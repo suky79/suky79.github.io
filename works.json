@@ -178,7 +178,8 @@
     "dK": "",
     "dE": "",
     "lk": [],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "008",
