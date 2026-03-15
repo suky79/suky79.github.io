@@ -144,11 +144,12 @@
     "g": "영화",
     "ko": "스파이더맨: 노 웨이 홈",
     "en": "Spider-Man: No Way Home",
-    "sub": "Marvel Comics",
+    "sub": "",
     "y": 2021,
     "t": 634649,
     "gr": "g6",
     "feat": false,
+    "home": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -158,9 +159,7 @@
         "c": "#000",
         "u": "https://www.imdb.com/title/tt10872600/"
       }
-    ],
-    "home": false,
-    "strip": true
+    ]
   },
   {
     "s": "007",
