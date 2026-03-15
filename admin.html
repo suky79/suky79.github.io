@@ -211,6 +211,7 @@ select.form-input{cursor:pointer}
     <div class="auth-row">
       <input type="password" id="ghToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
       <button class="btn btn-primary" onclick="authenticate()">연결</button>
+      <button class="btn btn-ghost" onclick="logoutGitHub()" title="저장된 토큰 삭제">로그아웃</button>
     </div>
     <div class="auth-status" id="authStatus"></div>
   </div>
@@ -741,6 +742,13 @@ async function authenticate(){
   }catch(e){ showStatus('연결 실패.','err'); }
 }
 
+function logoutGitHub(){
+  localStorage.removeItem('beardos_gh_token');
+  ghToken='';
+  document.getElementById('ghToken').value='';
+  showStatus('로그아웃됨. 토큰을 다시 입력하세요.','err');
+}
+
 function showStatus(msg,type){
   const el = document.getElementById('authStatus');
   el.textContent=msg; el.className='auth-status '+type;
@@ -761,7 +769,9 @@ async function loadWorks(){
     const r = await ghFetch(`https://api.github.com/repos/${REPO}/contents/${FILE}`);
     if(r.content){
       fileSha=r.sha;
-      works = JSON.parse(atob(r.content.replace(/\n/g,'')));
+      const raw = r.content.replace(/\n/g,'');
+      const decoded = decodeURIComponent(escape(atob(raw)));
+      works = JSON.parse(decoded);
       renderWorksList(); renderFeatured(); renderHomeGrid(); renderAdminStrip(); worksSnapshot=JSON.stringify(works);
       document.getElementById('totalCount').textContent = works.length;
     }
@@ -817,6 +827,7 @@ function selectTMDB(idx){
 
 /* ═══ SAVE WORK ═══ */
 async function saveWork(){
+  if(!ghToken){ toast('먼저 GitHub에 연결하세요.','error'); return; }
   const en = document.getElementById('fEn').value.trim();
   const year = parseInt(document.getElementById('fYear').value);
   if(!en||!year){ toast('제목과 연도는 필수입니다.','error'); return; }
@@ -1235,13 +1246,15 @@ function toast(msg,type='success'){
 }
 
 /* ═══ INIT ═══ */
-setGenre('영화');
-document.getElementById('tmdbKeyInput').value = TMDB_KEY;
-// 저장된 GitHub 토큰 복원 및 자동 연결
-if(ghToken){
-  document.getElementById('ghToken').value = ghToken;
-  authenticate();
-}
+document.addEventListener('DOMContentLoaded', () => {
+  setGenre('영화');
+  document.getElementById('tmdbKeyInput').value = TMDB_KEY;
+  // 저장된 GitHub 토큰 복원 및 자동 연결
+  if(ghToken){
+    document.getElementById('ghToken').value = ghToken;
+    authenticate();
+  }
+});
 </script>
 </body>
 </html>
