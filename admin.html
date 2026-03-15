@@ -178,6 +178,19 @@ select.form-input{cursor:pointer}
   .tmdb-results{grid-template-columns:repeat(3,1fr)}
   .admin-header{flex-direction:column;align-items:flex-start}
 }
+
+/* ═══ SAVE BAR ═══ */
+.save-bar{position:fixed;bottom:0;left:0;right:0;z-index:500;background:rgba(27,37,64,.97);backdrop-filter:blur(12px);border-top:1px solid rgba(229,186,65,.15);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;transform:translateY(100%);transition:transform .3s cubic-bezier(.25,.46,.45,.94)}
+.save-bar.visible{transform:translateY(0)}
+.save-bar-msg{font-size:12px;color:rgba(240,235,224,.5)}
+.save-bar-msg strong{color:var(--accent);font-weight:600}
+.save-bar-actions{display:flex;gap:10px;align-items:center}
+.save-bar-count{font-size:11px;color:rgba(240,235,224,.4);padding:4px 10px;background:rgba(229,186,65,.1);border-radius:20px}
+.btn-save-main{padding:10px 28px;background:var(--accent);color:#1B2540;border:none;border-radius:6px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;letter-spacing:.02em}
+.btn-save-main:hover{filter:brightness(1.1)}
+.btn-save-main:disabled{opacity:.5;cursor:not-allowed}
+.btn-discard{padding:10px 18px;background:transparent;color:rgba(240,235,224,.5);border:1px solid rgba(240,235,224,.1);border-radius:6px;font-family:'Space Grotesk',sans-serif;font-size:13px;cursor:pointer;transition:all .2s}
+.btn-discard:hover{border-color:rgba(240,235,224,.3);color:rgba(240,235,224,.8)}
 </style>
 </head>
 <body>
@@ -463,6 +476,15 @@ select.form-input{cursor:pointer}
 
 <div class="toast" id="toast"></div>
 
+<!-- SAVE BAR -->
+<div class="save-bar" id="saveBar">
+  <div class="save-bar-msg"><strong id="saveBarCount">0</strong>개 변경사항이 저장되지 않았습니다</div>
+  <div class="save-bar-actions">
+    <button class="btn-discard" onclick="discardChanges()">되돌리기</button>
+    <button class="btn-save-main" id="saveBarBtn" onclick="saveAllChanges()">💾 GitHub에 저장</button>
+  </div>
+</div>
+
 <script>
 const REPO = 'suky79/suky79.github.io';
 const FILE = 'works.json';
@@ -472,7 +494,7 @@ const GE = {영화:'Film',뮤지컬:'Musical',연극:'Theatre',책:'Book',저서
 const GRADS = ['g1','g2','g3','g4','g5','g6','g7','g8','g9','g10','g11','g12','g13','g14','g15'];
 const BADGE_CLASS = {영화:'badge-film',뮤지컬:'badge-musical',연극:'badge-theatre',책:'badge-book',저서:'badge-authored'};
 
-let ghToken='', works=[], editIdx=-1, fileSha='';
+let ghToken=localStorage.getItem('beardos_gh_token')||'', works=[], editIdx=-1, fileSha='';
 let currentGenre='영화', imgBase64=null, imgFileName='', imgSource='upload';
 
 /* ═══ TAB ═══ */
@@ -662,6 +684,46 @@ function showTmdbStatus(msg, type){
   el.className = 'auth-status' + (type ? ' '+type : '');
 }
 
+/* ═══ PENDING CHANGES & SAVE BAR ═══ */
+let pendingChanges = 0;
+let worksSnapshot = null; // 마지막 저장 시점 스냅샷
+
+function markDirty(label=''){
+  pendingChanges++;
+  document.getElementById('saveBarCount').textContent = pendingChanges;
+  document.getElementById('saveBar').classList.add('visible');
+}
+
+function clearDirty(){
+  pendingChanges = 0;
+  document.getElementById('saveBar').classList.remove('visible');
+  worksSnapshot = JSON.stringify(works);
+}
+
+async function saveAllChanges(){
+  const btn = document.getElementById('saveBarBtn');
+  btn.disabled = true;
+  btn.textContent = '저장 중...';
+  const ok = await commitWorks('Admin: save changes');
+  if(ok){
+    clearDirty();
+    btn.textContent = '💾 GitHub에 저장';
+  } else {
+    btn.disabled = false;
+    btn.textContent = '💾 GitHub에 저장';
+  }
+}
+
+async function discardChanges(){
+  if(!confirm('저장하지 않은 변경사항을 모두 되돌릴까요?')) return;
+  if(worksSnapshot){
+    works = JSON.parse(worksSnapshot);
+    renderWorksList(); renderFeatured(); renderHomeGrid(); renderAdminStrip();
+    clearDirty();
+    toast('변경사항을 되돌렸습니다.','info');
+  }
+}
+
 /* ═══ AUTH ═══ */
 async function authenticate(){
   ghToken = document.getElementById('ghToken').value.trim();
@@ -669,9 +731,13 @@ async function authenticate(){
   try{
     const r = await ghFetch('https://api.github.com/user');
     if(r.login){
+      localStorage.setItem('beardos_gh_token', ghToken);
       showStatus(`✓ ${r.login} 로 연결됨`,'ok');
       loadWorks();
-    } else { showStatus('토큰이 유효하지 않습니다.','err'); }
+    } else {
+      localStorage.removeItem('beardos_gh_token');
+      showStatus('토큰이 유효하지 않습니다.','err');
+    }
   }catch(e){ showStatus('연결 실패.','err'); }
 }
 
@@ -696,7 +762,7 @@ async function loadWorks(){
     if(r.content){
       fileSha=r.sha;
       works = JSON.parse(atob(r.content.replace(/\n/g,'')));
-      renderWorksList(); renderFeatured(); renderHomeGrid(); renderAdminStrip();
+      renderWorksList(); renderFeatured(); renderHomeGrid(); renderAdminStrip(); worksSnapshot=JSON.stringify(works);
       document.getElementById('totalCount').textContent = works.length;
     }
   }catch(e){ toast('works.json 로드 실패','error'); }
@@ -812,11 +878,11 @@ async function saveWork(){
       if(!posterUrl && works[editIdx].poster) work.poster = works[editIdx].poster;
       works[editIdx]=work;
       const ok = await commitWorks(`Update: ${en}`);
-      if(ok){ resetForm(); renderWorksList(); renderFeatured(); renderHomeGrid(); }
+      if(ok){ clearDirty(); resetForm(); renderWorksList(); renderFeatured(); renderHomeGrid(); renderAdminStrip(); }
     } else {
       works.push(work);
       const ok = await commitWorks(`Add: ${en}`);
-      if(ok){ resetForm(); renderWorksList(); renderFeatured(); renderHomeGrid(); }
+      if(ok){ clearDirty(); resetForm(); renderWorksList(); renderFeatured(); renderHomeGrid(); renderAdminStrip(); }
     }
   } finally {
     btn.disabled=false; btn.textContent= editIdx>=0?'작품 업데이트':'작품 저장';
@@ -877,7 +943,7 @@ async function deleteWork(idx){
   works.splice(idx,1);
   works.forEach((w,i)=>w.s=String(i+1).padStart(3,'0'));
   const ok = await commitWorks(`Delete: ${w.en}`);
-  if(ok){ renderWorksList(); renderFeatured(); renderHomeGrid(); }
+  if(ok){ clearDirty(); renderWorksList(); renderFeatured(); renderHomeGrid(); renderAdminStrip(); }
 }
 
 /* ═══ RESET FORM ═══ */
@@ -993,8 +1059,7 @@ async function addToFeatured(gi){
 async function removeFromFeatured(gi){
   const w=works[gi]; if(!w||!confirm(`"${w.en}"을 히어로에서 제거할까요?`)) return;
   w.feat=false;
-  const ok=await commitWorks(`Unfeature: ${w.en}`);
-  if(ok){ renderFeatured(); renderWorksList(); }
+  markDirty(); renderFeatured(); renderWorksList();
 }
 
 function editFeatDesc(gi){
@@ -1018,8 +1083,7 @@ async function featDrop(e){
   const rest=works.filter(w=>!w.feat);
   works=[...featured,...rest];
   works.forEach((w,i)=>w.s=String(i+1).padStart(3,'0'));
-  const ok=await commitWorks('Reorder featured');
-  if(ok){ renderFeatured(); renderWorksList(); }
+  markDirty(); renderFeatured(); renderWorksList();
   featDragIdx=null;
 }
 
@@ -1066,8 +1130,7 @@ async function addToGrid(gi){
 async function removeFromGrid(gi){
   const w=works[gi]; if(!w||!confirm(`"${w.en}"을 그리드에서 제거할까요?`)) return;
   w.home=false;
-  const ok=await commitWorks(`Grid remove: ${w.en}`);
-  if(ok) renderHomeGrid();
+  markDirty(); renderHomeGrid();
 }
 
 function editGridDesc(gi){
@@ -1130,21 +1193,18 @@ function renderAdminStrip(){
 async function addToStrip(gi){
   if(works.filter(w=>w.strip).length >= 5){ showStripFull(); return; }
   works[gi].strip = true;
-  const ok = await commitWorks(`Strip add: ${works[gi].en}`);
-  if(ok){ renderAdminStrip(); renderWorksList(); }
+  markDirty(); renderAdminStrip(); renderWorksList();
 }
 
 async function removeFromStrip(gi){
   works[gi].strip = false;
-  const ok = await commitWorks(`Strip remove: ${works[gi].en}`);
-  if(ok){ renderAdminStrip(); renderWorksList(); }
+  markDirty(); renderAdminStrip(); renderWorksList();
 }
 
 async function clearStrip(){
   if(!confirm('대표작 선택을 모두 해제할까요?')) return;
   works.forEach(w=>{ w.strip = false; });
-  const ok = await commitWorks('Clear strip');
-  if(ok){ renderAdminStrip(); renderWorksList(); }
+  markDirty(); renderAdminStrip(); renderWorksList();
 }
 
 function showStripFull(){ toast('최대 5개까지만 선택할 수 있습니다.','info'); }
@@ -1163,8 +1223,7 @@ async function stripDrop(e){
   const rest=works.filter(w=>!w.strip);
   works=[...inStrip,...rest];
   works.forEach((w,i)=>w.s=String(i+1).padStart(3,'0'));
-  const ok=await commitWorks('Reorder strip');
-  if(ok){ renderAdminStrip(); renderWorksList(); }
+  markDirty(); renderAdminStrip(); renderWorksList();
   stripDragIdx=null;
 }
 
@@ -1177,8 +1236,12 @@ function toast(msg,type='success'){
 
 /* ═══ INIT ═══ */
 setGenre('영화');
-// 저장된 TMDB 키를 입력창에 표시
 document.getElementById('tmdbKeyInput').value = TMDB_KEY;
+// 저장된 GitHub 토큰 복원 및 자동 연결
+if(ghToken){
+  document.getElementById('ghToken').value = ghToken;
+  authenticate();
+}
 </script>
 </body>
 </html>
