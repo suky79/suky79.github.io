@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Beardos</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0e0e0e;--bg2:#161616;--bg3:#1e1e1e;--bg4:#282828;--text:#e8e3da;--muted:#888;--accent:#c9a96e;--accent2:#e8d5b0;--red:#e05555;--green:#5cb85c;--blue:#5b9bd5;--sans:'DM Sans',sans-serif}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;font-size:14px;line-height:1.6;min-height:100vh}
+
+/* Layout */
+.admin-wrap{max-width:960px;margin:0 auto;padding:24px 20px 80px}
+h1{font-size:24px;font-weight:500;margin-bottom:4px}
+h1 span{color:var(--accent)}
+.subtitle{font-size:13px;color:var(--muted);margin-bottom:32px}
+
+/* Auth */
+.auth-bar{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:20px;margin-bottom:24px}
+.auth-bar h3{font-size:14px;font-weight:500;margin-bottom:8px}
+.auth-bar p{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.5}
+.auth-row{display:flex;gap:8px}
+.auth-row input{flex:1;padding:8px 12px;background:var(--bg3);border:1px solid rgba(255,255,255,.08);border-radius:4px;color:var(--text);font-family:var(--sans);font-size:13px;outline:none}
+.auth-row input:focus{border-color:var(--accent)}
+.auth-row input::placeholder{color:var(--muted)}
+.auth-status{margin-top:8px;font-size:12px}
+.auth-status.ok{color:var(--green)}
+.auth-status.err{color:var(--red)}
+
+/* Buttons */
+.btn{padding:8px 18px;border:none;border-radius:4px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;letter-spacing:.02em}
+.btn-primary{background:var(--accent);color:#0e0e0e}
+.btn-primary:hover{filter:brightness(1.1)}
+.btn-danger{background:var(--red);color:#fff}
+.btn-danger:hover{filter:brightness(1.1)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-sm{padding:5px 12px;font-size:12px}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* Add Form */
+.add-section{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:20px;margin-bottom:24px}
+.add-section h3{font-size:14px;font-weight:500;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.add-section h3 .badge{font-size:10px;background:var(--accent);color:#0e0e0e;padding:2px 8px;border-radius:10px;font-weight:600}
+
+/* TMDB Search */
+.tmdb-search{display:flex;gap:8px;margin-bottom:16px}
+.tmdb-search input{flex:1;padding:8px 12px;background:var(--bg3);border:1px solid rgba(255,255,255,.08);border-radius:4px;color:var(--text);font-family:var(--sans);font-size:13px;outline:none}
+.tmdb-search input:focus{border-color:var(--accent)}
+.tmdb-results{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:16px;max-height:300px;overflow-y:auto}
+.tmdb-result{background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:4px;cursor:pointer;overflow:hidden;transition:all .2s}
+.tmdb-result:hover{border-color:var(--accent)}
+.tmdb-result.selected{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.tmdb-result img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block}
+.tmdb-result-info{padding:6px 8px}
+.tmdb-result-title{font-size:11px;font-weight:500;line-height:1.3}
+.tmdb-result-year{font-size:10px;color:var(--muted)}
+
+/* Form Grid */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-group{display:flex;flex-direction:column;gap:4px}
+.form-group.full{grid-column:1/-1}
+.form-label{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.form-input{padding:8px 12px;background:var(--bg3);border:1px solid rgba(255,255,255,.08);border-radius:4px;color:var(--text);font-family:var(--sans);font-size:13px;outline:none}
+.form-input:focus{border-color:var(--accent)}
+select.form-input{cursor:pointer}
+.form-actions{margin-top:16px;display:flex;gap:8px;justify-content:flex-end}
+
+/* Works List */
+.works-section h3{font-size:14px;font-weight:500;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+.works-list{display:flex;flex-direction:column;gap:6px}
+.work-item{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:10px 14px;transition:border-color .2s}
+.work-item:hover{border-color:rgba(255,255,255,.12)}
+.work-item-poster{width:36px;height:54px;border-radius:2px;overflow:hidden;background:var(--bg3);flex-shrink:0}
+.work-item-poster img{width:100%;height:100%;object-fit:cover}
+.work-item-info{flex:1;min-width:0}
+.work-item-title{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.work-item-meta{font-size:11px;color:var(--muted)}
+.work-item-badge{font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:10px;background:rgba(201,169,110,.15);color:var(--accent)}
+.work-item-actions{display:flex;gap:6px;flex-shrink:0}
+
+/* Featured Section */
+.featured-section{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:20px;margin-bottom:24px}
+.featured-section h3{font-size:14px;font-weight:500;margin-bottom:4px}
+.featured-current{display:flex;flex-direction:column;gap:6px}
+.featured-item{display:flex;align-items:center;gap:12px;background:var(--bg3);border:1px solid rgba(201,169,110,.2);border-radius:6px;padding:10px 14px;cursor:grab;transition:all .2s}
+.featured-item:active{cursor:grabbing;opacity:.7}
+.featured-item.drag-over{border-color:var(--accent);background:rgba(201,169,110,.05)}
+.featured-item-num{font-family:var(--sans);font-size:18px;font-weight:600;color:var(--accent);min-width:28px;text-align:center}
+.featured-item-poster{width:32px;height:48px;border-radius:2px;overflow:hidden;background:var(--bg4);flex-shrink:0}
+.featured-item-poster img{width:100%;height:100%;object-fit:cover}
+.featured-item-info{flex:1;min-width:0}
+.featured-item-title{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.featured-item-meta{font-size:11px;color:var(--muted)}
+.featured-item-desc{font-size:10px;color:var(--accent3);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+.featured-item-actions{display:flex;gap:6px;flex-shrink:0}
+.featured-available{display:flex;flex-wrap:wrap;gap:6px}
+.featured-add-chip{display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:5px 12px 5px 6px;cursor:pointer;transition:all .2s;font-size:12px;color:var(--muted)}
+.featured-add-chip:hover{border-color:var(--accent);color:var(--accent)}
+.featured-add-chip img{width:20px;height:30px;object-fit:cover;border-radius:1px}
+
+/* Toast */
+.toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:6px;font-size:13px;font-weight:500;color:#fff;z-index:999;transform:translateY(80px);opacity:0;transition:all .3s var(--ease)}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.success{background:var(--green)}
+.toast.error{background:var(--red)}
+
+/* Loading */
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.2);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media(max-width:600px){
+  .form-grid{grid-template-columns:1fr}
+  .tmdb-results{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="admin-wrap">
+  <h1>Beardos<span>.</span> Admin</h1>
+  <p class="subtitle">Manage your translation portfolio. Changes auto-deploy to your site.</p>
+
+  <!-- AUTH -->
+  <div class="auth-bar">
+    <h3>🔑 GitHub Authentication</h3>
+    <p>Enter your GitHub Personal Access Token to enable saving.<br>
+       Generate one at <a href="https://github.com/settings/tokens/new?scopes=repo&description=Beardos+Admin" target="_blank" style="color:var(--accent)">github.com/settings/tokens</a> (select <code style="background:var(--bg3);padding:2px 6px;border-radius:3px;font-size:12px">repo</code> scope).</p>
+    <div class="auth-row">
+      <input type="password" id="ghToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
+      <button class="btn btn-primary" onclick="authenticate()">Connect</button>
+    </div>
+    <div class="auth-status" id="authStatus"></div>
+  </div>
+
+  <!-- ADD / EDIT -->
+  <div class="add-section">
+    <h3>
+      <span id="formTitle">Add New Work</span>
+      <span class="badge">TMDB Auto-fill</span>
+    </h3>
+
+    <div class="tmdb-search">
+      <input type="text" id="tmdbQuery" placeholder="Search TMDB for a movie (e.g. Deadpool)..." onkeydown="if(event.key==='Enter')searchTMDB()" />
+      <button class="btn btn-ghost" onclick="searchTMDB()">Search</button>
+    </div>
+    <div class="tmdb-results" id="tmdbResults"></div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <span class="form-label">English Title *</span>
+        <input class="form-input" id="fEn" placeholder="Deadpool & Wolverine" />
+      </div>
+      <div class="form-group">
+        <span class="form-label">Korean Title</span>
+        <input class="form-input" id="fKo" placeholder="데드풀 & 울버린" />
+      </div>
+      <div class="form-group">
+        <span class="form-label">Genre *</span>
+        <select class="form-input" id="fGenre">
+          <option value="영화">Film (영화)</option>
+          <option value="뮤지컬">Musical (뮤지컬)</option>
+          <option value="연극">Theatre (연극)</option>
+          <option value="책">Book (책)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <span class="form-label">Year *</span>
+        <input class="form-input" type="number" id="fYear" placeholder="2024" />
+      </div>
+      <div class="form-group">
+        <span class="form-label">Subtitle / Credit</span>
+        <input class="form-input" id="fSub" placeholder="Marvel Comics" />
+      </div>
+      <div class="form-group">
+        <span class="form-label">TMDB ID</span>
+        <input class="form-input" type="number" id="fTmdb" placeholder="533535 (auto-filled from search)" />
+      </div>
+      <div class="form-group">
+        <span class="form-label">IMDb URL</span>
+        <input class="form-input" id="fImdb" placeholder="https://www.imdb.com/title/tt..." />
+      </div>
+      <div class="form-group">
+        <span class="form-label">Featured on Home?</span>
+        <select class="form-input" id="fFeat">
+          <option value="false">No</option>
+          <option value="true">Yes</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <span class="form-label">Description (EN) — for featured hero</span>
+        <input class="form-input" id="fDescEn" placeholder="A short English description for the homepage hero..." />
+      </div>
+      <div class="form-group full">
+        <span class="form-label">Description (KO)</span>
+        <input class="form-input" id="fDescKo" placeholder="홈페이지 히어로용 한국어 설명..." />
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-ghost" onclick="resetForm()">Cancel</button>
+      <button class="btn btn-primary" id="saveBtn" onclick="saveWork()">Add Work</button>
+    </div>
+  </div>
+
+  <!-- FEATURED MANAGEMENT -->
+  <div class="featured-section" id="featuredSection" style="display:none">
+    <h3>🏠 Homepage Featured</h3>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.6">
+      These works appear on the homepage — hero carousel & editorial grid.<br>
+      Drag to reorder. The first 3 appear in the hero slideshow.
+    </p>
+    <div class="featured-current" id="featuredList"></div>
+    <div style="margin-top:16px">
+      <p style="font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Add to Featured</p>
+      <div class="featured-available" id="featuredAvailable"></div>
+    </div>
+  </div>
+
+  <!-- WORKS LIST -->
+  <div class="works-section">
+    <h3>
+      <span>Works (<span id="totalCount">0</span>)</span>
+      <button class="btn btn-ghost btn-sm" onclick="loadWorks()">↻ Refresh</button>
+    </h3>
+    <div class="works-list" id="worksList">
+      <p style="color:var(--muted);text-align:center;padding:40px 0">Connect to GitHub to load works.</p>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const REPO = 'suky79/suky79.github.io';
+const FILE = 'works.json';
+const TMDB_KEY = '953ab5c0680706b5f7447d45b19ca8f1';
+const TP = 'https://image.tmdb.org/t/p/w185';
+const GE = {영화:'Film',뮤지컬:'Musical',연극:'Theatre',책:'Book'};
+const GRADS = ['g1','g2','g3','g4','g5','g6','g7','g8','g9','g10','g11','g12','g13','g14','g15'];
+
+let ghToken = '';
+let works = [];
+let editIdx = -1;
+let fileSha = '';
+
+/* ═══ AUTH ═══ */
+async function authenticate(){
+  ghToken = document.getElementById('ghToken').value.trim();
+  if(!ghToken){ showStatus('Please enter a token.','err'); return; }
+  try{
+    const r = await ghFetch('https://api.github.com/user');
+    if(r.login){
+      showStatus(`Connected as ${r.login}`,'ok');
+      loadWorks();
+    } else {
+      showStatus('Invalid token.','err');
+    }
+  }catch(e){ showStatus('Connection failed.','err'); }
+}
+
+function showStatus(msg,type){
+  const el = document.getElementById('authStatus');
+  el.textContent = msg;
+  el.className = 'auth-status ' + type;
+}
+
+/* ═══ GITHUB API ═══ */
+async function ghFetch(url, opts={}){
+  const r = await fetch(url, {
+    ...opts,
+    headers: { 'Authorization': `Bearer ${ghToken}`, 'Accept': 'application/vnd.github+json', ...(opts.headers||{}) }
+  });
+  return r.json();
+}
+
+/* ═══ LOAD ═══ */
+async function loadWorks(){
+  try{
+    const r = await ghFetch(`https://api.github.com/repos/${REPO}/contents/${FILE}`);
+    if(r.content){
+      fileSha = r.sha;
+      works = JSON.parse(atob(r.content.replace(/\n/g,'')));
+      renderWorksList();
+      renderFeatured();
+      document.getElementById('featuredSection').style.display='';
+    } else {
+      works = [];
+      fileSha = '';
+      renderWorksList();
+      renderFeatured();
+    }
+  }catch(e){
+    toast('Failed to load works.','error');
+  }
+}
+
+/* ═══ SAVE TO GITHUB ═══ */
+async function commitWorks(message){
+  if(!ghToken){ toast('Connect to GitHub first.','error'); return false; }
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(works, null, 2))));
+  const body = { message, content, sha: fileSha || undefined };
+  try{
+    const r = await ghFetch(`https://api.github.com/repos/${REPO}/contents/${FILE}`, {
+      method: 'PUT',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(body)
+    });
+    if(r.content){
+      fileSha = r.content.sha;
+      toast('Saved & deployed!','success');
+      return true;
+    } else {
+      toast('Save failed: '+(r.message||'unknown error'),'error');
+      return false;
+    }
+  }catch(e){
+    toast('Save failed.','error');
+    return false;
+  }
+}
+
+/* ═══ TMDB SEARCH ═══ */
+async function searchTMDB(){
+  const q = document.getElementById('tmdbQuery').value.trim();
+  if(!q) return;
+  const r = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_KEY}&query=${encodeURIComponent(q)}&language=en-US`);
+  const d = await r.json();
+  const el = document.getElementById('tmdbResults');
+  if(!d.results||!d.results.length){ el.innerHTML='<p style="color:var(--muted);font-size:12px;padding:8px">No results found.</p>'; return; }
+  el.innerHTML = d.results.slice(0,8).map((m,i)=>{
+    const poster = m.poster_path ? TP+m.poster_path : '';
+    const yr = m.release_date ? m.release_date.substring(0,4) : '—';
+    return `<div class="tmdb-result" onclick="selectTMDB(${i})" data-idx="${i}">
+      ${poster ? `<img src="${poster}" alt="">` : `<div style="aspect-ratio:2/3;background:#1e1e1e;display:flex;align-items:center;justify-content:center;font-size:11px;color:#555">No poster</div>`}
+      <div class="tmdb-result-info">
+        <div class="tmdb-result-title">${m.title}</div>
+        <div class="tmdb-result-year">${yr}</div>
+      </div>
+    </div>`;
+  }).join('');
+  window._tmdbResults = d.results.slice(0,8);
+}
+
+function selectTMDB(idx){
+  const m = window._tmdbResults[idx];
+  if(!m) return;
+  document.querySelectorAll('.tmdb-result').forEach((el,i)=>el.classList.toggle('selected',i===idx));
+  document.getElementById('fEn').value = m.title || '';
+  document.getElementById('fYear').value = m.release_date ? m.release_date.substring(0,4) : '';
+  document.getElementById('fTmdb').value = m.id || '';
+  // Try to get IMDb ID
+  fetch(`https://api.themoviedb.org/3/movie/${m.id}/external_ids?api_key=${TMDB_KEY}`)
+    .then(r=>r.json()).then(d=>{
+      if(d.imdb_id) document.getElementById('fImdb').value = `https://www.imdb.com/title/${d.imdb_id}/`;
+    }).catch(()=>{});
+}
+
+/* ═══ SAVE WORK ═══ */
+async function saveWork(){
+  const en = document.getElementById('fEn').value.trim();
+  const ko = document.getElementById('fKo').value.trim();
+  const genre = document.getElementById('fGenre').value;
+  const year = parseInt(document.getElementById('fYear').value);
+  const sub = document.getElementById('fSub').value.trim();
+  const tmdb = parseInt(document.getElementById('fTmdb').value) || null;
+  const imdb = document.getElementById('fImdb').value.trim();
+  const feat = document.getElementById('fFeat').value === 'true';
+  const dE = document.getElementById('fDescEn').value.trim();
+  const dK = document.getElementById('fDescKo').value.trim();
+
+  if(!en || !year){ toast('Title and Year are required.','error'); return; }
+
+  const spine = editIdx >= 0 ? works[editIdx].s : String(works.length+1).padStart(3,'0');
+  const gr = editIdx >= 0 ? works[editIdx].gr : GRADS[works.length % GRADS.length];
+
+  const lk = [];
+  if(imdb) lk.push({n:'IMDb',bg:'#f5c518',c:'#000',u:imdb});
+
+  const work = { s:spine, g:genre, ko:ko||en, en, sub:sub||'', y:year, t:tmdb, gr, feat, dK:dK||'', dE:dE||'', lk };
+
+  if(editIdx >= 0){
+    works[editIdx] = work;
+    const ok = await commitWorks(`Update: ${en}`);
+    if(ok){ resetForm(); renderWorksList(); renderFeatured(); }
+  } else {
+    works.push(work);
+    const ok = await commitWorks(`Add: ${en}`);
+    if(ok){ resetForm(); renderWorksList(); renderFeatured(); }
+  }
+}
+
+/* ═══ EDIT ═══ */
+function editWork(idx){
+  const w = works[idx];
+  if(!w) return;
+  editIdx = idx;
+  document.getElementById('formTitle').textContent = `Edit: ${w.en}`;
+  document.getElementById('saveBtn').textContent = 'Update Work';
+  document.getElementById('fEn').value = w.en;
+  document.getElementById('fKo').value = w.ko;
+  document.getElementById('fGenre').value = w.g;
+  document.getElementById('fYear').value = w.y;
+  document.getElementById('fSub').value = w.sub;
+  document.getElementById('fTmdb').value = w.t || '';
+  document.getElementById('fFeat').value = w.feat ? 'true' : 'false';
+  document.getElementById('fDescEn').value = w.dE || '';
+  document.getElementById('fDescKo').value = w.dK || '';
+  const imdbLink = w.lk.find(l=>l.n==='IMDb');
+  document.getElementById('fImdb').value = imdbLink ? imdbLink.u : '';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ═══ DELETE ═══ */
+async function deleteWork(idx){
+  const w = works[idx];
+  if(!confirm(`Delete "${w.en}"?`)) return;
+  works.splice(idx,1);
+  // Re-number spines
+  works.forEach((w,i)=>w.s = String(i+1).padStart(3,'0'));
+  const ok = await commitWorks(`Delete: ${w.en}`);
+  if(ok){ renderWorksList(); renderFeatured(); }
+}
+
+/* ═══ MOVE ═══ */
+async function moveWork(idx, dir){
+  const newIdx = idx + dir;
+  if(newIdx < 0 || newIdx >= works.length) return;
+  [works[idx], works[newIdx]] = [works[newIdx], works[idx]];
+  works.forEach((w,i)=>w.s = String(i+1).padStart(3,'0'));
+  const ok = await commitWorks(`Reorder works`);
+  if(ok){ renderWorksList(); renderFeatured(); }
+}
+
+/* ═══ RESET FORM ═══ */
+function resetForm(){
+  editIdx = -1;
+  document.getElementById('formTitle').textContent = 'Add New Work';
+  document.getElementById('saveBtn').textContent = 'Add Work';
+  ['fEn','fKo','fYear','fSub','fTmdb','fImdb','fDescEn','fDescKo','tmdbQuery'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('fGenre').value = '영화';
+  document.getElementById('fFeat').value = 'false';
+  document.getElementById('tmdbResults').innerHTML = '';
+}
+
+/* ═══ RENDER LIST ═══ */
+function renderWorksList(){
+  document.getElementById('totalCount').textContent = works.length;
+  const el = document.getElementById('worksList');
+  if(!works.length){
+    el.innerHTML = '<p style="color:var(--muted);text-align:center;padding:40px 0">No works yet. Add your first one above.</p>';
+    return;
+  }
+  el.innerHTML = works.map((w,i)=>{
+    const posterUrl = w.t ? `https://image.tmdb.org/t/p/w92/${w.t}` : ''; // placeholder
+    const badge = GE[w.g] || w.g;
+    return `
+    <div class="work-item">
+      <div class="work-item-poster" id="poster-${i}"><div style="width:100%;height:100%;background:var(--bg3);border-radius:2px"></div></div>
+      <div class="work-item-info">
+        <div class="work-item-title">${w.s} — ${w.en}</div>
+        <div class="work-item-meta">${w.ko!==w.en?w.ko+' · ':''}${w.y} · ${w.sub}</div>
+      </div>
+      <span class="work-item-badge">${badge}</span>
+      ${w.feat?'<span style="font-size:10px;color:var(--accent)">★</span>':''}
+      <div class="work-item-actions">
+        <button class="btn btn-ghost btn-sm" onclick="moveWork(${i},-1)" ${i===0?'disabled':''}>↑</button>
+        <button class="btn btn-ghost btn-sm" onclick="moveWork(${i},1)" ${i===works.length-1?'disabled':''}>↓</button>
+        <button class="btn btn-ghost btn-sm" onclick="editWork(${i})">Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteWork(${i})">✕</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Load posters for items with TMDB IDs
+  works.forEach((w,i)=>{
+    if(!w.t) return;
+    fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}&language=en-US`)
+      .then(r=>r.json()).then(d=>{
+        if(d.poster_path){
+          const el = document.getElementById(`poster-${i}`);
+          if(el) el.innerHTML = `<img src="${TP}${d.poster_path}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:2px">`;
+        }
+      }).catch(()=>{});
+  });
+}
+
+/* ═══ FEATURED MANAGEMENT ═══ */
+function renderFeatured(){
+  const featList = document.getElementById('featuredList');
+  const availList = document.getElementById('featuredAvailable');
+  const featured = works.filter(w=>w.feat);
+  const nonFeatured = works.filter(w=>!w.feat);
+
+  // Render current featured items
+  if(!featured.length){
+    featList.innerHTML='<p style="color:var(--muted);font-size:12px;padding:12px;text-align:center;background:var(--bg3);border-radius:4px">No featured works yet. Add works below.</p>';
+  } else {
+    featList.innerHTML = featured.map((w,fi)=>{
+      const globalIdx = works.indexOf(w);
+      const posterHtml = w.t ? `<img src="${TP}/??" alt="" id="fposter-${globalIdx}">` : '';
+      const descPreview = w.dE ? w.dE.replace(/\n/g,' ').substring(0,50)+'…' : 'No description';
+      return `
+      <div class="featured-item" draggable="true" data-feat-idx="${fi}" data-global-idx="${globalIdx}"
+           ondragstart="featDragStart(event)" ondragover="featDragOver(event)" ondragleave="featDragLeave(event)" ondrop="featDrop(event)">
+        <div class="featured-item-num">${fi+1}</div>
+        <div class="featured-item-poster" id="fposter-${globalIdx}"></div>
+        <div class="featured-item-info">
+          <div class="featured-item-title">${w.en}</div>
+          <div class="featured-item-meta">${w.y} · ${GE[w.g]||w.g}</div>
+          <div class="featured-item-desc">${descPreview}</div>
+        </div>
+        <div class="featured-item-actions">
+          <button class="btn btn-ghost btn-sm" onclick="editFeatDesc(${globalIdx})" title="Edit description">✏️</button>
+          <button class="btn btn-danger btn-sm" onclick="removeFromFeatured(${globalIdx})" title="Remove from featured">✕</button>
+        </div>
+      </div>`;
+    }).join('');
+
+    // Load posters
+    featured.forEach(w=>{
+      const gi = works.indexOf(w);
+      if(!w.t) return;
+      fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}&language=en-US`)
+        .then(r=>r.json()).then(d=>{
+          if(d.poster_path){
+            const el=document.getElementById(`fposter-${gi}`);
+            if(el) el.innerHTML=`<img src="${TP}${d.poster_path}" style="width:100%;height:100%;object-fit:cover;border-radius:2px">`;
+          }
+        }).catch(()=>{});
+    });
+  }
+
+  // Render available (non-featured) works to add
+  availList.innerHTML = nonFeatured.map(w=>{
+    const gi = works.indexOf(w);
+    return `<div class="featured-add-chip" onclick="addToFeatured(${gi})">
+      <span>＋</span> ${w.en} (${w.y})
+    </div>`;
+  }).join('') || '<p style="color:var(--muted);font-size:12px">All works are featured.</p>';
+}
+
+async function addToFeatured(globalIdx){
+  const w = works[globalIdx];
+  if(!w) return;
+  w.feat = true;
+  // If no description, prompt
+  if(!w.dE){
+    const desc = prompt(`Enter English description for "${w.en}" (shown on homepage hero):`);
+    if(desc) w.dE = desc;
+    const descKo = prompt(`Enter Korean description (optional):`);
+    if(descKo) w.dK = descKo;
+  }
+  const ok = await commitWorks(`Feature: ${w.en}`);
+  if(ok){ renderFeatured(); renderWorksList(); }
+}
+
+async function removeFromFeatured(globalIdx){
+  const w = works[globalIdx];
+  if(!w) return;
+  if(!confirm(`Remove "${w.en}" from homepage featured?`)) return;
+  w.feat = false;
+  const ok = await commitWorks(`Unfeature: ${w.en}`);
+  if(ok){ renderFeatured(); renderWorksList(); }
+}
+
+function editFeatDesc(globalIdx){
+  const w = works[globalIdx];
+  if(!w) return;
+  const dE = prompt('English description (for homepage hero):', w.dE||'');
+  if(dE===null) return;
+  w.dE = dE;
+  const dK = prompt('Korean description:', w.dK||'');
+  if(dK!==null) w.dK = dK;
+  commitWorks(`Update description: ${w.en}`).then(ok=>{
+    if(ok) renderFeatured();
+  });
+}
+
+/* Featured drag & drop reorder */
+let featDragIdx = null;
+function featDragStart(e){
+  featDragIdx = +e.currentTarget.dataset.featIdx;
+  e.currentTarget.style.opacity = '.5';
+}
+function featDragOver(e){
+  e.preventDefault();
+  e.currentTarget.classList.add('drag-over');
+}
+function featDragLeave(e){
+  e.currentTarget.classList.remove('drag-over');
+}
+async function featDrop(e){
+  e.preventDefault();
+  e.currentTarget.classList.remove('drag-over');
+  const dropIdx = +e.currentTarget.dataset.featIdx;
+  if(featDragIdx===null || featDragIdx===dropIdx) return;
+
+  // Get featured works in current order
+  const featured = works.filter(w=>w.feat);
+  const dragged = featured[featDragIdx];
+  featured.splice(featDragIdx,1);
+  featured.splice(dropIdx,0,dragged);
+
+  // Rebuild works array: featured first in new order, then non-featured
+  const nonFeatured = works.filter(w=>!w.feat);
+  const reordered = [...featured, ...nonFeatured];
+  reordered.forEach((w,i)=>w.s = String(i+1).padStart(3,'0'));
+  works = reordered;
+
+  const ok = await commitWorks('Reorder featured');
+  if(ok){ renderFeatured(); renderWorksList(); }
+  featDragIdx = null;
+}
+
+/* ═══ TOAST ═══ */
+function toast(msg, type='success'){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = `toast ${type} show`;
+  setTimeout(()=>el.classList.remove('show'),3000);
+}
+</script>
+</body>
+</html>

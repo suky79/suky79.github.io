@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beardos — The White Beard Translators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;--bg2:#111;--bg3:#1a1a1a;
+  --text:#f0ebe2;--text2:#d4cfc6;--muted:#7a7570;--muted2:#555049;
+  --accent:#c9a96e;--accent2:#e8d5b0;--accent3:#a88a4e;
+  --border:rgba(240,235,226,.07);--border2:rgba(240,235,226,.12);
+  --serif:'Cormorant Garamond','Noto Serif KR',Georgia,serif;
+  --sans:'DM Sans',sans-serif;--serif-kr:'Noto Serif KR',serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--accent);color:var(--bg)}
+
+/* ═══════════ NAV — A24 minimal ═══════════ */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:60px;transition:background .4s,backdrop-filter .4s}
+nav.scrolled{background:rgba(10,10,10,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:.5px solid var(--border)}
+.nav-logo{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:.02em;color:var(--text);text-decoration:none;transition:opacity .3s}
+.nav-logo:hover{opacity:.7}
+.nav-logo i{color:var(--accent);font-style:italic}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,235,226,.6);text-decoration:none;transition:color .3s}
+.nav-links a:hover{color:var(--text)}
+.lang-toggle{display:flex;border:.5px solid rgba(240,235,226,.15);border-radius:20px;overflow:hidden}
+.lang-toggle button{padding:4px 12px;background:none;border:none;color:rgba(240,235,226,.4);cursor:pointer;transition:all .25s;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.1em}
+.lang-toggle button.active{background:var(--accent);color:var(--bg);border-radius:20px}
+
+/* ═══════════ HERO — A24 fullscreen ═══════════ */
+.hero{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;cursor:pointer}
+.hero-slides{position:absolute;inset:0}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.hero-slide.active{opacity:1}
+.hero-slide-bg{position:absolute;inset:0;transition:transform 8s linear}
+.hero-slide.active .hero-slide-bg{transform:scale(1.06)}
+.hero-slide-bg img{width:100%;height:100%;object-fit:cover}
+.hero-slide-gradient{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.9) 0%,rgba(10,10,10,.3) 40%,rgba(10,10,10,.1) 60%,rgba(10,10,10,.4) 100%)}
+.hero-slide-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:120px;font-weight:300;font-style:italic;color:rgba(240,235,226,.03);letter-spacing:-.02em}
+.hero-slide-fallback::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.9) 0%,rgba(10,10,10,.2) 50%,rgba(10,10,10,.5) 100%)}
+
+/* Hero Content — bottom left, A24 style */
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 40px 48px;z-index:10}
+.hero-eyebrow{font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;opacity:0;animation:fadeIn .8s .3s var(--ease) forwards}
+.hero-film-title{font-family:var(--serif);font-size:clamp(42px,6vw,80px);font-weight:300;line-height:1.0;letter-spacing:-.02em;margin-bottom:12px;opacity:0;animation:fadeUp .8s .4s var(--ease) forwards}
+.hero-film-title em{font-style:italic;color:var(--accent)}
+.hero-film-meta{display:flex;align-items:center;gap:20px;font-size:12px;letter-spacing:.1em;color:rgba(240,235,226,.5);text-transform:uppercase;opacity:0;animation:fadeUp .8s .6s var(--ease) forwards}
+.hero-film-meta span{color:var(--accent2)}
+.hero-film-desc{font-size:14px;color:rgba(240,235,226,.5);max-width:400px;line-height:1.8;margin-top:16px;opacity:0;animation:fadeUp .8s .7s var(--ease) forwards}
+
+/* Hero Nav Dots — right side vertical, A24 style */
+.hero-dots{position:absolute;right:40px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:20}
+.hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(240,235,226,.2);border:none;cursor:pointer;transition:all .4s;padding:0}
+.hero-dot.active{background:var(--accent);height:28px;border-radius:4px}
+.hero-counter{position:absolute;right:40px;bottom:48px;font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(240,235,226,.35);z-index:20;letter-spacing:.05em}
+
+/* ═══════════ FILM STRIP — A24 horizontal scroll ═══════════ */
+.filmstrip{padding:48px 0 48px 40px;border-bottom:.5px solid var(--border)}
+.filmstrip-header{display:flex;align-items:baseline;justify-content:space-between;padding-right:40px;margin-bottom:28px}
+.filmstrip-title{font-family:var(--serif);font-size:11px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--muted)}
+.filmstrip-count{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--muted2)}
+.filmstrip-track{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.filmstrip-track::-webkit-scrollbar{display:none}
+.filmstrip-card{flex:0 0 220px;cursor:pointer;transition:transform .3s var(--ease)}
+.filmstrip-card:hover{transform:translateY(-4px)}
+.filmstrip-card:last-child{margin-right:40px}
+.filmstrip-poster{aspect-ratio:2/3;border-radius:2px;overflow:hidden;position:relative;background:var(--bg3);border:.5px solid var(--border);margin-bottom:10px;transition:border-color .3s}
+.filmstrip-card:hover .filmstrip-poster{border-color:var(--accent3)}
+.filmstrip-poster img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.filmstrip-card:hover .filmstrip-poster img{transform:scale(1.04)}
+.filmstrip-poster-fb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(240,235,226,.08);text-align:center;padding:16px;line-height:1.3}
+.filmstrip-spine{position:absolute;top:0;left:0;width:24px;height:100%;background:rgba(10,10,10,.8);border-right:.5px solid var(--border);display:flex;align-items:center;justify-content:center;z-index:3}
+.filmstrip-spine span{font-family:var(--serif);font-size:9px;color:var(--muted2);writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);letter-spacing:.15em;transition:color .3s}
+.filmstrip-card:hover .filmstrip-spine span{color:var(--accent)}
+.filmstrip-badge{position:absolute;top:8px;right:8px;font-size:8px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:2px 7px;border-radius:1px;background:rgba(10,10,10,.85);color:var(--accent);border:.5px solid rgba(201,169,110,.2);z-index:3}
+.filmstrip-info h3{font-family:var(--serif-kr);font-size:13px;font-weight:400;color:var(--text);line-height:1.3;margin-bottom:2px;transition:color .3s}
+.filmstrip-card:hover .filmstrip-info h3{color:var(--accent2)}
+.filmstrip-info p{font-size:10px;color:var(--muted2);letter-spacing:.05em}
+.filmstrip-info .yr{font-family:var(--serif);font-style:italic;color:var(--accent3);letter-spacing:.08em}
+
+/* ═══════════ EDITORIAL GRID — A24 mixed blocks ═══════════ */
+.editorial{max-width:1320px;margin:0 auto;padding:64px 40px}
+.editorial-row{display:grid;gap:20px;margin-bottom:20px}
+.editorial-row.two{grid-template-columns:1fr 1fr}
+.editorial-row.wide{grid-template-columns:1fr}
+.editorial-row.asym{grid-template-columns:2fr 1fr}
+.editorial-row.asym-r{grid-template-columns:1fr 2fr}
+
+.ed-block{position:relative;border-radius:2px;overflow:hidden;border:.5px solid var(--border);background:var(--bg2);cursor:pointer;transition:border-color .4s}
+.ed-block:hover{border-color:var(--accent3)}
+.ed-block-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.ed-block:hover .ed-block-img{transform:scale(1.03)}
+.ed-block-fb{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:36px;font-weight:300;font-style:italic;color:rgba(240,235,226,.05)}
+.ed-block-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,rgba(10,10,10,.92))}
+.ed-block-tag{font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.ed-block-title{font-family:var(--serif);font-size:22px;font-weight:300;line-height:1.3}
+.ed-block-title em{font-style:italic;color:var(--accent)}
+
+/* ═══════════ ABOUT ═══════════ */
+.about{padding:80px 40px;border-top:.5px solid var(--border);max-width:1320px;margin:0 auto}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.about-tag{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.about-name{font-family:var(--serif);font-size:48px;font-weight:300;line-height:1.1;margin-bottom:28px}
+.about-name em{font-style:italic;color:var(--accent)}
+.about-bio{font-size:14px;font-weight:300;color:var(--muted);line-height:2;margin-bottom:16px}
+.about-right{padding-top:8px}
+.skill-item{padding:20px 0;border-bottom:.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.skill-label{font-size:12px;font-weight:400;color:var(--text2);letter-spacing:.05em}
+.skill-value{font-family:var(--serif);font-size:17px;font-weight:300;color:var(--accent2)}
+
+/* ═══════════ CONTACT ═══════════ */
+.contact{padding:80px 40px;border-top:.5px solid var(--border);max-width:1320px;margin:0 auto}
+.contact-title{font-family:var(--serif);font-size:clamp(32px,5vw,56px);font-weight:300;line-height:1.15;max-width:500px;margin-bottom:32px}
+.contact-title em{font-style:italic;color:var(--accent)}
+.contact-email{display:inline-block;padding:14px 36px;border:.5px solid var(--accent3);border-radius:1px;color:var(--accent);font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.contact-email:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+
+/* ═══════════ FOOTER ═══════════ */
+footer{padding:32px 40px;border-top:.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1320px;margin:0 auto}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:300;font-style:italic;color:var(--muted2)}
+.footer-copy{font-size:11px;color:var(--muted2);letter-spacing:.06em}
+
+/* ═══════════ ANIMATIONS ═══════════ */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* ═══════════ GRADIENT CLASSES ═══════════ */
+.g1{background:linear-gradient(145deg,#3a0000,#1a0000 50%,#2d0a0a)}.g2{background:linear-gradient(145deg,#2a0a1a,#1a0000 50%,#3d0a0a)}.g3{background:linear-gradient(145deg,#1a1a2e,#3a0000 50%,#2d0a1a)}.g4{background:linear-gradient(145deg,#001a2e,#002a3a 50%,#001020)}.g5{background:linear-gradient(145deg,#0a1a0a,#001a2e 50%,#0a2a1a)}.g6{background:linear-gradient(145deg,#0a0a2e,#1a0a3a 50%,#0a1a3a)}.g7{background:linear-gradient(145deg,#0a2a0a,#1a3a1a 50%,#0a1a0a)}.g8{background:linear-gradient(145deg,#1a1a0a,#2a2a1a 50%,#1a0a00)}.g9{background:linear-gradient(145deg,#1a1a1a,#2a1a2a 50%,#0a0a1a)}.g10{background:linear-gradient(145deg,#1a0a0a,#2a1a1a 50%,#1a0a1a)}.g11{background:linear-gradient(145deg,#0a0a0a,#1a0a0a 50%,#2a1a0a)}.g12{background:linear-gradient(145deg,#0a0a1a,#1a1a2a 50%,#0a0a0a)}.g13{background:linear-gradient(145deg,#1a1a0a,#0a0a0a 50%,#1a1a1a)}.g14{background:linear-gradient(145deg,#0a1a2a,#1a2a3a 50%,#0a0a1a)}.g15{background:linear-gradient(145deg,#2a1a0a,#3a2a1a 50%,#1a0a00)}
+
+/* ═══════════ RESPONSIVE ═══════════ */
+@media(max-width:1024px){
+  .editorial-row.asym,.editorial-row.asym-r{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{padding:0 20px;height:52px}
+  .nav-links{display:none}
+  .hero-content{padding:0 20px 36px}
+  .hero-dots{right:16px}
+  .hero-counter{right:16px;bottom:36px}
+  .filmstrip{padding-left:20px}
+  .filmstrip-header{padding-right:20px}
+  .filmstrip-card{flex:0 0 160px}
+  .filmstrip-card:last-child{margin-right:20px}
+  .editorial{padding:40px 20px}
+  .editorial-row.two{grid-template-columns:1fr}
+  .about{padding:60px 20px}
+  .about-inner{grid-template-columns:1fr;gap:40px}
+  .about-name{font-size:36px}
+  .contact{padding:60px 20px}
+  footer{padding:24px 20px;flex-direction:column;gap:8px;text-align:center}
+}
+@media(max-width:480px){
+  .hero-film-title{font-size:36px}
+}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="#" class="nav-logo">Beardos<i>.</i></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="collection.html"><span class="lang-ko" style="display:none">컬렉션</span><span class="lang-en">Collection</span></a></li>
+      <li><a href="#about"><span class="lang-ko" style="display:none">소개</span><span class="lang-en">About</span></a></li>
+      <li><a href="#contact"><span class="lang-ko" style="display:none">의뢰</span><span class="lang-en">Contact</span></a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button onclick="setLang('ko')">KO</button>
+      <button class="active" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO — FULLSCREEN A24 ═══════════ -->
+<section class="hero" id="heroSection">
+  <div class="hero-slides" id="heroSlides"></div>
+  <div class="hero-content" id="heroContent"></div>
+  <div class="hero-dots" id="heroDots"></div>
+  <div class="hero-counter" id="heroCounter"></div>
+</section>
+
+<!-- ═══════════ FILM STRIP ═══════════ -->
+<section class="filmstrip" id="works">
+  <div class="filmstrip-header">
+    <span class="filmstrip-title lang-ko" style="display:none">전체 컬렉션</span>
+    <span class="filmstrip-title lang-en">Full Collection</span>
+    <span class="filmstrip-count" id="stripCount"></span>
+  </div>
+  <div class="filmstrip-track" id="filmstrip"></div>
+</section>
+
+<!-- ═══════════ EDITORIAL GRID — dynamically rendered from featured works ═══════════ -->
+<section class="editorial" id="editorialGrid"></section>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <p class="about-tag lang-ko" style="display:none">번역가 소개</p><p class="about-tag lang-en">About the Translator</p>
+      <h2 class="about-name"><span class="lang-ko" style="display:none">황석희<br><em>黃錫熙</em></span><span class="lang-en">Hwang<br><em>Seokhee</em></span></h2>
+      <p class="about-bio lang-ko" style="display:none">영화, 뮤지컬, 연극, 문학을 가로지르는 번역가. 두 언어 사이의 감정적 진실을 놓치지 않는 것, 그것이 흰수염 번역단의 원칙입니다.</p>
+      <p class="about-bio lang-en">A translator working across film, musical theatre, stage plays, and literature. The guiding principle of Beardos: never lose the emotional truth between two languages.</p>
+      <p class="about-bio lang-ko" style="display:none">단어를 옮기는 것이 아니라 세계를 옮깁니다.</p>
+      <p class="about-bio lang-en">We don't translate words. We translate worlds.</p>
+    </div>
+    <div class="about-right">
+      <div class="skill-item"><span class="skill-label lang-ko" style="display:none">주요 분야</span><span class="skill-label lang-en">Specialisation</span><span class="skill-value lang-ko" style="display:none">영화 자막 · 더빙</span><span class="skill-value lang-en">Subtitle · Dubbing</span></div>
+      <div class="skill-item"><span class="skill-label lang-ko" style="display:none">뮤지컬 번역</span><span class="skill-label lang-en">Musical Translation</span><span class="skill-value lang-ko" style="display:none">다수 초연</span><span class="skill-value lang-en">Multiple Premieres</span></div>
+      <div class="skill-item"><span class="skill-label lang-ko" style="display:none">작업 언어</span><span class="skill-label lang-en">Languages</span><span class="skill-value">EN → KO</span></div>
+      <div class="skill-item"><span class="skill-label lang-ko" style="display:none">기반</span><span class="skill-label lang-en">Based in</span><span class="skill-value lang-ko" style="display:none">서울, 대한민국</span><span class="skill-value lang-en">Seoul, Korea</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section class="contact" id="contact">
+  <p class="about-tag lang-ko" style="display:none">번역 의뢰</p><p class="about-tag lang-en">Commission</p>
+  <h2 class="contact-title"><span class="lang-ko" style="display:none">새로운 이야기를<br><em>함께</em> 만들어요.</span><span class="lang-en">Let's tell a new<br><em>story</em> together.</span></h2>
+  <a href="mailto:contact@beardos.studio" class="contact-email">contact@beardos.studio</a>
+</section>
+
+<footer>
+  <span class="footer-logo">Beardos.</span>
+  <span class="footer-copy lang-ko" style="display:none">© 2025 흰수염 번역단. All rights reserved.</span>
+  <span class="footer-copy lang-en">© 2025 The White Beard Translators. All rights reserved.</span>
+</footer>
+
+<script>
+/* ═══════════ TMDB API ═══════════ */
+const TMDB_KEY = '953ab5c0680706b5f7447d45b19ca8f1';
+const TP = 'https://image.tmdb.org/t/p/w500';
+const TB = 'https://image.tmdb.org/t/p/w1280';
+
+let W = [];
+let lang='en',hIdx=0,hTimer;
+const GE={영화:'Film',뮤지컬:'Musical',연극:'Theatre',책:'Book'};
+
+// TMDB ID → editorial block 매핑
+const ED_MAP = {76600:0, 634649:1, 83533:2};
+
+/* ═══════════ LOAD DATA ═══════════ */
+async function init(){
+  try{
+    const r = await fetch('works.json?v='+Date.now());
+    W = await r.json();
+    // Map sub field for index compatibility
+    W.forEach(w=>{ if(!w.subE) w.subE = w.sub; });
+  }catch(e){ W = []; }
+  renderHero();
+  renderStrip();
+  renderEditorial();
+  await loadTMDB();
+}
+
+/* ═══════════ TMDB API FETCH ═══════════ */
+async function loadTMDB(){
+  if(!TMDB_KEY) return;
+  const movies = W.filter(w=>w.t);
+  await Promise.all(movies.map(async w=>{
+    try{
+      const r = await fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}&language=en-US`);
+      const d = await r.json();
+      if(d.poster_path) w.poster = TP + d.poster_path;
+      if(d.backdrop_path) w.back = TB + d.backdrop_path;
+    }catch(e){}
+  }));
+  renderHero();
+  renderStrip();
+  renderEditorial();
+  setLang(lang);
+}
+
+/* ═══════════ EDITORIAL GRID — built from featured works ═══════════ */
+function renderEditorial(){
+  const F = W.filter(w=>w.feat);
+  if(!F.length){ document.getElementById('editorialGrid').innerHTML=''; return; }
+
+  const hk = lang==='ko'?'':'style="display:none"';
+  const he = lang==='en'?'':'style="display:none"';
+
+  // Layout patterns cycle: asym, wide, asym-r
+  const layouts = ['asym','wide','asym-r'];
+  const rows = [];
+  let fi = 0;
+
+  while(fi < F.length){
+    const layout = layouts[rows.length % layouts.length];
+    if(layout === 'wide'){
+      rows.push({layout, items:[F[fi++]]});
+    } else {
+      const items = [F[fi++]];
+      if(fi < F.length) items.push(F[fi++]);
+      rows.push({layout, items});
+    }
+  }
+
+  const html = rows.map(row=>{
+    const blocks = row.items.map(w=>{
+      const aspect = row.layout==='wide' ? '21/9' : '16/9';
+      const badgeKo = GE[w.g] ? w.g+' 번역' : w.g;
+      const badgeEn = GE[w.g] ? GE[w.g]+' Translation' : w.g;
+      const imgHtml = w.back
+        ? `<img class="ed-block-img" src="${w.back}" alt="${w.en}">`
+        : `<div class="ed-block-fb ${w.gr}" style="aspect-ratio:${aspect};font-size:${row.layout==='wide'?48:28}px"><span class="lang-ko" ${hk} style="position:relative;z-index:1">${w.ko}</span><span class="lang-en" ${he} style="position:relative;z-index:1">${w.en}</span></div>`;
+      return `<div class="ed-block">
+        ${imgHtml}
+        <div class="ed-block-overlay">
+          <p class="ed-block-tag lang-ko" ${hk}>${badgeKo}</p><p class="ed-block-tag lang-en" ${he}>${badgeEn}</p>
+          <h3 class="ed-block-title"><span class="lang-ko" ${hk}>${w.ko}</span><span class="lang-en" ${he}><em>${w.en}</em></span></h3>
+        </div>
+      </div>`;
+    }).join('');
+    return `<div class="editorial-row ${row.layout}">${blocks}</div>`;
+  }).join('');
+
+  document.getElementById('editorialGrid').innerHTML = html;
+}
+
+/* ═══════════ HERO ═══════════ */
+function renderHero(){
+  const F=W.filter(w=>w.feat);
+  const slides=document.getElementById('heroSlides');
+  const dots=document.getElementById('heroDots');
+
+  slides.innerHTML=F.map((w,i)=>{
+    const imgHtml = w.back
+      ? `<img src="${w.back}" alt="${w.ko}" style="width:100%;height:100%;object-fit:cover">`
+      : '';
+    return `
+    <div class="hero-slide${i===0?' active':''}">
+      <div class="hero-slide-bg">
+        ${imgHtml}
+        <div class="hero-slide-fallback ${w.gr}" ${w.back?'style="display:none"':''}>${w.ko}</div>
+        <div class="hero-slide-gradient"></div>
+      </div>
+    </div>`;
+  }).join('');
+
+  dots.innerHTML=F.map((_,i)=>`<button class="hero-dot${i===0?' active':''}" onclick="goHero(${i})"></button>`).join('');
+
+  updateHeroContent(hIdx);
+  updateHeroCounter();
+  clearInterval(hTimer);
+  startHeroAuto();
+}
+
+function updateHeroContent(i){
+  const F=W.filter(w=>w.feat);
+  const w=F[i];
+  const c=document.getElementById('heroContent');
+  c.style.opacity='0';
+  setTimeout(()=>{
+    const hk=lang==='ko'?'':'style="display:none"';
+    const he=lang==='en'?'':'style="display:none"';
+    c.innerHTML=`
+      <p class="hero-eyebrow" style="animation:none;opacity:0">
+        <span class="lang-ko" ${hk}>${w.g} · 자막 번역</span>
+        <span class="lang-en" ${he}>${GE[w.g]} · Subtitle</span>
+      </p>
+      <h1 class="hero-film-title" style="animation:none;opacity:0">
+        <span class="lang-ko" ${hk}>${w.ko}</span>
+        <span class="lang-en" ${he}><em>${w.en}</em></span>
+      </h1>
+      <div class="hero-film-meta" style="animation:none;opacity:0">
+        <span>${w.y}</span> · <span class="lang-ko" ${hk}>흰수염 번역단</span><span class="lang-en" ${he}>The White Beard Translators</span>
+      </div>
+      <p class="hero-film-desc" style="animation:none;opacity:0">
+        <span class="lang-ko" ${hk}>${(w.dK||'').replace(/\n/g,'<br>')}</span>
+        <span class="lang-en" ${he}>${(w.dE||'').replace(/\n/g,'<br>')}</span>
+      </p>`;
+    c.style.opacity='1';
+    requestAnimationFrame(()=>{
+      c.querySelectorAll('[style*="opacity:0"]').forEach((el,j)=>{
+        el.style.animation=`fadeUp .7s ${j*.12}s var(--ease) forwards`;
+      });
+    });
+  },150);
+}
+
+function goHero(i){
+  const F=W.filter(w=>w.feat);
+  hIdx=((i%F.length)+F.length)%F.length;
+  document.querySelectorAll('.hero-slide').forEach((s,j)=>s.classList.toggle('active',j===hIdx));
+  document.querySelectorAll('.hero-dot').forEach((d,j)=>d.classList.toggle('active',j===hIdx));
+  updateHeroContent(hIdx);
+  updateHeroCounter();
+  clearInterval(hTimer);startHeroAuto();
+}
+function startHeroAuto(){hTimer=setInterval(()=>goHero(hIdx+1),7000)}
+function updateHeroCounter(){
+  const F=W.filter(w=>w.feat);
+  document.getElementById('heroCounter').textContent=`${hIdx+1} / ${F.length}`;
+}
+
+/* ═══════════ FILM STRIP ═══════════ */
+function renderStrip(){
+  const el=document.getElementById('filmstrip');
+  el.innerHTML=W.map(w=>{
+    const imgHtml = w.poster
+      ? `<img src="${w.poster}" alt="${w.ko}" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:relative;z-index:1">`
+      : '';
+    return `
+    <div class="filmstrip-card">
+      <div class="filmstrip-poster">
+        <div class="filmstrip-spine"><span>${w.s}</span></div>
+        ${imgHtml}
+        <div class="filmstrip-poster-fb ${w.gr}" ${w.poster?'style="display:none"':''}><span class="lang-ko" style="display:none">${w.ko}</span><span class="lang-en">${w.en}</span></div>
+        <div class="filmstrip-badge lang-ko" style="display:none">${w.g}</div>
+        <div class="filmstrip-badge lang-en">${GE[w.g]}</div>
+      </div>
+      <div class="filmstrip-info">
+        <h3><span class="lang-ko" style="display:none">${w.ko}</span><span class="lang-en">${w.en}</span></h3>
+        <p><span class="lang-ko" style="display:none">${w.sub}</span><span class="lang-en">${w.subE}</span></p>
+        <p class="yr">${w.y}</p>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('stripCount').textContent=lang==='ko'?W.length+'개 작품':W.length+' works';
+}
+
+/* ═══════════ LANG ═══════════ */
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('.lang-toggle button').forEach((b,i)=>b.classList.toggle('active',(i===0&&l==='ko')||(i===1&&l==='en')));
+  document.querySelectorAll('.lang-ko').forEach(e=>e.style.display=l==='ko'?'':'none');
+  document.querySelectorAll('.lang-en').forEach(e=>e.style.display=l==='en'?'':'none');
+  document.documentElement.lang=l;
+  document.getElementById('stripCount').textContent=l==='ko'?W.length+'개 작품':W.length+' works';
+  updateHeroContent(hIdx);
+}
+
+/* ═══════════ NAV SCROLL ═══════════ */
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>80);
+});
+
+/* ═══════════ INIT ═══════════ */
+init();
+</script>
+</body>
+</html>
