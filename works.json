@@ -385,6 +385,7 @@
     "home": false,
     "dK": "",
     "dE": "",
-    "lk": []
+    "lk": [],
+    "strip": true
   }
 ]
