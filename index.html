@@ -238,10 +238,12 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* ═══════════ TMDB API ═══════════ */
+/* ═══════════ API KEYS ═══════════ */
 const TMDB_KEY = '953ab5c0680706b5f7447d45b19ca8f1';
 const TP = 'https://image.tmdb.org/t/p/w500';
 const TB = 'https://image.tmdb.org/t/p/w1280';
+const KOPIS_KEY = '80eee61339564315aef9acfd05e32945';
+const ALADIN_KEY = 'ttbsuky79.shopping0154001';
 
 let W = [];
 let lang='en',hIdx=0,hTimer;
@@ -255,16 +257,16 @@ async function init(){
   try{
     const r = await fetch('works.json?v='+Date.now());
     W = await r.json();
-    // Map sub field for index compatibility
     W.forEach(w=>{ if(!w.subE) w.subE = w.sub; });
   }catch(e){ W = []; }
   renderHero();
   renderStrip();
   renderEditorial();
-  await loadTMDB();
+  // 세 API 병렬 호출
+  await Promise.all([loadTMDB(), loadKOPIS(), loadAladin()]);
 }
 
-/* ═══════════ TMDB API FETCH ═══════════ */
+/* ═══════════ TMDB (영화) ═══════════ */
 async function loadTMDB(){
   if(!TMDB_KEY) return;
   const movies = W.filter(w=>w.t);
@@ -280,6 +282,57 @@ async function loadTMDB(){
   renderStrip();
   renderEditorial();
   setLang(lang);
+}
+
+/* ═══════════ KOPIS (뮤지컬·연극) ═══════════ */
+async function loadKOPIS(){
+  if(!KOPIS_KEY) return;
+  const perfs = W.filter(w=>(w.g==='뮤지컬'||w.g==='연극')&&!w.poster);
+  await Promise.all(perfs.map(async w=>{
+    try{
+      let posterUrl = null;
+      // kid(공연 ID) 있으면 상세 조회, 없으면 제목 검색
+      if(w.kid){
+        const r = await fetch(`https://www.kopis.or.kr/openApi/restful/pblprfr/${w.kid}?service=${KOPIS_KEY}`);
+        const xml = await r.text();
+        const doc = new DOMParser().parseFromString(xml,'text/xml');
+        posterUrl = doc.querySelector('poster')?.textContent||null;
+      } else {
+        const q = encodeURIComponent(w.ko);
+        const r = await fetch(`https://www.kopis.or.kr/openApi/restful/pblprfr?service=${KOPIS_KEY}&stdate=20000101&eddate=20301231&shprfnm=${q}&cpage=1&rows=1`);
+        const xml = await r.text();
+        const doc = new DOMParser().parseFromString(xml,'text/xml');
+        posterUrl = doc.querySelector('poster')?.textContent||null;
+        const id = doc.querySelector('mt20id')?.textContent;
+        if(id) w.kid = id;
+      }
+      if(posterUrl) w.poster = posterUrl.replace(/^http:/,'https:');
+    }catch(e){}
+  }));
+  renderStrip();
+  renderEditorial();
+}
+
+/* ═══════════ ALADIN (책·저서) ═══════════ */
+async function loadAladin(){
+  if(!ALADIN_KEY) return;
+  const books = W.filter(w=>(w.g==='책'||w.g==='저서')&&!w.poster);
+  await Promise.all(books.map(async w=>{
+    try{
+      let url;
+      if(w.isbn){
+        url = `https://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=${ALADIN_KEY}&itemIdType=ISBN13&ItemId=${w.isbn}&output=js&Version=20131101&Cover=Big`;
+      } else {
+        const q = encodeURIComponent(w.ko);
+        url = `https://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=${ALADIN_KEY}&Query=${q}&QueryType=Title&MaxResults=1&SearchTarget=Book&output=js&Version=20131101&Cover=Big`;
+      }
+      const r = await fetch(url);
+      const d = await r.json();
+      if(d.item?.[0]?.cover) w.poster = d.item[0].cover;
+    }catch(e){}
+  }));
+  renderStrip();
+  renderEditorial();
 }
 
 /* ═══════════ EDITORIAL GRID — Category Showcase ═══════════ */
@@ -468,4 +521,19 @@ function setLang(l){
   updateHeroContent(hIdx);
 }
 
-/* ═══════════ NAV SCROLL ══════════
+/* ═══════════ NAV SCROLL ══════════*/
+function initNavScroll(){
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initNavScroll();
+  setLang('en');
+  init();
+});
+</script>
+</body>
+</html>
