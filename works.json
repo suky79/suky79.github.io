@@ -139,7 +139,8 @@
         "u": "https://www.rottentomatoes.com/m/avatar_fire_and_ash"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "006",
