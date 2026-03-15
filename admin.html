@@ -8,39 +8,6 @@
 <title>Admin — Beardos</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ═══ PIN LOCK ═══ */
-#pinLock{position:fixed;inset:0;background:#1B2540;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0}
-.pin-box{background:#212E4A;border:1px solid rgba(229,186,65,.12);border-radius:16px;padding:48px 40px;width:360px;text-align:center}
-.pin-logo{font-family:'Clash Display',sans-serif;font-size:32px;font-weight:700;color:#F0EBE0;margin-bottom:4px}.pin-logo span{color:#E5BA41}
-.pin-sub{font-size:13px;color:rgba(240,235,224,.4);margin-bottom:32px;letter-spacing:.06em;text-transform:uppercase}
-.pin-dots{display:flex;justify-content:center;gap:12px;margin-bottom:28px}
-.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid rgba(229,186,65,.3);transition:all .2s}
-.pin-dot.filled{background:#E5BA41;border-color:#E5BA41}
-.pin-dot.error{background:#e05555;border-color:#e05555;animation:shake .3s}
-.pin-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.pin-key{padding:16px;border:1px solid rgba(229,186,65,.1);border-radius:8px;background:rgba(240,235,224,.04);color:#F0EBE0;font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;cursor:pointer;transition:all .15s;letter-spacing:.02em}
-.pin-key:hover{background:rgba(229,186,65,.1);border-color:rgba(229,186,65,.3)}
-.pin-key:active{transform:scale(.95)}
-.pin-key.del{font-size:16px;color:rgba(240,235,224,.5)}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
-
-/* ═══ MODAL ═══ */
-.modal-overlay{position:fixed;inset:0;background:rgba(10,15,30,.7);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(4px)}
-.modal-overlay.open{opacity:1;pointer-events:all}
-.modal{background:#212E4A;border:1px solid rgba(229,186,65,.12);border-radius:12px;padding:28px;width:500px;max-width:calc(100vw-40px);transform:translateY(16px);transition:transform .25s}
-.modal-overlay.open .modal{transform:translateY(0)}
-.modal-title{font-family:'Clash Display',sans-serif;font-size:18px;font-weight:600;color:#F0EBE0;margin-bottom:4px}
-.modal-sub{font-size:12px;color:rgba(240,235,224,.4);margin-bottom:20px}
-.modal-label{font-size:11px;font-weight:500;color:rgba(240,235,224,.5);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;display:block}
-.modal-textarea{width:100%;padding:10px 12px;background:rgba(240,235,224,.06);border:1px solid rgba(229,186,65,.1);border-radius:6px;color:#F0EBE0;font-family:'Space Grotesk',sans-serif;font-size:13px;resize:vertical;min-height:80px;outline:none;transition:border-color .2s;line-height:1.5}
-.modal-textarea:focus{border-color:rgba(229,186,65,.4)}
-.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:20px}
-.modal-btn{padding:9px 22px;border:none;border-radius:6px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s}
-.modal-btn-cancel{background:rgba(240,235,224,.08);color:rgba(240,235,224,.7)}
-.modal-btn-cancel:hover{background:rgba(240,235,224,.14)}
-.modal-btn-save{background:#E5BA41;color:#1B2540}
-.modal-btn-save:hover{filter:brightness(1.08)}
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#F5F1EA;--bg2:#EDE8DC;--bg3:#E3DBCE;--bg4:#D9D1C2;
@@ -214,51 +181,7 @@ select.form-input{cursor:pointer}
 </style>
 </head>
 <body>
-<!-- PIN LOCK -->
-<div id="pinLock">
-  <div class="pin-box">
-    <div class="pin-logo">Beardos<span>.</span></div>
-    <div class="pin-sub">Admin Access</div>
-    <div class="pin-dots">
-      <div class="pin-dot" id="pd0"></div>
-      <div class="pin-dot" id="pd1"></div>
-      <div class="pin-dot" id="pd2"></div>
-      <div class="pin-dot" id="pd3"></div>
-    </div>
-    <div class="pin-pad">
-      <button class="pin-key" onclick="pinInput('1')">1</button>
-      <button class="pin-key" onclick="pinInput('2')">2</button>
-      <button class="pin-key" onclick="pinInput('3')">3</button>
-      <button class="pin-key" onclick="pinInput('4')">4</button>
-      <button class="pin-key" onclick="pinInput('5')">5</button>
-      <button class="pin-key" onclick="pinInput('6')">6</button>
-      <button class="pin-key" onclick="pinInput('7')">7</button>
-      <button class="pin-key" onclick="pinInput('8')">8</button>
-      <button class="pin-key" onclick="pinInput('9')">9</button>
-      <button class="pin-key" onclick="pinInput('')" style="opacity:.3"></button>
-      <button class="pin-key" onclick="pinInput('0')">0</button>
-      <button class="pin-key del" onclick="pinDelete()">⌫</button>
-    </div>
-  </div>
-</div>
-
-<!-- DESCRIPTION MODAL -->
-<div class="modal-overlay" id="descModal">
-  <div class="modal">
-    <div class="modal-title" id="modalTitle">설명 편집</div>
-    <div class="modal-sub" id="modalSub"></div>
-    <label class="modal-label">영문 설명 (홈 표시용)</label>
-    <textarea class="modal-textarea" id="modalDescEn" placeholder="English description for homepage display..."></textarea>
-    <label class="modal-label" style="margin-top:14px">한국어 설명</label>
-    <textarea class="modal-textarea" id="modalDescKo" placeholder="한국어 설명..."></textarea>
-    <div class="modal-actions">
-      <button class="modal-btn modal-btn-cancel" onclick="closeModal()">취소</button>
-      <button class="modal-btn modal-btn-save" onclick="saveModal()">저장</button>
-    </div>
-  </div>
-</div>
-
-<div class="admin-wrap" id="adminWrap" style="display:none">
+<div class="admin-wrap">
   <div class="admin-header">
     <div>
       <h1>Beardos<span>.</span> Admin</h1>
@@ -284,7 +207,6 @@ select.form-input{cursor:pointer}
     <button class="tab-btn active" onclick="switchTab('add')">＋ 작품 추가</button>
     <button class="tab-btn" onclick="switchTab('featured')">★ 히어로 관리</button>
     <button class="tab-btn" onclick="switchTab('grid')">◆ 쇼케이스 그리드</button>
-    <button class="tab-btn" onclick="switchTab('strip')">▦ 필름스트립</button>
     <button class="tab-btn" onclick="switchTab('list')">≡ 전체 목록</button>
   </div>
 
@@ -444,20 +366,6 @@ select.form-input{cursor:pointer}
               <div style="font-size:11px;color:var(--muted);margin-top:8px" id="imgFileName"></div>
             </div>
           </div>
-          <div style="margin-top:10px;display:flex;align-items:center;gap:8px">
-            <select id="imgUploadTarget" class="form-input" style="flex:1;font-size:12px">
-              <option value="github">GitHub 저장소에 업로드</option>
-              <option value="cloudinary">Cloudinary CDN 업로드 (더 빠름)</option>
-            </select>
-          </div>
-          <div id="cloudinaryConfig" style="display:none;margin-top:10px;padding:12px;background:rgba(91,155,213,.08);border:1px solid rgba(91,155,213,.2);border-radius:6px">
-            <div style="font-size:11px;font-weight:600;color:var(--blue);margin-bottom:8px;letter-spacing:.05em;text-transform:uppercase">Cloudinary 설정</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-              <div><div class="form-label" style="margin-bottom:4px">Cloud Name</div><input class="form-input" id="cloudName" placeholder="your-cloud-name" style="font-size:12px"></div>
-              <div><div class="form-label" style="margin-bottom:4px">Upload Preset</div><input class="form-input" id="cloudPreset" placeholder="unsigned-preset" style="font-size:12px"></div>
-            </div>
-            <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5">Cloudinary → Settings → Upload → Unsigned preset 생성 후 입력</div>
-          </div>
           <div class="upload-progress" id="uploadProgress">
             <div class="upload-progress-bar" id="uploadProgressBar"></div>
           </div>
@@ -509,26 +417,6 @@ select.form-input{cursor:pointer}
     </div>
   </div>
 
-  <!-- TAB: FILMSTRIP -->
-  <div id="tab-strip" style="display:none">
-    <div class="featured-section-card">
-      <div class="card-title">▦ 홈 필름스트립 <span class="badge">최대 6개</span></div>
-      <p class="card-sub">메인 화면 "FULL COLLECTION" 가로 스크롤 섹션에 표시되는 작품입니다.<br>최대 6개까지 선택할 수 있으며 드래그로 순서를 바꿀 수 있습니다.</p>
-
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-        <span style="font-size:12px;color:var(--muted)" id="stripCountLabel">0 / 6 선택됨</span>
-        <button class="btn btn-ghost btn-sm" onclick="clearStrip()">전체 해제</button>
-      </div>
-
-      <div class="featured-list" id="stripList">
-        <p style="color:var(--muted);font-size:12px;text-align:center;padding:20px;background:var(--bg3);border-radius:6px">GitHub 연결 후 로드됩니다.</p>
-      </div>
-
-      <div style="font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:14px 0 8px">작품 추가</div>
-      <div class="available-chips" id="stripAvailable"></div>
-    </div>
-  </div>
-
   <!-- TAB: WORKS LIST -->
   <div id="tab-list" style="display:none">
     <div class="section-header">
@@ -544,114 +432,6 @@ select.form-input{cursor:pointer}
 <div class="toast" id="toast"></div>
 
 <script>
-/* ═══ PIN LOCK ═══ */
-const ADMIN_PIN = '0907'; // 원하는 PIN으로 변경
-let pinBuffer = '';
-
-function pinInput(d){
-  if(!d) return;
-  if(pinBuffer.length >= 4) return;
-  pinBuffer += d;
-  updatePinDots();
-  if(pinBuffer.length === 4) setTimeout(checkPin, 120);
-}
-
-function pinDelete(){
-  if(pinBuffer.length > 0){ pinBuffer = pinBuffer.slice(0,-1); updatePinDots(); }
-}
-
-function updatePinDots(){
-  for(let i=0;i<4;i++){
-    const el=document.getElementById('pd'+i);
-    el.classList.toggle('filled', i < pinBuffer.length);
-    el.classList.remove('error');
-  }
-}
-
-function checkPin(){
-  if(pinBuffer === ADMIN_PIN){
-    document.getElementById('pinLock').style.opacity='0';
-    document.getElementById('pinLock').style.transition='opacity .4s';
-    setTimeout(()=>{ document.getElementById('pinLock').style.display='none'; document.getElementById('adminWrap').style.display=''; },400);
-    sessionStorage.setItem('beardos_auth','1');
-  } else {
-    document.querySelectorAll('.pin-dot').forEach(d=>d.classList.add('error'));
-    setTimeout(()=>{ pinBuffer=''; updatePinDots(); },600);
-  }
-}
-
-// Skip PIN if already authenticated this session
-if(sessionStorage.getItem('beardos_auth')==='1'){
-  document.getElementById('pinLock').style.display='none';
-  document.getElementById('adminWrap').style.display='';
-}
-
-/* ═══ CLOUDINARY UPLOAD TARGET ═══ */
-document.getElementById('imgUploadTarget').addEventListener('change',function(){
-  document.getElementById('cloudinaryConfig').style.display = this.value==='cloudinary'?'':'none';
-});
-
-async function uploadImageCloudinary(slug){
-  const name = document.getElementById('cloudName').value.trim();
-  const preset = document.getElementById('cloudPreset').value.trim();
-  if(!name||!preset){ toast('Cloud Name과 Upload Preset을 입력하세요.','error'); return null; }
-  const blob = await (await fetch(imgBase64)).blob();
-  const fd = new FormData();
-  fd.append('file', blob);
-  fd.append('upload_preset', preset);
-  fd.append('public_id', `beardos/works/${slug}`);
-  fd.append('overwrite','true');
-  const r = await fetch(`https://api.cloudinary.com/v1_1/${name}/image/upload`, {method:'POST',body:fd});
-  const d = await r.json();
-  return d.secure_url || null;
-}
-
-/* ═══ DESCRIPTION MODAL ═══ */
-let _modalGi = null, _modalType = null;
-
-function openDescModal(gi, type){
-  const w = works[gi]; if(!w) return;
-  _modalGi = gi; _modalType = type;
-  document.getElementById('modalTitle').textContent = type==='feat' ? '히어로 설명 편집' : '그리드 설명 편집';
-  document.getElementById('modalSub').textContent = w.en + ' · ' + w.y;
-  document.getElementById('modalDescEn').value = w.dE||'';
-  document.getElementById('modalDescKo').value = w.dK||'';
-  document.getElementById('descModal').classList.add('open');
-  document.getElementById('modalDescEn').focus();
-}
-
-function closeModal(){
-  document.getElementById('descModal').classList.remove('open');
-  _modalGi=null; _modalType=null;
-}
-
-async function saveModal(){
-  if(_modalGi===null) return;
-  const w=works[_modalGi];
-  w.dE = document.getElementById('modalDescEn').value.trim();
-  w.dK = document.getElementById('modalDescKo').value.trim();
-  closeModal();
-  const ok = await commitWorks(`Update desc: ${w.en}`);
-  if(ok){ renderFeatured(); renderHomeGrid(); }
-}
-
-// Close modal on overlay click
-document.getElementById('descModal').addEventListener('click',function(e){
-  if(e.target===this) closeModal();
-});
-
-// Keyboard: Enter to save, Esc to close
-document.addEventListener('keydown',function(e){
-  if(document.getElementById('descModal').classList.contains('open')){
-    if(e.key==='Escape') closeModal();
-  }
-  // PIN input via keyboard
-  if(document.getElementById('pinLock').style.display!=='none'){
-    if(e.key>='0'&&e.key<='9') pinInput(e.key);
-    if(e.key==='Backspace') pinDelete();
-  }
-});
-
 const REPO = 'suky79/suky79.github.io';
 const FILE = 'works.json';
 const TMDB_KEY = '953ab5c0680706b5f7447d45b19ca8f1';
@@ -665,11 +445,11 @@ let currentGenre='영화', imgBase64=null, imgFileName='', imgSource='upload';
 
 /* ═══ TAB ═══ */
 function switchTab(t){
-  ['add','featured','grid','strip','list'].forEach(id=>{
+  ['add','featured','grid','list'].forEach(id=>{
     document.getElementById('tab-'+id).style.display = id===t?'':'none';
   });
   document.querySelectorAll('.tab-btn').forEach((b,i)=>{
-    b.classList.toggle('active',['add','featured','grid','strip','list'][i]===t);
+    b.classList.toggle('active',['add','featured','grid','list'][i]===t);
   });
 }
 
@@ -853,7 +633,7 @@ async function loadWorks(){
     if(r.content){
       fileSha=r.sha;
       works = JSON.parse(atob(r.content.replace(/\n/g,'')));
-      renderWorksList(); renderFeatured(); renderHomeGrid(); renderAdminStrip();
+      renderWorksList(); renderFeatured(); renderHomeGrid();
       document.getElementById('totalCount').textContent = works.length;
     }
   }catch(e){ toast('works.json 로드 실패','error'); }
@@ -920,8 +700,7 @@ async function saveWork(){
     let posterUrl = null;
     if(imgSource==='upload' && imgBase64){
       const slug = en.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-      const target = document.getElementById('imgUploadTarget').value;
-      posterUrl = target==='cloudinary' ? await uploadImageCloudinary(slug) : await uploadImageToGitHub(slug);
+      posterUrl = await uploadImageToGitHub(slug);
       if(!posterUrl){ toast('이미지 업로드 실패','error'); return; }
     } else if(imgSource==='url'){
       const u = document.getElementById('fPosterUrl').value.trim();
@@ -1143,8 +922,9 @@ function renderFeatured(){
 
 async function addToFeatured(gi){
   const w=works[gi]; if(!w) return; w.feat=true;
+  if(!w.dE){ const d=prompt(`"${w.en}" 영문 설명 (히어로 표시용):`); if(d) w.dE=d; }
   const ok=await commitWorks(`Feature: ${w.en}`);
-  if(ok){ renderFeatured(); renderWorksList(); openDescModal(gi,'feat'); }
+  if(ok){ renderFeatured(); renderWorksList(); }
 }
 
 async function removeFromFeatured(gi){
@@ -1154,8 +934,12 @@ async function removeFromFeatured(gi){
   if(ok){ renderFeatured(); renderWorksList(); }
 }
 
-function editFeatDesc(gi){ openDescModal(gi,'feat'); }
-function editGridDesc(gi){ openDescModal(gi,'grid'); }
+function editFeatDesc(gi){
+  const w=works[gi]; if(!w) return;
+  const dE=prompt('영문 설명 (히어로용):',w.dE||''); if(dE===null) return; w.dE=dE;
+  const dK=prompt('한국어 설명:',w.dK||''); if(dK!==null) w.dK=dK;
+  commitWorks(`Update desc: ${w.en}`).then(ok=>{ if(ok) renderFeatured(); });
+}
 
 let featDragIdx=null;
 function featDragStart(e){ featDragIdx=+e.currentTarget.dataset.featIdx; e.currentTarget.style.opacity='.5'; }
@@ -1211,8 +995,9 @@ function renderHomeGrid(){
 
 async function addToGrid(gi){
   const w=works[gi]; if(!w) return; w.home=true;
+  if(!w.dE){ const d=prompt(`"${w.en}" 영문 설명 (그리드 표시용):`); if(d) w.dE=d; }
   const ok=await commitWorks(`Grid add: ${w.en}`);
-  if(ok){ renderHomeGrid(); openDescModal(gi,'grid'); }
+  if(ok) renderHomeGrid();
 }
 
 async function removeFromGrid(gi){
@@ -1222,103 +1007,11 @@ async function removeFromGrid(gi){
   if(ok) renderHomeGrid();
 }
 
-
-
-/* ═══ FILMSTRIP MANAGEMENT ═══ */
-function renderAdminStrip(){
-  const list = document.getElementById('stripList');
-  const avail = document.getElementById('stripAvailable');
-  const inStrip = works.filter(w=>w.strip);
-  const notIn = works.filter(w=>!w.strip);
-
-  document.getElementById('stripCountLabel').textContent = `${inStrip.length} / 6 선택됨`;
-
-  if(inStrip.length){
-    list.innerHTML = inStrip.map((w,si)=>{
-      const gi = works.indexOf(w);
-      const badge = GE[w.g]||w.g;
-      return `<div class="featured-item" draggable="true" data-strip-idx="${si}" data-global-idx="${gi}"
-        ondragstart="stripDragStart(event)" ondragover="stripDragOver(event)" ondragleave="stripDragLeave(event)" ondrop="stripDrop(event)">
-        <div class="featured-item-num" style="font-size:13px;color:var(--muted)">${si+1}</div>
-        <div class="featured-item-poster" id="sp-${gi}">${w.poster?`<img src="${w.poster}" style="width:100%;height:100%;object-fit:cover">`:''}</div>
-        <div class="featured-item-info">
-          <div class="featured-item-title">${w.en}</div>
-          <div class="featured-item-meta">${w.y} · ${badge}${w.ko!==w.en?' · '+w.ko:''}</div>
-        </div>
-        <button class="btn btn-danger btn-sm" onclick="removeFromStrip(${gi})">✕</button>
-      </div>`;
-    }).join('');
-
-    // Load TMDB posters for films without poster
-    inStrip.forEach(w=>{
-      if(!w.t||w.poster) return;
-      const gi=works.indexOf(w);
-      fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}`)
-        .then(r=>r.json()).then(d=>{
-          if(d.poster_path){
-            const el=document.getElementById(`sp-${gi}`);
-            if(el) el.innerHTML=`<img src="${TP}${d.poster_path}" style="width:100%;height:100%;object-fit:cover">`;
-          }
-        }).catch(()=>{});
-    });
-  } else {
-    list.innerHTML = '<p style="color:var(--muted);font-size:12px;text-align:center;padding:20px;background:var(--bg3);border-radius:6px">필름스트립에 표시할 작품이 없습니다. 아래에서 추가하세요.</p>';
-  }
-
-  // Available chips (exclude already in strip, show all genres)
-  const canAdd = inStrip.length < 6;
-  avail.innerHTML = notIn.map(w=>{
-    const gi=works.indexOf(w);
-    const badge=GE[w.g]||w.g;
-    return `<div class="chip${canAdd?'':' disabled'}" onclick="${canAdd?`addToStrip(${gi})`:'showStripFull()'}" style="${canAdd?'':'opacity:.4;cursor:not-allowed'}">
-      <span>＋</span>${w.en} <span style="opacity:.6;font-size:10px">${badge}</span>
-    </div>`;
-  }).join('') || '<p style="color:var(--muted);font-size:12px">모든 작품이 필름스트립에 포함되어 있습니다.</p>';
-}
-
-async function addToStrip(gi){
-  const inStrip = works.filter(w=>w.strip);
-  if(inStrip.length >= 6){ showStripFull(); return; }
-  works[gi].strip = true;
-  const ok = await commitWorks(`Strip add: ${works[gi].en}`);
-  if(ok){ renderAdminStrip(); renderWorksList(); }
-}
-
-async function removeFromStrip(gi){
-  works[gi].strip = false;
-  const ok = await commitWorks(`Strip remove: ${works[gi].en}`);
-  if(ok){ renderAdminStrip(); renderWorksList(); }
-}
-
-async function clearStrip(){
-  if(!confirm('필름스트립 선택을 모두 해제할까요?')) return;
-  works.forEach(w=>w.strip=false);
-  const ok = await commitWorks('Clear strip');
-  if(ok){ renderAdminStrip(); renderWorksList(); }
-}
-
-function showStripFull(){
-  toast('최대 6개까지만 선택할 수 있습니다.','info');
-}
-
-// Strip drag & drop
-let stripDragIdx=null;
-function stripDragStart(e){ stripDragIdx=+e.currentTarget.dataset.stripIdx; e.currentTarget.style.opacity='.5'; }
-function stripDragOver(e){ e.preventDefault(); e.currentTarget.classList.add('drag-over'); }
-function stripDragLeave(e){ e.currentTarget.classList.remove('drag-over'); }
-async function stripDrop(e){
-  e.preventDefault(); e.currentTarget.classList.remove('drag-over');
-  const dropIdx=+e.currentTarget.dataset.stripIdx;
-  if(stripDragIdx===null||stripDragIdx===dropIdx) return;
-  const inStrip=works.filter(w=>w.strip);
-  const dragged=inStrip[stripDragIdx];
-  inStrip.splice(stripDragIdx,1); inStrip.splice(dropIdx,0,dragged);
-  const rest=works.filter(w=>!w.strip);
-  works=[...inStrip,...rest];
-  works.forEach((w,i)=>w.s=String(i+1).padStart(3,'0'));
-  const ok=await commitWorks('Reorder strip');
-  if(ok){ renderAdminStrip(); renderWorksList(); }
-  stripDragIdx=null;
+function editGridDesc(gi){
+  const w=works[gi]; if(!w) return;
+  const dE=prompt('영문 설명 (그리드용):',w.dE||''); if(dE===null) return; w.dE=dE;
+  const dK=prompt('한국어 설명:',w.dK||''); if(dK!==null) w.dK=dK;
+  commitWorks(`Update grid desc: ${w.en}`).then(ok=>{ if(ok) renderHomeGrid(); });
 }
 
 /* ═══ TOAST ═══ */
