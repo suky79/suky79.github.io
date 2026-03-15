@@ -225,7 +225,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify
 <section class="contact" id="contact">
   <p class="about-tag lang-ko" style="display:none">번역 의뢰</p><p class="about-tag lang-en">Commission</p>
   <h2 class="contact-title"><span class="lang-ko" style="display:none">새로운 이야기를<br><em>함께</em> 만들어요.</span><span class="lang-en">Let's tell a new<br><em>story</em> together.</span></h2>
-  <a href="mailto:hwang@beardos.kr" class="contact-email"><span class="lang-ko" style="display:none">이메일 보내기</span><span class="lang-en">hwang@beardos.kr</span></a>
+  <a href="mailto:contact@wsyum.com" class="contact-email"><span class="lang-ko" style="display:none">이메일 보내기</span><span class="lang-en">contact@wsyum.com</span></a>
 </section>
 
 <footer>
@@ -514,7 +514,7 @@ function renderStrip(){
       </div>
     </div>`;
   }).join('');
-  document.getElementById('stripCount').textContent=lang==='ko'?W.length+'개 작품':W.length+' works';
+  
 }
 
 /* ═══════════ LANG ═══════════ */
@@ -524,7 +524,7 @@ function setLang(l){
   document.querySelectorAll('.lang-ko').forEach(e=>e.style.display=l==='ko'?'':'none');
   document.querySelectorAll('.lang-en').forEach(e=>e.style.display=l==='en'?'':'none');
   document.documentElement.lang=l;
-  document.getElementById('stripCount').textContent=l==='ko'?W.length+'개 작품':W.length+' works';
+  
   updateHeroContent(hIdx);
 }
 
