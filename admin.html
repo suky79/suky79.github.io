@@ -234,7 +234,7 @@ select.form-input{cursor:pointer}
     <button class="tab-btn active" onclick="switchTab('add')">＋ 작품 추가</button>
     <button class="tab-btn" onclick="switchTab('featured')">★ 히어로 관리</button>
     <button class="tab-btn" onclick="switchTab('grid')">◆ 쇼케이스 그리드</button>
-    <button class="tab-btn" onclick="switchTab('strip')">▦ 대표작 5선</button>
+    <button class="tab-btn" onclick="switchTab('strip')">▦ 대표작 10선</button>
     <button class="tab-btn" onclick="switchTab('list')">≡ 전체 목록</button>
   </div>
 
@@ -453,14 +453,14 @@ select.form-input{cursor:pointer}
     </div>
   </div>
 
-  <!-- TAB: FILMSTRIP (대표작 5선) -->
+  <!-- TAB: FILMSTRIP (대표작 10선) -->
   <div id="tab-strip" style="display:none">
     <div class="featured-section-card">
-      <div class="card-title">▦ 대표작 5선 <span class="badge">최대 5개</span></div>
+      <div class="card-title">▦ 대표작 10선 <span class="badge">최대 10개</span></div>
       <p class="card-sub">메인 화면 "Selected Works" 가로 스크롤 섹션에 표시됩니다.<br>
         5개까지 선택 가능 · 드래그로 순서 변경 · 지정하지 않으면 최신 5개 자동 표시</p>
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-        <span style="font-size:12px;color:var(--muted)" id="stripCountLabel">0 / 5 선택됨</span>
+        <span style="font-size:12px;color:var(--muted)" id="stripCountLabel">0 / 10 선택됨</span>
         <button class="btn btn-ghost btn-sm" onclick="clearStrip()">전체 해제</button>
       </div>
       <div class="featured-list" id="stripList">
@@ -1273,7 +1273,7 @@ function renderAdminStrip(){
   const inStrip = works.filter(w=>w.strip);
   const notIn = works.filter(w=>!w.strip);
 
-  document.getElementById('stripCountLabel').textContent = `${inStrip.length} / 5 선택됨`;
+  document.getElementById('stripCountLabel').textContent = `${inStrip.length} / 10 선택됨`;
 
   if(inStrip.length){
     list.innerHTML = inStrip.map((w,si)=>{
@@ -1305,7 +1305,7 @@ function renderAdminStrip(){
     list.innerHTML = '<p style="color:var(--muted);font-size:12px;text-align:center;padding:20px;background:var(--bg3);border-radius:6px">아래에서 작품을 추가하세요. 비워두면 최신 5개가 자동 표시됩니다.</p>';
   }
 
-  const canAdd = inStrip.length < 5;
+  const canAdd = inStrip.length < 10;
   avail.innerHTML = notIn.map(w=>{
     const gi=works.indexOf(w);
     return `<div class="chip" onclick="${canAdd?`addToStrip(${gi})`:'showStripFull()'}"
@@ -1316,7 +1316,7 @@ function renderAdminStrip(){
 }
 
 async function addToStrip(gi){
-  if(works.filter(w=>w.strip).length >= 5){ showStripFull(); return; }
+  if(works.filter(w=>w.strip).length >= 10){ showStripFull(); return; }
   works[gi].strip = true;
   markDirty(); renderAdminStrip(); renderWorksList();
 }
@@ -1332,7 +1332,7 @@ async function clearStrip(){
   markDirty(); renderAdminStrip(); renderWorksList();
 }
 
-function showStripFull(){ toast('최대 5개까지만 선택할 수 있습니다.','info'); }
+function showStripFull(){ toast('최대 10개까지만 선택할 수 있습니다.','info'); }
 
 let stripDragIdx=null;
 function stripDragStart(e){ stripDragIdx=+e.currentTarget.dataset.stripIdx; e.currentTarget.style.opacity='.5'; }
