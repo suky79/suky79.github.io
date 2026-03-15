@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collection — Beardos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;--bg2:#111;--bg3:#181818;--bg4:#222;
+  --text:#f0ebe2;--text2:#d4cfc6;--muted:#7a7570;--muted2:#555049;
+  --accent:#c9a96e;--accent2:#e8d5b0;--accent3:#a88a4e;
+  --border:rgba(240,235,226,.07);--border2:rgba(240,235,226,.12);
+  --serif:'Cormorant Garamond','Noto Serif KR',Georgia,serif;
+  --sans:'DM Sans',sans-serif;--serif-kr:'Noto Serif KR',serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:var(--bg)}
+
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:56px;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:.5px solid var(--border)}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--text);text-decoration:none;transition:opacity .3s}
+.nav-logo:hover{opacity:.7}
+.nav-logo i{color:var(--accent);font-style:italic}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,235,226,.5);text-decoration:none;transition:color .3s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--accent)}
+.lang-toggle{display:flex;border:.5px solid rgba(240,235,226,.15);border-radius:20px;overflow:hidden}
+.lang-toggle button{padding:4px 12px;background:none;border:none;color:rgba(240,235,226,.4);cursor:pointer;transition:all .25s;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.1em}
+.lang-toggle button.active{background:var(--accent);color:var(--bg);border-radius:20px}
+
+/* ═══ PAGE HEADER ═══ */
+.page-header{padding:88px 40px 0;max-width:1400px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.page-header-left{}
+.page-title{font-family:var(--serif);font-size:32px;font-weight:300;letter-spacing:-.01em;line-height:1.2}
+.page-title em{font-style:italic;color:var(--accent)}
+.page-desc{font-size:13px;color:var(--muted);margin-top:6px}
+
+/* ═══ TOOLBAR ═══ */
+.toolbar{display:flex;align-items:center;justify-content:space-between;padding:20px 40px 16px;max-width:1400px;margin:0 auto;border-bottom:.5px solid var(--border);flex-wrap:wrap;gap:12px}
+.filter-tabs{display:flex;gap:0}
+.filter-tab{padding:6px 16px;border:none;background:none;font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.08em;color:var(--muted);cursor:pointer;transition:all .2s;text-transform:uppercase;border-bottom:2px solid transparent}
+.filter-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.filter-tab:hover:not(.active){color:var(--text)}
+.toolbar-right{display:flex;align-items:center;gap:16px}
+.work-count{font-size:12px;color:var(--muted2);letter-spacing:.04em}
+.sort-btn{background:none;border:none;font-family:var(--sans);font-size:11px;color:var(--muted);cursor:pointer;letter-spacing:.06em;text-transform:uppercase;transition:color .2s;padding:4px 0}
+.sort-btn:hover{color:var(--accent)}
+.sort-btn .arrow{display:inline-block;margin-left:4px;transition:transform .2s}
+.sort-btn.desc .arrow{transform:rotate(180deg)}
+
+/* ═══ POSTER GRID — Letterboxd style ═══ */
+.grid-wrap{max-width:1400px;margin:0 auto;padding:24px 40px 80px}
+.poster-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:8px}
+
+/* ═══ POSTER CARD ═══ */
+.poster-card{position:relative;border-radius:3px;overflow:hidden;cursor:pointer;opacity:0;animation:posterIn .4s var(--ease) forwards}
+.poster-card:nth-child(1){animation-delay:.02s}.poster-card:nth-child(2){animation-delay:.04s}.poster-card:nth-child(3){animation-delay:.06s}.poster-card:nth-child(4){animation-delay:.08s}.poster-card:nth-child(5){animation-delay:.1s}.poster-card:nth-child(6){animation-delay:.12s}.poster-card:nth-child(7){animation-delay:.14s}.poster-card:nth-child(8){animation-delay:.16s}.poster-card:nth-child(9){animation-delay:.18s}.poster-card:nth-child(10){animation-delay:.2s}.poster-card:nth-child(11){animation-delay:.22s}.poster-card:nth-child(12){animation-delay:.24s}.poster-card:nth-child(13){animation-delay:.26s}.poster-card:nth-child(14){animation-delay:.28s}.poster-card:nth-child(15){animation-delay:.3s}.poster-card:nth-child(16){animation-delay:.32s}
+
+.poster-card .poster-img{aspect-ratio:2/3;display:block;width:100%;background:var(--bg3);position:relative;border:.5px solid var(--border);border-radius:3px;overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.poster-card:hover .poster-img{border-color:var(--accent3);box-shadow:0 4px 20px rgba(201,169,110,.15)}
+.poster-card .poster-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s var(--ease)}
+.poster-card:hover .poster-img img{transform:scale(1.03)}
+.poster-fb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(240,235,226,.06);text-align:center;padding:12px;line-height:1.3}
+
+/* Hover overlay — Letterboxd style tooltip */
+.poster-tooltip{position:absolute;bottom:0;left:0;right:0;padding:10px 8px 8px;background:linear-gradient(transparent,rgba(10,10,10,.95) 40%);opacity:0;transition:opacity .3s;pointer-events:none}
+.poster-card:hover .poster-tooltip{opacity:1}
+.poster-tooltip-title{font-size:11px;font-weight:400;color:var(--text);line-height:1.3;margin-bottom:2px}
+.poster-tooltip-year{font-size:10px;color:var(--accent);font-family:var(--serif);font-style:italic}
+
+/* Spine number — subtle top-left */
+.poster-spine{position:absolute;top:6px;left:6px;font-family:var(--serif);font-size:9px;color:rgba(240,235,226,.25);letter-spacing:.08em;z-index:2;transition:color .3s}
+.poster-card:hover .poster-spine{color:var(--accent)}
+
+/* Genre dot */
+.poster-genre{position:absolute;top:6px;right:6px;font-size:7px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:2px 6px;border-radius:1px;background:rgba(10,10,10,.7);color:var(--accent);z-index:2;opacity:0;transition:opacity .3s}
+.poster-card:hover .poster-genre{opacity:1}
+
+/* Links on click/hover */
+.poster-links{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;gap:6px;opacity:0;transition:opacity .3s;z-index:3}
+.poster-card:hover .poster-links{opacity:1}
+.poster-link{padding:5px 12px;border-radius:2px;font-size:9px;font-weight:600;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;transition:all .2s;backdrop-filter:blur(4px)}
+.poster-link:hover{filter:brightness(1.2);transform:scale(1.05)}
+
+.poster-card.hidden{display:none!important}
+
+/* Gradients */
+.g1{background:linear-gradient(145deg,#3a0000,#1a0000 50%,#2d0a0a)}.g2{background:linear-gradient(145deg,#2a0a1a,#1a0000 50%,#3d0a0a)}.g3{background:linear-gradient(145deg,#1a1a2e,#3a0000 50%,#2d0a1a)}.g4{background:linear-gradient(145deg,#001a2e,#002a3a 50%,#001020)}.g5{background:linear-gradient(145deg,#0a1a0a,#001a2e 50%,#0a2a1a)}.g6{background:linear-gradient(145deg,#0a0a2e,#1a0a3a 50%,#0a1a3a)}.g7{background:linear-gradient(145deg,#0a2a0a,#1a3a1a 50%,#0a1a0a)}.g8{background:linear-gradient(145deg,#1a1a0a,#2a2a1a 50%,#1a0a00)}.g9{background:linear-gradient(145deg,#1a1a1a,#2a1a2a 50%,#0a0a1a)}.g10{background:linear-gradient(145deg,#1a0a0a,#2a1a1a 50%,#1a0a1a)}.g11{background:linear-gradient(145deg,#0a0a0a,#1a0a0a 50%,#2a1a0a)}.g12{background:linear-gradient(145deg,#0a0a1a,#1a1a2a 50%,#0a0a0a)}.g13{background:linear-gradient(145deg,#1a1a0a,#0a0a0a 50%,#1a1a1a)}.g14{background:linear-gradient(145deg,#0a1a2a,#1a2a3a 50%,#0a0a1a)}.g15{background:linear-gradient(145deg,#2a1a0a,#3a2a1a 50%,#1a0a00)}
+
+/* ═══ FOOTER ═══ */
+footer{padding:32px 40px;border-top:.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:300;font-style:italic;color:var(--muted2);text-decoration:none}
+.footer-copy{font-size:11px;color:var(--muted2);letter-spacing:.06em}
+
+@keyframes posterIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:1200px){
+  .poster-grid{grid-template-columns:repeat(6,1fr)}
+}
+@media(max-width:900px){
+  .poster-grid{grid-template-columns:repeat(4,1fr);gap:6px}
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .page-header{padding:76px 20px 0}
+  .toolbar{padding:16px 20px 12px}
+  .grid-wrap{padding:16px 20px 60px}
+  footer{padding:24px 20px;flex-direction:column;gap:8px;text-align:center}
+}
+@media(max-width:540px){
+  .poster-grid{grid-template-columns:repeat(3,1fr);gap:5px}
+  .page-title{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Beardos<i>.</i></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="collection.html" class="active"><span class="lang-ko" style="display:none">컬렉션</span><span class="lang-en">Collection</span></a></li>
+      <li><a href="index.html#about"><span class="lang-ko" style="display:none">소개</span><span class="lang-en">About</span></a></li>
+      <li><a href="index.html#contact"><span class="lang-ko" style="display:none">의뢰</span><span class="lang-en">Contact</span></a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button onclick="setLang('ko')">KO</button>
+      <button class="active" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="page-header-left">
+    <h1 class="page-title">
+      <span class="lang-ko" style="display:none">번역 <em>컬렉션</em></span>
+      <span class="lang-en">Translation <em>Collection</em></span>
+    </h1>
+    <p class="page-desc">
+      <span class="lang-ko" style="display:none">흰수염 번역단이 작업한 모든 작품.</span>
+      <span class="lang-en">Every work translated by Beardos.</span>
+    </p>
+  </div>
+</section>
+
+<div class="toolbar">
+  <div class="filter-tabs">
+    <button class="filter-tab active" onclick="filter('all')">
+      <span class="lang-ko" style="display:none">전체</span><span class="lang-en">All</span>
+    </button>
+    <button class="filter-tab" onclick="filter('영화')">
+      <span class="lang-ko" style="display:none">영화</span><span class="lang-en">Film</span>
+    </button>
+    <button class="filter-tab" onclick="filter('뮤지컬')">
+      <span class="lang-ko" style="display:none">뮤지컬</span><span class="lang-en">Musical</span>
+    </button>
+    <button class="filter-tab" onclick="filter('연극')">
+      <span class="lang-ko" style="display:none">연극</span><span class="lang-en">Theatre</span>
+    </button>
+    <button class="filter-tab" onclick="filter('책')">
+      <span class="lang-ko" style="display:none">책</span><span class="lang-en">Book</span>
+    </button>
+  </div>
+  <div class="toolbar-right">
+    <span class="work-count" id="workCount"></span>
+    <button class="sort-btn desc" id="sortBtn" onclick="toggleSort()">
+      <span class="lang-ko" style="display:none">최신순</span><span class="lang-en">Newest</span>
+      <span class="arrow">▲</span>
+    </button>
+  </div>
+</div>
+
+<section class="grid-wrap">
+  <div class="poster-grid" id="posterGrid"></div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">Beardos.</a>
+  <span class="footer-copy lang-ko" style="display:none">© 2025 흰수염 번역단. All rights reserved.</span>
+  <span class="footer-copy lang-en">© 2025 Beardos Translation. All rights reserved.</span>
+</footer>
+
+<script>
+const TMDB_KEY = '953ab5c0680706b5f7447d45b19ca8f1';
+const TP = 'https://image.tmdb.org/t/p/w342';
+
+const GE = {영화:'Film',뮤지컬:'Musical',연극:'Theatre',책:'Book'};
+
+const W = [
+  {s:'001',g:'영화',ko:'데드풀',en:'Deadpool',sub:'Marvel Comics',y:2016,t:293660,gr:'g1',
+    lk:[{n:'IMDb',bg:'#f5c518',c:'#000',u:'https://www.imdb.com/title/tt1431045/'},{n:'RT',bg:'#fa320a',c:'#fff',u:'https://www.rottentomatoes.com/m/deadpool'}]},
+  {s:'002',g:'영화',ko:'데드풀 2',en:'Deadpool 2',sub:'Marvel Comics',y:2018,t:383498,gr:'g2',
+    lk:[{n:'IMDb',bg:'#f5c518',c:'#000',u:'https://www.imdb.com/title/tt5463162/'},{n:'RT',bg:'#fa320a',c:'#fff',u:'https://www.rottentomatoes.com/m/deadpool_2'}]},
+  {s:'003',g:'영화',ko:'데드풀 & 울버린',en:'Deadpool & Wolverine',sub:'Marvel Comics',y:2024,t:533535,gr:'g3',
+    lk:[{n:'IMDb',bg:'#f5c518',c:'#000',u:'https://www.imdb.com/title/tt6263850/'},{n:'RT',bg:'#fa320a',c:'#fff',u:'https://www.rottentomatoes.com/m/deadpool_and_wolverine'}]},
+  {s:'004',g:'영화',ko:'아바타: 물의 길',en:'Avatar: The Way of Water',sub:'James Cameron',y:2022,t:76600,gr:'g4',
+    lk:[{n:'IMDb',bg:'#f5c518',c:'#000',u:'https://www.imdb.com/title/tt1630029/'},{n:'RT',bg:'#fa320a',c:'#fff',u:'https://www.rottentomatoes.com/m/avatar_the_way_of_water'}]},
+  {s:'005',g:'영화',ko:'아바타: 불과 재',en:'Avatar: Fire and Ash',sub:'James Cameron',y:2025,t:83533,gr:'g5',
+    lk:[{n:'IMDb',bg:'#f5c518',c:'#000',u:'https://www.imdb.com/title/tt3748528/'},{n:'RT',bg:'#fa320a',c:'#fff',u:'https://www.rottentomatoes.com/m/avatar_fire_and_ash'}]},
+  {s:'006',g:'영화',ko:'스파이더맨: 노 웨이 홈',en:'Spider-Man: No Way Home',sub:'Marvel Comics',y:2021,t:634649,gr:'g6',
+    lk:[{n:'IMDb',bg:'#f5c518',c:'#000',u:'https://www.imdb.com/title/tt10872600/'}]},
+  {s:'007',g:'뮤지컬',ko:'위키드',en:'Wicked',sub:'Korean Premiere',y:2012,gr:'g7',lk:[]},
+  {s:'008',g:'뮤지컬',ko:'해밀턴',en:'Hamilton',sub:'Korean Premiere',y:2023,gr:'g8',lk:[]},
+  {s:'009',g:'뮤지컬',ko:'오페라의 유령',en:'The Phantom of the Opera',sub:'Andrew Lloyd Webber',y:2009,gr:'g9',lk:[]},
+  {s:'010',g:'뮤지컬',ko:'레미제라블',en:'Les Misérables',sub:'Victor Hugo',y:2013,gr:'g10',lk:[]},
+  {s:'011',g:'뮤지컬',ko:'시카고',en:'Chicago',sub:'Bob Fosse',y:2000,gr:'g11',lk:[]},
+  {s:'012',g:'연극',ko:'햄릿',en:'Hamlet',sub:'Shakespeare',y:2018,gr:'g12',lk:[]},
+  {s:'013',g:'연극',ko:'고도를 기다리며',en:'Waiting for Godot',sub:'Samuel Beckett',y:2016,gr:'g13',lk:[]},
+  {s:'014',g:'책',ko:'위대한 개츠비',en:'The Great Gatsby',sub:'F. Scott Fitzgerald',y:2020,gr:'g14',lk:[]},
+  {s:'015',g:'책',ko:'호밀밭의 파수꾼',en:'The Catcher in the Rye',sub:'J.D. Salinger',y:2019,gr:'g15',lk:[]},
+];
+
+let lang = 'en', currentFilter = 'all', sortNewest = true;
+
+/* ═══ TMDB — English original posters ═══ */
+async function loadTMDB(){
+  if(!TMDB_KEY) return;
+  await Promise.all(W.filter(w=>w.t).map(async w=>{
+    try{
+      const r = await fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}&language=en-US`);
+      const d = await r.json();
+      if(d.poster_path) w.poster = TP + d.poster_path;
+    }catch(e){}
+  }));
+  renderGrid();
+}
+
+/* ═══ RENDER ═══ */
+function renderGrid(){
+  let items = [...W];
+  if(currentFilter !== 'all') items = items.filter(w=>w.g===currentFilter);
+  if(sortNewest) items.sort((a,b)=>b.y-a.y);
+  else items.sort((a,b)=>a.y-b.y);
+
+  const grid = document.getElementById('posterGrid');
+  grid.innerHTML = items.map(w=>{
+    const title = lang==='en' ? w.en : w.ko;
+    const badge = lang==='en' ? GE[w.g] : w.g;
+
+    const imgHtml = w.poster
+      ? `<img src="${w.poster}" alt="${w.en}" loading="lazy">`
+      : `<div class="poster-fb ${w.gr}">${w.en}</div>`;
+
+    const linksHtml = w.lk.map(l=>
+      `<a class="poster-link" href="${l.u}" target="_blank" onclick="event.stopPropagation()" style="background:${l.bg};color:${l.c}">${l.n}</a>`
+    ).join('');
+
+    return `
+    <div class="poster-card">
+      <div class="poster-img">
+        <span class="poster-spine">${w.s}</span>
+        ${imgHtml}
+        <span class="poster-genre">${badge}</span>
+        ${linksHtml?`<div class="poster-links">${linksHtml}</div>`:''}
+        <div class="poster-tooltip">
+          <div class="poster-tooltip-title">${title}</div>
+          <div class="poster-tooltip-year">${w.y} · ${w.sub}</div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('workCount').textContent =
+    lang==='en' ? `${items.length} works` : `${items.length}개 작품`;
+}
+
+/* ═══ FILTER ═══ */
+function filter(genre){
+  currentFilter = genre;
+  const genres = ['all','영화','뮤지컬','연극','책'];
+  document.querySelectorAll('.filter-tab').forEach((t,i)=>
+    t.classList.toggle('active',genres[i]===genre)
+  );
+  renderGrid();
+}
+
+/* ═══ SORT ═══ */
+function toggleSort(){
+  sortNewest = !sortNewest;
+  const btn = document.getElementById('sortBtn');
+  btn.classList.toggle('desc',sortNewest);
+  const koLabel = sortNewest ? '최신순' : '오래된순';
+  const enLabel = sortNewest ? 'Newest' : 'Oldest';
+  btn.innerHTML = `<span class="lang-ko" style="${lang==='ko'?'':'display:none'}">${koLabel}</span><span class="lang-en" style="${lang==='en'?'':'display:none'}">${enLabel}</span><span class="arrow">▲</span>`;
+  renderGrid();
+}
+
+/* ═══ LANG ═══ */
+function setLang(l){
+  lang = l;
+  document.querySelectorAll('.lang-toggle button').forEach((b,i)=>
+    b.classList.toggle('active',(i===0&&l==='ko')||(i===1&&l==='en'))
+  );
+  document.querySelectorAll('.lang-ko').forEach(e=>e.style.display=l==='ko'?'':'none');
+  document.querySelectorAll('.lang-en').forEach(e=>e.style.display=l==='en'?'':'none');
+  document.documentElement.lang = l;
+  renderGrid();
+}
+
+/* ═══ INIT ═══ */
+renderGrid();
+loadTMDB();
+</script>
+</body>
+</html>
