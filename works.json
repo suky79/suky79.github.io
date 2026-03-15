@@ -53,7 +53,8 @@
         "c": "#fff",
         "u": "https://www.rottentomatoes.com/m/deadpool_2"
       }
-    ]
+    ],
+    "strip": true
   },
   {
     "s": "003",
@@ -81,7 +82,8 @@
         "u": "https://www.rottentomatoes.com/m/deadpool_and_wolverine"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "004",
@@ -137,7 +139,8 @@
         "u": "https://www.rottentomatoes.com/m/avatar_fire_and_ash"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "006",
@@ -159,7 +162,8 @@
         "u": "https://www.imdb.com/title/tt10872600/"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "007",
