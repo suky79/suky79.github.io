@@ -236,7 +236,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ═══════════ API KEYS ═══════════ */
-const TMDB_KEY = '953ab5c0680706b5f7447d45b19ca8f1';
+const TMDB_KEY = localStorage.getItem('beardos_tmdb_key') || '953ab5c0680706b5f7447d45b19ca8f1';
 const TP = 'https://image.tmdb.org/t/p/w500';
 const TB = 'https://image.tmdb.org/t/p/w1280';
 const KOPIS_KEY = '80eee61339564315aef9acfd05e32945';

@@ -202,6 +202,19 @@ select.form-input{cursor:pointer}
     <div class="auth-status" id="authStatus"></div>
   </div>
 
+  <!-- TMDB API KEY -->
+  <div class="card">
+    <div class="card-title">🎬 TMDB API 키</div>
+    <p class="card-sub">영화 포스터 자동 로딩에 사용됩니다. 키가 만료되면 여기서 갱신하세요.<br>
+      <a href="https://www.themoviedb.org/settings/api" target="_blank" style="color:var(--accent)">themoviedb.org/settings/api</a>에서 발급 (무료, v3 auth 키 사용)</p>
+    <div class="auth-row">
+      <input type="text" id="tmdbKeyInput" placeholder="953ab5c0..." style="font-family:monospace;font-size:12px" />
+      <button class="btn btn-primary" onclick="saveTmdbKey()">저장</button>
+      <button class="btn btn-ghost" onclick="testTmdbKey()">테스트</button>
+    </div>
+    <div class="auth-status" id="tmdbKeyStatus"></div>
+  </div>
+
   <!-- TABS -->
   <div class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('add')">＋ 작품 추가</button>
@@ -434,7 +447,7 @@ select.form-input{cursor:pointer}
 <script>
 const REPO = 'suky79/suky79.github.io';
 const FILE = 'works.json';
-const TMDB_KEY = '953ab5c0680706b5f7447d45b19ca8f1';
+let TMDB_KEY = localStorage.getItem('beardos_tmdb_key') || '953ab5c0680706b5f7447d45b19ca8f1';
 const TP = 'https://image.tmdb.org/t/p/w185';
 const GE = {영화:'Film',뮤지컬:'Musical',연극:'Theatre',책:'Book',저서:'Authored'};
 const GRADS = ['g1','g2','g3','g4','g5','g6','g7','g8','g9','g10','g11','g12','g13','g14','g15'];
@@ -597,6 +610,37 @@ function getLinks(){
     if(!name || !url) return null;
     return {n:name, bg, c:bg==='#f5c518'||bg==='#f0c040'?'#000':'#fff', u:url};
   }).filter(Boolean);
+}
+
+/* ═══ TMDB KEY MANAGEMENT ═══ */
+function saveTmdbKey(){
+  const key = document.getElementById('tmdbKeyInput').value.trim();
+  if(!key){ showTmdbStatus('키를 입력해주세요.','err'); return; }
+  TMDB_KEY = key;
+  localStorage.setItem('beardos_tmdb_key', key);
+  showTmdbStatus('✓ 저장됨 — 페이지를 새로고침해도 유지됩니다.','ok');
+}
+
+async function testTmdbKey(){
+  const key = document.getElementById('tmdbKeyInput').value.trim() || TMDB_KEY;
+  showTmdbStatus('테스트 중...','');
+  try{
+    const r = await fetch(`https://api.themoviedb.org/3/movie/533535?api_key=${key}`);
+    const d = await r.json();
+    if(d.title){
+      TMDB_KEY = key;
+      localStorage.setItem('beardos_tmdb_key', key);
+      showTmdbStatus(`✓ 유효한 키 — "${d.title}" 조회 성공`,'ok');
+    } else {
+      showTmdbStatus('✗ 유효하지 않은 키: ' + (d.status_message||'오류'),'err');
+    }
+  }catch(e){ showTmdbStatus('✗ 연결 실패','err'); }
+}
+
+function showTmdbStatus(msg, type){
+  const el = document.getElementById('tmdbKeyStatus');
+  el.textContent = msg;
+  el.className = 'auth-status' + (type ? ' '+type : '');
 }
 
 /* ═══ AUTH ═══ */
@@ -1023,6 +1067,8 @@ function toast(msg,type='success'){
 
 /* ═══ INIT ═══ */
 setGenre('영화');
+// 저장된 TMDB 키를 입력창에 표시
+document.getElementById('tmdbKeyInput').value = TMDB_KEY;
 </script>
 </body>
 </html>
