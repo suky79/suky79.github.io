@@ -414,14 +414,18 @@ function renderHero(){
   const dots=document.getElementById('heroDots');
 
   slides.innerHTML=F.map((w,i)=>{
-    const imgHtml = w.back
-      ? `<img src="${w.back}" alt="${w.ko}" style="width:100%;height:100%;object-fit:cover">`
+    const imgSrc = w.back || w.poster || null;
+    const imgStyle = w.back
+      ? 'width:100%;height:100%;object-fit:cover'
+      : 'width:100%;height:100%;object-fit:cover;object-position:center top';
+    const imgHtml = imgSrc
+      ? `<img src="${imgSrc}" alt="${w.ko}" style="${imgStyle}">`
       : '';
     return `
     <div class="hero-slide${i===0?' active':''}">
       <div class="hero-slide-bg">
         ${imgHtml}
-        <div class="hero-slide-fallback ${w.gr}" ${w.back?'style="display:none"':''}>${w.ko}</div>
+        <div class="hero-slide-fallback ${w.gr}" ${imgSrc?'style="display:none"':''}>${w.ko}</div>
         <div class="hero-slide-gradient"></div>
       </div>
     </div>`;
