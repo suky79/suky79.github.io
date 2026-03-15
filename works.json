@@ -116,11 +116,12 @@
     "g": "영화",
     "ko": "아바타: 불과 재",
     "en": "Avatar: Fire and Ash",
-    "sub": "James Cameron",
+    "sub": "",
     "y": 2025,
     "t": 83533,
     "gr": "g5",
     "feat": true,
+    "home": false,
     "dK": "불과 재의 세계로 돌아온 아바타.\n가장 최근 작업한 블록버스터입니다.",
     "dE": "Avatar returns to fire and ash.\nOur most recent blockbuster translation.",
     "lk": [
@@ -136,9 +137,7 @@
         "c": "#fff",
         "u": "https://www.rottentomatoes.com/m/avatar_fire_and_ash"
       }
-    ],
-    "home": false,
-    "strip": true
+    ]
   },
   {
     "s": "006",
