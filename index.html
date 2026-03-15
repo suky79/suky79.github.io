@@ -74,15 +74,13 @@ nav.scrolled{background:rgba(27,37,64,.96);backdrop-filter:blur(20px);-webkit-ba
 .filmstrip-card{flex:0 0 220px;cursor:pointer;transition:transform .3s var(--ease)}
 .filmstrip-card:hover{transform:translateY(-4px)}
 .filmstrip-card:last-child{margin-right:40px}
-.filmstrip-poster{aspect-ratio:2/3;border-radius:2px;overflow:hidden;position:relative;background:var(--bg3);border:1px solid var(--border);margin-bottom:10px;transition:border-color .3s}
-.filmstrip-card:hover .filmstrip-poster{border-color:var(--accent3)}
+.filmstrip-poster{aspect-ratio:2/3;border-radius:4px;overflow:hidden;position:relative;background:var(--bg3);margin-bottom:10px;transition:transform .3s,box-shadow .3s}
+.filmstrip-card:hover .filmstrip-poster{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.4)}
 .filmstrip-poster img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
-.filmstrip-card:hover .filmstrip-poster img{transform:scale(1.04)}
+.filmstrip-card:hover .filmstrip-poster img{transform:scale(1.03)}
 .filmstrip-poster-fb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(240,235,224,.06);text-align:center;padding:16px;line-height:1.3}
-.filmstrip-spine{position:absolute;top:0;left:0;width:24px;height:100%;background:rgba(255,255,255,.85);border-right:.5px solid var(--border);display:flex;align-items:center;justify-content:center;z-index:3}
-.filmstrip-spine span{font-family:var(--serif);font-size:9px;color:var(--muted2);writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);letter-spacing:.15em;transition:color .3s}
-.filmstrip-card:hover .filmstrip-spine span{color:var(--accent)}
-.filmstrip-badge{position:absolute;top:8px;right:8px;font-size:8px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:2px 7px;border-radius:1px;background:rgba(27,37,64,.75);color:var(--accent);border:.5px solid rgba(45,60,89,.2);z-index:3}
+.filmstrip-spine{display:none}
+.filmstrip-badge{position:absolute;top:8px;right:8px;font-size:8px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:2px 7px;border-radius:2px;background:rgba(27,37,64,.75);color:var(--accent);backdrop-filter:blur(4px);z-index:3}
 .filmstrip-info h3{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--text);line-height:1.3;margin-bottom:2px;transition:color .3s}
 .filmstrip-card:hover .filmstrip-info h3{color:var(--accent2)}
 .filmstrip-info p{font-size:10px;color:var(--muted2);letter-spacing:.05em}
@@ -499,8 +497,6 @@ function renderStrip(){
         <div class="filmstrip-spine"><span>${w.s}</span></div>
         ${imgHtml}
         <div class="filmstrip-poster-fb ${w.gr}" ${w.poster?'style="display:none"':''}><span class="lang-ko" style="display:none">${w.ko}</span><span class="lang-en">${w.en}</span></div>
-        <div class="filmstrip-badge lang-ko" style="display:none">${w.g}</div>
-        <div class="filmstrip-badge lang-en">${GE[w.g]}</div>
       </div>
       <div class="filmstrip-info">
         <h3><span class="lang-ko" style="display:none">${w.ko}</span><span class="lang-en">${w.en}</span></h3>
