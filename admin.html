@@ -284,6 +284,7 @@ select.form-input{cursor:pointer}
     <button class="tab-btn active" onclick="switchTab('add')">＋ 작품 추가</button>
     <button class="tab-btn" onclick="switchTab('featured')">★ 히어로 관리</button>
     <button class="tab-btn" onclick="switchTab('grid')">◆ 쇼케이스 그리드</button>
+    <button class="tab-btn" onclick="switchTab('strip')">▦ 필름스트립</button>
     <button class="tab-btn" onclick="switchTab('list')">≡ 전체 목록</button>
   </div>
 
@@ -508,6 +509,26 @@ select.form-input{cursor:pointer}
     </div>
   </div>
 
+  <!-- TAB: FILMSTRIP -->
+  <div id="tab-strip" style="display:none">
+    <div class="featured-section-card">
+      <div class="card-title">▦ 홈 필름스트립 <span class="badge">최대 6개</span></div>
+      <p class="card-sub">메인 화면 "FULL COLLECTION" 가로 스크롤 섹션에 표시되는 작품입니다.<br>최대 6개까지 선택할 수 있으며 드래그로 순서를 바꿀 수 있습니다.</p>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <span style="font-size:12px;color:var(--muted)" id="stripCountLabel">0 / 6 선택됨</span>
+        <button class="btn btn-ghost btn-sm" onclick="clearStrip()">전체 해제</button>
+      </div>
+
+      <div class="featured-list" id="stripList">
+        <p style="color:var(--muted);font-size:12px;text-align:center;padding:20px;background:var(--bg3);border-radius:6px">GitHub 연결 후 로드됩니다.</p>
+      </div>
+
+      <div style="font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:14px 0 8px">작품 추가</div>
+      <div class="available-chips" id="stripAvailable"></div>
+    </div>
+  </div>
+
   <!-- TAB: WORKS LIST -->
   <div id="tab-list" style="display:none">
     <div class="section-header">
@@ -644,11 +665,11 @@ let currentGenre='영화', imgBase64=null, imgFileName='', imgSource='upload';
 
 /* ═══ TAB ═══ */
 function switchTab(t){
-  ['add','featured','grid','list'].forEach(id=>{
+  ['add','featured','grid','strip','list'].forEach(id=>{
     document.getElementById('tab-'+id).style.display = id===t?'':'none';
   });
   document.querySelectorAll('.tab-btn').forEach((b,i)=>{
-    b.classList.toggle('active',['add','featured','grid','list'][i]===t);
+    b.classList.toggle('active',['add','featured','grid','strip','list'][i]===t);
   });
 }
 
@@ -832,7 +853,7 @@ async function loadWorks(){
     if(r.content){
       fileSha=r.sha;
       works = JSON.parse(atob(r.content.replace(/\n/g,'')));
-      renderWorksList(); renderFeatured(); renderHomeGrid();
+      renderWorksList(); renderFeatured(); renderHomeGrid(); renderAdminStrip();
       document.getElementById('totalCount').textContent = works.length;
     }
   }catch(e){ toast('works.json 로드 실패','error'); }
@@ -1202,6 +1223,103 @@ async function removeFromGrid(gi){
 }
 
 
+
+/* ═══ FILMSTRIP MANAGEMENT ═══ */
+function renderAdminStrip(){
+  const list = document.getElementById('stripList');
+  const avail = document.getElementById('stripAvailable');
+  const inStrip = works.filter(w=>w.strip);
+  const notIn = works.filter(w=>!w.strip);
+
+  document.getElementById('stripCountLabel').textContent = `${inStrip.length} / 6 선택됨`;
+
+  if(inStrip.length){
+    list.innerHTML = inStrip.map((w,si)=>{
+      const gi = works.indexOf(w);
+      const badge = GE[w.g]||w.g;
+      return `<div class="featured-item" draggable="true" data-strip-idx="${si}" data-global-idx="${gi}"
+        ondragstart="stripDragStart(event)" ondragover="stripDragOver(event)" ondragleave="stripDragLeave(event)" ondrop="stripDrop(event)">
+        <div class="featured-item-num" style="font-size:13px;color:var(--muted)">${si+1}</div>
+        <div class="featured-item-poster" id="sp-${gi}">${w.poster?`<img src="${w.poster}" style="width:100%;height:100%;object-fit:cover">`:''}</div>
+        <div class="featured-item-info">
+          <div class="featured-item-title">${w.en}</div>
+          <div class="featured-item-meta">${w.y} · ${badge}${w.ko!==w.en?' · '+w.ko:''}</div>
+        </div>
+        <button class="btn btn-danger btn-sm" onclick="removeFromStrip(${gi})">✕</button>
+      </div>`;
+    }).join('');
+
+    // Load TMDB posters for films without poster
+    inStrip.forEach(w=>{
+      if(!w.t||w.poster) return;
+      const gi=works.indexOf(w);
+      fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}`)
+        .then(r=>r.json()).then(d=>{
+          if(d.poster_path){
+            const el=document.getElementById(`sp-${gi}`);
+            if(el) el.innerHTML=`<img src="${TP}${d.poster_path}" style="width:100%;height:100%;object-fit:cover">`;
+          }
+        }).catch(()=>{});
+    });
+  } else {
+    list.innerHTML = '<p style="color:var(--muted);font-size:12px;text-align:center;padding:20px;background:var(--bg3);border-radius:6px">필름스트립에 표시할 작품이 없습니다. 아래에서 추가하세요.</p>';
+  }
+
+  // Available chips (exclude already in strip, show all genres)
+  const canAdd = inStrip.length < 6;
+  avail.innerHTML = notIn.map(w=>{
+    const gi=works.indexOf(w);
+    const badge=GE[w.g]||w.g;
+    return `<div class="chip${canAdd?'':' disabled'}" onclick="${canAdd?`addToStrip(${gi})`:'showStripFull()'}" style="${canAdd?'':'opacity:.4;cursor:not-allowed'}">
+      <span>＋</span>${w.en} <span style="opacity:.6;font-size:10px">${badge}</span>
+    </div>`;
+  }).join('') || '<p style="color:var(--muted);font-size:12px">모든 작품이 필름스트립에 포함되어 있습니다.</p>';
+}
+
+async function addToStrip(gi){
+  const inStrip = works.filter(w=>w.strip);
+  if(inStrip.length >= 6){ showStripFull(); return; }
+  works[gi].strip = true;
+  const ok = await commitWorks(`Strip add: ${works[gi].en}`);
+  if(ok){ renderAdminStrip(); renderWorksList(); }
+}
+
+async function removeFromStrip(gi){
+  works[gi].strip = false;
+  const ok = await commitWorks(`Strip remove: ${works[gi].en}`);
+  if(ok){ renderAdminStrip(); renderWorksList(); }
+}
+
+async function clearStrip(){
+  if(!confirm('필름스트립 선택을 모두 해제할까요?')) return;
+  works.forEach(w=>w.strip=false);
+  const ok = await commitWorks('Clear strip');
+  if(ok){ renderAdminStrip(); renderWorksList(); }
+}
+
+function showStripFull(){
+  toast('최대 6개까지만 선택할 수 있습니다.','info');
+}
+
+// Strip drag & drop
+let stripDragIdx=null;
+function stripDragStart(e){ stripDragIdx=+e.currentTarget.dataset.stripIdx; e.currentTarget.style.opacity='.5'; }
+function stripDragOver(e){ e.preventDefault(); e.currentTarget.classList.add('drag-over'); }
+function stripDragLeave(e){ e.currentTarget.classList.remove('drag-over'); }
+async function stripDrop(e){
+  e.preventDefault(); e.currentTarget.classList.remove('drag-over');
+  const dropIdx=+e.currentTarget.dataset.stripIdx;
+  if(stripDragIdx===null||stripDragIdx===dropIdx) return;
+  const inStrip=works.filter(w=>w.strip);
+  const dragged=inStrip[stripDragIdx];
+  inStrip.splice(stripDragIdx,1); inStrip.splice(dropIdx,0,dragged);
+  const rest=works.filter(w=>!w.strip);
+  works=[...inStrip,...rest];
+  works.forEach((w,i)=>w.s=String(i+1).padStart(3,'0'));
+  const ok=await commitWorks('Reorder strip');
+  if(ok){ renderAdminStrip(); renderWorksList(); }
+  stripDragIdx=null;
+}
 
 /* ═══ TOAST ═══ */
 function toast(msg,type='success'){

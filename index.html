@@ -487,14 +487,15 @@ function updateHeroCounter(){
 /* ═══════════ FILM STRIP ═══════════ */
 function renderStrip(){
   const el=document.getElementById('filmstrip');
-  el.innerHTML=W.map(w=>{
+  const pinned=W.filter(w=>w.strip);
+  const display=pinned.length ? pinned.slice(0,6) : [...W].sort((a,b)=>b.y-a.y).slice(0,6);
+  el.innerHTML=display.map(w=>{
     const imgHtml = w.poster
       ? `<img src="${w.poster}" alt="${w.ko}" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:relative;z-index:1">`
       : '';
     return `
     <div class="filmstrip-card">
       <div class="filmstrip-poster">
-        <div class="filmstrip-spine"><span>${w.s}</span></div>
         ${imgHtml}
         <div class="filmstrip-poster-fb ${w.gr}" ${w.poster?'style="display:none"':''}><span class="lang-ko" style="display:none">${w.ko}</span><span class="lang-en">${w.en}</span></div>
       </div>
