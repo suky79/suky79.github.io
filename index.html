@@ -409,7 +409,11 @@ function renderEditorial(){
 
 /* ═══════════ HERO ═══════════ */
 function renderHero(){
-  const F=W.filter(w=>w.feat);
+  let F=W.filter(w=>w.feat);
+  // feat 작품이 없으면 처음 3개로 폴백
+  if(!F.length) F=W.slice(0,3);
+  if(!F.length) return;
+
   const slides=document.getElementById('heroSlides');
   const dots=document.getElementById('heroDots');
 
@@ -440,7 +444,8 @@ function renderHero(){
 }
 
 function updateHeroContent(i){
-  const F=W.filter(w=>w.feat);
+  let F=W.filter(w=>w.feat);
+  if(!F.length) F=W.slice(0,3);
   const w=F[i];
   const c=document.getElementById('heroContent');
   c.style.opacity='0';
@@ -473,7 +478,7 @@ function updateHeroContent(i){
 }
 
 function goHero(i){
-  const F=W.filter(w=>w.feat);
+  let F=W.filter(w=>w.feat); if(!F.length) F=W.slice(0,3);
   hIdx=((i%F.length)+F.length)%F.length;
   document.querySelectorAll('.hero-slide').forEach((s,j)=>s.classList.toggle('active',j===hIdx));
   document.querySelectorAll('.hero-dot').forEach((d,j)=>d.classList.toggle('active',j===hIdx));
@@ -483,7 +488,7 @@ function goHero(i){
 }
 function startHeroAuto(){hTimer=setInterval(()=>goHero(hIdx+1),7000)}
 function updateHeroCounter(){
-  const F=W.filter(w=>w.feat);
+  let F=W.filter(w=>w.feat); if(!F.length) F=W.slice(0,3);
   document.getElementById('heroCounter').textContent=`${hIdx+1} / ${F.length}`;
 }
 
