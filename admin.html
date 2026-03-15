@@ -263,17 +263,25 @@ select.form-input{cursor:pointer}
 
       <!-- PERFORMANCE section: KOPIS -->
       <div class="genre-section" id="section-perf">
-        <div style="background:rgba(148,163,120,.1);border:1px solid rgba(148,163,120,.25);border-radius:6px;padding:12px 14px;margin-bottom:16px;font-size:12px;color:var(--muted);line-height:1.7">
-          💡 <strong style="color:var(--text)">공연예술통합전산망(KOPIS)</strong>에서 공연 ID(mt20id)를 찾아 입력하면 포스터가 자동 연결됩니다.<br>
-          또는 이미지를 직접 업로드하세요.
+        <div class="search-row">
+          <input type="text" id="kopisQuery" placeholder="공연 제목 검색 (예: 렘피카, 해밀턴)..." onkeydown="if(event.key==='Enter')searchKOPIS()" />
+          <button class="btn btn-ghost" onclick="searchKOPIS()">검색</button>
+        </div>
+        <div id="kopisResults"></div>
+        <div style="background:rgba(148,163,120,.1);border:1px solid rgba(148,163,120,.25);border-radius:6px;padding:10px 14px;margin-bottom:16px;font-size:11px;color:var(--muted);line-height:1.6">
+          💡 검색 결과에서 작품을 선택하면 제목·연도·포스터가 자동 입력됩니다. KOPIS API 특성상 결과가 없으면 직접 입력하세요.
         </div>
       </div>
 
       <!-- BOOK section: Aladin -->
       <div class="genre-section" id="section-book">
-        <div style="background:rgba(229,186,65,.1);border:1px solid rgba(229,186,65,.3);border-radius:6px;padding:12px 14px;margin-bottom:16px;font-size:12px;color:var(--muted);line-height:1.7">
-          💡 ISBN 13자리 또는 알라딘 ItemId를 입력하면 책 정보가 연결됩니다.<br>
-          또는 이미지를 직접 업로드하세요.
+        <div class="search-row">
+          <input type="text" id="aladinQuery" placeholder="도서 제목 검색 (예: 그린라이트, 호밀밭의 파수꾼)..." onkeydown="if(event.key==='Enter')searchAladin()" />
+          <button class="btn btn-ghost" onclick="searchAladin()">검색</button>
+        </div>
+        <div id="aladinResults"></div>
+        <div style="background:rgba(229,186,65,.1);border:1px solid rgba(229,186,65,.3);border-radius:6px;padding:10px 14px;margin-bottom:16px;font-size:11px;color:var(--muted);line-height:1.6">
+          💡 검색 결과에서 작품을 선택하면 제목·연도·표지 이미지가 자동 입력됩니다.
         </div>
       </div>
 
@@ -1154,7 +1162,102 @@ function editGridDesc(gi){
   commitWorks(`Update grid desc: ${w.en}`).then(ok=>{ if(ok) renderHomeGrid(); });
 }
 
-/* ═══ FILMSTRIP (대표작 5선) ═══ */
+/* ═══ KOPIS 공연 검색 ═══ */
+async function searchKOPIS(){
+  const q = document.getElementById('kopisQuery').value.trim();
+  if(!q) return;
+  const el = document.getElementById('kopisResults');
+  el.innerHTML = '<p style="font-size:12px;color:var(--muted);padding:8px">검색 중...</p>';
+  try{
+    const url = `https://www.kopis.or.kr/openApi/restful/pblprfr?service=${KOPIS_KEY}&stdate=20000101&eddate=20301231&shprfnm=${encodeURIComponent(q)}&cpage=1&rows=6`;
+    const r = await fetch(url);
+    const xml = await r.text();
+    const doc = new DOMParser().parseFromString(xml,'text/xml');
+    const items = doc.querySelectorAll('db');
+    if(!items.length){ el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">결과 없음 — 직접 입력해주세요.</p>'; return; }
+    el.innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:14px;max-height:260px;overflow-y:auto">` +
+      Array.from(items).map((item,i)=>{
+        const title = item.querySelector('prfnm')?.textContent||'';
+        const poster = item.querySelector('poster')?.textContent||'';
+        const kid = item.querySelector('mt20id')?.textContent||'';
+        const startDt = item.querySelector('prfpdfrom')?.textContent||'';
+        const year = startDt ? startDt.substring(0,4) : '';
+        const genre = item.querySelector('genrenm')?.textContent||'';
+        return `<div class="tmdb-result" onclick="selectKOPIS(${i})" data-idx="${i}"
+          data-title="${title.replace(/"/g,'&quot;')}" data-poster="${poster}" data-kid="${kid}" data-year="${year}" data-genre="${genre}">
+          ${poster ? `<img src="${poster.replace(/^http:/,'https:')}" alt="" style="width:100%;aspect-ratio:2/3;object-fit:cover;display:block">` : `<div style="aspect-ratio:2/3;background:var(--bg4);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted)">No poster</div>`}
+          <div class="tmdb-result-info"><div class="tmdb-result-title">${title}</div><div class="tmdb-result-year">${year}</div></div>
+        </div>`;
+      }).join('') + `</div>`;
+  }catch(e){
+    el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">KOPIS 검색 실패 — 직접 입력해주세요.</p>';
+  }
+}
+
+function selectKOPIS(idx){
+  const el = document.querySelector(`[data-idx="${idx}"]`);
+  if(!el) return;
+  document.querySelectorAll('#kopisResults .tmdb-result').forEach((r,i)=>r.classList.toggle('selected',i===idx));
+  document.getElementById('fKo').value = el.dataset.title;
+  document.getElementById('fEn').value = el.dataset.title;
+  document.getElementById('fYear').value = el.dataset.year;
+  document.getElementById('fKid').value = el.dataset.kid;
+  if(el.dataset.poster){
+    const posterUrl = el.dataset.poster.replace(/^http:/,'https:');
+    setImgSource('url');
+    document.getElementById('fPosterUrl').value = posterUrl;
+    previewPosterUrl(posterUrl);
+  }
+}
+
+/* ═══ 알라딘 도서 검색 ═══ */
+async function searchAladin(){
+  const q = document.getElementById('aladinQuery').value.trim();
+  if(!q) return;
+  const el = document.getElementById('aladinResults');
+  el.innerHTML = '<p style="font-size:12px;color:var(--muted);padding:8px">검색 중...</p>';
+  try{
+    const url = `https://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=${ALADIN_KEY}&Query=${encodeURIComponent(q)}&QueryType=Title&MaxResults=6&SearchTarget=Book&output=js&Version=20131101&Cover=Big`;
+    const r = await fetch(url);
+    const d = await r.json();
+    if(!d.item?.length){ el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">결과 없음 — 직접 입력해주세요.</p>'; return; }
+    el.innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:14px;max-height:260px;overflow-y:auto">` +
+      d.item.map((item,i)=>{
+        const year = item.pubDate ? item.pubDate.substring(0,4) : '';
+        return `<div class="tmdb-result" onclick="selectAladin(${i})" data-idx="${i}"
+          data-title="${(item.title||'').replace(/"/g,'&quot;')}" data-cover="${item.cover||''}"
+          data-year="${year}" data-author="${(item.author||'').replace(/"/g,'&quot;')}" data-isbn="${item.isbn13||''}">
+          ${item.cover ? `<img src="${item.cover}" alt="" style="width:100%;aspect-ratio:2/3;object-fit:cover;display:block">` : `<div style="aspect-ratio:2/3;background:var(--bg4);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted)">No cover</div>`}
+          <div class="tmdb-result-info"><div class="tmdb-result-title">${item.title||''}</div><div class="tmdb-result-year">${year}</div></div>
+        </div>`;
+      }).join('') + `</div>`;
+    window._aladinResults = d.item;
+  }catch(e){
+    el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">알라딘 검색 실패 — 직접 입력해주세요.</p>';
+  }
+}
+
+function selectAladin(idx){
+  const items = window._aladinResults;
+  if(!items?.[idx]) return;
+  const item = items[idx];
+  document.querySelectorAll('#aladinResults .tmdb-result').forEach((r,i)=>r.classList.toggle('selected',i===idx));
+  const year = item.pubDate ? item.pubDate.substring(0,4) : '';
+  document.getElementById('fKo').value = item.title||'';
+  document.getElementById('fEn').value = item.title||'';
+  document.getElementById('fYear').value = year;
+  document.getElementById('fSub').value = item.author||'';
+  document.getElementById('fIsbn').value = item.isbn13||'';
+  if(item.cover){
+    setImgSource('url');
+    document.getElementById('fPosterUrl').value = item.cover;
+    previewPosterUrl(item.cover);
+  }
+}
+
+/* ═══ KOPIS 상수 ═══ */
+const KOPIS_KEY = '80eee61339564315aef9acfd05e32945';
+const ALADIN_KEY = 'ttbsuky79.shopping0154001';
 function renderAdminStrip(){
   const list = document.getElementById('stripList');
   const avail = document.getElementById('stripAvailable');
