@@ -4,11 +4,12 @@
     "g": "영화",
     "ko": "데드풀",
     "en": "Deadpool",
-    "sub": "Marvel Comics",
+    "sub": "",
     "y": 2016,
     "t": 293660,
     "gr": "g1",
     "feat": false,
+    "home": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -24,8 +25,7 @@
         "c": "#fff",
         "u": "https://www.rottentomatoes.com/m/deadpool"
       }
-    ],
-    "home": false
+    ]
   },
   {
     "s": "002",
