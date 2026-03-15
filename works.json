@@ -88,11 +88,12 @@
     "g": "영화",
     "ko": "아바타: 물의 길",
     "en": "Avatar: The Way of Water",
-    "sub": "James Cameron",
+    "sub": "",
     "y": 2022,
     "t": 76600,
     "gr": "g4",
     "feat": true,
+    "home": false,
     "dK": "판도라 바다의 서사.\n자연과 공존의 메시지를 한국어 자막에 담았습니다.",
     "dE": "An oceanic epic on Pandora.\nNature and coexistence in Korean subtitles.",
     "lk": [
@@ -108,8 +109,7 @@
         "c": "#fff",
         "u": "https://www.rottentomatoes.com/m/avatar_the_way_of_water"
       }
-    ],
-    "home": false
+    ]
   },
   {
     "s": "005",
