@@ -163,7 +163,8 @@
         "u": "https://www.imdb.com/title/tt10872600/"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "007",
