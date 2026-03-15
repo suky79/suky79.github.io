@@ -111,7 +111,8 @@
         "u": "https://www.rottentomatoes.com/m/avatar_the_way_of_water"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "005",
