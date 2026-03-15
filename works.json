@@ -82,7 +82,8 @@
         "u": "https://www.rottentomatoes.com/m/deadpool_and_wolverine"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "004",
