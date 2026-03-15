@@ -770,7 +770,8 @@ async function loadWorks(){
     if(r.content){
       fileSha=r.sha;
       const raw = r.content.replace(/\n/g,'');
-      const decoded = decodeURIComponent(escape(atob(raw)));
+      const bytes = Uint8Array.from(atob(raw), c => c.charCodeAt(0));
+      const decoded = new TextDecoder('utf-8').decode(bytes);
       works = JSON.parse(decoded);
       renderWorksList(); renderFeatured(); renderHomeGrid(); renderAdminStrip(); worksSnapshot=JSON.stringify(works);
       document.getElementById('totalCount').textContent = works.length;
@@ -781,7 +782,9 @@ async function loadWorks(){
 /* ═══ COMMIT ═══ */
 async function commitWorks(message){
   if(!ghToken){ toast('GitHub에 먼저 연결하세요.','error'); return false; }
-  const content = btoa(unescape(encodeURIComponent(JSON.stringify(works, null, 2))));
+  const jsonStr = JSON.stringify(works, null, 2);
+  const bytes = new TextEncoder().encode(jsonStr);
+  const content = btoa(String.fromCharCode(...bytes));
   const body = {message, content, ...(fileSha && {sha:fileSha})};
   try{
     const r = await ghFetch(`https://api.github.com/repos/${REPO}/contents/${FILE}`, {
