@@ -6,243 +6,516 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin — Beardos</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* ═══ PIN LOCK ═══ */
+#pinLock{position:fixed;inset:0;background:#1B2540;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0}
+.pin-box{background:#212E4A;border:1px solid rgba(229,186,65,.12);border-radius:16px;padding:48px 40px;width:360px;text-align:center}
+.pin-logo{font-family:'Clash Display',sans-serif;font-size:32px;font-weight:700;color:#F0EBE0;margin-bottom:4px}.pin-logo span{color:#E5BA41}
+.pin-sub{font-size:13px;color:rgba(240,235,224,.4);margin-bottom:32px;letter-spacing:.06em;text-transform:uppercase}
+.pin-dots{display:flex;justify-content:center;gap:12px;margin-bottom:28px}
+.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid rgba(229,186,65,.3);transition:all .2s}
+.pin-dot.filled{background:#E5BA41;border-color:#E5BA41}
+.pin-dot.error{background:#e05555;border-color:#e05555;animation:shake .3s}
+.pin-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pin-key{padding:16px;border:1px solid rgba(229,186,65,.1);border-radius:8px;background:rgba(240,235,224,.04);color:#F0EBE0;font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;cursor:pointer;transition:all .15s;letter-spacing:.02em}
+.pin-key:hover{background:rgba(229,186,65,.1);border-color:rgba(229,186,65,.3)}
+.pin-key:active{transform:scale(.95)}
+.pin-key.del{font-size:16px;color:rgba(240,235,224,.5)}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+/* ═══ MODAL ═══ */
+.modal-overlay{position:fixed;inset:0;background:rgba(10,15,30,.7);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(4px)}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:#212E4A;border:1px solid rgba(229,186,65,.12);border-radius:12px;padding:28px;width:500px;max-width:calc(100vw-40px);transform:translateY(16px);transition:transform .25s}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-title{font-family:'Clash Display',sans-serif;font-size:18px;font-weight:600;color:#F0EBE0;margin-bottom:4px}
+.modal-sub{font-size:12px;color:rgba(240,235,224,.4);margin-bottom:20px}
+.modal-label{font-size:11px;font-weight:500;color:rgba(240,235,224,.5);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;display:block}
+.modal-textarea{width:100%;padding:10px 12px;background:rgba(240,235,224,.06);border:1px solid rgba(229,186,65,.1);border-radius:6px;color:#F0EBE0;font-family:'Space Grotesk',sans-serif;font-size:13px;resize:vertical;min-height:80px;outline:none;transition:border-color .2s;line-height:1.5}
+.modal-textarea:focus{border-color:rgba(229,186,65,.4)}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:20px}
+.modal-btn{padding:9px 22px;border:none;border-radius:6px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s}
+.modal-btn-cancel{background:rgba(240,235,224,.08);color:rgba(240,235,224,.7)}
+.modal-btn-cancel:hover{background:rgba(240,235,224,.14)}
+.modal-btn-save{background:#E5BA41;color:#1B2540}
+.modal-btn-save:hover{filter:brightness(1.08)}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#F5F1EA;--bg2:#EDE8DC;--bg3:#E3DBCE;--bg4:#D9D1C2;--text:#2D3C59;--muted:#94A378;--accent:#E5BA41;--accent2:#D1855C;--red:#e05555;--green:#5cb85c;--blue:#5b9bd5;--sans:'Space Grotesk','Noto Sans KR',sans-serif}
+:root{
+  --bg:#F5F1EA;--bg2:#EDE8DC;--bg3:#E3DBCE;--bg4:#D9D1C2;
+  --text:#2D3C59;--muted:#94A378;--accent:#E5BA41;--accent2:#D1855C;
+  --red:#e05555;--green:#5cb85c;--blue:#5b9bd5;
+  --sans:'Space Grotesk','Noto Sans KR',sans-serif;
+  --display:'Clash Display','Space Grotesk',sans-serif;
+}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;font-size:14px;line-height:1.6;min-height:100vh}
 
-/* Layout */
-.admin-wrap{max-width:960px;margin:0 auto;padding:24px 20px 80px}
-h1{font-size:24px;font-weight:500;margin-bottom:4px}
+.admin-wrap{max-width:980px;margin:0 auto;padding:32px 20px 100px}
+
+/* Header */
+.admin-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:12px}
+h1{font-family:var(--display);font-size:28px;font-weight:700}
 h1 span{color:var(--accent)}
-.subtitle{font-size:13px;color:var(--muted);margin-bottom:32px}
+.subtitle{font-size:13px;color:var(--muted);margin-bottom:28px}
+
+/* Tabs */
+.tab-nav{display:flex;gap:2px;background:var(--bg3);border-radius:8px;padding:4px;margin-bottom:24px;width:fit-content}
+.tab-btn{padding:7px 20px;border:none;background:none;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;border-radius:5px;color:var(--muted);transition:all .2s}
+.tab-btn.active{background:var(--bg);color:var(--text);box-shadow:0 1px 4px rgba(45,60,89,.1)}
+
+/* Cards */
+.card{background:var(--bg2);border:1px solid rgba(45,60,89,.06);border-radius:10px;padding:22px;margin-bottom:20px}
+.card-title{font-family:var(--display);font-size:15px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.card-title .badge{font-family:var(--sans);font-size:10px;background:var(--accent);color:#2D3C59;padding:2px 9px;border-radius:20px;font-weight:600;letter-spacing:.04em}
+.card-sub{font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5}
 
 /* Auth */
-.auth-bar{background:var(--bg2);border:1px solid rgba(45,60,89,.06);border-radius:8px;padding:20px;margin-bottom:24px}
-.auth-bar h3{font-size:14px;font-weight:500;margin-bottom:8px}
-.auth-bar p{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.5}
 .auth-row{display:flex;gap:8px}
-.auth-row input{flex:1;padding:8px 12px;background:var(--bg3);border:1px solid rgba(45,60,89,.08);border-radius:4px;color:var(--text);font-family:var(--sans);font-size:13px;outline:none}
+.auth-row input{flex:1;padding:8px 12px;background:var(--bg3);border:1px solid rgba(45,60,89,.08);border-radius:5px;color:var(--text);font-family:var(--sans);font-size:13px;outline:none}
 .auth-row input:focus{border-color:var(--accent)}
-.auth-row input::placeholder{color:var(--muted)}
 .auth-status{margin-top:8px;font-size:12px}
-.auth-status.ok{color:var(--green)}
-.auth-status.err{color:var(--red)}
+.auth-status.ok{color:var(--green)}.auth-status.err{color:var(--red)}
 
-/* Buttons */
-.btn{padding:8px 18px;border:none;border-radius:4px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;letter-spacing:.02em}
-.btn-primary{background:var(--accent);color:#2D3C59}
-.btn-primary:hover{filter:brightness(1.1)}
-.btn-danger{background:var(--red);color:#fff}
-.btn-danger:hover{filter:brightness(1.1)}
-.btn-ghost{background:transparent;border:1px solid rgba(45,60,89,.12);color:var(--text)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-.btn-sm{padding:5px 12px;font-size:12px}
-.btn:disabled{opacity:.4;cursor:not-allowed}
+/* Genre Selector */
+.genre-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.genre-pill{padding:7px 18px;border:1.5px solid rgba(45,60,89,.12);border-radius:30px;background:none;font-family:var(--sans);font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--muted)}
+.genre-pill.active{border-color:var(--accent);background:var(--accent);color:#2D3C59}
+.genre-pill:hover:not(.active){border-color:var(--accent);color:var(--text)}
 
-/* Add Form */
-.add-section{background:var(--bg2);border:1px solid rgba(45,60,89,.06);border-radius:8px;padding:20px;margin-bottom:24px}
-.add-section h3{font-size:14px;font-weight:500;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.add-section h3 .badge{font-size:10px;background:var(--accent);color:#2D3C59;padding:2px 8px;border-radius:10px;font-weight:600}
+/* Form sections that show/hide per genre */
+.genre-section{display:none}
+.genre-section.visible{display:block}
 
 /* TMDB Search */
-.tmdb-search{display:flex;gap:8px;margin-bottom:16px}
-.tmdb-search input{flex:1;padding:8px 12px;background:var(--bg3);border:1px solid rgba(45,60,89,.08);border-radius:4px;color:var(--text);font-family:var(--sans);font-size:13px;outline:none}
-.tmdb-search input:focus{border-color:var(--accent)}
-.tmdb-results{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:16px;max-height:300px;overflow-y:auto}
-.tmdb-result{background:var(--bg3);border:1px solid rgba(45,60,89,.06);border-radius:4px;cursor:pointer;overflow:hidden;transition:all .2s}
+.search-row{display:flex;gap:8px;margin-bottom:14px}
+.search-row input{flex:1;padding:9px 14px;background:var(--bg3);border:1px solid rgba(45,60,89,.08);border-radius:5px;color:var(--text);font-family:var(--sans);font-size:13px;outline:none}
+.search-row input:focus{border-color:var(--accent)}
+.tmdb-results{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:16px;max-height:280px;overflow-y:auto}
+.tmdb-result{background:var(--bg3);border:1.5px solid rgba(45,60,89,.06);border-radius:5px;cursor:pointer;overflow:hidden;transition:all .2s}
 .tmdb-result:hover{border-color:var(--accent)}
 .tmdb-result.selected{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
 .tmdb-result img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block}
-.tmdb-result-info{padding:6px 8px}
-.tmdb-result-title{font-size:11px;font-weight:500;line-height:1.3}
-.tmdb-result-year{font-size:10px;color:var(--muted)}
+.tmdb-result-info{padding:5px 8px}
+.tmdb-result-title{font-size:10px;font-weight:500;line-height:1.3}
+.tmdb-result-year{font-size:9px;color:var(--muted)}
 
 /* Form Grid */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form-group{display:flex;flex-direction:column;gap:4px}
+.form-group{display:flex;flex-direction:column;gap:5px}
 .form-group.full{grid-column:1/-1}
-.form-label{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.form-input{padding:8px 12px;background:var(--bg3);border:1px solid rgba(45,60,89,.08);border-radius:4px;color:var(--text);font-family:var(--sans);font-size:13px;outline:none}
+.form-group.third{grid-column:span 1}
+.form-label{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+.form-input{padding:9px 12px;background:var(--bg3);border:1px solid rgba(45,60,89,.08);border-radius:5px;color:var(--text);font-family:var(--sans);font-size:13px;outline:none;transition:border-color .2s}
 .form-input:focus{border-color:var(--accent)}
+textarea.form-input{resize:vertical;min-height:70px;line-height:1.5}
 select.form-input{cursor:pointer}
-.form-actions{margin-top:16px;display:flex;gap:8px;justify-content:flex-end}
+.form-hint{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* Image Upload */
+.img-upload-zone{border:2px dashed rgba(45,60,89,.15);border-radius:8px;padding:24px;text-align:center;cursor:pointer;transition:all .25s;background:var(--bg3);position:relative}
+.img-upload-zone:hover,.img-upload-zone.drag-over{border-color:var(--accent);background:rgba(229,186,65,.06)}
+.img-upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.img-upload-icon{font-size:28px;margin-bottom:8px;display:block}
+.img-upload-text{font-size:13px;color:var(--muted);font-weight:500}
+.img-upload-sub{font-size:11px;color:var(--muted);margin-top:4px;opacity:.7}
+.img-preview{position:relative;width:100%;max-width:180px;margin:0 auto}
+.img-preview img{width:100%;border-radius:5px;display:block;box-shadow:0 4px 16px rgba(45,60,89,.15)}
+.img-preview-remove{position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;border:none;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;line-height:1}
+.img-url-input{margin-top:10px}
+.img-source-tabs{display:flex;gap:6px;margin-bottom:12px}
+.img-source-btn{padding:5px 14px;border:1px solid rgba(45,60,89,.12);border-radius:20px;background:none;font-size:11px;font-weight:500;cursor:pointer;color:var(--muted);transition:all .2s}
+.img-source-btn.active{border-color:var(--accent);background:var(--accent);color:#2D3C59}
+
+/* Links Builder */
+.links-list{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.link-row{display:flex;gap:6px;align-items:center}
+.link-row input{flex:1;padding:7px 10px;background:var(--bg3);border:1px solid rgba(45,60,89,.08);border-radius:4px;color:var(--text);font-family:var(--sans);font-size:12px;outline:none}
+.link-row input:focus{border-color:var(--accent)}
+.link-row .link-label{width:80px;flex-shrink:0}
+.link-row-remove{padding:5px 8px;border:none;background:rgba(224,85,85,.12);border-radius:4px;color:var(--red);cursor:pointer;font-size:13px;line-height:1}
+.add-link-btn{padding:6px 14px;border:1px dashed rgba(45,60,89,.2);border-radius:4px;background:none;font-size:12px;color:var(--muted);cursor:pointer;transition:all .2s}
+.add-link-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Buttons */
+.btn{padding:9px 20px;border:none;border-radius:5px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;letter-spacing:.02em}
+.btn-primary{background:var(--accent);color:#2D3C59}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-danger{background:var(--red);color:#fff}
+.btn-ghost{background:transparent;border:1px solid rgba(45,60,89,.14);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-sm{padding:5px 12px;font-size:12px}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.form-actions{margin-top:18px;display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
 
 /* Works List */
-.works-section h3{font-size:14px;font-weight:500;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.section-title{font-family:var(--display);font-size:16px;font-weight:600}
 .works-list{display:flex;flex-direction:column;gap:6px}
-.work-item{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid rgba(45,60,89,.06);border-radius:6px;padding:10px 14px;transition:border-color .2s}
-.work-item:hover{border-color:rgba(45,60,89,.12)}
-.work-item-poster{width:36px;height:54px;border-radius:2px;overflow:hidden;background:var(--bg3);flex-shrink:0}
+.work-item{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid rgba(45,60,89,.06);border-radius:7px;padding:10px 14px;transition:border-color .2s}
+.work-item:hover{border-color:rgba(45,60,89,.14)}
+.work-item-poster{width:36px;height:54px;border-radius:3px;overflow:hidden;background:var(--bg3);flex-shrink:0}
 .work-item-poster img{width:100%;height:100%;object-fit:cover}
 .work-item-info{flex:1;min-width:0}
 .work-item-title{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .work-item-meta{font-size:11px;color:var(--muted)}
-.work-item-badge{font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:10px;background:rgba(45,60,89,.15);color:var(--accent)}
-.work-item-actions{display:flex;gap:6px;flex-shrink:0}
+.work-item-badge{font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:20px;flex-shrink:0}
+.badge-film{background:rgba(91,155,213,.15);color:#5b9bd5}
+.badge-musical{background:rgba(232,121,168,.15);color:#e879a8}
+.badge-theatre{background:rgba(148,163,120,.2);color:#5a7044}
+.badge-book{background:rgba(229,186,65,.18);color:#a07c00}
+.badge-authored{background:rgba(92,184,92,.15);color:#3a7a3a}
+.work-item-actions{display:flex;gap:5px;flex-shrink:0}
+.work-item-flags{display:flex;gap:4px;flex-shrink:0}
+.flag{font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600}
+.flag-feat{background:rgba(229,186,65,.2);color:#a07c00}
+.flag-home{background:rgba(92,184,92,.15);color:#3a7a3a}
+.flag-img{background:rgba(91,155,213,.15);color:#3a6ea8}
 
-/* Featured Section */
-.featured-section{background:var(--bg2);border:1px solid rgba(45,60,89,.06);border-radius:8px;padding:20px;margin-bottom:24px}
-.featured-section h3{font-size:14px;font-weight:500;margin-bottom:4px}
-.featured-current{display:flex;flex-direction:column;gap:6px}
-.featured-item{display:flex;align-items:center;gap:12px;background:var(--bg3);border:1px solid rgba(45,60,89,.2);border-radius:6px;padding:10px 14px;cursor:grab;transition:all .2s}
+/* Featured / Grid sections */
+.featured-section-card{background:var(--bg2);border:1px solid rgba(45,60,89,.06);border-radius:10px;padding:20px;margin-bottom:20px}
+.featured-list{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.featured-item{display:flex;align-items:center;gap:12px;background:var(--bg3);border:1.5px solid rgba(45,60,89,.12);border-radius:6px;padding:10px 14px;cursor:grab;transition:all .2s}
 .featured-item:active{cursor:grabbing;opacity:.7}
-.featured-item.drag-over{border-color:var(--accent);background:rgba(45,60,89,.05)}
-.featured-item-num{font-family:var(--sans);font-size:18px;font-weight:600;color:var(--accent);min-width:28px;text-align:center}
+.featured-item.drag-over{border-color:var(--accent);background:rgba(229,186,65,.06)}
+.featured-item-num{font-family:var(--display);font-size:18px;font-weight:700;color:var(--accent);min-width:26px;text-align:center}
 .featured-item-poster{width:32px;height:48px;border-radius:2px;overflow:hidden;background:var(--bg4);flex-shrink:0}
 .featured-item-poster img{width:100%;height:100%;object-fit:cover}
 .featured-item-info{flex:1;min-width:0}
-.featured-item-title{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.featured-item-title{font-size:13px;font-weight:500}
 .featured-item-meta{font-size:11px;color:var(--muted)}
-.featured-item-desc{font-size:10px;color:var(--accent3);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
-.featured-item-actions{display:flex;gap:6px;flex-shrink:0}
-.featured-available{display:flex;flex-wrap:wrap;gap:6px}
-.featured-add-chip{display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid rgba(45,60,89,.06);border-radius:4px;padding:5px 12px 5px 6px;cursor:pointer;transition:all .2s;font-size:12px;color:var(--muted)}
-.featured-add-chip:hover{border-color:var(--accent);color:var(--accent)}
-.featured-add-chip img{width:20px;height:30px;object-fit:cover;border-radius:1px}
+.featured-item-desc{font-size:10px;color:var(--accent2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.available-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{display:flex;align-items:center;gap:5px;background:var(--bg3);border:1px solid rgba(45,60,89,.08);border-radius:4px;padding:5px 12px 5px 8px;cursor:pointer;transition:all .2s;font-size:12px;color:var(--muted)}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip img{width:18px;height:27px;object-fit:cover;border-radius:1px}
+
+/* Upload progress */
+.upload-progress{height:3px;background:var(--bg3);border-radius:2px;overflow:hidden;margin-top:8px;display:none}
+.upload-progress-bar{height:100%;background:var(--accent);border-radius:2px;width:0%;transition:width .3s}
 
 /* Toast */
-.toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:6px;font-size:13px;font-weight:500;color:#fff;z-index:999;transform:translateY(80px);opacity:0;transition:all .3s var(--ease)}
+.toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:7px;font-size:13px;font-weight:500;color:#fff;z-index:999;transform:translateY(80px);opacity:0;transition:all .3s;max-width:320px}
 .toast.show{transform:translateY(0);opacity:1}
-.toast.success{background:var(--green)}
+.toast.success{background:#3a7a3a}
 .toast.error{background:var(--red)}
+.toast.info{background:var(--blue)}
 
-/* Loading */
-.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(45,60,89,.2);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(45,60,89,.2);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:4px}
 @keyframes spin{to{transform:rotate(360deg)}}
+
+.divider{height:1px;background:rgba(45,60,89,.08);margin:20px 0}
 
 @media(max-width:600px){
   .form-grid{grid-template-columns:1fr}
   .tmdb-results{grid-template-columns:repeat(3,1fr)}
+  .admin-header{flex-direction:column;align-items:flex-start}
 }
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+<!-- PIN LOCK -->
+<div id="pinLock">
+  <div class="pin-box">
+    <div class="pin-logo">Beardos<span>.</span></div>
+    <div class="pin-sub">Admin Access</div>
+    <div class="pin-dots">
+      <div class="pin-dot" id="pd0"></div>
+      <div class="pin-dot" id="pd1"></div>
+      <div class="pin-dot" id="pd2"></div>
+      <div class="pin-dot" id="pd3"></div>
+    </div>
+    <div class="pin-pad">
+      <button class="pin-key" onclick="pinInput('1')">1</button>
+      <button class="pin-key" onclick="pinInput('2')">2</button>
+      <button class="pin-key" onclick="pinInput('3')">3</button>
+      <button class="pin-key" onclick="pinInput('4')">4</button>
+      <button class="pin-key" onclick="pinInput('5')">5</button>
+      <button class="pin-key" onclick="pinInput('6')">6</button>
+      <button class="pin-key" onclick="pinInput('7')">7</button>
+      <button class="pin-key" onclick="pinInput('8')">8</button>
+      <button class="pin-key" onclick="pinInput('9')">9</button>
+      <button class="pin-key" onclick="pinInput('')" style="opacity:.3"></button>
+      <button class="pin-key" onclick="pinInput('0')">0</button>
+      <button class="pin-key del" onclick="pinDelete()">⌫</button>
+    </div>
+  </div>
+</div>
 
-<div class="admin-wrap">
-  <h1>Beardos<span>.</span> Admin</h1>
-  <p class="subtitle">Manage your translation portfolio. Changes auto-deploy to your site.</p>
+<!-- DESCRIPTION MODAL -->
+<div class="modal-overlay" id="descModal">
+  <div class="modal">
+    <div class="modal-title" id="modalTitle">설명 편집</div>
+    <div class="modal-sub" id="modalSub"></div>
+    <label class="modal-label">영문 설명 (홈 표시용)</label>
+    <textarea class="modal-textarea" id="modalDescEn" placeholder="English description for homepage display..."></textarea>
+    <label class="modal-label" style="margin-top:14px">한국어 설명</label>
+    <textarea class="modal-textarea" id="modalDescKo" placeholder="한국어 설명..."></textarea>
+    <div class="modal-actions">
+      <button class="modal-btn modal-btn-cancel" onclick="closeModal()">취소</button>
+      <button class="modal-btn modal-btn-save" onclick="saveModal()">저장</button>
+    </div>
+  </div>
+</div>
+
+<div class="admin-wrap" id="adminWrap" style="display:none">
+  <div class="admin-header">
+    <div>
+      <h1>Beardos<span>.</span> Admin</h1>
+      <p class="subtitle">번역 포트폴리오 관리 패널 · Translation portfolio manager</p>
+    </div>
+    <a href="index.html" style="font-size:12px;color:var(--muted);text-decoration:none;border:1px solid rgba(45,60,89,.12);padding:7px 14px;border-radius:5px;transition:all .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">← 메인으로</a>
+  </div>
 
   <!-- AUTH -->
-  <div class="auth-bar">
-    <h3>🔑 GitHub Authentication</h3>
-    <p>Enter your GitHub Personal Access Token to enable saving.<br>
-       Generate one at <a href="https://github.com/settings/tokens/new?scopes=repo&description=Beardos+Admin" target="_blank" style="color:var(--accent)">github.com/settings/tokens</a> (select <code style="background:var(--bg3);padding:2px 6px;border-radius:3px;font-size:12px">repo</code> scope).</p>
+  <div class="card">
+    <div class="card-title">🔑 GitHub 연결</div>
+    <p class="card-sub">GitHub Personal Access Token을 입력해 저장 기능을 활성화하세요.<br>
+      <a href="https://github.com/settings/tokens/new?scopes=repo&description=Beardos+Admin" target="_blank" style="color:var(--accent)">github.com/settings/tokens</a>에서 <code style="background:var(--bg3);padding:2px 6px;border-radius:3px;font-size:11px">repo</code> 권한 선택 후 생성.</p>
     <div class="auth-row">
       <input type="password" id="ghToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
-      <button class="btn btn-primary" onclick="authenticate()">Connect</button>
+      <button class="btn btn-primary" onclick="authenticate()">연결</button>
     </div>
     <div class="auth-status" id="authStatus"></div>
   </div>
 
-  <!-- ADD / EDIT -->
-  <div class="add-section">
-    <h3>
-      <span id="formTitle">Add New Work</span>
-      <span class="badge">TMDB Auto-fill</span>
-    </h3>
+  <!-- TABS -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('add')">＋ 작품 추가</button>
+    <button class="tab-btn" onclick="switchTab('featured')">★ 히어로 관리</button>
+    <button class="tab-btn" onclick="switchTab('grid')">◆ 쇼케이스 그리드</button>
+    <button class="tab-btn" onclick="switchTab('list')">≡ 전체 목록</button>
+  </div>
 
-    <div class="tmdb-search">
-      <input type="text" id="tmdbQuery" placeholder="Search TMDB for a movie (e.g. Deadpool)..." onkeydown="if(event.key==='Enter')searchTMDB()" />
-      <button class="btn btn-ghost" onclick="searchTMDB()">Search</button>
-    </div>
-    <div class="tmdb-results" id="tmdbResults"></div>
+  <!-- TAB: ADD WORK -->
+  <div id="tab-add">
+    <div class="card">
+      <div class="card-title"><span id="formTitle">작품 추가</span> <span class="badge" id="formBadge">NEW</span></div>
 
-    <div class="form-grid">
-      <div class="form-group">
-        <span class="form-label">English Title *</span>
-        <input class="form-input" id="fEn" placeholder="Deadpool & Wolverine" />
+      <!-- Genre Pills -->
+      <div class="genre-pills">
+        <button class="genre-pill active" onclick="setGenre('영화')" id="pill-영화">🎬 영화</button>
+        <button class="genre-pill" onclick="setGenre('뮤지컬')" id="pill-뮤지컬">🎭 뮤지컬</button>
+        <button class="genre-pill" onclick="setGenre('연극')" id="pill-연극">🎪 연극</button>
+        <button class="genre-pill" onclick="setGenre('책')" id="pill-책">📚 책</button>
+        <button class="genre-pill" onclick="setGenre('저서')" id="pill-저서">✍️ 저서</button>
       </div>
-      <div class="form-group">
-        <span class="form-label">Korean Title</span>
-        <input class="form-input" id="fKo" placeholder="데드풀 & 울버린" />
+
+      <!-- FILM section: TMDB search -->
+      <div class="genre-section visible" id="section-film">
+        <div class="search-row">
+          <input type="text" id="tmdbQuery" placeholder="TMDB 영화 검색 (예: Deadpool)..." onkeydown="if(event.key==='Enter')searchTMDB()" />
+          <button class="btn btn-ghost" onclick="searchTMDB()">검색</button>
+        </div>
+        <div class="tmdb-results" id="tmdbResults"></div>
       </div>
-      <div class="form-group">
-        <span class="form-label">Genre *</span>
-        <select class="form-input" id="fGenre">
-          <option value="영화">Film (영화)</option>
-          <option value="뮤지컬">Musical (뮤지컬)</option>
-          <option value="연극">Theatre (연극)</option>
-          <option value="책">Book (책)</option>
-          <option value="저서">Authored (저서)</option>
-        </select>
+
+      <!-- PERFORMANCE section: KOPIS -->
+      <div class="genre-section" id="section-perf">
+        <div style="background:rgba(148,163,120,.1);border:1px solid rgba(148,163,120,.25);border-radius:6px;padding:12px 14px;margin-bottom:16px;font-size:12px;color:var(--muted);line-height:1.7">
+          💡 <strong style="color:var(--text)">공연예술통합전산망(KOPIS)</strong>에서 공연 ID(mt20id)를 찾아 입력하면 포스터가 자동 연결됩니다.<br>
+          또는 이미지를 직접 업로드하세요.
+        </div>
       </div>
-      <div class="form-group">
-        <span class="form-label">Year *</span>
-        <input class="form-input" type="number" id="fYear" placeholder="2024" />
+
+      <!-- BOOK section: Aladin -->
+      <div class="genre-section" id="section-book">
+        <div style="background:rgba(229,186,65,.1);border:1px solid rgba(229,186,65,.3);border-radius:6px;padding:12px 14px;margin-bottom:16px;font-size:12px;color:var(--muted);line-height:1.7">
+          💡 ISBN 13자리 또는 알라딘 ItemId를 입력하면 책 정보가 연결됩니다.<br>
+          또는 이미지를 직접 업로드하세요.
+        </div>
       </div>
-      <div class="form-group">
-        <span class="form-label">Subtitle / Credit</span>
-        <input class="form-input" id="fSub" placeholder="Marvel Comics" />
+
+      <!-- Common Fields -->
+      <div class="form-grid">
+        <div class="form-group">
+          <span class="form-label">영문 제목 *</span>
+          <input class="form-input" id="fEn" placeholder="Deadpool & Wolverine" />
+        </div>
+        <div class="form-group">
+          <span class="form-label">한국어 제목</span>
+          <input class="form-input" id="fKo" placeholder="데드풀 & 울버린" />
+        </div>
+        <div class="form-group">
+          <span class="form-label">연도 *</span>
+          <input class="form-input" type="number" id="fYear" placeholder="2024" />
+        </div>
+        <div class="form-group">
+          <span class="form-label">서브타이틀 / 크레딧</span>
+          <input class="form-input" id="fSub" placeholder="Marvel Comics" />
+        </div>
+
+        <!-- Film only -->
+        <div class="form-group film-only" id="fg-tmdb">
+          <span class="form-label">TMDB ID</span>
+          <input class="form-input" type="number" id="fTmdb" placeholder="533535" />
+        </div>
+        <div class="form-group film-only" id="fg-imdb">
+          <span class="form-label">IMDb URL</span>
+          <input class="form-input" id="fImdb" placeholder="https://www.imdb.com/title/tt..." />
+        </div>
+        <div class="form-group film-only" id="fg-rt">
+          <span class="form-label">Rotten Tomatoes URL</span>
+          <input class="form-input" id="fRt" placeholder="https://www.rottentomatoes.com/m/..." />
+        </div>
+
+        <!-- Performance only -->
+        <div class="form-group perf-only" id="fg-kid" style="display:none">
+          <span class="form-label">KOPIS 공연 ID (mt20id)</span>
+          <input class="form-input" id="fKid" placeholder="PF220301" />
+          <span class="form-hint">kopis.or.kr → 공연검색 → URL의 mt20id 파라미터</span>
+        </div>
+        <div class="form-group perf-only" id="fg-venue" style="display:none">
+          <span class="form-label">공연장</span>
+          <input class="form-input" id="fVenue" placeholder="블루스퀘어 신한카드홀" />
+        </div>
+        <div class="form-group perf-only" id="fg-runtime" style="display:none">
+          <span class="form-label">공연 시간 (분)</span>
+          <input class="form-input" type="number" id="fRuntime" placeholder="160" />
+        </div>
+        <div class="form-group perf-only" id="fg-ticket" style="display:none">
+          <span class="form-label">예매 링크 (인터파크 / YES24)</span>
+          <input class="form-input" id="fTicket" placeholder="https://tickets.interpark.com/..." />
+        </div>
+
+        <!-- Book only -->
+        <div class="form-group book-only" id="fg-isbn" style="display:none">
+          <span class="form-label">ISBN 13</span>
+          <input class="form-input" id="fIsbn" placeholder="9788901234567" />
+        </div>
+        <div class="form-group book-only" id="fg-publisher" style="display:none">
+          <span class="form-label">출판사</span>
+          <input class="form-input" id="fPublisher" placeholder="민음사" />
+        </div>
+        <div class="form-group book-only" id="fg-aladin" style="display:none">
+          <span class="form-label">알라딘 URL</span>
+          <input class="form-input" id="fAladin" placeholder="https://www.aladin.co.kr/shop/..." />
+        </div>
+        <div class="form-group book-only" id="fg-kyobo" style="display:none">
+          <span class="form-label">교보문고 URL</span>
+          <input class="form-input" id="fKyobo" placeholder="https://product.kyobobook.co.kr/..." />
+        </div>
+
+        <div class="form-group">
+          <span class="form-label">메인 히어로 노출</span>
+          <select class="form-input" id="fFeat">
+            <option value="false">아니오</option>
+            <option value="true">예</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <span class="form-label">소개 (영문) — 홈 히어로/그리드용</span>
+          <textarea class="form-input" id="fDescEn" placeholder="A short English description..."></textarea>
+        </div>
+        <div class="form-group full">
+          <span class="form-label">소개 (한국어)</span>
+          <textarea class="form-input" id="fDescKo" placeholder="홈페이지 표시용 한국어 설명..."></textarea>
+        </div>
       </div>
-      <div class="form-group">
-        <span class="form-label">TMDB ID</span>
-        <input class="form-input" type="number" id="fTmdb" placeholder="533535 (auto-filled from search)" />
+
+      <div class="divider"></div>
+
+      <!-- IMAGE SECTION -->
+      <div style="margin-bottom:16px">
+        <div class="form-label" style="margin-bottom:10px">포스터 이미지</div>
+        <div class="img-source-tabs">
+          <button class="img-source-btn active" onclick="setImgSource('upload')" id="imgsrc-upload">📁 파일 업로드</button>
+          <button class="img-source-btn" onclick="setImgSource('url')" id="imgsrc-url">🔗 URL 직접 입력</button>
+        </div>
+
+        <div id="img-upload-pane">
+          <div id="imgDropZone" class="img-upload-zone"
+            ondragover="event.preventDefault();this.classList.add('drag-over')"
+            ondragleave="this.classList.remove('drag-over')"
+            ondrop="handleImgDrop(event)">
+            <input type="file" id="imgFile" accept="image/*" onchange="handleImgFile(this.files[0])">
+            <div id="imgPlaceholder">
+              <span class="img-upload-icon">🖼️</span>
+              <div class="img-upload-text">클릭하거나 이미지를 드래그하세요</div>
+              <div class="img-upload-sub">JPG, PNG, WEBP — 최대 5MB</div>
+            </div>
+            <div id="imgPreviewWrap" style="display:none">
+              <div class="img-preview">
+                <img id="imgPreviewImg" src="" alt="">
+                <button class="img-preview-remove" onclick="clearImage(event)" title="이미지 제거">✕</button>
+              </div>
+              <div style="font-size:11px;color:var(--muted);margin-top:8px" id="imgFileName"></div>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;align-items:center;gap:8px">
+            <select id="imgUploadTarget" class="form-input" style="flex:1;font-size:12px">
+              <option value="github">GitHub 저장소에 업로드</option>
+              <option value="cloudinary">Cloudinary CDN 업로드 (더 빠름)</option>
+            </select>
+          </div>
+          <div id="cloudinaryConfig" style="display:none;margin-top:10px;padding:12px;background:rgba(91,155,213,.08);border:1px solid rgba(91,155,213,.2);border-radius:6px">
+            <div style="font-size:11px;font-weight:600;color:var(--blue);margin-bottom:8px;letter-spacing:.05em;text-transform:uppercase">Cloudinary 설정</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div><div class="form-label" style="margin-bottom:4px">Cloud Name</div><input class="form-input" id="cloudName" placeholder="your-cloud-name" style="font-size:12px"></div>
+              <div><div class="form-label" style="margin-bottom:4px">Upload Preset</div><input class="form-input" id="cloudPreset" placeholder="unsigned-preset" style="font-size:12px"></div>
+            </div>
+            <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5">Cloudinary → Settings → Upload → Unsigned preset 생성 후 입력</div>
+          </div>
+          <div class="upload-progress" id="uploadProgress">
+            <div class="upload-progress-bar" id="uploadProgressBar"></div>
+          </div>
+        </div>
+
+        <div id="img-url-pane" style="display:none">
+          <input class="form-input" id="fPosterUrl" placeholder="https://image.example.com/poster.jpg" oninput="previewPosterUrl(this.value)" />
+          <div id="urlPreviewWrap" style="display:none;margin-top:10px">
+            <img id="urlPreviewImg" src="" alt="" style="max-width:120px;border-radius:4px;display:block">
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <span class="form-label">IMDb URL</span>
-        <input class="form-input" id="fImdb" placeholder="https://www.imdb.com/title/tt..." />
+
+      <div class="divider"></div>
+
+      <!-- LINKS BUILDER -->
+      <div style="margin-bottom:4px">
+        <div class="form-label" style="margin-bottom:10px">외부 링크</div>
+        <div id="linksList" class="links-list"></div>
+        <button class="add-link-btn" onclick="addLinkRow()">+ 링크 추가</button>
       </div>
-      <div class="form-group">
-        <span class="form-label">Featured on Home?</span>
-        <select class="form-input" id="fFeat">
-          <option value="false">No</option>
-          <option value="true">Yes</option>
-        </select>
+
+      <div class="form-actions">
+        <button class="btn btn-ghost" onclick="resetForm()">취소</button>
+        <button class="btn btn-primary" id="saveBtn" onclick="saveWork()">작품 저장</button>
       </div>
-      <div class="form-group full">
-        <span class="form-label">Description (EN) — for featured hero</span>
-        <input class="form-input" id="fDescEn" placeholder="A short English description for the homepage hero..." />
-      </div>
-      <div class="form-group full">
-        <span class="form-label">Description (KO)</span>
-        <input class="form-input" id="fDescKo" placeholder="홈페이지 히어로용 한국어 설명..." />
-      </div>
-    </div>
-    <div class="form-actions">
-      <button class="btn btn-ghost" onclick="resetForm()">Cancel</button>
-      <button class="btn btn-primary" id="saveBtn" onclick="saveWork()">Add Work</button>
     </div>
   </div>
 
-  <!-- FEATURED MANAGEMENT -->
-  <div class="featured-section" id="featuredSection" style="display:none">
-    <h3>🏠 Homepage Featured</h3>
-    <p style="font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.6">
-      These works appear on the homepage — hero carousel & editorial grid.<br>
-      Drag to reorder. The first 3 appear in the hero slideshow.
-    </p>
-    <div class="featured-current" id="featuredList"></div>
-    <div style="margin-top:16px">
-      <p style="font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Add to Featured</p>
-      <div class="featured-available" id="featuredAvailable"></div>
+  <!-- TAB: FEATURED HERO -->
+  <div id="tab-featured" style="display:none">
+    <div class="featured-section-card">
+      <div class="card-title">★ 홈페이지 히어로 캐러셀</div>
+      <p class="card-sub">메인 화면 풀스크린 캐러셀에 표시됩니다. 드래그로 순서 변경. 처음 3개가 우선 표시됩니다.</p>
+      <div class="featured-list" id="featuredList"><p style="color:var(--muted);font-size:12px;text-align:center;padding:20px">GitHub 연결 후 로드됩니다.</p></div>
+      <div style="font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">히어로에 추가</div>
+      <div class="available-chips" id="featuredAvailable"></div>
     </div>
   </div>
 
-  <!-- HOMEPAGE GRID (editorial showcase) -->
-  <div class="featured-section" id="gridSection" style="display:none">
-    <h3>🎭 Homepage Showcase Grid</h3>
-    <p style="font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.6">
-      These works appear in the editorial grid below the hero.<br>
-      Best with: 1 Musical, 1 Book/Theatre, 1 Authored work. Add as many as needed.
-    </p>
-    <div class="featured-current" id="gridList"></div>
-    <div style="margin-top:16px">
-      <p style="font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Add to Grid</p>
-      <div class="featured-available" id="gridAvailable"></div>
+  <!-- TAB: SHOWCASE GRID -->
+  <div id="tab-grid" style="display:none">
+    <div class="featured-section-card">
+      <div class="card-title">◆ 홈페이지 쇼케이스 그리드</div>
+      <p class="card-sub">히어로 아래 에디토리얼 그리드 섹션. 뮤지컬 1, 도서/연극 1, 저서 1 조합을 권장합니다.</p>
+      <div class="featured-list" id="gridList"><p style="color:var(--muted);font-size:12px;text-align:center;padding:20px">GitHub 연결 후 로드됩니다.</p></div>
+      <div style="font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">그리드에 추가</div>
+      <div class="available-chips" id="gridAvailable"></div>
     </div>
   </div>
 
-  <!-- WORKS LIST -->
-  <div class="works-section">
-    <h3>
-      <span>Works (<span id="totalCount">0</span>)</span>
-      <button class="btn btn-ghost btn-sm" onclick="loadWorks()">↻ Refresh</button>
-    </h3>
+  <!-- TAB: WORKS LIST -->
+  <div id="tab-list" style="display:none">
+    <div class="section-header">
+      <span class="section-title">전체 작품 <span id="totalCount" style="color:var(--muted);font-weight:400;font-size:14px">0</span></span>
+      <button class="btn btn-ghost btn-sm" onclick="loadWorks()">↻ 새로고침</button>
+    </div>
     <div class="works-list" id="worksList">
-      <p style="color:var(--muted);text-align:center;padding:40px 0">Connect to GitHub to load works.</p>
+      <p style="color:var(--muted);text-align:center;padding:40px 0">GitHub 연결 후 작품 목록이 표시됩니다.</p>
     </div>
   </div>
 </div>
@@ -250,44 +523,304 @@ select.form-input{cursor:pointer}
 <div class="toast" id="toast"></div>
 
 <script>
+/* ═══ PIN LOCK ═══ */
+const ADMIN_PIN = '1234'; // 원하는 PIN으로 변경
+let pinBuffer = '';
+
+function pinInput(d){
+  if(!d) return;
+  if(pinBuffer.length >= 4) return;
+  pinBuffer += d;
+  updatePinDots();
+  if(pinBuffer.length === 4) setTimeout(checkPin, 120);
+}
+
+function pinDelete(){
+  if(pinBuffer.length > 0){ pinBuffer = pinBuffer.slice(0,-1); updatePinDots(); }
+}
+
+function updatePinDots(){
+  for(let i=0;i<4;i++){
+    const el=document.getElementById('pd'+i);
+    el.classList.toggle('filled', i < pinBuffer.length);
+    el.classList.remove('error');
+  }
+}
+
+function checkPin(){
+  if(pinBuffer === ADMIN_PIN){
+    document.getElementById('pinLock').style.opacity='0';
+    document.getElementById('pinLock').style.transition='opacity .4s';
+    setTimeout(()=>{ document.getElementById('pinLock').style.display='none'; document.getElementById('adminWrap').style.display=''; },400);
+    sessionStorage.setItem('beardos_auth','1');
+  } else {
+    document.querySelectorAll('.pin-dot').forEach(d=>d.classList.add('error'));
+    setTimeout(()=>{ pinBuffer=''; updatePinDots(); },600);
+  }
+}
+
+// Skip PIN if already authenticated this session
+if(sessionStorage.getItem('beardos_auth')==='1'){
+  document.getElementById('pinLock').style.display='none';
+  document.getElementById('adminWrap').style.display='';
+}
+
+/* ═══ CLOUDINARY UPLOAD TARGET ═══ */
+document.getElementById('imgUploadTarget').addEventListener('change',function(){
+  document.getElementById('cloudinaryConfig').style.display = this.value==='cloudinary'?'':'none';
+});
+
+async function uploadImageCloudinary(slug){
+  const name = document.getElementById('cloudName').value.trim();
+  const preset = document.getElementById('cloudPreset').value.trim();
+  if(!name||!preset){ toast('Cloud Name과 Upload Preset을 입력하세요.','error'); return null; }
+  const blob = await (await fetch(imgBase64)).blob();
+  const fd = new FormData();
+  fd.append('file', blob);
+  fd.append('upload_preset', preset);
+  fd.append('public_id', `beardos/works/${slug}`);
+  fd.append('overwrite','true');
+  const r = await fetch(`https://api.cloudinary.com/v1_1/${name}/image/upload`, {method:'POST',body:fd});
+  const d = await r.json();
+  return d.secure_url || null;
+}
+
+/* ═══ DESCRIPTION MODAL ═══ */
+let _modalGi = null, _modalType = null;
+
+function openDescModal(gi, type){
+  const w = works[gi]; if(!w) return;
+  _modalGi = gi; _modalType = type;
+  document.getElementById('modalTitle').textContent = type==='feat' ? '히어로 설명 편집' : '그리드 설명 편집';
+  document.getElementById('modalSub').textContent = w.en + ' · ' + w.y;
+  document.getElementById('modalDescEn').value = w.dE||'';
+  document.getElementById('modalDescKo').value = w.dK||'';
+  document.getElementById('descModal').classList.add('open');
+  document.getElementById('modalDescEn').focus();
+}
+
+function closeModal(){
+  document.getElementById('descModal').classList.remove('open');
+  _modalGi=null; _modalType=null;
+}
+
+async function saveModal(){
+  if(_modalGi===null) return;
+  const w=works[_modalGi];
+  w.dE = document.getElementById('modalDescEn').value.trim();
+  w.dK = document.getElementById('modalDescKo').value.trim();
+  closeModal();
+  const ok = await commitWorks(`Update desc: ${w.en}`);
+  if(ok){ renderFeatured(); renderHomeGrid(); }
+}
+
+// Close modal on overlay click
+document.getElementById('descModal').addEventListener('click',function(e){
+  if(e.target===this) closeModal();
+});
+
+// Keyboard: Enter to save, Esc to close
+document.addEventListener('keydown',function(e){
+  if(document.getElementById('descModal').classList.contains('open')){
+    if(e.key==='Escape') closeModal();
+  }
+  // PIN input via keyboard
+  if(document.getElementById('pinLock').style.display!=='none'){
+    if(e.key>='0'&&e.key<='9') pinInput(e.key);
+    if(e.key==='Backspace') pinDelete();
+  }
+});
+
 const REPO = 'suky79/suky79.github.io';
 const FILE = 'works.json';
 const TMDB_KEY = '953ab5c0680706b5f7447d45b19ca8f1';
 const TP = 'https://image.tmdb.org/t/p/w185';
 const GE = {영화:'Film',뮤지컬:'Musical',연극:'Theatre',책:'Book',저서:'Authored'};
 const GRADS = ['g1','g2','g3','g4','g5','g6','g7','g8','g9','g10','g11','g12','g13','g14','g15'];
+const BADGE_CLASS = {영화:'badge-film',뮤지컬:'badge-musical',연극:'badge-theatre',책:'badge-book',저서:'badge-authored'};
 
-let ghToken = '';
-let works = [];
-let editIdx = -1;
-let fileSha = '';
+let ghToken='', works=[], editIdx=-1, fileSha='';
+let currentGenre='영화', imgBase64=null, imgFileName='', imgSource='upload';
+
+/* ═══ TAB ═══ */
+function switchTab(t){
+  ['add','featured','grid','list'].forEach(id=>{
+    document.getElementById('tab-'+id).style.display = id===t?'':'none';
+  });
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{
+    b.classList.toggle('active',['add','featured','grid','list'][i]===t);
+  });
+}
+
+/* ═══ GENRE ═══ */
+function setGenre(g){
+  currentGenre = g;
+  document.querySelectorAll('.genre-pill').forEach(p=>p.classList.remove('active'));
+  document.getElementById('pill-'+g).classList.add('active');
+
+  // Show/hide sections
+  document.getElementById('section-film').classList.toggle('visible', g==='영화');
+  document.getElementById('section-perf').classList.toggle('visible', g==='뮤지컬'||g==='연극');
+  document.getElementById('section-book').classList.toggle('visible', g==='책'||g==='저서');
+
+  // Show/hide form fields
+  document.querySelectorAll('.film-only').forEach(el=>el.style.display=g==='영화'?'':'none');
+  document.querySelectorAll('.perf-only').forEach(el=>el.style.display=(g==='뮤지컬'||g==='연극')?'':'none');
+  document.querySelectorAll('.book-only').forEach(el=>el.style.display=(g==='책'||g==='저서')?'':'none');
+
+  // Badge
+  document.getElementById('formBadge').textContent = GE[g]||g;
+
+  // Reset links to genre defaults
+  renderDefaultLinks(g);
+}
+
+function renderDefaultLinks(g){
+  const list = document.getElementById('linksList');
+  list.innerHTML='';
+  if(g==='영화'){
+    addLinkRow('IMDb','','#f5c518','#000');
+    addLinkRow('RT','','#fa320a','#fff');
+  } else if(g==='뮤지컬'||g==='연극'){
+    addLinkRow('인터파크','','#e61e25','#fff');
+    addLinkRow('YES24','','#e61e25','#fff');
+  } else if(g==='책'||g==='저서'){
+    addLinkRow('알라딘','','#ef6f18','#fff');
+    addLinkRow('교보문고','','#5c8a4d','#fff');
+  }
+}
+
+/* ═══ IMAGE HANDLING ═══ */
+function setImgSource(s){
+  imgSource = s;
+  document.getElementById('img-upload-pane').style.display = s==='upload'?'':'none';
+  document.getElementById('img-url-pane').style.display = s==='url'?'':'none';
+  document.querySelectorAll('.img-source-btn').forEach((b,i)=>
+    b.classList.toggle('active',['upload','url'][i]===s)
+  );
+}
+
+function handleImgDrop(e){
+  e.preventDefault();
+  document.getElementById('imgDropZone').classList.remove('drag-over');
+  const f = e.dataTransfer.files[0];
+  if(f && f.type.startsWith('image/')) handleImgFile(f);
+}
+
+function handleImgFile(f){
+  if(!f) return;
+  if(f.size > 5*1024*1024){ toast('이미지 크기는 5MB 이하여야 합니다.','error'); return; }
+  imgFileName = f.name;
+  const reader = new FileReader();
+  reader.onload = e=>{
+    imgBase64 = e.target.result;
+    document.getElementById('imgPreviewImg').src = imgBase64;
+    document.getElementById('imgFileName').textContent = f.name + ' (' + (f.size/1024).toFixed(0) + 'KB)';
+    document.getElementById('imgPlaceholder').style.display='none';
+    document.getElementById('imgPreviewWrap').style.display='block';
+  };
+  reader.readAsDataURL(f);
+}
+
+function clearImage(e){
+  e.stopPropagation();
+  imgBase64=null; imgFileName='';
+  document.getElementById('imgPreviewWrap').style.display='none';
+  document.getElementById('imgPlaceholder').style.display='block';
+  document.getElementById('imgFile').value='';
+}
+
+function previewPosterUrl(url){
+  const w = document.getElementById('urlPreviewWrap');
+  const img = document.getElementById('urlPreviewImg');
+  if(url){ img.src=url; w.style.display='block'; } else { w.style.display='none'; }
+}
+
+/* Upload image to GitHub */
+async function uploadImageToGitHub(slug){
+  if(!imgBase64) return null;
+  const path = `images/works/${slug}.jpg`;
+  const base64Data = imgBase64.split(',')[1];
+
+  // Check if file exists
+  let existingSha;
+  try{
+    const check = await ghFetch(`https://api.github.com/repos/${REPO}/contents/${path}`);
+    if(check.sha) existingSha = check.sha;
+  }catch(e){}
+
+  const body = {
+    message: `Upload poster: ${slug}`,
+    content: base64Data,
+    ...(existingSha && {sha: existingSha})
+  };
+
+  const prog = document.getElementById('uploadProgress');
+  const bar = document.getElementById('uploadProgressBar');
+  prog.style.display='block'; bar.style.width='30%';
+
+  const r = await ghFetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
+    method:'PUT', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)
+  });
+
+  bar.style.width='100%';
+  setTimeout(()=>{ prog.style.display='none'; bar.style.width='0%'; },600);
+
+  if(r.content?.download_url) return r.content.download_url;
+  if(r.content?.html_url){
+    return `https://raw.githubusercontent.com/${REPO}/main/${path}`;
+  }
+  return null;
+}
+
+/* ═══ LINKS BUILDER ═══ */
+function addLinkRow(name='', url='', bg='#888', color='#fff'){
+  const list = document.getElementById('linksList');
+  const row = document.createElement('div');
+  row.className='link-row';
+  row.innerHTML=`
+    <input class="form-input link-label" placeholder="라벨" value="${name}" style="width:80px;flex:0 0 80px">
+    <input class="form-input" placeholder="URL (https://...)" value="${url}" style="flex:1">
+    <input class="form-input" type="color" value="${bg}" style="width:40px;flex:0 0 40px;padding:4px">
+    <button class="link-row-remove" onclick="this.parentElement.remove()">✕</button>`;
+  list.appendChild(row);
+}
+
+function getLinks(){
+  const rows = document.getElementById('linksList').querySelectorAll('.link-row');
+  return Array.from(rows).map(r=>{
+    const inputs = r.querySelectorAll('input');
+    const name = inputs[0].value.trim();
+    const url = inputs[1].value.trim();
+    const bg = inputs[2].value;
+    if(!name || !url) return null;
+    return {n:name, bg, c:bg==='#f5c518'||bg==='#f0c040'?'#000':'#fff', u:url};
+  }).filter(Boolean);
+}
 
 /* ═══ AUTH ═══ */
 async function authenticate(){
   ghToken = document.getElementById('ghToken').value.trim();
-  if(!ghToken){ showStatus('Please enter a token.','err'); return; }
+  if(!ghToken){ showStatus('토큰을 입력해주세요.','err'); return; }
   try{
     const r = await ghFetch('https://api.github.com/user');
     if(r.login){
-      showStatus(`Connected as ${r.login}`,'ok');
+      showStatus(`✓ ${r.login} 로 연결됨`,'ok');
       loadWorks();
-    } else {
-      showStatus('Invalid token.','err');
-    }
-  }catch(e){ showStatus('Connection failed.','err'); }
+    } else { showStatus('토큰이 유효하지 않습니다.','err'); }
+  }catch(e){ showStatus('연결 실패.','err'); }
 }
 
 function showStatus(msg,type){
   const el = document.getElementById('authStatus');
-  el.textContent = msg;
-  el.className = 'auth-status ' + type;
+  el.textContent=msg; el.className='auth-status '+type;
 }
 
 /* ═══ GITHUB API ═══ */
 async function ghFetch(url, opts={}){
   const r = await fetch(url, {
     ...opts,
-    headers: { 'Authorization': `Bearer ${ghToken}`, 'Accept': 'application/vnd.github+json', ...(opts.headers||{}) }
+    headers: {'Authorization':`Bearer ${ghToken}`,'Accept':'application/vnd.github+json',...(opts.headers||{})}
   });
   return r.json();
 }
@@ -297,67 +830,42 @@ async function loadWorks(){
   try{
     const r = await ghFetch(`https://api.github.com/repos/${REPO}/contents/${FILE}`);
     if(r.content){
-      fileSha = r.sha;
+      fileSha=r.sha;
       works = JSON.parse(atob(r.content.replace(/\n/g,'')));
-      renderWorksList();
-      renderFeatured();
-      renderHomeGrid();
-      document.getElementById('featuredSection').style.display='';
-      document.getElementById('gridSection').style.display='';
-    } else {
-      works = [];
-      fileSha = '';
-      renderWorksList();
-      renderFeatured();
-      renderHomeGrid();
+      renderWorksList(); renderFeatured(); renderHomeGrid();
+      document.getElementById('totalCount').textContent = works.length;
     }
-  }catch(e){
-    toast('Failed to load works.','error');
-  }
+  }catch(e){ toast('works.json 로드 실패','error'); }
 }
 
-/* ═══ SAVE TO GITHUB ═══ */
+/* ═══ COMMIT ═══ */
 async function commitWorks(message){
-  if(!ghToken){ toast('Connect to GitHub first.','error'); return false; }
+  if(!ghToken){ toast('GitHub에 먼저 연결하세요.','error'); return false; }
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(works, null, 2))));
-  const body = { message, content, sha: fileSha || undefined };
+  const body = {message, content, ...(fileSha && {sha:fileSha})};
   try{
     const r = await ghFetch(`https://api.github.com/repos/${REPO}/contents/${FILE}`, {
-      method: 'PUT',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify(body)
+      method:'PUT', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)
     });
-    if(r.content){
-      fileSha = r.content.sha;
-      toast('Saved & deployed!','success');
-      return true;
-    } else {
-      toast('Save failed: '+(r.message||'unknown error'),'error');
-      return false;
-    }
-  }catch(e){
-    toast('Save failed.','error');
-    return false;
-  }
+    if(r.content){ fileSha=r.content.sha; toast('저장 완료 ✓','success'); return true; }
+    toast('저장 실패: '+(r.message||'오류'),'error'); return false;
+  }catch(e){ toast('저장 실패','error'); return false; }
 }
 
 /* ═══ TMDB SEARCH ═══ */
 async function searchTMDB(){
   const q = document.getElementById('tmdbQuery').value.trim();
   if(!q) return;
-  const r = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_KEY}&query=${encodeURIComponent(q)}&language=en-US`);
+  const r = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_KEY}&query=${encodeURIComponent(q)}&language=ko-KR`);
   const d = await r.json();
   const el = document.getElementById('tmdbResults');
-  if(!d.results||!d.results.length){ el.innerHTML='<p style="color:var(--muted);font-size:12px;padding:8px">No results found.</p>'; return; }
+  if(!d.results?.length){ el.innerHTML='<p style="color:var(--muted);font-size:12px;padding:8px">결과 없음</p>'; return; }
   el.innerHTML = d.results.slice(0,8).map((m,i)=>{
     const poster = m.poster_path ? TP+m.poster_path : '';
     const yr = m.release_date ? m.release_date.substring(0,4) : '—';
     return `<div class="tmdb-result" onclick="selectTMDB(${i})" data-idx="${i}">
-      ${poster ? `<img src="${poster}" alt="">` : `<div style="aspect-ratio:2/3;background:#1e1e1e;display:flex;align-items:center;justify-content:center;font-size:11px;color:#555">No poster</div>`}
-      <div class="tmdb-result-info">
-        <div class="tmdb-result-title">${m.title}</div>
-        <div class="tmdb-result-year">${yr}</div>
-      </div>
+      ${poster?`<img src="${poster}" alt="">`:`<div style="aspect-ratio:2/3;background:var(--bg4);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted)">No poster</div>`}
+      <div class="tmdb-result-info"><div class="tmdb-result-title">${m.title}</div><div class="tmdb-result-year">${yr}</div></div>
     </div>`;
   }).join('');
   window._tmdbResults = d.results.slice(0,8);
@@ -367,10 +875,10 @@ function selectTMDB(idx){
   const m = window._tmdbResults[idx];
   if(!m) return;
   document.querySelectorAll('.tmdb-result').forEach((el,i)=>el.classList.toggle('selected',i===idx));
-  document.getElementById('fEn').value = m.title || '';
+  document.getElementById('fEn').value = m.original_title || m.title || '';
+  document.getElementById('fKo').value = m.title !== m.original_title ? m.title : '';
   document.getElementById('fYear').value = m.release_date ? m.release_date.substring(0,4) : '';
   document.getElementById('fTmdb').value = m.id || '';
-  // Try to get IMDb ID
   fetch(`https://api.themoviedb.org/3/movie/${m.id}/external_ids?api_key=${TMDB_KEY}`)
     .then(r=>r.json()).then(d=>{
       if(d.imdb_id) document.getElementById('fImdb').value = `https://www.imdb.com/title/${d.imdb_id}/`;
@@ -380,35 +888,75 @@ function selectTMDB(idx){
 /* ═══ SAVE WORK ═══ */
 async function saveWork(){
   const en = document.getElementById('fEn').value.trim();
-  const ko = document.getElementById('fKo').value.trim();
-  const genre = document.getElementById('fGenre').value;
   const year = parseInt(document.getElementById('fYear').value);
-  const sub = document.getElementById('fSub').value.trim();
-  const tmdb = parseInt(document.getElementById('fTmdb').value) || null;
-  const imdb = document.getElementById('fImdb').value.trim();
-  const feat = document.getElementById('fFeat').value === 'true';
-  const dE = document.getElementById('fDescEn').value.trim();
-  const dK = document.getElementById('fDescKo').value.trim();
+  if(!en||!year){ toast('제목과 연도는 필수입니다.','error'); return; }
 
-  if(!en || !year){ toast('Title and Year are required.','error'); return; }
+  const btn = document.getElementById('saveBtn');
+  btn.disabled=true; btn.innerHTML='<span class="spinner"></span>저장 중...';
 
-  const spine = editIdx >= 0 ? works[editIdx].s : String(works.length+1).padStart(3,'0');
-  const gr = editIdx >= 0 ? works[editIdx].gr : GRADS[works.length % GRADS.length];
+  try{
+    // Upload image if needed
+    let posterUrl = null;
+    if(imgSource==='upload' && imgBase64){
+      const slug = en.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+      const target = document.getElementById('imgUploadTarget').value;
+      posterUrl = target==='cloudinary' ? await uploadImageCloudinary(slug) : await uploadImageToGitHub(slug);
+      if(!posterUrl){ toast('이미지 업로드 실패','error'); return; }
+    } else if(imgSource==='url'){
+      const u = document.getElementById('fPosterUrl').value.trim();
+      if(u) posterUrl = u;
+    }
 
-  const lk = [];
-  if(imdb) lk.push({n:'IMDb',bg:'#f5c518',c:'#000',u:imdb});
+    const spine = editIdx>=0 ? works[editIdx].s : String(works.length+1).padStart(3,'0');
+    const gr = editIdx>=0 ? works[editIdx].gr : GRADS[works.length % GRADS.length];
 
-  const home = editIdx >= 0 ? (works[editIdx].home || false) : false;
-  const work = { s:spine, g:genre, ko:ko||en, en, sub:sub||'', y:year, t:tmdb, gr, feat, home, dK:dK||'', dE:dE||'', lk };
+    // Genre-specific fields
+    const extraFields = {};
+    if(currentGenre==='뮤지컬'||currentGenre==='연극'){
+      const kid = document.getElementById('fKid').value.trim();
+      const venue = document.getElementById('fVenue').value.trim();
+      const runtime = parseInt(document.getElementById('fRuntime').value)||null;
+      if(kid) extraFields.kid = kid;
+      if(venue) extraFields.venue = venue;
+      if(runtime) extraFields.runtime = runtime;
+    } else if(currentGenre==='책'||currentGenre==='저서'){
+      const isbn = document.getElementById('fIsbn').value.trim();
+      const publisher = document.getElementById('fPublisher').value.trim();
+      if(isbn) extraFields.isbn = isbn;
+      if(publisher) extraFields.publisher = publisher;
+    }
 
-  if(editIdx >= 0){
-    works[editIdx] = work;
-    const ok = await commitWorks(`Update: ${en}`);
-    if(ok){ resetForm(); renderWorksList(); renderFeatured(); renderHomeGrid(); }
-  } else {
-    works.push(work);
-    const ok = await commitWorks(`Add: ${en}`);
-    if(ok){ resetForm(); renderWorksList(); renderFeatured(); renderHomeGrid(); }
+    const work = {
+      s: spine,
+      g: currentGenre,
+      ko: document.getElementById('fKo').value.trim() || en,
+      en,
+      sub: document.getElementById('fSub').value.trim() || '',
+      y: year,
+      t: currentGenre==='영화' ? (parseInt(document.getElementById('fTmdb').value)||null) : null,
+      gr,
+      feat: document.getElementById('fFeat').value==='true',
+      home: editIdx>=0 ? (works[editIdx].home||false) : false,
+      dK: document.getElementById('fDescKo').value.trim()||'',
+      dE: document.getElementById('fDescEn').value.trim()||'',
+      lk: getLinks(),
+      ...(posterUrl && {poster: posterUrl}),
+      ...extraFields
+    };
+
+    if(editIdx>=0){
+      // Keep existing poster if no new one uploaded
+      if(!posterUrl && works[editIdx].poster) work.poster = works[editIdx].poster;
+      works[editIdx]=work;
+      const ok = await commitWorks(`Update: ${en}`);
+      if(ok){ resetForm(); renderWorksList(); renderFeatured(); renderHomeGrid(); }
+    } else {
+      works.push(work);
+      const ok = await commitWorks(`Add: ${en}`);
+      if(ok){ resetForm(); renderWorksList(); renderFeatured(); renderHomeGrid(); }
+    }
+  } finally {
+    btn.disabled=false; btn.textContent= editIdx>=0?'작품 업데이트':'작품 저장';
   }
 }
 
@@ -416,319 +964,254 @@ async function saveWork(){
 function editWork(idx){
   const w = works[idx];
   if(!w) return;
-  editIdx = idx;
-  document.getElementById('formTitle').textContent = `Edit: ${w.en}`;
-  document.getElementById('saveBtn').textContent = 'Update Work';
+  editIdx=idx;
+  switchTab('add');
+  window.scrollTo({top:0,behavior:'smooth'});
+
+  setGenre(w.g);
+  document.getElementById('formTitle').textContent = `수정: ${w.en}`;
+  document.getElementById('saveBtn').textContent = '작품 업데이트';
   document.getElementById('fEn').value = w.en;
   document.getElementById('fKo').value = w.ko;
-  document.getElementById('fGenre').value = w.g;
   document.getElementById('fYear').value = w.y;
   document.getElementById('fSub').value = w.sub;
-  document.getElementById('fTmdb').value = w.t || '';
-  document.getElementById('fFeat').value = w.feat ? 'true' : 'false';
-  document.getElementById('fDescEn').value = w.dE || '';
-  document.getElementById('fDescKo').value = w.dK || '';
-  const imdbLink = w.lk.find(l=>l.n==='IMDb');
-  document.getElementById('fImdb').value = imdbLink ? imdbLink.u : '';
-  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('fFeat').value = w.feat?'true':'false';
+  document.getElementById('fDescEn').value = w.dE||'';
+  document.getElementById('fDescKo').value = w.dK||'';
+
+  if(w.g==='영화'){
+    document.getElementById('fTmdb').value = w.t||'';
+    const imdb = w.lk?.find(l=>l.n==='IMDb'); if(imdb) document.getElementById('fImdb').value = imdb.u;
+    const rt = w.lk?.find(l=>l.n==='RT'); if(rt) document.getElementById('fRt').value = rt.u;
+  } else if(w.g==='뮤지컬'||w.g==='연극'){
+    document.getElementById('fKid').value = w.kid||'';
+    document.getElementById('fVenue').value = w.venue||'';
+    document.getElementById('fRuntime').value = w.runtime||'';
+    const ticket = w.lk?.find(l=>l.n==='인터파크'||l.n==='YES24'); if(ticket) document.getElementById('fTicket').value = ticket.u;
+  } else if(w.g==='책'||w.g==='저서'){
+    document.getElementById('fIsbn').value = w.isbn||'';
+    document.getElementById('fPublisher').value = w.publisher||'';
+    const aladin = w.lk?.find(l=>l.n==='알라딘'); if(aladin) document.getElementById('fAladin').value = aladin.u;
+    const kyobo = w.lk?.find(l=>l.n==='교보문고'); if(kyobo) document.getElementById('fKyobo').value = kyobo.u;
+  }
+
+  // Show existing poster
+  if(w.poster){
+    setImgSource('url');
+    document.getElementById('fPosterUrl').value = w.poster;
+    previewPosterUrl(w.poster);
+  }
+
+  // Rebuild links (excluding genre defaults already covered above)
+  document.getElementById('linksList').innerHTML='';
+  (w.lk||[]).forEach(l=>addLinkRow(l.n,l.u,l.bg,l.c));
 }
 
 /* ═══ DELETE ═══ */
 async function deleteWork(idx){
   const w = works[idx];
-  if(!confirm(`Delete "${w.en}"?`)) return;
+  if(!confirm(`"${w.en}" 을(를) 삭제할까요?`)) return;
   works.splice(idx,1);
-  // Re-number spines
-  works.forEach((w,i)=>w.s = String(i+1).padStart(3,'0'));
+  works.forEach((w,i)=>w.s=String(i+1).padStart(3,'0'));
   const ok = await commitWorks(`Delete: ${w.en}`);
-  if(ok){ renderWorksList(); renderFeatured(); renderHomeGrid(); }
-}
-
-/* ═══ MOVE ═══ */
-async function moveWork(idx, dir){
-  const newIdx = idx + dir;
-  if(newIdx < 0 || newIdx >= works.length) return;
-  [works[idx], works[newIdx]] = [works[newIdx], works[idx]];
-  works.forEach((w,i)=>w.s = String(i+1).padStart(3,'0'));
-  const ok = await commitWorks(`Reorder works`);
   if(ok){ renderWorksList(); renderFeatured(); renderHomeGrid(); }
 }
 
 /* ═══ RESET FORM ═══ */
 function resetForm(){
-  editIdx = -1;
-  document.getElementById('formTitle').textContent = 'Add New Work';
-  document.getElementById('saveBtn').textContent = 'Add Work';
-  ['fEn','fKo','fYear','fSub','fTmdb','fImdb','fDescEn','fDescKo','tmdbQuery'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('fGenre').value = '영화';
-  document.getElementById('fFeat').value = 'false';
-  document.getElementById('tmdbResults').innerHTML = '';
+  editIdx=-1; imgBase64=null; imgFileName='';
+  document.getElementById('formTitle').textContent='작품 추가';
+  document.getElementById('saveBtn').textContent='작품 저장';
+  ['fEn','fKo','fYear','fSub','fTmdb','fImdb','fRt','fKid','fVenue','fRuntime','fTicket','fIsbn','fPublisher','fAladin','fKyobo','fDescEn','fDescKo','fPosterUrl','tmdbQuery'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.value='';
+  });
+  document.getElementById('fFeat').value='false';
+  document.getElementById('tmdbResults').innerHTML='';
+  document.getElementById('imgPreviewWrap').style.display='none';
+  document.getElementById('imgPlaceholder').style.display='block';
+  document.getElementById('urlPreviewWrap').style.display='none';
+  setGenre('영화');
+  setImgSource('upload');
 }
 
-/* ═══ RENDER LIST ═══ */
+/* ═══ RENDER WORKS LIST ═══ */
 function renderWorksList(){
   document.getElementById('totalCount').textContent = works.length;
   const el = document.getElementById('worksList');
-  if(!works.length){
-    el.innerHTML = '<p style="color:var(--muted);text-align:center;padding:40px 0">No works yet. Add your first one above.</p>';
-    return;
-  }
+  if(!works.length){ el.innerHTML='<p style="color:var(--muted);text-align:center;padding:40px 0">작품이 없습니다.</p>'; return; }
   el.innerHTML = works.map((w,i)=>{
-    const posterUrl = w.t ? `https://image.tmdb.org/t/p/w92/${w.t}` : ''; // placeholder
-    const badge = GE[w.g] || w.g;
-    return `
-    <div class="work-item">
-      <div class="work-item-poster" id="poster-${i}"><div style="width:100%;height:100%;background:var(--bg3);border-radius:2px"></div></div>
+    const badge = GE[w.g]||w.g;
+    const bc = BADGE_CLASS[w.g]||'badge-film';
+    const posterSrc = w.poster || (w.t ? `https://image.tmdb.org/t/p/w92_and_h138_bestv2${(window._posterCache&&window._posterCache[w.t])||''}` : '');
+    return `<div class="work-item">
+      <div class="work-item-poster" id="adminposter-${i}">${posterSrc?`<img src="${w.poster||''}" alt="" onerror="this.style.display='none'">`:''}</div>
       <div class="work-item-info">
         <div class="work-item-title">${w.s} — ${w.en}</div>
-        <div class="work-item-meta">${w.ko!==w.en?w.ko+' · ':''}${w.y} · ${w.sub}</div>
+        <div class="work-item-meta">${w.ko!==w.en?w.ko+' · ':''}${w.y}${w.sub?' · '+w.sub:''}</div>
       </div>
-      <span class="work-item-badge">${badge}</span>
-      ${w.feat?'<span style="font-size:10px;color:var(--accent)" title="Hero Featured">★</span>':''}${w.home?'<span style="font-size:10px;color:var(--green)" title="Grid Showcase">◆</span>':''}
+      <span class="work-item-badge ${bc}">${badge}</span>
+      <div class="work-item-flags">
+        ${w.feat?'<span class="flag flag-feat">★ 히어로</span>':''}
+        ${w.home?'<span class="flag flag-home">◆ 그리드</span>':''}
+        ${w.poster?'<span class="flag flag-img">🖼 이미지</span>':''}
+      </div>
       <div class="work-item-actions">
-        <button class="btn btn-ghost btn-sm" onclick="moveWork(${i},-1)" ${i===0?'disabled':''}>↑</button>
-        <button class="btn btn-ghost btn-sm" onclick="moveWork(${i},1)" ${i===works.length-1?'disabled':''}>↓</button>
-        <button class="btn btn-ghost btn-sm" onclick="editWork(${i})">Edit</button>
-        <button class="btn btn-danger btn-sm" onclick="deleteWork(${i})">✕</button>
+        <button class="btn btn-ghost btn-sm" onclick="editWork(${i})">수정</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteWork(${i})">삭제</button>
       </div>
     </div>`;
   }).join('');
 
-  // Load posters for items with TMDB IDs
+  // Async load TMDB posters for films
   works.forEach((w,i)=>{
-    if(!w.t) return;
-    fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}&language=en-US`)
+    if(!w.t || w.poster) return;
+    fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}`)
       .then(r=>r.json()).then(d=>{
         if(d.poster_path){
-          const el = document.getElementById(`poster-${i}`);
-          if(el) el.innerHTML = `<img src="${TP}${d.poster_path}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:2px">`;
+          const el=document.getElementById(`adminposter-${i}`);
+          if(el) el.innerHTML=`<img src="https://image.tmdb.org/t/p/w92${d.poster_path}" style="width:100%;height:100%;object-fit:cover">`;
         }
       }).catch(()=>{});
   });
 }
 
-/* ═══ HOMEPAGE GRID MANAGEMENT ═══ */
-function renderHomeGrid(){
-  const gridList = document.getElementById('gridList');
-  const gridAvail = document.getElementById('gridAvailable');
-  const inGrid = works.filter(w=>w.home);
-  const notInGrid = works.filter(w=>!w.home);
-
-  if(!inGrid.length){
-    gridList.innerHTML='<p style="color:var(--muted);font-size:12px;padding:12px;text-align:center;background:var(--bg3);border-radius:4px">No showcase items yet. Add works below.</p>';
-  } else {
-    gridList.innerHTML = inGrid.map((w,i)=>{
-      const gi = works.indexOf(w);
-      const badge = GE[w.g]||w.g;
-      const descPreview = w.dE ? w.dE.replace(/\n/g,' ').substring(0,50)+'…' : 'No description';
-      return `
-      <div class="featured-item">
-        <div class="featured-item-num" style="color:${w.g==='뮤지컬'?'#e879a8':w.g==='저서'?'#7bc47b':w.g==='책'?'#5b9bd5':'var(--accent)'}">${badge}</div>
-        <div class="featured-item-poster" id="gposter-${gi}"></div>
-        <div class="featured-item-info">
-          <div class="featured-item-title">${w.en}</div>
-          <div class="featured-item-meta">${w.y} · ${w.ko!==w.en?w.ko:''}</div>
-          <div class="featured-item-desc">${descPreview}</div>
-        </div>
-        <div class="featured-item-actions">
-          <button class="btn btn-ghost btn-sm" onclick="editGridDesc(${gi})" title="Edit description">✏️</button>
-          <button class="btn btn-danger btn-sm" onclick="removeFromGrid(${gi})" title="Remove">✕</button>
-        </div>
-      </div>`;
-    }).join('');
-
-    inGrid.forEach(w=>{
-      const gi=works.indexOf(w);
-      if(!w.t) return;
-      fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}&language=en-US`)
-        .then(r=>r.json()).then(d=>{
-          if(d.poster_path){
-            const el=document.getElementById(`gposter-${gi}`);
-            if(el) el.innerHTML=`<img src="${TP}${d.poster_path}" style="width:100%;height:100%;object-fit:cover;border-radius:2px">`;
-          }
-        }).catch(()=>{});
-    });
-  }
-
-  gridAvail.innerHTML = notInGrid.map(w=>{
-    const gi = works.indexOf(w);
-    const badge = GE[w.g]||w.g;
-    return `<div class="featured-add-chip" onclick="addToGrid(${gi})">
-      <span>＋</span> ${w.en} <span style="color:var(--muted);font-size:10px">${badge}</span>
-    </div>`;
-  }).join('') || '<p style="color:var(--muted);font-size:12px">All works are in the grid.</p>';
-}
-
-async function addToGrid(globalIdx){
-  const w = works[globalIdx];
-  if(!w) return;
-  w.home = true;
-  if(!w.dE){
-    const desc = prompt(`Enter English description for "${w.en}" (shown on homepage grid):`);
-    if(desc) w.dE = desc;
-    const descKo = prompt(`Korean description (optional):`);
-    if(descKo) w.dK = descKo;
-  }
-  const ok = await commitWorks(`Add to grid: ${w.en}`);
-  if(ok) renderHomeGrid();
-}
-
-async function removeFromGrid(globalIdx){
-  const w = works[globalIdx];
-  if(!w || !confirm(`Remove "${w.en}" from homepage grid?`)) return;
-  w.home = false;
-  const ok = await commitWorks(`Remove from grid: ${w.en}`);
-  if(ok) renderHomeGrid();
-}
-
-function editGridDesc(globalIdx){
-  const w = works[globalIdx];
-  if(!w) return;
-  const dE = prompt('English description:', w.dE||'');
-  if(dE===null) return;
-  w.dE = dE;
-  const dK = prompt('Korean description:', w.dK||'');
-  if(dK!==null) w.dK = dK;
-  commitWorks(`Update grid desc: ${w.en}`).then(ok=>{
-    if(ok) renderHomeGrid();
-  });
-}
-
-/* ═══ FEATURED MANAGEMENT ═══ */
+/* ═══ FEATURED ═══ */
 function renderFeatured(){
-  const featList = document.getElementById('featuredList');
-  const availList = document.getElementById('featuredAvailable');
-  const featured = works.filter(w=>w.feat);
-  const nonFeatured = works.filter(w=>!w.feat);
+  const list=document.getElementById('featuredList');
+  const avail=document.getElementById('featuredAvailable');
+  const featured=works.filter(w=>w.feat);
+  const rest=works.filter(w=>!w.feat);
 
-  // Render current featured items
-  if(!featured.length){
-    featList.innerHTML='<p style="color:var(--muted);font-size:12px;padding:12px;text-align:center;background:var(--bg3);border-radius:4px">No featured works yet. Add works below.</p>';
-  } else {
-    featList.innerHTML = featured.map((w,fi)=>{
-      const globalIdx = works.indexOf(w);
-      const posterHtml = w.t ? `<img src="${TP}/??" alt="" id="fposter-${globalIdx}">` : '';
-      const descPreview = w.dE ? w.dE.replace(/\n/g,' ').substring(0,50)+'…' : 'No description';
-      return `
-      <div class="featured-item" draggable="true" data-feat-idx="${fi}" data-global-idx="${globalIdx}"
-           ondragstart="featDragStart(event)" ondragover="featDragOver(event)" ondragleave="featDragLeave(event)" ondrop="featDrop(event)">
-        <div class="featured-item-num">${fi+1}</div>
-        <div class="featured-item-poster" id="fposter-${globalIdx}"></div>
-        <div class="featured-item-info">
-          <div class="featured-item-title">${w.en}</div>
-          <div class="featured-item-meta">${w.y} · ${GE[w.g]||w.g}</div>
-          <div class="featured-item-desc">${descPreview}</div>
-        </div>
-        <div class="featured-item-actions">
-          <button class="btn btn-ghost btn-sm" onclick="editFeatDesc(${globalIdx})" title="Edit description">✏️</button>
-          <button class="btn btn-danger btn-sm" onclick="removeFromFeatured(${globalIdx})" title="Remove from featured">✕</button>
-        </div>
-      </div>`;
-    }).join('');
-
-    // Load posters
-    featured.forEach(w=>{
-      const gi = works.indexOf(w);
-      if(!w.t) return;
-      fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}&language=en-US`)
-        .then(r=>r.json()).then(d=>{
-          if(d.poster_path){
-            const el=document.getElementById(`fposter-${gi}`);
-            if(el) el.innerHTML=`<img src="${TP}${d.poster_path}" style="width:100%;height:100%;object-fit:cover;border-radius:2px">`;
-          }
-        }).catch(()=>{});
-    });
-  }
-
-  // Render available (non-featured) works to add
-  availList.innerHTML = nonFeatured.map(w=>{
-    const gi = works.indexOf(w);
-    return `<div class="featured-add-chip" onclick="addToFeatured(${gi})">
-      <span>＋</span> ${w.en} (${w.y})
+  list.innerHTML = featured.length ? featured.map((w,fi)=>{
+    const gi=works.indexOf(w);
+    const desc=(w.dE||'').replace(/\n/g,' ').substring(0,55);
+    return `<div class="featured-item" draggable="true" data-feat-idx="${fi}" data-global-idx="${gi}"
+      ondragstart="featDragStart(event)" ondragover="featDragOver(event)" ondragleave="featDragLeave(event)" ondrop="featDrop(event)">
+      <div class="featured-item-num">${fi+1}</div>
+      <div class="featured-item-poster" id="fp-${gi}">${w.poster?`<img src="${w.poster}" style="width:100%;height:100%;object-fit:cover">`:''}</div>
+      <div class="featured-item-info">
+        <div class="featured-item-title">${w.en}</div>
+        <div class="featured-item-meta">${w.y} · ${GE[w.g]||w.g}</div>
+        <div class="featured-item-desc">${desc||'설명 없음'}</div>
+      </div>
+      <div class="featured-item-actions">
+        <button class="btn btn-ghost btn-sm" onclick="editFeatDesc(${gi})">✏️</button>
+        <button class="btn btn-danger btn-sm" onclick="removeFromFeatured(${gi})">✕</button>
+      </div>
     </div>`;
-  }).join('') || '<p style="color:var(--muted);font-size:12px">All works are featured.</p>';
-}
+  }).join('') : '<p style="color:var(--muted);font-size:12px;padding:20px;text-align:center;background:var(--bg3);border-radius:6px">히어로에 표시할 작품이 없습니다.</p>';
 
-async function addToFeatured(globalIdx){
-  const w = works[globalIdx];
-  if(!w) return;
-  w.feat = true;
-  // If no description, prompt
-  if(!w.dE){
-    const desc = prompt(`Enter English description for "${w.en}" (shown on homepage hero):`);
-    if(desc) w.dE = desc;
-    const descKo = prompt(`Enter Korean description (optional):`);
-    if(descKo) w.dK = descKo;
-  }
-  const ok = await commitWorks(`Feature: ${w.en}`);
-  if(ok){ renderFeatured(); renderWorksList(); }
-}
-
-async function removeFromFeatured(globalIdx){
-  const w = works[globalIdx];
-  if(!w) return;
-  if(!confirm(`Remove "${w.en}" from homepage featured?`)) return;
-  w.feat = false;
-  const ok = await commitWorks(`Unfeature: ${w.en}`);
-  if(ok){ renderFeatured(); renderWorksList(); }
-}
-
-function editFeatDesc(globalIdx){
-  const w = works[globalIdx];
-  if(!w) return;
-  const dE = prompt('English description (for homepage hero):', w.dE||'');
-  if(dE===null) return;
-  w.dE = dE;
-  const dK = prompt('Korean description:', w.dK||'');
-  if(dK!==null) w.dK = dK;
-  commitWorks(`Update description: ${w.en}`).then(ok=>{
-    if(ok) renderFeatured();
+  // Load TMDB posters
+  featured.forEach(w=>{
+    if(!w.t||w.poster) return;
+    const gi=works.indexOf(w);
+    fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}`)
+      .then(r=>r.json()).then(d=>{
+        if(d.poster_path){
+          const el=document.getElementById(`fp-${gi}`);
+          if(el) el.innerHTML=`<img src="${TP}${d.poster_path}" style="width:100%;height:100%;object-fit:cover">`;
+        }
+      }).catch(()=>{});
   });
+
+  avail.innerHTML = rest.map(w=>{
+    const gi=works.indexOf(w);
+    return `<div class="chip" onclick="addToFeatured(${gi})"><span>＋</span>${w.en} <span style="opacity:.6;font-size:10px">${GE[w.g]||w.g}</span></div>`;
+  }).join('') || '<p style="color:var(--muted);font-size:12px">모든 작품이 히어로에 포함되어 있습니다.</p>';
 }
 
-/* Featured drag & drop reorder */
-let featDragIdx = null;
-function featDragStart(e){
-  featDragIdx = +e.currentTarget.dataset.featIdx;
-  e.currentTarget.style.opacity = '.5';
+async function addToFeatured(gi){
+  const w=works[gi]; if(!w) return; w.feat=true;
+  const ok=await commitWorks(`Feature: ${w.en}`);
+  if(ok){ renderFeatured(); renderWorksList(); openDescModal(gi,'feat'); }
 }
-function featDragOver(e){
-  e.preventDefault();
-  e.currentTarget.classList.add('drag-over');
-}
-function featDragLeave(e){
-  e.currentTarget.classList.remove('drag-over');
-}
-async function featDrop(e){
-  e.preventDefault();
-  e.currentTarget.classList.remove('drag-over');
-  const dropIdx = +e.currentTarget.dataset.featIdx;
-  if(featDragIdx===null || featDragIdx===dropIdx) return;
 
-  // Get featured works in current order
-  const featured = works.filter(w=>w.feat);
-  const dragged = featured[featDragIdx];
-  featured.splice(featDragIdx,1);
-  featured.splice(dropIdx,0,dragged);
-
-  // Rebuild works array: featured first in new order, then non-featured
-  const nonFeatured = works.filter(w=>!w.feat);
-  const reordered = [...featured, ...nonFeatured];
-  reordered.forEach((w,i)=>w.s = String(i+1).padStart(3,'0'));
-  works = reordered;
-
-  const ok = await commitWorks('Reorder featured');
+async function removeFromFeatured(gi){
+  const w=works[gi]; if(!w||!confirm(`"${w.en}"을 히어로에서 제거할까요?`)) return;
+  w.feat=false;
+  const ok=await commitWorks(`Unfeature: ${w.en}`);
   if(ok){ renderFeatured(); renderWorksList(); }
-  featDragIdx = null;
 }
+
+function editFeatDesc(gi){ openDescModal(gi,'feat'); }
+function editGridDesc(gi){ openDescModal(gi,'grid'); }
+
+let featDragIdx=null;
+function featDragStart(e){ featDragIdx=+e.currentTarget.dataset.featIdx; e.currentTarget.style.opacity='.5'; }
+function featDragOver(e){ e.preventDefault(); e.currentTarget.classList.add('drag-over'); }
+function featDragLeave(e){ e.currentTarget.classList.remove('drag-over'); }
+async function featDrop(e){
+  e.preventDefault(); e.currentTarget.classList.remove('drag-over');
+  const dropIdx=+e.currentTarget.dataset.featIdx;
+  if(featDragIdx===null||featDragIdx===dropIdx) return;
+  const featured=works.filter(w=>w.feat);
+  const dragged=featured[featDragIdx];
+  featured.splice(featDragIdx,1); featured.splice(dropIdx,0,dragged);
+  const rest=works.filter(w=>!w.feat);
+  works=[...featured,...rest];
+  works.forEach((w,i)=>w.s=String(i+1).padStart(3,'0'));
+  const ok=await commitWorks('Reorder featured');
+  if(ok){ renderFeatured(); renderWorksList(); }
+  featDragIdx=null;
+}
+
+/* ═══ HOME GRID ═══ */
+function renderHomeGrid(){
+  const list=document.getElementById('gridList');
+  const avail=document.getElementById('gridAvailable');
+  const inGrid=works.filter(w=>w.home);
+  const notIn=works.filter(w=>!w.home);
+
+  list.innerHTML = inGrid.length ? inGrid.map(w=>{
+    const gi=works.indexOf(w);
+    const badge=GE[w.g]||w.g;
+    const desc=(w.dE||'').replace(/\n/g,' ').substring(0,55);
+    const accent=w.g==='뮤지컬'?'#e879a8':w.g==='저서'?'#5cb85c':w.g==='책'?'#5b9bd5':'var(--accent)';
+    return `<div class="featured-item">
+      <div class="featured-item-num" style="color:${accent};font-size:11px;min-width:52px">${badge}</div>
+      <div class="featured-item-poster" id="gp-${gi}">${w.poster?`<img src="${w.poster}" style="width:100%;height:100%;object-fit:cover">`:''}</div>
+      <div class="featured-item-info">
+        <div class="featured-item-title">${w.en}</div>
+        <div class="featured-item-meta">${w.y}${w.ko!==w.en?' · '+w.ko:''}</div>
+        <div class="featured-item-desc">${desc||'설명 없음'}</div>
+      </div>
+      <div class="featured-item-actions">
+        <button class="btn btn-ghost btn-sm" onclick="editGridDesc(${gi})">✏️</button>
+        <button class="btn btn-danger btn-sm" onclick="removeFromGrid(${gi})">✕</button>
+      </div>
+    </div>`;
+  }).join('') : '<p style="color:var(--muted);font-size:12px;padding:20px;text-align:center;background:var(--bg3);border-radius:6px">그리드에 표시할 작품이 없습니다.</p>';
+
+  avail.innerHTML = notIn.map(w=>{
+    const gi=works.indexOf(w);
+    return `<div class="chip" onclick="addToGrid(${gi})"><span>＋</span>${w.en} <span style="opacity:.6;font-size:10px">${GE[w.g]||w.g}</span></div>`;
+  }).join('') || '<p style="color:var(--muted);font-size:12px">모든 작품이 그리드에 포함되어 있습니다.</p>';
+}
+
+async function addToGrid(gi){
+  const w=works[gi]; if(!w) return; w.home=true;
+  const ok=await commitWorks(`Grid add: ${w.en}`);
+  if(ok){ renderHomeGrid(); openDescModal(gi,'grid'); }
+}
+
+async function removeFromGrid(gi){
+  const w=works[gi]; if(!w||!confirm(`"${w.en}"을 그리드에서 제거할까요?`)) return;
+  w.home=false;
+  const ok=await commitWorks(`Grid remove: ${w.en}`);
+  if(ok) renderHomeGrid();
+}
+
+
 
 /* ═══ TOAST ═══ */
-function toast(msg, type='success'){
-  const el = document.getElementById('toast');
-  el.textContent = msg;
-  el.className = `toast ${type} show`;
-  setTimeout(()=>el.classList.remove('show'),3000);
+function toast(msg,type='success'){
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.className=`toast ${type} show`;
+  setTimeout(()=>el.classList.remove('show'),3200);
 }
+
+/* ═══ INIT ═══ */
+setGenre('영화');
 </script>
 </body>
 </html>
