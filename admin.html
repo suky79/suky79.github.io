@@ -197,7 +197,7 @@ select.form-input{cursor:pointer}
 <div class="admin-wrap">
   <div class="admin-header">
     <div>
-      <h1>Beardos<span>.</span> Admin</h1>
+      <h1>Beardos<span>.</span> Admin <small style="font-size:13px;color:var(--muted);font-weight:400">v3.16</small></h1>
       <p class="subtitle">번역 포트폴리오 관리 패널 · Translation portfolio manager</p>
     </div>
     <a href="index.html" style="font-size:12px;color:var(--muted);text-decoration:none;border:1px solid rgba(45,60,89,.12);padding:7px 14px;border-radius:5px;transition:all .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">← 메인으로</a>
@@ -518,9 +518,13 @@ function switchTab(t){
 
 /* ═══ GENRE ═══ */
 function setGenre(g){
+  // 알 수 없는 장르 값이면 기본값으로
+  const validGenres = ['영화','뮤지컬','연극','책','저서'];
+  if(!validGenres.includes(g)) g = '영화';
   currentGenre = g;
   document.querySelectorAll('.genre-pill').forEach(p=>p.classList.remove('active'));
-  document.getElementById('pill-'+g).classList.add('active');
+  const pill = document.getElementById('pill-'+g);
+  if(pill) pill.classList.add('active');
 
   // Show/hide sections
   document.getElementById('section-film').classList.toggle('visible', g==='영화');
@@ -781,7 +785,9 @@ async function loadWorks(){
       const binary = atob(raw);
       const bytes = new Uint8Array(binary.length);
       for(let i=0;i<binary.length;i++) bytes[i]=binary.charCodeAt(i);
-      works = JSON.parse(new TextDecoder('utf-8').decode(bytes));
+      const decoded = new TextDecoder('utf-8').decode(bytes);
+      console.log('[Beardos v3.16] First 200 chars:', decoded.substring(0,200));
+      works = JSON.parse(decoded);
       renderWorksList(); renderFeatured(); renderHomeGrid(); renderAdminStrip(); worksSnapshot=JSON.stringify(works);
       document.getElementById('totalCount').textContent = works.length;
     }
@@ -1172,12 +1178,13 @@ async function searchKOPIS(){
   const el = document.getElementById('kopisResults');
   el.innerHTML = '<p style="font-size:12px;color:var(--muted);padding:8px">검색 중...</p>';
   try{
-    const url = `https://www.kopis.or.kr/openApi/restful/pblprfr?service=${KOPIS_KEY}&stdate=20000101&eddate=20301231&shprfnm=${encodeURIComponent(q)}&cpage=1&rows=6`;
-    const r = await fetch(url);
+    const apiUrl = `https://www.kopis.or.kr/openApi/restful/pblprfr?service=${KOPIS_KEY}&stdate=20000101&eddate=20301231&shprfnm=${encodeURIComponent(q)}&cpage=1&rows=6`;
+    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(apiUrl)}`;
+    const r = await fetch(proxyUrl);
     const xml = await r.text();
     const doc = new DOMParser().parseFromString(xml,'text/xml');
     const items = doc.querySelectorAll('db');
-    if(!items.length){ el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">결과 없음 — 직접 입력해주세요.</p>'; return; }
+    if(!items.length){ el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">결과 없음 — 제목을 직접 입력해주세요.</p>'; return; }
     el.innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:14px;max-height:260px;overflow-y:auto">` +
       Array.from(items).map((item,i)=>{
         const title = item.querySelector('prfnm')?.textContent||'';
@@ -1185,15 +1192,14 @@ async function searchKOPIS(){
         const kid = item.querySelector('mt20id')?.textContent||'';
         const startDt = item.querySelector('prfpdfrom')?.textContent||'';
         const year = startDt ? startDt.substring(0,4) : '';
-        const genre = item.querySelector('genrenm')?.textContent||'';
         return `<div class="tmdb-result" onclick="selectKOPIS(${i})" data-idx="${i}"
-          data-title="${title.replace(/"/g,'&quot;')}" data-poster="${poster}" data-kid="${kid}" data-year="${year}" data-genre="${genre}">
-          ${poster ? `<img src="${poster.replace(/^http:/,'https:')}" alt="" style="width:100%;aspect-ratio:2/3;object-fit:cover;display:block">` : `<div style="aspect-ratio:2/3;background:var(--bg4);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted)">No poster</div>`}
+          data-title="${title.replace(/"/g,'&quot;')}" data-poster="${poster.replace(/^http:/,'https:')}" data-kid="${kid}" data-year="${year}">
+          ${poster ? `<img src="${poster.replace(/^http:/,'https:')}" alt="" style="width:100%;aspect-ratio:2/3;object-fit:cover;display:block">` : `<div style="aspect-ratio:2/3;background:var(--bg4);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);padding:4px;text-align:center">${title}</div>`}
           <div class="tmdb-result-info"><div class="tmdb-result-title">${title}</div><div class="tmdb-result-year">${year}</div></div>
         </div>`;
       }).join('') + `</div>`;
   }catch(e){
-    el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">KOPIS 검색 실패 — 직접 입력해주세요.</p>';
+    el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">검색 실패 — 잠시 후 다시 시도해주세요.</p>';
   }
 }
 
@@ -1220,23 +1226,22 @@ async function searchAladin(){
   const el = document.getElementById('aladinResults');
   el.innerHTML = '<p style="font-size:12px;color:var(--muted);padding:8px">검색 중...</p>';
   try{
-    const url = `https://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=${ALADIN_KEY}&Query=${encodeURIComponent(q)}&QueryType=Title&MaxResults=6&SearchTarget=Book&output=js&Version=20131101&Cover=Big`;
-    const r = await fetch(url);
+    const apiUrl = `https://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=${ALADIN_KEY}&Query=${encodeURIComponent(q)}&QueryType=Title&MaxResults=6&SearchTarget=Book&output=js&Version=20131101&Cover=Big`;
+    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(apiUrl)}`;
+    const r = await fetch(proxyUrl);
     const d = await r.json();
-    if(!d.item?.length){ el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">결과 없음 — 직접 입력해주세요.</p>'; return; }
+    if(!d.item?.length){ el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">결과 없음 — 제목을 직접 입력해주세요.</p>'; return; }
+    window._aladinResults = d.item;
     el.innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:14px;max-height:260px;overflow-y:auto">` +
       d.item.map((item,i)=>{
         const year = item.pubDate ? item.pubDate.substring(0,4) : '';
-        return `<div class="tmdb-result" onclick="selectAladin(${i})" data-idx="${i}"
-          data-title="${(item.title||'').replace(/"/g,'&quot;')}" data-cover="${item.cover||''}"
-          data-year="${year}" data-author="${(item.author||'').replace(/"/g,'&quot;')}" data-isbn="${item.isbn13||''}">
-          ${item.cover ? `<img src="${item.cover}" alt="" style="width:100%;aspect-ratio:2/3;object-fit:cover;display:block">` : `<div style="aspect-ratio:2/3;background:var(--bg4);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted)">No cover</div>`}
+        return `<div class="tmdb-result" onclick="selectAladin(${i})" data-idx="${i}">
+          ${item.cover ? `<img src="${item.cover}" alt="" style="width:100%;aspect-ratio:2/3;object-fit:cover;display:block">` : `<div style="aspect-ratio:2/3;background:var(--bg4);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);padding:4px;text-align:center">${item.title}</div>`}
           <div class="tmdb-result-info"><div class="tmdb-result-title">${item.title||''}</div><div class="tmdb-result-year">${year}</div></div>
         </div>`;
       }).join('') + `</div>`;
-    window._aladinResults = d.item;
   }catch(e){
-    el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">알라딘 검색 실패 — 직접 입력해주세요.</p>';
+    el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">검색 실패 — 잠시 후 다시 시도해주세요.</p>';
   }
 }
 
