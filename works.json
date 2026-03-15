@@ -54,7 +54,8 @@
         "u": "https://www.rottentomatoes.com/m/deadpool_2"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "003",
