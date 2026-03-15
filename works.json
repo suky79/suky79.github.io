@@ -1,0 +1,299 @@
+[
+  {
+    "s": "001",
+    "g": "영화",
+    "ko": "데드풀",
+    "en": "Deadpool",
+    "sub": "Marvel Comics",
+    "y": 2016,
+    "t": 293660,
+    "gr": "g1",
+    "feat": false,
+    "dK": "",
+    "dE": "",
+    "lk": [
+      {
+        "n": "IMDb",
+        "bg": "#f5c518",
+        "c": "#000",
+        "u": "https://www.imdb.com/title/tt1431045/"
+      },
+      {
+        "n": "RT",
+        "bg": "#fa320a",
+        "c": "#fff",
+        "u": "https://www.rottentomatoes.com/m/deadpool"
+      }
+    ],
+    "home": false
+  },
+  {
+    "s": "002",
+    "g": "영화",
+    "ko": "데드풀 2",
+    "en": "Deadpool 2",
+    "sub": "Marvel Comics",
+    "y": 2018,
+    "t": 383498,
+    "gr": "g2",
+    "feat": false,
+    "dK": "",
+    "dE": "",
+    "lk": [
+      {
+        "n": "IMDb",
+        "bg": "#f5c518",
+        "c": "#000",
+        "u": "https://www.imdb.com/title/tt5463162/"
+      },
+      {
+        "n": "RT",
+        "bg": "#fa320a",
+        "c": "#fff",
+        "u": "https://www.rottentomatoes.com/m/deadpool_2"
+      }
+    ],
+    "home": false
+  },
+  {
+    "s": "003",
+    "g": "영화",
+    "ko": "데드풀 & 울버린",
+    "en": "Deadpool & Wolverine",
+    "sub": "Marvel Comics",
+    "y": 2024,
+    "t": 533535,
+    "gr": "g3",
+    "feat": true,
+    "dK": "마블 시네마틱 유니버스의 R등급 블록버스터.\n두 안티히어로의 위트와 독설을 한국어의 결로 옮겼습니다.",
+    "dE": "Marvel's R-rated blockbuster.\nThe wit of two antiheroes, in Korean grain.",
+    "lk": [
+      {
+        "n": "IMDb",
+        "bg": "#f5c518",
+        "c": "#000",
+        "u": "https://www.imdb.com/title/tt6263850/"
+      },
+      {
+        "n": "RT",
+        "bg": "#fa320a",
+        "c": "#fff",
+        "u": "https://www.rottentomatoes.com/m/deadpool_and_wolverine"
+      }
+    ],
+    "home": false
+  },
+  {
+    "s": "004",
+    "g": "영화",
+    "ko": "아바타: 물의 길",
+    "en": "Avatar: The Way of Water",
+    "sub": "James Cameron",
+    "y": 2022,
+    "t": 76600,
+    "gr": "g4",
+    "feat": true,
+    "dK": "판도라 바다의 서사.\n자연과 공존의 메시지를 한국어 자막에 담았습니다.",
+    "dE": "An oceanic epic on Pandora.\nNature and coexistence in Korean subtitles.",
+    "lk": [
+      {
+        "n": "IMDb",
+        "bg": "#f5c518",
+        "c": "#000",
+        "u": "https://www.imdb.com/title/tt1630029/"
+      },
+      {
+        "n": "RT",
+        "bg": "#fa320a",
+        "c": "#fff",
+        "u": "https://www.rottentomatoes.com/m/avatar_the_way_of_water"
+      }
+    ],
+    "home": false
+  },
+  {
+    "s": "005",
+    "g": "영화",
+    "ko": "아바타: 불과 재",
+    "en": "Avatar: Fire and Ash",
+    "sub": "James Cameron",
+    "y": 2025,
+    "t": 83533,
+    "gr": "g5",
+    "feat": true,
+    "dK": "불과 재의 세계로 돌아온 아바타.\n가장 최근 작업한 블록버스터입니다.",
+    "dE": "Avatar returns to fire and ash.\nOur most recent blockbuster translation.",
+    "lk": [
+      {
+        "n": "IMDb",
+        "bg": "#f5c518",
+        "c": "#000",
+        "u": "https://www.imdb.com/title/tt3748528/"
+      },
+      {
+        "n": "RT",
+        "bg": "#fa320a",
+        "c": "#fff",
+        "u": "https://www.rottentomatoes.com/m/avatar_fire_and_ash"
+      }
+    ],
+    "home": false
+  },
+  {
+    "s": "006",
+    "g": "영화",
+    "ko": "스파이더맨: 노 웨이 홈",
+    "en": "Spider-Man: No Way Home",
+    "sub": "Marvel Comics",
+    "y": 2021,
+    "t": 634649,
+    "gr": "g6",
+    "feat": false,
+    "dK": "",
+    "dE": "",
+    "lk": [
+      {
+        "n": "IMDb",
+        "bg": "#f5c518",
+        "c": "#000",
+        "u": "https://www.imdb.com/title/tt10872600/"
+      }
+    ],
+    "home": false
+  },
+  {
+    "s": "007",
+    "g": "뮤지컬",
+    "ko": "위키드",
+    "en": "Wicked",
+    "sub": "Korean Premiere",
+    "y": 2012,
+    "t": null,
+    "gr": "g7",
+    "feat": false,
+    "dK": "",
+    "dE": "",
+    "lk": [],
+    "home": false
+  },
+  {
+    "s": "008",
+    "g": "뮤지컬",
+    "ko": "해밀턴",
+    "en": "Hamilton",
+    "sub": "Korean Premiere",
+    "y": 2023,
+    "t": null,
+    "gr": "g8",
+    "feat": false,
+    "dK": "",
+    "dE": "",
+    "lk": [],
+    "home": false
+  },
+  {
+    "s": "009",
+    "g": "뮤지컬",
+    "ko": "오페라의 유령",
+    "en": "The Phantom of the Opera",
+    "sub": "Andrew Lloyd Webber",
+    "y": 2009,
+    "t": null,
+    "gr": "g9",
+    "feat": false,
+    "dK": "",
+    "dE": "",
+    "lk": [],
+    "home": false
+  },
+  {
+    "s": "010",
+    "g": "뮤지컬",
+    "ko": "레미제라블",
+    "en": "Les Misérables",
+    "sub": "Victor Hugo",
+    "y": 2013,
+    "t": null,
+    "gr": "g10",
+    "feat": false,
+    "dK": "",
+    "dE": "",
+    "lk": [],
+    "home": false
+  },
+  {
+    "s": "011",
+    "g": "뮤지컬",
+    "ko": "시카고",
+    "en": "Chicago",
+    "sub": "Bob Fosse",
+    "y": 2000,
+    "t": null,
+    "gr": "g11",
+    "feat": false,
+    "dK": "",
+    "dE": "",
+    "lk": [],
+    "home": false
+  },
+  {
+    "s": "012",
+    "g": "연극",
+    "ko": "햄릿",
+    "en": "Hamlet",
+    "sub": "Shakespeare",
+    "y": 2018,
+    "t": null,
+    "gr": "g12",
+    "feat": false,
+    "dK": "",
+    "dE": "",
+    "lk": [],
+    "home": false
+  },
+  {
+    "s": "013",
+    "g": "연극",
+    "ko": "고도를 기다리며",
+    "en": "Waiting for Godot",
+    "sub": "Samuel Beckett",
+    "y": 2016,
+    "t": null,
+    "gr": "g13",
+    "feat": false,
+    "dK": "",
+    "dE": "",
+    "lk": [],
+    "home": false
+  },
+  {
+    "s": "014",
+    "g": "책",
+    "ko": "위대한 개츠비",
+    "en": "The Great Gatsby",
+    "sub": "F. Scott Fitzgerald",
+    "y": 2020,
+    "t": null,
+    "gr": "g14",
+    "feat": false,
+    "dK": "",
+    "dE": "",
+    "lk": [],
+    "home": false
+  },
+  {
+    "s": "015",
+    "g": "책",
+    "ko": "호밀밭의 파수꾼",
+    "en": "The Catcher in the Rye",
+    "sub": "J.D. Salinger",
+    "y": 2019,
+    "t": null,
+    "gr": "g15",
+    "feat": false,
+    "dK": "",
+    "dE": "",
+    "lk": [],
+    "home": false
+  }
+]
