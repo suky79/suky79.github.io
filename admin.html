@@ -778,16 +778,10 @@ async function loadWorks(){
     if(r.content){
       fileSha=r.sha;
       const raw = r.content.replace(/\n/g,'');
-      // GitHub API는 파일 원본 바이트를 base64로 반환 → atob 후 escape/decodeURIComponent로 UTF-8 복원
-      let decoded;
-      try {
-        decoded = decodeURIComponent(escape(atob(raw)));
-      } catch(e) {
-        // fallback: TextDecoder
-        const bytes = Uint8Array.from(atob(raw), c => c.charCodeAt(0));
-        decoded = new TextDecoder('utf-8').decode(bytes);
-      }
-      works = JSON.parse(decoded);
+      const binary = atob(raw);
+      const bytes = new Uint8Array(binary.length);
+      for(let i=0;i<binary.length;i++) bytes[i]=binary.charCodeAt(i);
+      works = JSON.parse(new TextDecoder('utf-8').decode(bytes));
       renderWorksList(); renderFeatured(); renderHomeGrid(); renderAdminStrip(); worksSnapshot=JSON.stringify(works);
       document.getElementById('totalCount').textContent = works.length;
     }
@@ -798,7 +792,10 @@ async function loadWorks(){
 async function commitWorks(message){
   if(!ghToken){ toast('GitHub에 먼저 연결하세요.','error'); return false; }
   const jsonStr = JSON.stringify(works, null, 2);
-  const content = btoa(unescape(encodeURIComponent(jsonStr)));
+  const utf8 = new TextEncoder().encode(jsonStr);
+  let binary = '';
+  for(let i=0;i<utf8.length;i++) binary += String.fromCharCode(utf8[i]);
+  const content = btoa(binary);
   const body = {message, content, ...(fileSha && {sha:fileSha})};
   try{
     const r = await ghFetch(`https://api.github.com/repos/${REPO}/contents/${FILE}`, {
