@@ -5,7 +5,7 @@
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beardos — The White Beard Translators</title>
+<title>The White Beard Translators</title>
 
 
 <style>
@@ -26,7 +26,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
 /* ═══════════ NAV — A24 minimal ═══════════ */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:60px;transition:background .4s,backdrop-filter .4s}
 nav.scrolled{background:rgba(27,37,64,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:.5px solid var(--border)}
-.nav-logo{font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;letter-spacing:.02em;color:#F0EBE0;text-decoration:none;transition:opacity .3s}
+.nav-logo{font-family:'Clash Display',sans-serif;font-size:15px;font-weight:700;letter-spacing:.04em;color:#F0EBE0;text-decoration:none;transition:opacity .3s;text-transform:uppercase}
 .nav-logo:hover{opacity:.7}
 .nav-logo i{color:#E5BA41;font-style:italic}
 .nav-right{display:flex;align-items:center;gap:28px}
@@ -78,6 +78,10 @@ nav.scrolled{background:rgba(27,37,64,.96);backdrop-filter:blur(20px);-webkit-ba
 .filmstrip-poster img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
 .filmstrip-card:hover .filmstrip-poster img{transform:scale(1.03)}
 .filmstrip-poster-fb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(240,235,224,.06);text-align:center;padding:16px;line-height:1.3}
+.filmstrip-links{position:absolute;bottom:0;left:0;right:0;padding:8px;display:flex;gap:5px;justify-content:center;background:linear-gradient(transparent,rgba(0,0,0,.75));opacity:0;transition:opacity .25s;z-index:4}
+.filmstrip-card:hover .filmstrip-links{opacity:1}
+.filmstrip-link{padding:4px 10px;border-radius:2px;font-size:9px;font-weight:600;letter-spacing:.08em;text-decoration:none;transition:filter .2s;white-space:nowrap}
+.filmstrip-link:hover{filter:brightness(1.15)}
 .filmstrip-spine{display:none}
 .filmstrip-badge{position:absolute;top:8px;right:8px;font-size:8px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:2px 7px;border-radius:2px;background:rgba(27,37,64,.75);color:var(--accent);backdrop-filter:blur(4px);z-index:3}
 .filmstrip-info h3{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--text);line-height:1.3;margin-bottom:2px;transition:color .3s}
@@ -166,7 +170,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify
 <body>
 
 <nav id="mainNav">
-  <a href="#" class="nav-logo">Beardos<i>.</i></a>
+  <a href="#" class="nav-logo">The White Beard Translators<i>.</i></a>
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="collection.html"><span class="lang-ko" style="display:none">컬렉션</span><span class="lang-en">Collection</span></a></li>
@@ -228,7 +232,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify
 </section>
 
 <footer>
-  <span class="footer-logo">Beardos.</span>
+  <span class="footer-logo">The White Beard Translators.</span>
   <span class="footer-copy lang-ko" style="display:none">© 2025 흰수염 번역단. All rights reserved.</span>
   <span class="footer-copy lang-en">© 2025 The White Beard Translators. All rights reserved.</span>
 </footer>
@@ -505,6 +509,7 @@ function renderStrip(){
       <div class="filmstrip-poster">
         ${imgHtml}
         <div class="filmstrip-poster-fb ${w.gr}" ${w.poster?'style="display:none"':''}><span class="lang-ko" style="display:none">${w.ko}</span><span class="lang-en">${w.en}</span></div>
+        ${w.lk&&w.lk.length ? `<div class="filmstrip-links">${w.lk.map(l=>`<a class="filmstrip-link" href="${l.u}" target="_blank" onclick="event.stopPropagation()" style="background:${l.bg};color:${l.c}">${l.n}</a>`).join('')}</div>` : ''}
       </div>
       <div class="filmstrip-info">
         <h3><span class="lang-ko" style="display:none">${w.ko}</span><span class="lang-en">${w.en}</span></h3>
