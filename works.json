@@ -295,5 +295,64 @@
     "dE": "",
     "lk": [],
     "home": false
+  },
+  {
+    "s": "016",
+    "g": "뮤지컬",
+    "ko": "렘피카",
+    "en": "Lempicka",
+    "sub": "Broadway Musical · Korean Premiere",
+    "y": 2024,
+    "t": null,
+    "gr": "g7",
+    "feat": false,
+    "home": true,
+    "dK": "아르데코의 여왕, 타마라 드 렘피카의 삶을 그린 뮤지컬.\n브로드웨이 오리지널의 감성을 한국어로 옮겼습니다.",
+    "dE": "A musical portrait of Art Deco icon Tamara de Lempicka.\nThe Broadway original, translated into Korean.",
+    "lk": []
+  },
+  {
+    "s": "017",
+    "g": "책",
+    "ko": "그린라이트",
+    "en": "Greenlights",
+    "sub": "Matthew McConaughey",
+    "y": 2020,
+    "t": null,
+    "gr": "g14",
+    "feat": false,
+    "home": true,
+    "dK": "매튜 매커너히의 자전적 에세이.\n삶의 신호등에서 초록불을 찾아가는 이야기.",
+    "dE": "Matthew McConaughey's memoir.\nFinding the green lights in life's journey.",
+    "lk": [
+      {
+        "n": "Kyobo",
+        "bg": "#5c8a4d",
+        "c": "#fff",
+        "u": "https://product.kyobobook.co.kr/detail/S000001810103"
+      }
+    ]
+  },
+  {
+    "s": "018",
+    "g": "저서",
+    "ko": "오역하는 말들",
+    "en": "Mistranslated Words",
+    "sub": "Hwang Seokhee",
+    "y": 2024,
+    "t": null,
+    "gr": "g11",
+    "feat": false,
+    "home": true,
+    "dK": "번역가 황석희의 저서. 언어 사이에서 길을 잃는 말들에 대하여.",
+    "dE": "By translator Hwang Seokhee. On the words that lose their way between languages.",
+    "lk": [
+      {
+        "n": "Kyobo",
+        "bg": "#5c8a4d",
+        "c": "#fff",
+        "u": "https://product.kyobobook.co.kr/detail/S000216507425"
+      }
+    ]
   }
 ]
