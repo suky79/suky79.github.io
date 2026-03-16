@@ -596,21 +596,18 @@
   {
     "s": "030",
     "g": "영화",
-    "ko": "Surveillance",
+    "ko": "서베일런스",
     "en": "Surveillance",
     "sub": "",
-    "subE": "",
-    "y": 2013,
-    "t": 295298,
+    "y": 2008,
+    "t": 10900,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [],
-    "poster": "https://image.tmdb.org/t/p/w500/pMGx67dK4a6Zqk002NJQ4gbXH9L.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2L2VenhOw1Zw90Em7rVaJ3CSGmc.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/8CYX53rLeRonQjJOKyHkwAwBIWD.jpg"
   },
   {
     "s": "031",
