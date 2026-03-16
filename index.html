@@ -129,6 +129,43 @@ nav.scrolled{background:rgba(27,37,64,.96);backdrop-filter:blur(20px);-webkit-ba
   .nowplaying-inner{padding:0 20px}
 }
 
+/* ═══════════ MY BOOKS ═══════════ */
+.mybooks-section{padding:72px 0;border-bottom:1px solid var(--border)}
+.mybooks-inner{max-width:1320px;margin:0 auto;padding:0 40px}
+.mybooks-header{margin-bottom:48px}
+.mybooks-shelf{display:flex;flex-direction:column;gap:64px}
+.book-row{display:flex;align-items:center;gap:56px}
+.book-row:nth-child(even){flex-direction:row-reverse}
+.book-3d-wrap{position:relative;flex-shrink:0;width:200px;filter:drop-shadow(-18px 24px 36px rgba(0,0,0,.5));transition:filter .4s}
+.book-3d-wrap:hover{filter:drop-shadow(-24px 32px 48px rgba(0,0,0,.6))}
+.book-cover{width:200px;aspect-ratio:2/3;border-radius:2px 6px 6px 2px;overflow:hidden;position:relative;transform:perspective(700px) rotateY(-10deg);transform-origin:left center;transition:transform .5s cubic-bezier(.25,.46,.45,.94);cursor:pointer}
+.book-row:nth-child(even) .book-cover{transform:perspective(700px) rotateY(10deg);transform-origin:right center}
+.book-3d-wrap:hover .book-cover{transform:perspective(700px) rotateY(-16deg)}
+.book-row:nth-child(even) .book-3d-wrap:hover .book-cover{transform:perspective(700px) rotateY(16deg)}
+.book-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.book-spine{position:absolute;left:-18px;top:0;bottom:0;width:18px;background:rgba(0,0,0,.3);transform:perspective(700px) rotateY(68deg);transform-origin:right center;border-radius:2px 0 0 2px}
+.book-row:nth-child(even) .book-spine{left:auto;right:-18px;transform:perspective(700px) rotateY(-68deg);transform-origin:left center}
+.book-overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;gap:8px;opacity:0;transition:opacity .3s;border-radius:2px 6px 6px 2px;flex-direction:column}
+.book-3d-wrap:hover .book-overlay{opacity:1}
+.book-buy-btn{padding:8px 18px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.1em;text-decoration:none;transition:all .2s;display:block;text-align:center;width:120px}
+.book-buy-btn:hover{filter:brightness(1.15);transform:scale(1.04)}
+.book-info{flex:1}
+.book-info-label{font-size:10px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+.book-info-title{font-family:var(--display);font-size:28px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:6px}
+.book-info-subtitle{font-family:var(--serif);font-size:14px;font-style:italic;color:var(--accent3);margin-bottom:20px;letter-spacing:.04em}
+.book-info-desc{font-size:14px;color:var(--muted);line-height:1.9;max-width:420px}
+.book-info-desc .lang-ko{display:none}
+
+@media(max-width:768px){
+  .book-row,.book-row:nth-child(even){flex-direction:column;align-items:center;text-align:center;gap:28px}
+  .book-3d-wrap{width:150px}
+  .book-cover{width:150px}
+  .book-spine{left:-14px;width:14px}
+  .book-row:nth-child(even) .book-spine{right:-14px}
+  .book-info-desc{max-width:100%}
+  .mybooks-inner{padding:0 20px}
+}
+
 /* ═══════════ ABOUT ═══════════ */
 .about{padding:80px 40px;border-top:1px solid var(--border);max-width:1320px;margin:0 auto}
 .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
@@ -233,6 +270,17 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify
   </div>
 </section>
 
+<!-- ═══════════ MY BOOKS ═══════════ -->
+<section class="mybooks-section" id="myBooks">
+  <div class="mybooks-inner">
+    <div class="mybooks-header">
+      <span class="filmstrip-title lang-ko" style="display:none">저서</span>
+      <span class="filmstrip-title lang-en">My Books</span>
+    </div>
+    <div class="mybooks-shelf" id="myBooksShelf"></div>
+  </div>
+</section>
+
 <!-- ═══════════ EDITORIAL GRID — dynamically rendered from featured works ═══════════ -->
 <section class="editorial" id="editorialGrid"></section>
 
@@ -295,6 +343,7 @@ async function init(){
   renderStrip();
   renderEditorial();
   loadNowPlayingSection();
+  renderBooks();
   // 세 API 병렬 호출
   await Promise.all([loadTMDB(), loadKOPIS(), loadAladin()]);
 }
@@ -470,6 +519,70 @@ function renderNowPlayingSection(list){
       <div class="np-info">
         <h3>${item.title}</h3>
         <p>${item.year}${item.type==='perf'?' · 공연':''}</p>
+      </div>
+    </div>`).join('');
+}
+
+/* ═══════════ MY BOOKS ═══════════ */
+const BOOKS = [
+  {
+    titleKo: '번역: 황석희',
+    titleEn: 'Translation: Hwang Seokhee',
+    subtitleKo: '번역가의 영화적 일상 에세이',
+    subtitleEn: 'A Translator\'s Cinematic Essay',
+    year: 2022,
+    cover: 'images/book1.jpg',
+    descKo: '번역가 황석희의 첫 번째 에세이. 영화와 관객 사이에 뒤어져 있던 빈칸을 채우는 이야기, 그가 해체해 다시 빚어낸 대사 덕분에 가능한 일들.',
+    descEn: 'The first essay by translator Hwang Seokhee. Stories that fill the gaps between film and audience — made possible by the lines he takes apart and remakes.',
+    links: [
+      { label: '교보문고', url: 'https://product.kyobobook.co.kr', color: '#E5BA41', textColor: '#1B2540' },
+      { label: '알라딘', url: 'https://www.aladin.co.kr', color: 'rgba(240,235,224,.12)', textColor: '#F0EBE0' }
+    ]
+  },
+  {
+    titleKo: '오역하는 말들',
+    titleEn: 'Words That Mistranslate',
+    subtitleKo: '세상을 번역하는 번역가 황석희가 바라본',
+    subtitleEn: 'The World Through a Translator\'s Eyes',
+    year: 2024,
+    cover: 'images/book2.jpg',
+    descKo: '같은 언어 안에서도 번역이 필요한 순간이 있다. 일상에서 일어나는 오역, 오해, 그 말에 대하여.',
+    descEn: 'Even within the same language, there are moments that need translation. On the mistranslations and misunderstandings of everyday life.',
+    links: [
+      { label: '교보문고', url: 'https://product.kyobobook.co.kr', color: '#E5BA41', textColor: '#1B2540' },
+      { label: '알라딘', url: 'https://www.aladin.co.kr', color: 'rgba(240,235,224,.12)', textColor: '#F0EBE0' }
+    ]
+  }
+];
+
+function renderBooks(){
+  const shelf = document.getElementById('myBooksShelf');
+  if(!shelf) return;
+  shelf.innerHTML = BOOKS.map((b,i) => `
+    <div class="book-row">
+      <div class="book-3d-wrap">
+        <div class="book-spine"></div>
+        <div class="book-cover">
+          <img src="${b.cover}" alt="${b.titleKo}" loading="lazy" onerror="this.style.display='none'">
+          <div class="book-overlay">
+            ${b.links.map(l=>`<a class="book-buy-btn" href="${l.url}" target="_blank" style="background:${l.color};color:${l.textColor}">${l.label}</a>`).join('')}
+          </div>
+        </div>
+      </div>
+      <div class="book-info">
+        <div class="book-info-label">My Book · ${b.year}</div>
+        <div class="book-info-title">
+          <span class="lang-ko" style="display:none">${b.titleKo}</span>
+          <span class="lang-en">${b.titleEn}</span>
+        </div>
+        <div class="book-info-subtitle">
+          <span class="lang-ko" style="display:none">${b.subtitleKo}</span>
+          <span class="lang-en">${b.subtitleEn}</span>
+        </div>
+        <div class="book-info-desc">
+          <span class="lang-ko" style="display:none">${b.descKo}</span>
+          <span class="lang-en">${b.descEn}</span>
+        </div>
       </div>
     </div>`).join('');
 }
