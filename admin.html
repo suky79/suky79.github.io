@@ -1051,6 +1051,7 @@ function renderFeatured(){
         <div class="featured-item-desc">${desc||'설명 없음'}</div>
       </div>
       <div class="featured-item-actions">
+        <button class="btn btn-ghost btn-sm" onclick="editHeroImage(${gi})" title="히어로 이미지 변경">🖼️</button>
         <button class="btn btn-ghost btn-sm" onclick="editFeatDesc(${gi})">✏️</button>
         <button class="btn btn-danger btn-sm" onclick="removeFromFeatured(${gi})">✕</button>
       </div>
@@ -1262,6 +1263,66 @@ function selectAladin(idx){
 /* ═══ KOPIS 상수 ═══ */
 const KOPIS_KEY = '80eee61339564315aef9acfd05e32945';
 const ALADIN_KEY = 'ttbsuky79.shopping0154001';
+
+/* ═══ HERO IMAGE MODAL ═══ */
+let _heroImgGi = null;
+
+function editHeroImage(gi){
+  const w = works[gi]; if(!w) return;
+  _heroImgGi = gi;
+  document.getElementById('heroImgModalSub').textContent = w.en + ' · ' + w.y;
+  document.getElementById('heroImgUrl').value = w.back || w.poster || '';
+  previewHeroImg(w.back || w.poster || '');
+
+  const tmdbOpts = document.getElementById('tmdbImgOptions');
+  const tmdbPreviews = document.getElementById('tmdbImgPreviews');
+  if(w.t){
+    tmdbOpts.style.display='block';
+    tmdbPreviews.innerHTML = '<p style="font-size:11px;color:var(--muted)">로딩 중...</p>';
+    fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}`)
+      .then(r=>r.json()).then(d=>{
+        const opts = [];
+        if(d.backdrop_path) opts.push({label:'배경 (Backdrop)', url:'https://image.tmdb.org/t/p/w1280'+d.backdrop_path});
+        if(d.poster_path)   opts.push({label:'포스터', url:'https://image.tmdb.org/t/p/w500'+d.poster_path});
+        tmdbPreviews.innerHTML = opts.map(o=>`
+          <div style="cursor:pointer;text-align:center" onclick="selectHeroImg('${o.url}')">
+            <img src="${o.url}" style="height:90px;border-radius:4px;border:2px solid transparent;transition:border-color .2s;object-fit:cover"
+              onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='transparent'">
+            <div style="font-size:10px;color:var(--muted);margin-top:4px">${o.label}</div>
+          </div>`).join('');
+      }).catch(()=>{ tmdbOpts.style.display='none'; });
+  } else {
+    tmdbOpts.style.display='none';
+  }
+  document.getElementById('heroImgModal').style.display='flex';
+}
+
+function selectHeroImg(url){
+  document.getElementById('heroImgUrl').value = url;
+  previewHeroImg(url);
+}
+
+function previewHeroImg(url){
+  const wrap = document.getElementById('heroImgPreview');
+  const img  = document.getElementById('heroImgPreviewEl');
+  if(url){ img.src=url; wrap.style.display='block'; }
+  else { wrap.style.display='none'; }
+}
+
+async function saveHeroImage(){
+  const url = document.getElementById('heroImgUrl').value.trim();
+  if(_heroImgGi===null) return;
+  works[_heroImgGi].back = url || null;
+  closeHeroImgModal();
+  const ok = await commitWorks(`Hero image: ${works[_heroImgGi].en}`);
+  if(ok){ renderFeatured(); toast('히어로 이미지 저장 완료','success'); }
+}
+
+function closeHeroImgModal(){
+  document.getElementById('heroImgModal').style.display='none';
+  _heroImgGi = null;
+}
+
 function renderAdminStrip(){
   const list = document.getElementById('stripList');
   const avail = document.getElementById('stripAvailable');
@@ -1366,5 +1427,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+<!-- HERO IMAGE MODAL -->
+<div id="heroImgModal" style="display:none;position:fixed;inset:0;background:rgba(10,15,30,.7);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(4px)">
+  <div style="background:var(--bg2);border:1px solid rgba(229,186,65,.12);border-radius:12px;padding:28px;width:500px;max-width:calc(100vw-40px)">
+    <div style="font-family:var(--display);font-size:18px;font-weight:600;color:var(--text);margin-bottom:4px">🖼️ 히어로 이미지 변경</div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:20px" id="heroImgModalSub"></div>
+
+    <div id="tmdbImgOptions" style="display:none;margin-bottom:16px">
+      <div style="font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px">TMDB 자동 이미지 선택</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap" id="tmdbImgPreviews"></div>
+    </div>
+
+    <div style="font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px">URL 직접 입력</div>
+    <input class="form-input" id="heroImgUrl" placeholder="https://image.tmdb.org/... 또는 다른 이미지 URL" oninput="previewHeroImg(this.value)">
+    <div id="heroImgPreview" style="margin-top:10px;display:none">
+      <img id="heroImgPreviewEl" src="" style="max-width:100%;max-height:160px;border-radius:4px;object-fit:cover;display:block">
+    </div>
+
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:20px">
+      <button class="btn btn-ghost" onclick="closeHeroImgModal()">취소</button>
+      <button class="btn btn-primary" onclick="saveHeroImage()">적용</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
