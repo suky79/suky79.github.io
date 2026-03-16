@@ -1233,21 +1233,18 @@
   {
     "s": "064",
     "g": "영화",
-    "ko": "Margherita",
-    "en": "Margherita",
+    "ko": "나의 어머니",
+    "en": "Mia madre",
     "sub": "",
-    "subE": "",
-    "y": 1995,
-    "t": 1535359,
+    "y": 2015,
+    "t": 315872,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [],
-    "poster": "https://image.tmdb.org/t/p/w500/rbGDolSecRw5Qe7hK1MFWH0zaFy.jpg",
-    "back": ""
+    "poster": "https://image.tmdb.org/t/p/w500/4ijAT1ObfokFdZkKTt1wHj4kWdG.jpg"
   },
   {
     "s": "065",
