@@ -1593,21 +1593,18 @@
   {
     "s": "083",
     "g": "영화",
-    "ko": "Me and Mr. Right",
-    "en": "Me and Mr. Right",
+    "ko": "미스터 라잇",
+    "en": "Mr. Right",
     "sub": "",
-    "subE": "",
-    "y": 2023,
-    "t": 1039071,
+    "y": 2016,
+    "t": 333385,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [],
-    "poster": "https://image.tmdb.org/t/p/w500/uK8HLze1WHwi5hnQcs38YD7fNR.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2t5ZNPwkOYUoTMssww5YFwFAZsY.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/ys2DLFIrph4BfXmoE0VC9VTnlcQ.jpg"
   },
   {
     "s": "084",
