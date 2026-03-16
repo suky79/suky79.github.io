@@ -508,21 +508,18 @@
   {
     "s": "025",
     "g": "영화",
-    "ko": "The Crossing",
-    "en": "The Crossing",
+    "ko": "태평륜",
+    "en": "太平轮（上）",
     "sub": "",
-    "subE": "",
-    "y": 2012,
-    "t": 1051410,
+    "y": 2014,
+    "t": 264264,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [],
-    "poster": "https://image.tmdb.org/t/p/w500/3sbq7jJNt0dRq44jYPQJXpKWkxV.jpg",
-    "back": ""
+    "poster": "https://image.tmdb.org/t/p/w500/xh5eDfNXc9wsPqdeEVRqY4EHEcw.jpg"
   },
   {
     "s": "026",
