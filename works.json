@@ -482,5 +482,21 @@
     "dE": "",
     "lk": [],
     "strip": true
+  },
+  {
+    "s": "026",
+    "g": "뮤지컬",
+    "ko": "렘피카",
+    "en": "Lempika",
+    "sub": "",
+    "y": 2026,
+    "t": null,
+    "gr": "g11",
+    "feat": false,
+    "home": false,
+    "dK": "",
+    "dE": "",
+    "lk": [],
+    "poster": "https://raw.githubusercontent.com/suky79/suky79.github.io/main/images/works/lempika.jpg"
   }
 ]
