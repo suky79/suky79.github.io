@@ -234,7 +234,7 @@ select.form-input{cursor:pointer}
     <button class="tab-btn active" onclick="switchTab('add')">＋ 작품 추가</button>
     <button class="tab-btn" onclick="switchTab('featured')">★ 히어로 관리</button>
     <button class="tab-btn" onclick="switchTab('grid')">◆ 쇼케이스 그리드</button>
-    <button class="tab-btn" onclick="switchTab('strip')">▦ 대표작 10선</button>
+    <button class="tab-btn" onclick="switchTab('strip')">▦ 대표작 15선</button>
     <button class="tab-btn" onclick="switchTab('list')">≡ 전체 목록</button>
   </div>
 
@@ -261,27 +261,23 @@ select.form-input{cursor:pointer}
         <div class="tmdb-results" id="tmdbResults"></div>
       </div>
 
-      <!-- PERFORMANCE section: KOPIS -->
+      <!-- PERFORMANCE section: 직접 입력 -->
       <div class="genre-section" id="section-perf">
-        <div class="search-row">
-          <input type="text" id="kopisQuery" placeholder="공연 제목 검색 (예: 렘피카, 해밀턴)..." onkeydown="if(event.key==='Enter')searchKOPIS()" />
-          <button class="btn btn-ghost" onclick="searchKOPIS()">검색</button>
-        </div>
-        <div id="kopisResults"></div>
-        <div style="background:rgba(148,163,120,.1);border:1px solid rgba(148,163,120,.25);border-radius:6px;padding:10px 14px;margin-bottom:16px;font-size:11px;color:var(--muted);line-height:1.6">
-          💡 검색 결과에서 작품을 선택하면 제목·연도·포스터가 자동 입력됩니다. KOPIS API 특성상 결과가 없으면 직접 입력하세요.
+        <div style="background:rgba(148,163,120,.1);border:1px solid rgba(148,163,120,.25);border-radius:6px;padding:14px;margin-bottom:16px;font-size:12px;color:var(--muted);line-height:1.8">
+          <strong style="color:var(--text)">공연 포스터 등록 방법</strong><br>
+          1. <a href="https://www.kopis.or.kr" target="_blank" style="color:var(--accent)">kopis.or.kr</a>에서 공연 검색 → 포스터 이미지 우클릭 → <strong style="color:var(--text)">이미지 주소 복사</strong><br>
+          2. 아래 이미지 섹션에서 "🔗 URL 직접 입력" 선택 후 붙여넣기<br>
+          3. 또는 포스터 파일을 직접 업로드
         </div>
       </div>
 
-      <!-- BOOK section: Aladin -->
+      <!-- BOOK section: 알라딘 -->
       <div class="genre-section" id="section-book">
-        <div class="search-row">
-          <input type="text" id="aladinQuery" placeholder="도서 제목 검색 (예: 그린라이트, 호밀밭의 파수꾼)..." onkeydown="if(event.key==='Enter')searchAladin()" />
-          <button class="btn btn-ghost" onclick="searchAladin()">검색</button>
-        </div>
-        <div id="aladinResults"></div>
-        <div style="background:rgba(229,186,65,.1);border:1px solid rgba(229,186,65,.3);border-radius:6px;padding:10px 14px;margin-bottom:16px;font-size:11px;color:var(--muted);line-height:1.6">
-          💡 검색 결과에서 작품을 선택하면 제목·연도·표지 이미지가 자동 입력됩니다.
+        <div style="background:rgba(229,186,65,.1);border:1px solid rgba(229,186,65,.3);border-radius:6px;padding:14px;margin-bottom:16px;font-size:12px;color:var(--muted);line-height:1.8">
+          <strong style="color:var(--text)">도서 표지 등록 방법</strong><br>
+          1. <a href="https://www.aladin.co.kr" target="_blank" style="color:var(--accent)">aladin.co.kr</a>에서 도서 검색 → 표지 이미지 우클릭 → <strong style="color:var(--text)">이미지 주소 복사</strong><br>
+          2. 아래 이미지 섹션에서 "🔗 URL 직접 입력" 선택 후 붙여넣기<br>
+          3. 또는 표지 파일을 직접 업로드
         </div>
       </div>
 
@@ -453,14 +449,14 @@ select.form-input{cursor:pointer}
     </div>
   </div>
 
-  <!-- TAB: FILMSTRIP (대표작 10선) -->
+  <!-- TAB: FILMSTRIP (대표작 15선) -->
   <div id="tab-strip" style="display:none">
     <div class="featured-section-card">
-      <div class="card-title">▦ 대표작 10선 <span class="badge">최대 10개</span></div>
+      <div class="card-title">▦ 대표작 15선 <span class="badge">최대 15개</span></div>
       <p class="card-sub">메인 화면 "Selected Works" 가로 스크롤 섹션에 표시됩니다.<br>
         5개까지 선택 가능 · 드래그로 순서 변경 · 지정하지 않으면 최신 5개 자동 표시</p>
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-        <span style="font-size:12px;color:var(--muted)" id="stripCountLabel">0 / 10 선택됨</span>
+        <span style="font-size:12px;color:var(--muted)" id="stripCountLabel">0 / 15 선택됨</span>
         <button class="btn btn-ghost btn-sm" onclick="clearStrip()">전체 해제</button>
       </div>
       <div class="featured-list" id="stripList">
@@ -1273,7 +1269,7 @@ function renderAdminStrip(){
   const inStrip = works.filter(w=>w.strip);
   const notIn = works.filter(w=>!w.strip);
 
-  document.getElementById('stripCountLabel').textContent = `${inStrip.length} / 10 선택됨`;
+  document.getElementById('stripCountLabel').textContent = `${inStrip.length} / 15 선택됨`;
 
   if(inStrip.length){
     list.innerHTML = inStrip.map((w,si)=>{
@@ -1305,7 +1301,7 @@ function renderAdminStrip(){
     list.innerHTML = '<p style="color:var(--muted);font-size:12px;text-align:center;padding:20px;background:var(--bg3);border-radius:6px">아래에서 작품을 추가하세요. 비워두면 최신 5개가 자동 표시됩니다.</p>';
   }
 
-  const canAdd = inStrip.length < 10;
+  const canAdd = inStrip.length < 15;
   avail.innerHTML = notIn.map(w=>{
     const gi=works.indexOf(w);
     return `<div class="chip" onclick="${canAdd?`addToStrip(${gi})`:'showStripFull()'}"
@@ -1316,7 +1312,7 @@ function renderAdminStrip(){
 }
 
 async function addToStrip(gi){
-  if(works.filter(w=>w.strip).length >= 10){ showStripFull(); return; }
+  if(works.filter(w=>w.strip).length >= 15){ showStripFull(); return; }
   works[gi].strip = true;
   markDirty(); renderAdminStrip(); renderWorksList();
 }
@@ -1332,7 +1328,7 @@ async function clearStrip(){
   markDirty(); renderAdminStrip(); renderWorksList();
 }
 
-function showStripFull(){ toast('최대 10개까지만 선택할 수 있습니다.','info'); }
+function showStripFull(){ toast('최대 15개까지만 선택할 수 있습니다.','info'); }
 
 let stripDragIdx=null;
 function stripDragStart(e){ stripDragIdx=+e.currentTarget.dataset.stripIdx; e.currentTarget.style.opacity='.5'; }

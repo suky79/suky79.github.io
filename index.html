@@ -65,14 +65,14 @@ nav.scrolled{background:rgba(27,37,64,.96);backdrop-filter:blur(20px);-webkit-ba
 .hero-counter{position:absolute;right:40px;bottom:48px;font-family:var(--serif);font-size:14px;font-weight:400;color:rgba(240,235,224,.35);z-index:20;letter-spacing:.05em}
 
 /* ═══════════ FILM STRIP — A24 horizontal scroll ═══════════ */
-.filmstrip{padding:48px 0 48px 40px;border-bottom:1px solid var(--border);max-width:1320px;margin:0 auto}
-.filmstrip-header{display:flex;align-items:baseline;justify-content:space-between;padding-right:40px;margin-bottom:28px}
+.filmstrip{padding:40px 0;border-bottom:1px solid var(--border);overflow:hidden}
+.filmstrip-header{display:flex;align-items:baseline;padding:0 40px;margin-bottom:24px;max-width:1320px;margin-left:auto;margin-right:auto}
 .filmstrip-title{font-family:var(--serif);font-size:11px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--muted)}
-.filmstrip-count{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--muted2)}
-.filmstrip-track{display:grid;grid-template-columns:repeat(5,1fr);gap:20px 16px;padding-bottom:12px;padding-right:40px}
-.filmstrip-card{cursor:pointer;transition:transform .3s var(--ease)}
-.filmstrip-card:hover{transform:translateY(-4px)}
-.filmstrip-card:last-child{margin-right:0}
+.filmstrip-count{display:none}
+.filmstrip-track{display:flex;gap:12px;width:max-content;animation:marquee 40s linear infinite}
+.filmstrip-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.filmstrip-card{flex:0 0 160px;cursor:pointer}
 .filmstrip-poster{aspect-ratio:2/3;border-radius:4px;overflow:hidden;position:relative;background:var(--bg3);margin-bottom:10px;transition:transform .3s,box-shadow .3s}
 .filmstrip-card:hover .filmstrip-poster{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.4)}
 .filmstrip-poster img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
@@ -499,26 +499,13 @@ function updateHeroCounter(){
 function renderStrip(){
   const el=document.getElementById('filmstrip');
   const pinned=W.filter(w=>w.strip);
-  const display=pinned.length ? pinned.slice(0,10) : [...W].sort((a,b)=>b.y-a.y).slice(0,10);
-  el.innerHTML=display.map(w=>{
-    const imgHtml = w.poster
-      ? `<img src="${w.poster}" alt="${w.ko}" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:relative;z-index:1">`
-      : '';
-    return `
-    <div class="filmstrip-card">
-      <div class="filmstrip-poster">
-        ${imgHtml}
-        <div class="filmstrip-poster-fb ${w.gr}" ${w.poster?'style="display:none"':''}><span class="lang-ko" style="display:none">${w.ko}</span><span class="lang-en">${w.en}</span></div>
-        ${w.lk&&w.lk.length ? `<div class="filmstrip-links">${w.lk.map(l=>`<a class="filmstrip-link" href="${l.u}" target="_blank" onclick="event.stopPropagation()" style="background:${l.bg};color:${l.c}">${l.n}</a>`).join('')}</div>` : ''}
-      </div>
-      <div class="filmstrip-info">
-        <h3><span class="lang-ko" style="display:none">${w.ko}</span><span class="lang-en">${w.en}</span></h3>
-        <p><span class="lang-ko" style="display:none">${w.sub}</span><span class="lang-en">${w.subE}</span></p>
-        <p class="yr">${w.y}</p>
-      </div>
-    </div>`;
-  }).join('');
-  
+  const display=pinned.length ? pinned.slice(0,15) : [...W].sort((a,b)=>b.y-a.y).slice(0,15);
+  const makeCard=w=>{
+    const imgHtml=w.poster?`<img src="${w.poster}" alt="${w.ko}" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:relative;z-index:1">`:'';
+    return `<div class="filmstrip-card"><div class="filmstrip-poster">${imgHtml}<div class="filmstrip-poster-fb ${w.gr}" ${w.poster?'style="display:none"':''}><span class="lang-ko" style="display:none">${w.ko}</span><span class="lang-en">${w.en}</span></div>${w.lk&&w.lk.length?`<div class="filmstrip-links">${w.lk.map(l=>`<a class="filmstrip-link" href="${l.u}" target="_blank" onclick="event.stopPropagation()" style="background:${l.bg};color:${l.c}">${l.n}</a>`).join('')}</div>`:''}</div><div class="filmstrip-info"><h3><span class="lang-ko" style="display:none">${w.ko}</span><span class="lang-en">${w.en}</span></h3><p><span class="lang-ko" style="display:none">${w.sub}</span><span class="lang-en">${w.subE}</span></p><p class="yr">${w.y}</p></div></div>`;
+  };
+  const cards=display.map(makeCard).join('');
+  el.innerHTML=cards+cards;
 }
 
 /* ═══════════ LANG ═══════════ */
