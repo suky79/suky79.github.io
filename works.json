@@ -92,7 +92,7 @@
     "y": 2022,
     "t": 76600,
     "gr": "g4",
-    "feat": true,
+    "feat": false,
     "dK": "판도라 바다의 서사.\n자연과 공존의 메시지를 한국어 자막에 담았습니다.",
     "dE": "An oceanic epic on Pandora.\nNature and coexistence in Korean subtitles.",
     "lk": [
@@ -366,5 +366,20 @@
         "u": "https://product.kyobobook.co.kr/detail/S000216507425"
       }
     ]
+  },
+  {
+    "s": "019",
+    "g": "영화",
+    "ko": "프로젝트 헤일메리",
+    "en": "Project Hail Mary",
+    "sub": "",
+    "y": 2026,
+    "t": 687163,
+    "gr": "g4",
+    "feat": false,
+    "home": false,
+    "dK": "",
+    "dE": "",
+    "lk": []
   }
 ]
