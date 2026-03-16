@@ -4384,7 +4384,7 @@
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": true,
+    "strip": false,
     "dK": "모두가 갈망하는 공중도시와 그들을 위해 존재하는 고철도시로 나누어진 26세기. 고철 더미 속 모든 기억을 잃은 채 깨어난 알리타는 마음 따뜻한 의사 이도의 보살핌으로 새로운 삶을 시작한다. 이도는 사이보그인 알리타에게 특별한 과거의 비밀과 영혼이 존재한다는 사실을 깨닫고 미스터리한 과거로부터 그녀를 지키고자 한다. 한편 새로운 친구 휴고는 알리타가 위험한 고철도시를 헤쳐나갈 수 있는 방법과 함께 기억을 되찾도록 돕는다. 알리타가 자신의 과거에 다가갈수록 도시를 지배하는 악랄한 세력들이 그녀를 노리며 제거하려고 하는데...",
     "dE": "",
     "lk": [],
@@ -7082,7 +7082,7 @@
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": true,
+    "strip": false,
     "dK": "여러 성장통을 겪으며 새로운 스파이더맨이 된 마일스 모랄레스. 그 앞에 다른 평행세계의 스파이더우먼 그웬이 다시 나타난다. 모든 차원의 멀티버스 속 스파이더맨들을 만나게 되지만, 질서에 대한 신념이 부딪히며 예상치 못한 균열이 생기는데… 상상 그 이상을 넘어서는 멀티버스의 세계가 열린다!",
     "dE": "",
     "lk": [],
@@ -7797,7 +7797,8 @@
     "dK": "",
     "dE": "",
     "lk": [],
-    "poster": "https://kopis.or.kr/_next/image?url=%2Fupload%2FpfmPoster%2FPF_PF255956_241217_132621.gif&w=384&q=75"
+    "poster": "https://kopis.or.kr/_next/image?url=%2Fupload%2FpfmPoster%2FPF_PF255956_241217_132621.gif&w=384&q=75",
+    "strip": true
   },
   {
     "s": "412",
@@ -7813,6 +7814,7 @@
     "dK": "",
     "dE": "",
     "lk": [],
-    "poster": "https://kopis.or.kr/_next/image?url=%2Fupload%2FpfmPoster%2FPF_PF241301_240517_145643.gif&w=384&q=75"
+    "poster": "https://kopis.or.kr/_next/image?url=%2Fupload%2FpfmPoster%2FPF_PF241301_240517_145643.gif&w=384&q=75",
+    "strip": true
   }
 ]
