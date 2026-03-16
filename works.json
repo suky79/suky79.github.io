@@ -26,7 +26,8 @@
       }
     ],
     "home": false,
-    "strip": false
+    "strip": false,
+    "poster": "https://image.tmdb.org/t/p/w500/k1e0TlvDM4KsiSRyJENVrHxMqtK.jpg"
   },
   {
     "s": "002",
@@ -55,7 +56,8 @@
       }
     ],
     "home": false,
-    "strip": false
+    "strip": false,
+    "poster": "https://image.tmdb.org/t/p/w500/u4FChoDddutqEBP4L0AHhPbrCAk.jpg"
   },
   {
     "s": "003",
@@ -84,7 +86,8 @@
       }
     ],
     "home": false,
-    "strip": true
+    "strip": true,
+    "poster": "https://image.tmdb.org/t/p/w500/dsfAcQ5J7TPOpJgcX8R1lRBqiMK.jpg"
   },
   {
     "s": "004",
@@ -113,7 +116,8 @@
       }
     ],
     "home": false,
-    "strip": false
+    "strip": false,
+    "poster": "https://image.tmdb.org/t/p/w500/u2aVXft5GLBQnjzWVNda7sdDpdu.jpg"
   },
   {
     "s": "005",
@@ -142,7 +146,8 @@
       }
     ],
     "home": false,
-    "strip": true
+    "strip": true,
+    "poster": "https://image.tmdb.org/t/p/w500/l18o0AK18KS118tWeROOKYkF0ng.jpg"
   },
   {
     "s": "006",
@@ -165,7 +170,8 @@
       }
     ],
     "home": false,
-    "strip": true
+    "strip": true,
+    "poster": "https://image.tmdb.org/t/p/w500/fvqoI9r1GU2EFkc0xjZ6dKCuDVR.jpg"
   },
   {
     "s": "007",
@@ -227,7 +233,8 @@
     "dK": "",
     "dE": "",
     "lk": [],
-    "strip": true
+    "strip": true,
+    "poster": "https://image.tmdb.org/t/p/w500/qqGpVVZk2KD1lAvccgTU4Z6nh1H.jpg"
   },
   {
     "s": "010",
@@ -572,7 +579,8 @@
     "home": false,
     "dK": "",
     "dE": "",
-    "lk": []
+    "lk": [],
+    "poster": "https://image.tmdb.org/t/p/w500/3ZtjPZO6JVSpbDp0O4Fa8m6ssuJ.jpg"
   },
   {
     "s": "029",
@@ -7768,6 +7776,7 @@
     "home": false,
     "dK": "",
     "dE": "",
-    "lk": []
+    "lk": [],
+    "poster": "https://image.tmdb.org/t/p/w500/bauEuMbet8sii0CShmpwJqdD9ZT.jpg"
   }
 ]
