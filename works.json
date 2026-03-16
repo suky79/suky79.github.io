@@ -169,22 +169,6 @@
   },
   {
     "s": "007",
-    "g": "뮤지컬",
-    "ko": "렘피카",
-    "en": "Lempicka",
-    "sub": "Broadway Musical · Korean Premiere",
-    "y": 2024,
-    "t": null,
-    "kid": "",
-    "gr": "g7",
-    "feat": false,
-    "home": true,
-    "dK": "아르데코의 여왕, 타마라 드 렘피카의 삶을 그린 뮤지컬.\n브로드웨이 오리지널의 감성을 한국어로 옮겼습니다.",
-    "dE": "A musical portrait of Art Deco icon Tamara de Lempicka.\nThe Broadway original, translated into Korean.",
-    "lk": []
-  },
-  {
-    "s": "008",
     "g": "책",
     "ko": "그린라이트",
     "en": "Greenlights",
@@ -207,7 +191,7 @@
     ]
   },
   {
-    "s": "009",
+    "s": "008",
     "g": "저서",
     "ko": "오역하는 말들",
     "en": "Mistranslated Words",
@@ -230,7 +214,7 @@
     ]
   },
   {
-    "s": "010",
+    "s": "009",
     "g": "영화",
     "ko": "프로젝트 헤일메리",
     "en": "Project Hail Mary",
@@ -246,7 +230,7 @@
     "strip": true
   },
   {
-    "s": "011",
+    "s": "010",
     "g": "뮤지컬",
     "ko": "렘피카",
     "en": "렘피카",
