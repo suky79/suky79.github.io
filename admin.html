@@ -235,6 +235,7 @@ select.form-input{cursor:pointer}
     <button class="tab-btn" onclick="switchTab('featured')">★ 히어로 관리</button>
     <button class="tab-btn" onclick="switchTab('grid')">◆ 쇼케이스 그리드</button>
     <button class="tab-btn" onclick="switchTab('strip')">▦ 대표작 15선</button>
+    <button class="tab-btn" onclick="switchTab('nowplaying')">🎬 현재 상영작</button>
     <button class="tab-btn" onclick="switchTab('list')">≡ 전체 목록</button>
   </div>
 
@@ -312,6 +313,28 @@ select.form-input{cursor:pointer}
         <div class="form-group film-only" id="fg-rt">
           <span class="form-label">Rotten Tomatoes URL</span>
           <input class="form-input" id="fRt" placeholder="https://www.rottentomatoes.com/m/..." />
+        </div>
+
+        <!-- 현재 상영작 극장 예매 링크 -->
+        <div class="form-group film-only full" id="fg-nowplaying" style="margin-top:4px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+            <span class="form-label">극장 예매 링크 (현재 상영 중인 경우)</span>
+            <button type="button" class="btn btn-ghost btn-sm" onclick="autoFillBookingLinks()" style="font-size:11px">✨ 자동 생성</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:11px;font-weight:600;color:#e00;min-width:70px">CGV</span>
+              <input class="form-input" id="fCgv" placeholder="https://www.cgv.co.kr/search/?query=..." style="flex:1" />
+            </div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:11px;font-weight:600;color:#e5001c;min-width:70px">롯데</span>
+              <input class="form-input" id="fLotte" placeholder="https://www.lottecinema.co.kr/NLCHS/search?keyword=..." style="flex:1" />
+            </div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:11px;font-weight:600;color:#005bac;min-width:70px">메가박스</span>
+              <input class="form-input" id="fMega" placeholder="https://www.megabox.co.kr/on/oh/ohb/movie/list.do?searchWord=..." style="flex:1" />
+            </div>
+          </div>
         </div>
 
         <!-- Performance only -->
@@ -467,6 +490,28 @@ select.form-input{cursor:pointer}
     </div>
   </div>
 
+  <!-- TAB: NOW PLAYING -->
+  <div id="tab-nowplaying" style="display:none">
+    <div class="featured-section-card">
+      <div class="card-title">🎬 현재 상영작 <span class="badge">최대 5개</span></div>
+      <p class="card-sub">메인 화면 "현재 상영작" 섹션에 표시됩니다. TMDB에서 검색 후 추가하면 네이버 예매 링크가 자동 생성됩니다.</p>
+
+      <div class="search-row" style="margin-bottom:16px">
+        <input type="text" id="npQuery" placeholder="영화 제목 검색 (예: 프로젝트 헤일메리)..." onkeydown="if(event.key==='Enter')searchNowPlaying()" />
+        <button class="btn btn-primary" onclick="searchNowPlaying()">검색</button>
+      </div>
+      <div id="npResults"></div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <span style="font-size:12px;color:var(--muted)" id="npCountLabel">0 / 5 선택됨</span>
+        <button class="btn btn-ghost btn-sm" onclick="clearNowPlaying()">전체 해제</button>
+      </div>
+      <div class="featured-list" id="npList">
+        <p style="color:var(--muted);font-size:12px;text-align:center;padding:20px;background:var(--bg3);border-radius:6px">GitHub 연결 후 로드됩니다.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- TAB: WORKS LIST -->
   <div id="tab-list" style="display:none">
     <div class="section-header">
@@ -504,11 +549,11 @@ let currentGenre='영화', imgBase64=null, imgFileName='', imgSource='upload';
 
 /* ═══ TAB ═══ */
 function switchTab(t){
-  ['add','featured','grid','strip','list'].forEach(id=>{
+  ['add','featured','grid','strip','nowplaying','list'].forEach(id=>{
     document.getElementById('tab-'+id).style.display = id===t?'':'none';
   });
   document.querySelectorAll('.tab-btn').forEach((b,i)=>{
-    b.classList.toggle('active',['add','featured','grid','strip','list'][i]===t);
+    b.classList.toggle('active',['add','featured','grid','strip','nowplaying','list'][i]===t);
   });
 }
 
@@ -743,6 +788,7 @@ async function authenticate(){
       localStorage.setItem('beardos_gh_token', ghToken);
       showStatus(`✓ ${r.login} 로 연결됨`,'ok');
       loadWorks();
+      loadNowPlaying();
     } else {
       localStorage.removeItem('beardos_gh_token');
       showStatus('토큰이 유효하지 않습니다.','err');
@@ -882,6 +928,26 @@ async function saveWork(){
       if(publisher) extraFields.publisher = publisher;
     }
 
+    // 극장 예매 링크 수집
+    if(currentGenre==='영화'){
+      const cgv   = document.getElementById('fCgv').value.trim();
+      const lotte = document.getElementById('fLotte').value.trim();
+      const mega  = document.getElementById('fMega').value.trim();
+      if(cgv)   extraFields._cgv   = cgv;
+      if(lotte) extraFields._lotte = lotte;
+      if(mega)  extraFields._mega  = mega;
+    }
+
+    // getLinks()에 극장 링크 병합
+    const baseLks = getLinks().filter(l=>!['CGV','롯데시네마','메가박스'].includes(l.n));
+    const cinemaLks = [];
+    const cgvVal   = document.getElementById('fCgv')?.value.trim();
+    const lotteVal = document.getElementById('fLotte')?.value.trim();
+    const megaVal  = document.getElementById('fMega')?.value.trim();
+    if(cgvVal)   cinemaLks.push({n:'CGV',   bg:'#e00',  c:'#fff', u:cgvVal});
+    if(lotteVal) cinemaLks.push({n:'롯데시네마', bg:'#e5001c',c:'#fff', u:lotteVal});
+    if(megaVal)  cinemaLks.push({n:'메가박스',  bg:'#005bac',c:'#fff', u:megaVal});
+
     const work = {
       s: spine,
       g: currentGenre,
@@ -895,7 +961,7 @@ async function saveWork(){
       home: editIdx>=0 ? (works[editIdx].home||false) : false,
       dK: document.getElementById('fDescKo').value.trim()||'',
       dE: document.getElementById('fDescEn').value.trim()||'',
-      lk: getLinks(),
+      lk: [...baseLks, ...cinemaLks],
       ...(posterUrl && {poster: posterUrl}),
       ...extraFields
     };
@@ -938,7 +1004,10 @@ function editWork(idx){
   if(w.g==='영화'){
     document.getElementById('fTmdb').value = w.t||'';
     const imdb = w.lk?.find(l=>l.n==='IMDb'); if(imdb) document.getElementById('fImdb').value = imdb.u;
-    const rt = w.lk?.find(l=>l.n==='RT'); if(rt) document.getElementById('fRt').value = rt.u;
+    const rt   = w.lk?.find(l=>l.n==='RT');   if(rt)   document.getElementById('fRt').value   = rt.u;
+    const cgv  = w.lk?.find(l=>l.n==='CGV');           document.getElementById('fCgv').value   = cgv?.u||'';
+    const lotte= w.lk?.find(l=>l.n==='롯데시네마');      document.getElementById('fLotte').value = lotte?.u||'';
+    const mega = w.lk?.find(l=>l.n==='메가박스');        document.getElementById('fMega').value  = mega?.u||'';
   } else if(w.g==='뮤지컬'||w.g==='연극'){
     document.getElementById('fKid').value = w.kid||'';
     document.getElementById('fVenue').value = w.venue||'';
@@ -978,7 +1047,7 @@ function resetForm(){
   editIdx=-1; imgBase64=null; imgFileName='';
   document.getElementById('formTitle').textContent='작품 추가';
   document.getElementById('saveBtn').textContent='작품 저장';
-  ['fEn','fKo','fYear','fSub','fTmdb','fImdb','fRt','fKid','fVenue','fRuntime','fTicket','fIsbn','fPublisher','fAladin','fKyobo','fDescEn','fDescKo','fPosterUrl','tmdbQuery'].forEach(id=>{
+  ['fEn','fKo','fYear','fSub','fTmdb','fImdb','fRt','fCgv','fLotte','fMega','fKid','fVenue','fRuntime','fTicket','fIsbn','fPublisher','fAladin','fKyobo','fDescEn','fDescKo','fPosterUrl','tmdbQuery'].forEach(id=>{
     const el=document.getElementById(id); if(el) el.value='';
   });
   document.getElementById('fFeat').value='false';
@@ -1260,6 +1329,19 @@ function selectAladin(idx){
   }
 }
 
+/* ═══ 극장 예매 링크 자동 생성 ═══ */
+function autoFillBookingLinks(){
+  const ko = document.getElementById('fKo').value.trim();
+  const en = document.getElementById('fEn').value.trim();
+  const q = ko || en;
+  if(!q){ toast('먼저 제목을 입력하세요.','error'); return; }
+  const enc = encodeURIComponent(q);
+  document.getElementById('fCgv').value   = `https://www.cgv.co.kr/search/?query=${enc}`;
+  document.getElementById('fLotte').value = `https://www.lottecinema.co.kr/NLCHS/search?keyword=${enc}`;
+  document.getElementById('fMega').value  = `https://www.megabox.co.kr/on/oh/ohb/movie/list.do?searchWord=${enc}`;
+  toast('예매 링크 자동 생성 완료. 필요하면 직접 수정하세요.','success');
+}
+
 /* ═══ KOPIS 상수 ═══ */
 const KOPIS_KEY = '80eee61339564315aef9acfd05e32945';
 const ALADIN_KEY = 'ttbsuky79.shopping0154001';
@@ -1407,6 +1489,127 @@ async function stripDrop(e){
   works.forEach((w,i)=>w.s=String(i+1).padStart(3,'0'));
   markDirty(); renderAdminStrip(); renderWorksList();
   stripDragIdx=null;
+}
+
+/* ═══ 현재 상영작 ═══ */
+async function searchNowPlaying(){
+  const q = document.getElementById('npQuery').value.trim();
+  if(!q) return;
+  const el = document.getElementById('npResults');
+  el.innerHTML = '<p style="font-size:12px;color:var(--muted);padding:8px">검색 중...</p>';
+  try{
+    const r = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_KEY}&query=${encodeURIComponent(q)}&language=ko-KR`);
+    const d = await r.json();
+    if(!d.results?.length){ el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">결과 없음</p>'; return; }
+    el.innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:16px;max-height:260px;overflow-y:auto">` +
+      d.results.slice(0,8).map((m,i)=>{
+        const poster = m.poster_path ? `https://image.tmdb.org/t/p/w185${m.poster_path}` : '';
+        const yr = m.release_date ? m.release_date.substring(0,4) : '—';
+        return `<div class="tmdb-result" onclick="addNowPlaying(${i})" data-idx="${i}">
+          ${poster?`<img src="${poster}" alt="" style="width:100%;aspect-ratio:2/3;object-fit:cover;display:block">`:
+          `<div style="aspect-ratio:2/3;background:var(--bg4);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);text-align:center;padding:4px">${m.title}</div>`}
+          <div class="tmdb-result-info"><div class="tmdb-result-title">${m.title}</div><div class="tmdb-result-year">${yr}</div></div>
+        </div>`;
+      }).join('') + `</div>`;
+    window._npResults = d.results.slice(0,8);
+  }catch(e){ el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">검색 실패</p>'; }
+}
+
+async function addNowPlaying(idx){
+  const np = (works[0]?.nowplaying !== undefined) ? null : null; // works.json의 nowplaying 배열 사용
+  const current = JSON.parse(localStorage.getItem('beardos_nowplaying')||'[]');
+  if(current.length >= 5){ toast('최대 5개까지 선택할 수 있습니다.','info'); return; }
+  
+  const m = window._npResults?.[idx]; if(!m) return;
+  const poster = m.poster_path ? `https://image.tmdb.org/t/p/w500${m.poster_path}` : '';
+  const naverUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(m.title||m.original_title)}+예매`;
+  const item = {
+    id: m.id,
+    title: m.title || m.original_title,
+    originalTitle: m.original_title,
+    year: m.release_date ? m.release_date.substring(0,4) : '',
+    poster,
+    naverUrl
+  };
+  
+  if(current.find(x=>x.id===item.id)){ toast('이미 추가된 작품입니다.','info'); return; }
+  current.push(item);
+  await saveNowPlaying(current);
+}
+
+async function removeNowPlaying(id){
+  const current = JSON.parse(localStorage.getItem('beardos_nowplaying')||'[]');
+  const updated = current.filter(x=>x.id!==id);
+  await saveNowPlaying(updated);
+}
+
+async function clearNowPlaying(){
+  if(!confirm('현재 상영작을 모두 해제할까요?')) return;
+  await saveNowPlaying([]);
+}
+
+async function saveNowPlaying(list){
+  // works.json이 아닌 별도 nowplaying.json에 저장
+  localStorage.setItem('beardos_nowplaying', JSON.stringify(list));
+  
+  const jsonStr = JSON.stringify(list, null, 2);
+  const utf8 = new TextEncoder().encode(jsonStr);
+  let binary = '';
+  for(let i=0;i<utf8.length;i++) binary += String.fromCharCode(utf8[i]);
+  const content = btoa(binary);
+  
+  // Check existing file
+  let sha;
+  try{
+    const r = await ghFetch(`https://api.github.com/repos/${REPO}/contents/nowplaying.json`);
+    if(r.sha) sha = r.sha;
+  }catch(e){}
+  
+  const body = {message:'Update now playing', content, ...(sha&&{sha})};
+  try{
+    const r = await ghFetch(`https://api.github.com/repos/${REPO}/contents/nowplaying.json`, {
+      method:'PUT', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)
+    });
+    if(r.content){ toast('현재 상영작 저장 완료','success'); renderNowPlaying(); }
+    else { toast('저장 실패','error'); }
+  }catch(e){ toast('저장 실패','error'); }
+}
+
+function renderNowPlaying(){
+  const list = document.getElementById('npList');
+  if(!list) return;
+  const current = JSON.parse(localStorage.getItem('beardos_nowplaying')||'[]');
+  document.getElementById('npCountLabel').textContent = `${current.length} / 5 선택됨`;
+  
+  if(!current.length){
+    list.innerHTML = '<p style="color:var(--muted);font-size:12px;text-align:center;padding:20px;background:var(--bg3);border-radius:6px">상단에서 영화를 검색해 추가하세요.</p>';
+    return;
+  }
+  list.innerHTML = current.map(item=>`
+    <div class="featured-item">
+      <div class="featured-item-poster">${item.poster?`<img src="${item.poster}" style="width:100%;height:100%;object-fit:cover">`:''}</div>
+      <div class="featured-item-info">
+        <div class="featured-item-title">${item.title}</div>
+        <div class="featured-item-meta">${item.year}${item.originalTitle!==item.title?' · '+item.originalTitle:''}</div>
+        <div class="featured-item-desc" style="color:var(--accent)">🎬 네이버 예매 링크 자동생성됨</div>
+      </div>
+      <button class="btn btn-danger btn-sm" onclick="removeNowPlaying(${item.id})">✕</button>
+    </div>`).join('');
+}
+
+// 페이지 로드 시 nowplaying.json 불러오기
+async function loadNowPlaying(){
+  try{
+    const r = await ghFetch(`https://api.github.com/repos/${REPO}/contents/nowplaying.json`);
+    if(r.content){
+      const binary = atob(r.content.replace(/\n/g,''));
+      const bytes = new Uint8Array(binary.length);
+      for(let i=0;i<binary.length;i++) bytes[i]=binary.charCodeAt(i);
+      const list = JSON.parse(new TextDecoder('utf-8').decode(bytes));
+      localStorage.setItem('beardos_nowplaying', JSON.stringify(list));
+    }
+  }catch(e){}
+  renderNowPlaying();
 }
 
 /* ═══ TOAST ═══ */

@@ -4,12 +4,11 @@
     "g": "영화",
     "ko": "데드풀",
     "en": "Deadpool",
-    "sub": "",
+    "sub": "Marvel Comics",
     "y": 2016,
     "t": 293660,
     "gr": "g1",
     "feat": false,
-    "home": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -25,19 +24,19 @@
         "c": "#fff",
         "u": "https://www.rottentomatoes.com/m/deadpool"
       }
-    ]
+    ],
+    "home": false
   },
   {
     "s": "002",
     "g": "영화",
-    "ko": "프로젝트 헤일메리",
-    "en": "Project Hail Mary",
-    "sub": "",
-    "y": 2026,
-    "t": 687163,
+    "ko": "데드풀 2",
+    "en": "Deadpool 2",
+    "sub": "Marvel Comics",
+    "y": 2018,
+    "t": 383498,
     "gr": "g2",
-    "feat": true,
-    "home": false,
+    "feat": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -54,19 +53,18 @@
         "u": "https://www.rottentomatoes.com/m/deadpool_2"
       }
     ],
-    "strip": true
+    "home": false
   },
   {
     "s": "003",
     "g": "영화",
     "ko": "데드풀 & 울버린",
     "en": "Deadpool & Wolverine",
-    "sub": "",
+    "sub": "Marvel Comics",
     "y": 2024,
     "t": 533535,
     "gr": "g3",
     "feat": true,
-    "home": false,
     "dK": "마블 시네마틱 유니버스의 R등급 블록버스터.\n두 안티히어로의 위트와 독설을 한국어의 결로 옮겼습니다.",
     "dE": "Marvel's R-rated blockbuster.\nThe wit of two antiheroes, in Korean grain.",
     "lk": [
@@ -83,19 +81,18 @@
         "u": "https://www.rottentomatoes.com/m/deadpool_and_wolverine"
       }
     ],
-    "strip": true
+    "home": false
   },
   {
     "s": "004",
     "g": "영화",
     "ko": "아바타: 물의 길",
     "en": "Avatar: The Way of Water",
-    "sub": "",
+    "sub": "James Cameron",
     "y": 2022,
     "t": 76600,
     "gr": "g4",
-    "feat": false,
-    "home": false,
+    "feat": true,
     "dK": "판도라 바다의 서사.\n자연과 공존의 메시지를 한국어 자막에 담았습니다.",
     "dE": "An oceanic epic on Pandora.\nNature and coexistence in Korean subtitles.",
     "lk": [
@@ -111,19 +108,19 @@
         "c": "#fff",
         "u": "https://www.rottentomatoes.com/m/avatar_the_way_of_water"
       }
-    ]
+    ],
+    "home": false
   },
   {
     "s": "005",
     "g": "영화",
     "ko": "아바타: 불과 재",
     "en": "Avatar: Fire and Ash",
-    "sub": "",
+    "sub": "James Cameron",
     "y": 2025,
     "t": 83533,
     "gr": "g5",
     "feat": true,
-    "home": false,
     "dK": "불과 재의 세계로 돌아온 아바타.\n가장 최근 작업한 블록버스터입니다.",
     "dE": "Avatar returns to fire and ash.\nOur most recent blockbuster translation.",
     "lk": [
@@ -140,19 +137,18 @@
         "u": "https://www.rottentomatoes.com/m/avatar_fire_and_ash"
       }
     ],
-    "strip": true
+    "home": false
   },
   {
     "s": "006",
     "g": "영화",
     "ko": "스파이더맨: 노 웨이 홈",
     "en": "Spider-Man: No Way Home",
-    "sub": "",
+    "sub": "Marvel Comics",
     "y": 2021,
     "t": 634649,
     "gr": "g6",
-    "feat": true,
-    "home": false,
+    "feat": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -163,7 +159,7 @@
         "u": "https://www.imdb.com/title/tt10872600/"
       }
     ],
-    "strip": true
+    "home": false
   },
   {
     "s": "007",
@@ -320,7 +316,7 @@
     "kid": "",
     "gr": "g7",
     "feat": false,
-    "home": false,
+    "home": true,
     "dK": "아르데코의 여왕, 타마라 드 렘피카의 삶을 그린 뮤지컬.\n브로드웨이 오리지널의 감성을 한국어로 옮겼습니다.",
     "dE": "A musical portrait of Art Deco icon Tamara de Lempicka.\nThe Broadway original, translated into Korean.",
     "lk": []
@@ -370,133 +366,5 @@
         "u": "https://product.kyobobook.co.kr/detail/S000216507425"
       }
     ]
-  },
-  {
-    "s": "019",
-    "g": "영화",
-    "ko": "보헤미안 랩소디",
-    "en": "Bohemian Rhapsody",
-    "sub": "",
-    "y": 2018,
-    "t": 424694,
-    "gr": "g4",
-    "feat": false,
-    "home": false,
-    "dK": "",
-    "dE": "",
-    "lk": [],
-    "strip": true
-  },
-  {
-    "s": "020",
-    "g": "영화",
-    "ko": "나이브스 아웃: 웨이크 업 데드 맨",
-    "en": "Wake Up Dead Man: A Knives Out Mystery",
-    "sub": "",
-    "y": 2025,
-    "t": 812583,
-    "gr": "g5",
-    "feat": false,
-    "home": false,
-    "dK": "",
-    "dE": "",
-    "lk": [],
-    "strip": false
-  },
-  {
-    "s": "021",
-    "g": "영화",
-    "ko": "존 윅 4",
-    "en": "John Wick: Chapter 4",
-    "sub": "",
-    "y": 2023,
-    "t": 603692,
-    "gr": "g6",
-    "feat": false,
-    "home": false,
-    "dK": "",
-    "dE": "",
-    "lk": [],
-    "strip": true
-  },
-  {
-    "s": "022",
-    "g": "영화",
-    "ko": "포드 V 페라리",
-    "en": "Ford v Ferrari",
-    "sub": "",
-    "y": 2019,
-    "t": 359724,
-    "gr": "g7",
-    "feat": false,
-    "home": false,
-    "dK": "",
-    "dE": "",
-    "lk": [],
-    "strip": true
-  },
-  {
-    "s": "023",
-    "g": "영화",
-    "ko": "에브리씽 에브리웨어 올 앳 원스",
-    "en": "Everything Everywhere All at Once",
-    "sub": "",
-    "y": 2022,
-    "t": 545611,
-    "gr": "g8",
-    "feat": false,
-    "home": false,
-    "dK": "",
-    "dE": "",
-    "lk": [],
-    "strip": true
-  },
-  {
-    "s": "024",
-    "g": "영화",
-    "ko": "블레이드 러너 2049",
-    "en": "Blade Runner 2049",
-    "sub": "",
-    "y": 2017,
-    "t": 335984,
-    "gr": "g9",
-    "feat": false,
-    "home": false,
-    "dK": "",
-    "dE": "",
-    "lk": [],
-    "strip": true
-  },
-  {
-    "s": "025",
-    "g": "영화",
-    "ko": "혹성탈출: 종의 전쟁",
-    "en": "War for the Planet of the Apes",
-    "sub": "",
-    "y": 2017,
-    "t": 281338,
-    "gr": "g10",
-    "feat": false,
-    "home": false,
-    "dK": "",
-    "dE": "",
-    "lk": [],
-    "strip": true
-  },
-  {
-    "s": "026",
-    "g": "뮤지컬",
-    "ko": "렘피카",
-    "en": "Lempika",
-    "sub": "",
-    "y": 2026,
-    "t": null,
-    "gr": "g11",
-    "feat": false,
-    "home": true,
-    "dK": "",
-    "dE": "",
-    "lk": [],
-    "poster": "https://raw.githubusercontent.com/suky79/suky79.github.io/main/images/works/lempika.jpg"
   }
 ]
