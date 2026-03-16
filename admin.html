@@ -173,6 +173,8 @@ select.form-input{cursor:pointer}
 
 .divider{height:1px;background:rgba(45,60,89,.08);margin:20px 0}
 
+.active-sort{background:var(--accent)!important;color:#2D3C59!important;border-color:var(--accent)!important}
+
 @media(max-width:600px){
   .form-grid{grid-template-columns:1fr}
   .tmdb-results{grid-template-columns:repeat(3,1fr)}
@@ -516,7 +518,14 @@ select.form-input{cursor:pointer}
   <div id="tab-list" style="display:none">
     <div class="section-header">
       <span class="section-title">전체 작품 <span id="totalCount" style="color:var(--muted);font-weight:400;font-size:14px">0</span></span>
-      <button class="btn btn-ghost btn-sm" onclick="loadWorks()">↻ 새로고침</button>
+      <div style="display:flex;gap:6px;align-items:center">
+        <span style="font-size:11px;color:var(--muted);margin-right:2px">정렬:</span>
+        <button class="btn btn-ghost btn-sm active-sort" id="sortDefault" onclick="setSort('default')" style="font-size:11px">기본</button>
+        <button class="btn btn-ghost btn-sm" id="sortTitle" onclick="setSort('title')" style="font-size:11px">이름순</button>
+        <button class="btn btn-ghost btn-sm" id="sortYearAsc" onclick="setSort('yearAsc')" style="font-size:11px">연도 ↑</button>
+        <button class="btn btn-ghost btn-sm" id="sortYearDesc" onclick="setSort('yearDesc')" style="font-size:11px">연도 ↓</button>
+        <button class="btn btn-ghost btn-sm" onclick="loadWorks()" style="font-size:11px">↻</button>
+      </div>
     </div>
     <div class="works-list" id="worksList">
       <p style="color:var(--muted);text-align:center;padding:40px 0">GitHub 연결 후 작품 목록이 표시됩니다.</p>
@@ -1059,17 +1068,36 @@ function resetForm(){
   setImgSource('upload');
 }
 
+let currentSort = 'default';
+
+function setSort(s){
+  currentSort = s;
+  ['default','title','yearAsc','yearDesc'].forEach(k=>{
+    document.getElementById('sort'+k.charAt(0).toUpperCase()+k.slice(1))
+      ?.classList.toggle('active-sort', k===s);
+  });
+  renderWorksList();
+}
+
+function getSortedWorks(){
+  const list = [...works];
+  if(currentSort==='title') return list.sort((a,b)=>a.en.localeCompare(b.en));
+  if(currentSort==='yearAsc') return list.sort((a,b)=>a.y-b.y);
+  if(currentSort==='yearDesc') return list.sort((a,b)=>b.y-a.y);
+  return list; // default: 원래 순서
+}
+
 /* ═══ RENDER WORKS LIST ═══ */
 function renderWorksList(){
   document.getElementById('totalCount').textContent = works.length;
   const el = document.getElementById('worksList');
   if(!works.length){ el.innerHTML='<p style="color:var(--muted);text-align:center;padding:40px 0">작품이 없습니다.</p>'; return; }
-  el.innerHTML = works.map((w,i)=>{
+  el.innerHTML = getSortedWorks().map((w,i)=>{
+    const realIdx = works.indexOf(w);
     const badge = GE[w.g]||w.g;
     const bc = BADGE_CLASS[w.g]||'badge-film';
-    const posterSrc = w.poster || (w.t ? `https://image.tmdb.org/t/p/w92_and_h138_bestv2${(window._posterCache&&window._posterCache[w.t])||''}` : '');
     return `<div class="work-item">
-      <div class="work-item-poster" id="adminposter-${i}">${posterSrc?`<img src="${w.poster||''}" alt="" onerror="this.style.display='none'">`:''}</div>
+      <div class="work-item-poster" id="adminposter-${realIdx}">${w.poster?`<img src="${w.poster}" alt="" onerror="this.style.display='none'">`:''}</div>
       <div class="work-item-info">
         <div class="work-item-title">${w.s} — ${w.en}</div>
         <div class="work-item-meta">${w.ko!==w.en?w.ko+' · ':''}${w.y}${w.sub?' · '+w.sub:''}</div>
@@ -1081,10 +1109,11 @@ function renderWorksList(){
         ${w.poster?'<span class="flag flag-img">🖼 이미지</span>':''}
       </div>
       <div class="work-item-actions">
-        <button class="btn btn-ghost btn-sm" onclick="editWork(${i})">수정</button>
-        <button class="btn btn-danger btn-sm" onclick="deleteWork(${i})">삭제</button>
+        <button class="btn btn-ghost btn-sm" onclick="editWork(${realIdx})">수정</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteWork(${realIdx})">삭제</button>
       </div>
     </div>`;
+  }).join('');
   }).join('');
 
   // Async load TMDB posters for films
