@@ -25,7 +25,8 @@
         "u": "https://www.rottentomatoes.com/m/deadpool"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "002",
@@ -53,7 +54,8 @@
         "u": "https://www.rottentomatoes.com/m/deadpool_2"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "003",
@@ -81,7 +83,8 @@
         "u": "https://www.rottentomatoes.com/m/deadpool_and_wolverine"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "004",
@@ -109,7 +112,8 @@
         "u": "https://www.rottentomatoes.com/m/avatar_the_way_of_water"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "005",
@@ -137,7 +141,8 @@
         "u": "https://www.rottentomatoes.com/m/avatar_fire_and_ash"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "006",
@@ -159,7 +164,8 @@
         "u": "https://www.imdb.com/title/tt10872600/"
       }
     ],
-    "home": false
+    "home": false,
+    "strip": true
   },
   {
     "s": "007",
@@ -380,6 +386,7 @@
     "home": false,
     "dK": "",
     "dE": "",
-    "lk": []
+    "lk": [],
+    "strip": true
   }
 ]
