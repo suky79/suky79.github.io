@@ -2772,21 +2772,18 @@
   {
     "s": "146",
     "g": "영화",
-    "ko": "It's Only the End of the World",
-    "en": "It's Only the End of the World",
+    "ko": "단지 세상의 끝",
+    "en": "Juste la fin du monde",
     "sub": "",
-    "subE": "",
-    "y": 2021,
-    "t": 1295812,
+    "y": 2016,
+    "t": 338189,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [],
-    "poster": "",
-    "back": ""
+    "poster": "https://image.tmdb.org/t/p/w500/rhTo7nuESAHhV9EDTkak6cfCon4.jpg"
   },
   {
     "s": "147",
