@@ -170,22 +170,6 @@
   {
     "s": "007",
     "g": "뮤지컬",
-    "ko": "해밀턴",
-    "en": "Hamilton",
-    "sub": "Korean Premiere",
-    "y": 2023,
-    "t": null,
-    "kid": "",
-    "gr": "g8",
-    "feat": false,
-    "dK": "",
-    "dE": "",
-    "lk": [],
-    "home": false
-  },
-  {
-    "s": "008",
-    "g": "뮤지컬",
     "ko": "렘피카",
     "en": "Lempicka",
     "sub": "Broadway Musical · Korean Premiere",
@@ -200,7 +184,7 @@
     "lk": []
   },
   {
-    "s": "009",
+    "s": "008",
     "g": "책",
     "ko": "그린라이트",
     "en": "Greenlights",
@@ -223,7 +207,7 @@
     ]
   },
   {
-    "s": "010",
+    "s": "009",
     "g": "저서",
     "ko": "오역하는 말들",
     "en": "Mistranslated Words",
@@ -246,7 +230,7 @@
     ]
   },
   {
-    "s": "011",
+    "s": "010",
     "g": "영화",
     "ko": "프로젝트 헤일메리",
     "en": "Project Hail Mary",
@@ -262,7 +246,7 @@
     "strip": true
   },
   {
-    "s": "012",
+    "s": "011",
     "g": "뮤지컬",
     "ko": "렘피카",
     "en": "렘피카",
