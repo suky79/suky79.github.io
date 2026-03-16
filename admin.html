@@ -495,16 +495,53 @@ select.form-input{cursor:pointer}
   <!-- TAB: NOW PLAYING -->
   <div id="tab-nowplaying" style="display:none">
     <div class="featured-section-card">
-      <div class="card-title">🎬 현재 상영작 <span class="badge">최대 5개</span></div>
-      <p class="card-sub">메인 화면 "현재 상영작" 섹션에 표시됩니다. TMDB에서 검색 후 추가하면 네이버 예매 링크가 자동 생성됩니다.</p>
+      <div class="card-title">🎬 Now Showing <span class="badge">최대 5개</span></div>
+      <p class="card-sub">영화와 공연 모두 추가할 수 있습니다. 예매 링크는 자동 생성 후 수동 수정도 가능합니다.</p>
 
-      <div class="search-row" style="margin-bottom:16px">
-        <input type="text" id="npQuery" placeholder="영화 제목 검색 (예: 프로젝트 헤일메리)..." onkeydown="if(event.key==='Enter')searchNowPlaying()" />
-        <button class="btn btn-primary" onclick="searchNowPlaying()">검색</button>
+      <div style="display:flex;gap:8px;margin-bottom:16px">
+        <button class="btn btn-ghost btn-sm active-sort" id="npTypeFilm" onclick="setNpType('film')">🎬 영화</button>
+        <button class="btn btn-ghost btn-sm" id="npTypePerf" onclick="setNpType('perf')">🎭 공연</button>
       </div>
-      <div id="npResults"></div>
 
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+      <!-- 영화: TMDB 검색 -->
+      <div id="npFilmSearch">
+        <div class="search-row" style="margin-bottom:16px">
+          <input type="text" id="npQuery" placeholder="영화 제목 검색 (예: 프로젝트 헤일메리)..." onkeydown="if(event.key==='Enter')searchNowPlaying()" />
+          <button class="btn btn-primary" onclick="searchNowPlaying()">검색</button>
+        </div>
+        <div id="npResults"></div>
+      </div>
+
+      <!-- 공연: 직접 입력 -->
+      <div id="npPerfInput" style="display:none">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+          <div><label class="form-label">공연 제목 (한국어)</label><input class="form-input" id="npPerfKo" placeholder="렘피카"></div>
+          <div><label class="form-label">공연 제목 (영어)</label><input class="form-input" id="npPerfEn" placeholder="Lempicka"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+          <div><label class="form-label">연도</label><input class="form-input" id="npPerfYear" type="number" placeholder="2025"></div>
+          <div><label class="form-label">장르</label>
+            <select class="form-input" id="npPerfGenre">
+              <option value="뮤지컬">뮤지컬</option>
+              <option value="연극">연극</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-bottom:10px">
+          <label class="form-label">포스터 URL</label>
+          <input class="form-input" id="npPerfPoster" placeholder="https://...">
+        </div>
+        <div style="margin-bottom:14px">
+          <label class="form-label">예매 링크 <span style="color:var(--muted);font-weight:400">(자동 생성 — 수동 수정 가능)</span></label>
+          <div style="display:flex;gap:6px">
+            <input class="form-input" id="npPerfLink" placeholder="https://search.naver.com/..." style="flex:1">
+            <button class="btn btn-ghost btn-sm" onclick="autoGenPerfLink()">🔄 자동생성</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="addNowPlayingPerf()">+ 공연 추가</button>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin:16px 0 12px">
         <span style="font-size:12px;color:var(--muted)" id="npCountLabel">0 / 5 선택됨</span>
         <button class="btn btn-ghost btn-sm" onclick="clearNowPlaying()">전체 해제</button>
       </div>
@@ -1520,50 +1557,130 @@ async function stripDrop(e){
   stripDragIdx=null;
 }
 
-/* ═══ 현재 상영작 ═══ */
+/* ═══ 현재 상영작 (Now Showing) ═══ */
+let _npType = 'film'; // 'film' | 'perf'
+
+function setNpType(t){
+  _npType = t;
+  document.getElementById('npTypeFilm').classList.toggle('active-sort', t==='film');
+  document.getElementById('npTypePerf').classList.toggle('active-sort', t==='perf');
+  document.getElementById('npFilmSearch').style.display = t==='film' ? '' : 'none';
+  document.getElementById('npPerfInput').style.display  = t==='perf' ? '' : 'none';
+  document.getElementById('npResults').innerHTML = '';
+}
+
 async function searchNowPlaying(){
   const q = document.getElementById('npQuery').value.trim();
   if(!q) return;
   const el = document.getElementById('npResults');
   el.innerHTML = '<p style="font-size:12px;color:var(--muted);padding:8px">검색 중...</p>';
-  try{
-    const r = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_KEY}&query=${encodeURIComponent(q)}&language=ko-KR`);
-    const d = await r.json();
-    if(!d.results?.length){ el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">결과 없음</p>'; return; }
-    el.innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:16px;max-height:260px;overflow-y:auto">` +
-      d.results.slice(0,8).map((m,i)=>{
-        const poster = m.poster_path ? `https://image.tmdb.org/t/p/w185${m.poster_path}` : '';
-        const yr = m.release_date ? m.release_date.substring(0,4) : '—';
-        return `<div class="tmdb-result" onclick="addNowPlaying(${i})" data-idx="${i}">
-          ${poster?`<img src="${poster}" alt="" style="width:100%;aspect-ratio:2/3;object-fit:cover;display:block">`:
-          `<div style="aspect-ratio:2/3;background:var(--bg4);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);text-align:center;padding:4px">${m.title}</div>`}
-          <div class="tmdb-result-info"><div class="tmdb-result-title">${m.title}</div><div class="tmdb-result-year">${yr}</div></div>
-        </div>`;
-      }).join('') + `</div>`;
-    window._npResults = d.results.slice(0,8);
-  }catch(e){ el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">검색 실패</p>'; }
+
+  if(_npType === 'film'){
+    // TMDB 영화 검색
+    try{
+      const r = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_KEY}&query=${encodeURIComponent(q)}&language=ko-KR`);
+      const d = await r.json();
+      if(!d.results?.length){ el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">결과 없음</p>'; return; }
+      window._npResults = d.results.slice(0,8).map(m=>({
+        id: 'film_'+m.id,
+        title: m.title||m.original_title,
+        originalTitle: m.original_title,
+        year: m.release_date?m.release_date.substring(0,4):'',
+        poster: m.poster_path?`https://image.tmdb.org/t/p/w500${m.poster_path}`:'',
+        type: 'film',
+        naverUrl: `https://search.naver.com/search.naver?query=${encodeURIComponent((m.title||m.original_title)+' 예매')}`
+      }));
+      renderNpSearchResults();
+    }catch(e){ el.innerHTML='<p style="font-size:12px;color:var(--muted);padding:8px">검색 실패</p>'; }
+  } else {
+    // 공연 — 제목 기반 직접 항목 생성 (이미지는 수동 입력)
+    window._npResults = [{
+      id: 'perf_'+Date.now(),
+      title: q,
+      originalTitle: q,
+      year: new Date().getFullYear().toString(),
+      poster: '',
+      type: 'perf',
+      naverUrl: `https://search.naver.com/search.naver?query=${encodeURIComponent(q+' 공연 예매')}`
+    }];
+    el.innerHTML = `
+      <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:12px">
+        <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:10px">🎭 "${q}" 추가</div>
+        <div style="display:flex;gap:10px;align-items:flex-start">
+          <div>
+            <div style="font-size:11px;color:var(--muted);margin-bottom:4px">포스터 URL (선택)</div>
+            <input class="form-input" id="npPerfPoster" placeholder="https://..." style="width:280px;font-size:12px">
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--muted);margin-bottom:4px">연도</div>
+            <input class="form-input" id="npPerfYear" value="${new Date().getFullYear()}" style="width:70px;font-size:12px">
+          </div>
+        </div>
+        <button class="btn btn-primary" style="margin-top:10px" onclick="addNowPlayingPerf()">추가</button>
+      </div>`;
+  }
 }
 
-async function addNowPlaying(idx){
-  const np = (works[0]?.nowplaying !== undefined) ? null : null; // works.json의 nowplaying 배열 사용
-  const current = JSON.parse(localStorage.getItem('beardos_nowplaying')||'[]');
-  if(current.length >= 5){ toast('최대 5개까지 선택할 수 있습니다.','info'); return; }
-  
-  const m = window._npResults?.[idx]; if(!m) return;
-  const poster = m.poster_path ? `https://image.tmdb.org/t/p/w500${m.poster_path}` : '';
-  const naverUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(m.title||m.original_title)}+예매`;
+function renderNpSearchResults(){
+  const el = document.getElementById('npResults');
+  el.innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-bottom:14px;max-height:240px;overflow-y:auto">` +
+    window._npResults.map((item,i)=>`
+      <div class="tmdb-result" onclick="addNowPlayingItem(${i})">
+        ${item.poster?`<img src="${item.poster}" style="width:100%;aspect-ratio:2/3;object-fit:cover;display:block">`:
+        `<div style="aspect-ratio:2/3;background:var(--bg4);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);text-align:center;padding:4px">${item.title}</div>`}
+        <div class="tmdb-result-info"><div class="tmdb-result-title">${item.title}</div><div class="tmdb-result-year">${item.year}</div></div>
+      </div>`).join('') + `</div>`;
+}
+
+function autoGenPerfLink(){
+  const ko = document.getElementById('npPerfKo')?.value.trim();
+  const en = document.getElementById('npPerfEn')?.value.trim();
+  const q = ko || en;
+  if(!q) return;
+  const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(q+' 공연 예매')}`;
+  document.getElementById('npPerfLink').value = url;
+}
+
+async function addNowPlayingPerf(){
+  const ko   = document.getElementById('npPerfKo')?.value.trim();
+  const en   = document.getElementById('npPerfEn')?.value.trim();
+  const year = document.getElementById('npPerfYear')?.value.trim() || new Date().getFullYear().toString();
+  const genre= document.getElementById('npPerfGenre')?.value || '뮤지컬';
+  const poster = document.getElementById('npPerfPoster')?.value.trim() || '';
+  let naverUrl = document.getElementById('npPerfLink')?.value.trim();
+
+  if(!ko && !en){ toast('제목을 입력해주세요.','info'); return; }
+  if(!naverUrl) naverUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent((ko||en)+' 공연 예매')}`;
+
   const item = {
-    id: m.id,
-    title: m.title || m.original_title,
-    originalTitle: m.original_title,
-    year: m.release_date ? m.release_date.substring(0,4) : '',
-    poster,
+    id: 'perf_' + Date.now(),
+    title: ko || en,
+    titleEn: en || ko,
+    year, genre, poster,
+    type: 'perf',
     naverUrl
   };
-  
-  if(current.find(x=>x.id===item.id)){ toast('이미 추가된 작품입니다.','info'); return; }
+
+  const current = JSON.parse(localStorage.getItem('beardos_nowplaying')||'[]');
+  if(current.length >= 5){ toast('최대 5개까지 선택할 수 있습니다.','info'); return; }
   current.push(item);
   await saveNowPlaying(current);
+
+  // 폼 초기화
+  ['npPerfKo','npPerfEn','npPerfYear','npPerfPoster','npPerfLink'].forEach(id=>{
+    const el = document.getElementById(id); if(el) el.value='';
+  });
+}
+
+async function addNowPlayingItem(idx){
+  const current = JSON.parse(localStorage.getItem('beardos_nowplaying')||'[]');
+  if(current.length >= 5){ toast('최대 5개까지 선택할 수 있습니다.','info'); return; }
+  const item = window._npResults?.[idx]; if(!item) return;
+  if(current.find(x=>x.id===item.id)){ toast('이미 추가된 항목입니다.','info'); return; }
+  current.push(item);
+  await saveNowPlaying(current);
+  document.getElementById('npResults').innerHTML='';
+  document.getElementById('npQuery').value='';
 }
 
 async function removeNowPlaying(id){
@@ -1618,11 +1735,11 @@ function renderNowPlaying(){
     <div class="featured-item">
       <div class="featured-item-poster">${item.poster?`<img src="${item.poster}" style="width:100%;height:100%;object-fit:cover">`:''}</div>
       <div class="featured-item-info">
-        <div class="featured-item-title">${item.title}</div>
-        <div class="featured-item-meta">${item.year}${item.originalTitle!==item.title?' · '+item.originalTitle:''}</div>
-        <div class="featured-item-desc" style="color:var(--accent)">🎬 네이버 예매 링크 자동생성됨</div>
+        <div class="featured-item-title">${item.title}${item.titleEn&&item.titleEn!==item.title?' / '+item.titleEn:''}</div>
+        <div class="featured-item-meta">${item.year}${item.genre?' · '+item.genre:item.type==='film'?' · 영화':''}</div>
+        <div class="featured-item-desc" style="color:var(--accent);font-size:11px">🔗 ${item.naverUrl.substring(0,48)}...</div>
       </div>
-      <button class="btn btn-danger btn-sm" onclick="removeNowPlaying(${item.id})">✕</button>
+      <button class="btn btn-danger btn-sm" onclick="removeNowPlaying('${item.id}')">✕</button>
     </div>`).join('');
 }
 
