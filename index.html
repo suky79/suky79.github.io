@@ -38,7 +38,7 @@ nav.scrolled{background:rgba(27,37,64,.96);backdrop-filter:blur(20px);-webkit-ba
 .lang-toggle button.active{background:#2D3C59;color:#F7F8F0;border-radius:20px}
 
 /* ═══════════ HERO — A24 fullscreen ═══════════ */
-.hero{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;cursor:pointer}
+.hero{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;cursor:pointer;opacity:0;transition:opacity .6s ease}
 .hero-slides{position:absolute;inset:0}
 .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
 .hero-slide.active{opacity:1}
@@ -243,7 +243,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify
 </nav>
 
 <!-- ═══════════ HERO — FULLSCREEN A24 ═══════════ -->
-<section class="hero" id="heroSection">
+<section class="hero" id="heroSection" style="visibility:hidden">
   <div class="hero-slides" id="heroSlides"></div>
   <div class="hero-content" id="heroContent"></div>
   <div class="hero-dots" id="heroDots"></div>
@@ -344,8 +344,9 @@ async function init(){
   renderEditorial();
   loadNowPlayingSection();
   renderBooks();
-  // 세 API 병렬 호출
+  // hero visibility는 TMDB 로딩 완료 후 복원
   await Promise.all([loadTMDB(), loadKOPIS(), loadAladin()]);
+  document.getElementById('heroSection').style.visibility = 'visible';
 }
 
 /* ═══════════ TMDB (영화) ═══════════ */
@@ -364,6 +365,8 @@ async function loadTMDB(){
   renderStrip();
   renderEditorial();
   setLang(lang);
+  // TMDB 로딩 완료 후 히어로 페이드인
+  document.querySelector('.hero').style.opacity = '1';
 }
 
 /* ═══════════ KOPIS (뮤지컬·연극) ═══════════ */
