@@ -202,22 +202,6 @@
   {
     "s": "009",
     "g": "뮤지컬",
-    "ko": "오페라의 유령",
-    "en": "The Phantom of the Opera",
-    "sub": "Andrew Lloyd Webber",
-    "y": 2009,
-    "t": null,
-    "kid": "",
-    "gr": "g9",
-    "feat": false,
-    "dK": "",
-    "dE": "",
-    "lk": [],
-    "home": false
-  },
-  {
-    "s": "010",
-    "g": "뮤지컬",
     "ko": "레미제라블",
     "en": "Les Misérables",
     "sub": "Victor Hugo",
@@ -232,7 +216,7 @@
     "home": false
   },
   {
-    "s": "011",
+    "s": "010",
     "g": "연극",
     "ko": "햄릿",
     "en": "Hamlet",
@@ -248,7 +232,7 @@
     "home": false
   },
   {
-    "s": "012",
+    "s": "011",
     "g": "연극",
     "ko": "고도를 기다리며",
     "en": "Waiting for Godot",
@@ -264,7 +248,7 @@
     "home": false
   },
   {
-    "s": "013",
+    "s": "012",
     "g": "책",
     "ko": "위대한 개츠비",
     "en": "The Great Gatsby",
@@ -280,7 +264,7 @@
     "home": false
   },
   {
-    "s": "014",
+    "s": "013",
     "g": "책",
     "ko": "호밀밭의 파수꾼",
     "en": "The Catcher in the Rye",
@@ -296,7 +280,7 @@
     "home": false
   },
   {
-    "s": "015",
+    "s": "014",
     "g": "뮤지컬",
     "ko": "렘피카",
     "en": "Lempicka",
@@ -312,7 +296,7 @@
     "lk": []
   },
   {
-    "s": "016",
+    "s": "015",
     "g": "책",
     "ko": "그린라이트",
     "en": "Greenlights",
@@ -335,7 +319,7 @@
     ]
   },
   {
-    "s": "017",
+    "s": "016",
     "g": "저서",
     "ko": "오역하는 말들",
     "en": "Mistranslated Words",
@@ -358,7 +342,7 @@
     ]
   },
   {
-    "s": "018",
+    "s": "017",
     "g": "영화",
     "ko": "프로젝트 헤일메리",
     "en": "Project Hail Mary",
@@ -374,7 +358,7 @@
     "strip": true
   },
   {
-    "s": "019",
+    "s": "018",
     "g": "뮤지컬",
     "ko": "렘피카",
     "en": "렘피카",
