@@ -305,10 +305,10 @@ async function loadTMDB(){
   const movies = W.filter(w=>w.t);
   await Promise.all(movies.map(async w=>{
     try{
-      const r = await fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}&language=en-US`);
+      const r = await fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}&language=ko-KR`);
       const d = await r.json();
-      if(d.poster_path) w.poster = TP + d.poster_path;
-      if(d.backdrop_path) w.back = TB + d.backdrop_path;
+      if(!w.poster && d.poster_path) w.poster = TP + d.poster_path;
+      if(!w.back && d.backdrop_path) w.back = TB + d.backdrop_path;
     }catch(e){}
   }));
   renderHero();

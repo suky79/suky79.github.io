@@ -220,9 +220,10 @@ async function loadTMDB(){
   if(!TMDB_KEY) return;
   await Promise.all(W.filter(w=>w.t).map(async w=>{
     try{
-      const r = await fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}&language=en-US`);
+      const r = await fetch(`https://api.themoviedb.org/3/movie/${w.t}?api_key=${TMDB_KEY}&language=ko-KR`);
       const d = await r.json();
-      if(d.poster_path) w.poster = TP + d.poster_path;
+      // works.json에 저장된 포스터가 있으면 우선 사용, 없을 때만 TMDB에서 가져옴
+      if(!w.poster && d.poster_path) w.poster = TP + d.poster_path;
     }catch(e){}
   }));
   renderGrid();
