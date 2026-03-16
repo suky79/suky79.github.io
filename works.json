@@ -439,21 +439,18 @@
   {
     "s": "021",
     "g": "영화",
-    "ko": "나우 유 씨 미 3",
-    "en": "Now You See Me: Now You Don't",
+    "ko": "나우 유 씨 미: 마술사기단",
+    "en": "Now You See Me",
     "sub": "",
-    "subE": "",
-    "y": 2025,
-    "t": 425274,
+    "y": 2013,
+    "t": 75656,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
-    "dK": "한때 더러운 방식으로 돈을 모으는 재벌들을 시원하게 혼내주던 마술사기단 ‘포 호스맨’. 은퇴 후 평범한 삶을 살고 있던 그들에게 새로운 임무를 알리는 의미심장한 카드가 배달된다. 그렇게 다시 모이게 된 오리지널 ‘포 호스맨’은 자신들을 흉내 내던 신예 마술사들까지 영입하며 미션을 준비한다. 그들의 목표는 무기 밀매, 자금 세탁 등 더러운 돈에 물든 ‘하트 다이아몬드’를 훔치는 것. 하지만 다이아몬드를 훔치고, 통쾌한 쇼를 선보이려는 이들 앞에는 수많은 함정이 펼쳐지는데…",
+    "dK": "",
     "dE": "",
     "lk": [],
-    "poster": "https://image.tmdb.org/t/p/w500/dECA069mRikkghzgSBsM0cvic4F.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/dHSz0tSFuO2CsXJ1CApSauP9Ncl.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/mX3ozgAvhonMzawKFlxjvP605Sm.jpg"
   },
   {
     "s": "022",
