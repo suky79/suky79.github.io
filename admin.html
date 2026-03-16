@@ -927,6 +927,18 @@ function selectTMDB(idx){
   document.getElementById('fKo').value = m.title !== m.original_title ? m.title : '';
   document.getElementById('fYear').value = m.release_date ? m.release_date.substring(0,4) : '';
   document.getElementById('fTmdb').value = m.id || '';
+
+  // 포스터 URL 업데이트 + 미리보기 갱신
+  if(m.poster_path){
+    const posterUrl = `https://image.tmdb.org/t/p/w500${m.poster_path}`;
+    setImgSource('url');
+    document.getElementById('fPosterUrl').value = posterUrl;
+    previewPosterUrl(posterUrl);
+    // 버튼 active 상태 업데이트
+    document.getElementById('imgsrc-upload').classList.remove('active');
+    document.getElementById('imgsrc-url').classList.add('active');
+  }
+
   fetch(`https://api.themoviedb.org/3/movie/${m.id}/external_ids?api_key=${TMDB_KEY}`)
     .then(r=>r.json()).then(d=>{
       if(d.imdb_id) document.getElementById('fImdb').value = `https://www.imdb.com/title/${d.imdb_id}/`;
