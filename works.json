@@ -13568,15 +13568,15 @@
   {
     "s": "421",
     "g": "영화",
-    "ko": "007 골드핑거",
-    "en": "Goldfinger",
+    "ko": "골드핑거",
+    "en": "金手指",
     "sub": "EON Productions",
-    "y": 1964,
-    "t": 658,
+    "y": 2023,
+    "rd": "2024-04-10",
+    "t": 823598,
     "gr": "g5",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -13593,9 +13593,7 @@
         "u": "https://www.rottentomatoes.com/m/goldfinger"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/aKNFzaqQgPzsGXnsMc4kJH5hFIV.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/f1Is9VLQZSRpeLMU7mIcj5aXclt.jpg",
-    "rd": "1967-01-01"
+    "poster": "https://image.tmdb.org/t/p/w500/wee5eCGEN7NjuwN8bfCk2gSnhnH.jpg"
   },
   {
     "s": "422",
