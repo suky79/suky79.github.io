@@ -14516,15 +14516,14 @@
   {
     "s": "465",
     "g": "영화",
-    "ko": "28년 후: 뼈의 사원",
-    "en": "28 Years Later: The Bone Temple",
+    "ko": "28년 후",
+    "en": "28 Years Later",
     "sub": "Columbia Pictures",
-    "y": 2026,
-    "t": 1272837,
+    "y": 2025,
+    "t": 1100988,
     "gr": "g5",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -14541,8 +14540,7 @@
         "u": "https://www.rottentomatoes.com/m/28_years_later_the_bone_temple"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/ubgOSHAEhv1ds8BNHodhCcI13oH.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/hHDNOlATHhre4eZ7aYz5cdyJLik.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/zRo90O0bTKJem1aDgVa6Sm0gthE.jpg"
   },
   {
     "s": "466",
