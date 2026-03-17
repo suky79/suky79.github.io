@@ -6329,13 +6329,12 @@
     "ko": "굿타임",
     "en": "Good Time",
     "sub": "",
-    "subE": "",
     "y": 2017,
+    "rd": "2018-01-04",
     "t": 429200,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "지적장애 동생 닉과 그의 형 코니는 그들에게 비참함을 안겨주는 뉴욕을 떠나 새로운 삶을 찾으려 은행 털이를 결심한다. 하지만 현금 2만 달러를 들고 도주하던 형제는 그들의 계획이 엉망이 되었음을 깨닫고, 동생은 홀로 구치소에 수감된다. 코니는 경찰의 수사망을 따돌리고 동생을 구하기 위해, 또 형제를 옥죄는 뉴욕으로부터 탈출하기 위해 촌각을 다투는 사투를 벌이는데...",
     "dE": "",
     "lk": [
@@ -6352,9 +6351,7 @@
         "u": "https://www.rottentomatoes.com/m/good_time"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/AiZRCsPF4HFTywgQaAOQSYaQ7ER.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5AhkjcqqRxBdpYZ0TeOuTCuOUYq.jpg",
-    "rd": "2018-01-04"
+    "poster": "https://image.tmdb.org/t/p/w500/AiZRCsPF4HFTywgQaAOQSYaQ7ER.jpg"
   },
   {
     "s": "199",
