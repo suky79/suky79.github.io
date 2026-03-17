@@ -398,16 +398,15 @@
   {
     "s": "019",
     "g": "책",
-    "ko": "그린라이트",
+    "ko": "꼭 그런 건 아니야",
     "en": "Greenlights",
     "sub": "Matthew McConaughey",
-    "y": 2020,
+    "y": 2025,
     "t": null,
-    "isbn": "",
     "gr": "g14",
     "feat": false,
     "home": true,
-    "dK": "매튜 매커너히의 자전적 에세이.\n삶의 신호등에서 초록불을 찾아가는 이야기.",
+    "dK": "",
     "dE": "Matthew McConaughey's memoir.\nFinding the green lights in life's journey.",
     "lk": [
       {
@@ -416,7 +415,9 @@
         "c": "#fff",
         "u": "https://product.kyobobook.co.kr/detail/S000001810103"
       }
-    ]
+    ],
+    "poster": "https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791193904299.jpg",
+    "publisher": "서삼독"
   },
   {
     "s": "020",
