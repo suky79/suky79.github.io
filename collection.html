@@ -121,6 +121,19 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify
   .page-title{font-size:24px}
 }
 #moreBtn:hover{border-color:rgba(240,235,224,.5);color:var(--text)}
+/* ═══ LIGHTBOX ═══ */
+.lightbox{position:fixed;inset:0;background:rgba(10,15,30,.92);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(8px)}
+.lightbox.open{opacity:1;pointer-events:all}
+.lightbox-img{max-height:90vh;max-width:min(420px,90vw);border-radius:6px;box-shadow:0 40px 80px rgba(0,0,0,.6);transform:scale(.94);transition:transform .35s cubic-bezier(.25,.46,.45,.94);object-fit:contain}
+.lightbox.open .lightbox-img{transform:scale(1)}
+.lightbox-close{position:fixed;top:24px;right:28px;width:40px;height:40px;border-radius:50%;background:rgba(240,235,224,.1);border:1px solid rgba(240,235,224,.2);color:#F0EBE0;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;line-height:1}
+.lightbox-close:hover{background:rgba(240,235,224,.2)}
+.lightbox-meta{position:fixed;bottom:32px;left:0;right:0;text-align:center;color:rgba(240,235,224,.7);font-size:13px;letter-spacing:.06em}
+.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(240,235,224,.1);border:1px solid rgba(240,235,224,.2);color:#F0EBE0;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-nav:hover{background:rgba(240,235,224,.2)}
+.lightbox-nav.prev{left:20px}
+.lightbox-nav.next{right:20px}
+.lightbox-nav.hidden{opacity:0;pointer-events:none}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -350,19 +363,7 @@ function buildCards(items){
   }).join('');
 }
 
-/* ═══ LIGHTBOX ═══ */
-.lightbox{position:fixed;inset:0;background:rgba(10,15,30,.92);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(8px)}
-.lightbox.open{opacity:1;pointer-events:all}
-.lightbox-img{max-height:90vh;max-width:min(420px,90vw);border-radius:6px;box-shadow:0 40px 80px rgba(0,0,0,.6);transform:scale(.94);transition:transform .35s cubic-bezier(.25,.46,.45,.94);object-fit:contain}
-.lightbox.open .lightbox-img{transform:scale(1)}
-.lightbox-close{position:fixed;top:24px;right:28px;width:40px;height:40px;border-radius:50%;background:rgba(240,235,224,.1);border:1px solid rgba(240,235,224,.2);color:#F0EBE0;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;line-height:1}
-.lightbox-close:hover{background:rgba(240,235,224,.2)}
-.lightbox-meta{position:fixed;bottom:32px;left:0;right:0;text-align:center;color:rgba(240,235,224,.7);font-size:13px;letter-spacing:.06em}
-.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(240,235,224,.1);border:1px solid rgba(240,235,224,.2);color:#F0EBE0;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
-.lightbox-nav:hover{background:rgba(240,235,224,.2)}
-.lightbox-nav.prev{left:20px}
-.lightbox-nav.next{right:20px}
-.lightbox-nav.hidden{opacity:0;pointer-events:none}
+
 function filter(genre){
   currentFilter = genre;
   const genres = ['all','영화','공연','책'];
