@@ -10184,13 +10184,12 @@
     "ko": "이스케이프 룸 2: 노 웨이 아웃",
     "en": "Escape Room: Tournament of Champions",
     "sub": "",
-    "subE": "",
     "y": 2021,
+    "rd": "2021-04-28",
     "t": 585216,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "출구 없는 탈출 게임에서 가까스로 살아남은 ‘조이’와 ‘벤’. 게임을 설계한 의문의 조직 ‘미노스’의 실체를 밝히기 위해 뉴욕에 도착한 두 사람은 정체불명의 남자에게 휘말려 지하철에 갇히고 만다. 순간 다른 칸과 분리된 열차 안에는 초고압 전류가 흐르기 시작하고, 그곳에 있는 6명 모두 게임의 생존자라는 것이 밝혀진다. 목숨을 건 탈출 게임이 다시 시작됐음을 직감한 그들은 뉴욕을 배경으로 벌어지는 극한의 상황에서 살아남기 위한 사투를 벌이는데….",
     "dE": "",
     "lk": [
@@ -10207,9 +10206,7 @@
         "u": "https://www.rottentomatoes.com/m/escape_room_tournament_of_champions"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/ApWEAjflrgDBicdJEinFfIZcYH1.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/qo9tN87uTsbXnaAob6aa7U33ayb.jpg",
-    "rd": "2021-07-14"
+    "poster": "https://file.kinolights.com/xl/content_poster/202307/12/e4c61c1d-0c3f-4305-88d0-36bcbb913f75.webp"
   },
   {
     "s": "317",
