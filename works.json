@@ -12353,13 +12353,12 @@
     "ko": "이니셰린의 밴시",
     "en": "The Banshees of Inisherin",
     "sub": "",
-    "subE": "",
     "y": 2022,
+    "rd": "2022-01-14",
     "t": 674324,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "아일랜드의 외딴 섬마을 이니셰린. 주민 모두가 인정하는 절친 파우릭과 콜름은 하루도 빠짐없이 함께 술을 마시며 수다를 떨 정도로 다정하고 돈독한 사이다. 어느 날, 돌연 파우릭에게 절교를 선언하는 콜름. 절교를 받아들일 수 없는 파우릭은 그를 찾아가 이유를 묻지만 돌아오는 건 변심한 친구의 차가운 한마디. 관계를 회복해 보려 할수록 상황은 더욱 악화되어 가기만 하고 평온했던 그들의 일상과 마을은 점점 파국으로 치닫는데…",
     "dE": "",
     "lk": [
@@ -12376,9 +12375,7 @@
         "u": "https://www.rottentomatoes.com/m/the_banshees_of_inisherin"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/oxjM9l5senfyNOeba4wvUCVi8Ge.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/1vXD5HXqkhvsXFHE7KmCPZGPR1e.jpg",
-    "rd": "2023-03-15"
+    "poster": "https://file.kinolights.com/xl/content_poster/202307/12/f73bcb62-3f84-4699-973b-10f6e76c876d.webp"
   },
   {
     "s": "383",
