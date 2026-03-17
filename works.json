@@ -6590,16 +6590,15 @@
   {
     "s": "206",
     "g": "영화",
-    "ko": "Manhunt",
-    "en": "Manhunt",
+    "ko": "맨헌트",
+    "en": "追捕",
     "sub": "",
-    "subE": "",
-    "y": 2020,
-    "t": 675453,
+    "y": 2017,
+    "rd": "2018-01-25",
+    "t": 372782,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -6610,9 +6609,7 @@
         "u": "https://www.rottentomatoes.com/m/manhunt"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/6acY8NM0UN6qNr7gRhvZDXH2lxI.jpg",
-    "back": "",
-    "rd": "2020-01-01"
+    "poster": "https://image.tmdb.org/t/p/w500/AnUxm1cJahN2Xn992SIDHUYLdg2.jpg"
   },
   {
     "s": "207",
