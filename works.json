@@ -27,7 +27,8 @@
     ],
     "home": false,
     "strip": true,
-    "poster": "https://image.tmdb.org/t/p/w500/dsfAcQ5J7TPOpJgcX8R1lRBqiMK.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/dsfAcQ5J7TPOpJgcX8R1lRBqiMK.jpg",
+    "rd": "2024-07-24"
   },
   {
     "s": "002",
@@ -57,7 +58,8 @@
     ],
     "home": false,
     "strip": true,
-    "poster": "https://image.tmdb.org/t/p/w500/l18o0AK18KS118tWeROOKYkF0ng.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/l18o0AK18KS118tWeROOKYkF0ng.jpg",
+    "rd": "2025-12-17"
   },
   {
     "s": "003",
@@ -81,7 +83,8 @@
     ],
     "home": false,
     "strip": true,
-    "poster": "https://image.tmdb.org/t/p/w500/fvqoI9r1GU2EFkc0xjZ6dKCuDVR.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/fvqoI9r1GU2EFkc0xjZ6dKCuDVR.jpg",
+    "rd": "2021-12-15"
   },
   {
     "s": "004",
@@ -111,7 +114,8 @@
       }
     ],
     "strip": true,
-    "poster": "https://image.tmdb.org/t/p/w500/qqGpVVZk2KD1lAvccgTU4Z6nh1H.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/qqGpVVZk2KD1lAvccgTU4Z6nh1H.jpg",
+    "rd": "2026-03-18"
   },
   {
     "s": "005",
@@ -143,7 +147,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/8MdVJYHKp7JFvTMkLkZOou13LYV.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/qAhedRxRYWZAgZ8O8pHIl6QHdD7.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/qAhedRxRYWZAgZ8O8pHIl6QHdD7.jpg",
+    "rd": "2019-08-14"
   },
   {
     "s": "006",
@@ -175,7 +180,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/u2c6wgkam9JJ5V4ML3l8EqIXCdF.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/pYgj8e2Y6RufnSyOA6OnzmxFXxZ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/pYgj8e2Y6RufnSyOA6OnzmxFXxZ.jpg",
+    "rd": "2019-07-11"
   },
   {
     "s": "007",
@@ -207,7 +213,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/2kfDJEwZ7Rxo3yz5v6rJlwqtY0W.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/lqxxwTRk0l7CubY6JkJdhnwJEkn.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/lqxxwTRk0l7CubY6JkJdhnwJEkn.jpg",
+    "rd": "2020-02-12"
   },
   {
     "s": "008",
@@ -224,7 +231,8 @@
     "dE": "",
     "lk": [],
     "poster": "https://kopis.or.kr/_next/image?url=%2Fupload%2FpfmPoster%2FPF_PF241301_240517_145643.gif&w=384&q=75",
-    "strip": true
+    "strip": true,
+    "rd": "2021"
   },
   {
     "s": "009",
@@ -256,7 +264,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/u2oRQqUashBBIj5UNeOd5TN0bmB.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2lBOQK06tltt8SQaswgb8d657Mv.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2lBOQK06tltt8SQaswgb8d657Mv.jpg",
+    "rd": "2020-02-19"
   },
   {
     "s": "010",
@@ -288,7 +297,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1F2rDT1oNdvMyXF7gxbGxaXCzrz.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/kKTPv9LKKs5L3oO1y5FNObxAPWI.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/kKTPv9LKKs5L3oO1y5FNObxAPWI.jpg",
+    "rd": "2019-09-25"
   },
   {
     "s": "011",
@@ -320,7 +330,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/wBUoWL4z0nsvC9cYT3VCc74X3jE.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2vq5GTJOahE03mNYZGxIynlHcWr.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2vq5GTJOahE03mNYZGxIynlHcWr.jpg",
+    "rd": "2019-12-04"
   },
   {
     "s": "012",
@@ -352,7 +363,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/3zpCAni1BfzvhUJz8vGB2D87C17.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/oQPbZ5e6J9fuAyv4Gl0mMZMIyPI.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/oQPbZ5e6J9fuAyv4Gl0mMZMIyPI.jpg",
+    "rd": "2021-12-22"
   },
   {
     "s": "013",
@@ -384,7 +396,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/dd29Kt2p2voyP2sB6p3jC36A7ce.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/ss0Os3uWJfQAENILHZUdX8Tt1OC.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/ss0Os3uWJfQAENILHZUdX8Tt1OC.jpg",
+    "rd": "2022-10-12"
   },
   {
     "s": "014",
@@ -416,7 +429,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/h3LsdSBzhRnBebz4BTpAhh63PD3.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/7I6VUdPj6tQECNHdviJkUHD2u89.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/7I6VUdPj6tQECNHdviJkUHD2u89.jpg",
+    "rd": "2023-04-12"
   },
   {
     "s": "015",
@@ -433,7 +447,8 @@
     "dE": "",
     "lk": [],
     "poster": "https://kopis.or.kr/_next/image?url=%2Fupload%2FpfmPoster%2FPF_PF255956_241217_132621.gif&w=384&q=75",
-    "strip": true
+    "strip": true,
+    "rd": "2025"
   },
   {
     "s": "016",
@@ -463,7 +478,8 @@
     ],
     "home": false,
     "strip": false,
-    "poster": "https://image.tmdb.org/t/p/w500/k1e0TlvDM4KsiSRyJENVrHxMqtK.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/k1e0TlvDM4KsiSRyJENVrHxMqtK.jpg",
+    "rd": "2016-02-17"
   },
   {
     "s": "017",
@@ -493,7 +509,8 @@
     ],
     "home": false,
     "strip": false,
-    "poster": "https://image.tmdb.org/t/p/w500/u4FChoDddutqEBP4L0AHhPbrCAk.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/u4FChoDddutqEBP4L0AHhPbrCAk.jpg",
+    "rd": "2018-05-16"
   },
   {
     "s": "018",
@@ -523,7 +540,8 @@
     ],
     "home": false,
     "strip": false,
-    "poster": "https://image.tmdb.org/t/p/w500/u2aVXft5GLBQnjzWVNda7sdDpdu.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/u2aVXft5GLBQnjzWVNda7sdDpdu.jpg",
+    "rd": "2022-12-14"
   },
   {
     "s": "019",
@@ -547,7 +565,8 @@
       }
     ],
     "poster": "https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791193904299.jpg",
-    "publisher": "서삼독"
+    "publisher": "서삼독",
+    "rd": "2025"
   },
   {
     "s": "020",
@@ -570,7 +589,8 @@
         "u": "https://product.kyobobook.co.kr/detail/S000216507425"
       }
     ],
-    "poster": "https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791170612599.jpg"
+    "poster": "https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791170612599.jpg",
+    "rd": "2025"
   },
   {
     "s": "021",
@@ -586,7 +606,8 @@
     "dK": "",
     "dE": "",
     "lk": [],
-    "poster": "https://kopis.or.kr/_next/image?url=%2Fupload%2FpfmPoster%2FPF_PF283525_260120_112946.gif&w=384&q=75"
+    "poster": "https://kopis.or.kr/_next/image?url=%2Fupload%2FpfmPoster%2FPF_PF283525_260120_112946.gif&w=384&q=75",
+    "rd": "2026"
   },
   {
     "s": "022",
@@ -618,7 +639,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/plHwC5ypqqDNbFgLJso6gyI5tkL.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/3Ke0f7c6InUpoUn2Pi12ayX9EIU.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/3Ke0f7c6InUpoUn2Pi12ayX9EIU.jpg",
+    "rd": "2009-09-03"
   },
   {
     "s": "023",
@@ -650,7 +672,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/s7NudN5X36FagXFTjQBrkbfDoHh.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/eWUJTW9HFDmlIACchS6Ohnk5Aom.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/eWUJTW9HFDmlIACchS6Ohnk5Aom.jpg",
+    "rd": "2016-05-25"
   },
   {
     "s": "024",
@@ -682,7 +705,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/3VmjByKKgDaEdPzt1h9nlLIZNOY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/lJKhmgfilbyi0ejGYKTNh7UHZgE.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/lJKhmgfilbyi0ejGYKTNh7UHZgE.jpg",
+    "rd": "2013-11-28"
   },
   {
     "s": "025",
@@ -714,7 +738,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1XKbrWUobAyHjET7W2ousaDCOA3.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/kdkCTC6Cl20TJSf4B1eIJXAFeXl.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/kdkCTC6Cl20TJSf4B1eIJXAFeXl.jpg",
+    "rd": "2014-01-29"
   },
   {
     "s": "026",
@@ -743,7 +768,8 @@
         "u": "https://www.rottentomatoes.com/m/frances_ha"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/sgrS9KTeFchQ3Xwt3lElraBwh69.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/sgrS9KTeFchQ3Xwt3lElraBwh69.jpg",
+    "rd": "2014-07-17"
   },
   {
     "s": "027",
@@ -775,7 +801,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/u9kF8nWyonRiywKZtcnGbEUJzJ3.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2ADD5cncyDmVaRUOem22jZy1Bdh.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2ADD5cncyDmVaRUOem22jZy1Bdh.jpg",
+    "rd": "2011-03-18"
   },
   {
     "s": "028",
@@ -804,7 +831,8 @@
         "u": "https://www.rottentomatoes.com/m/wolves"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/9zhAsSWFOwS0HK23BtDxSMjNTsg.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/9zhAsSWFOwS0HK23BtDxSMjNTsg.jpg",
+    "rd": "2014-11-13"
   },
   {
     "s": "029",
@@ -836,7 +864,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/8PhaOZrAKgQ0cU5TnN9z6s513Aj.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/naGU49u4BXynQ1o5L755pfs8dom.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/naGU49u4BXynQ1o5L755pfs8dom.jpg",
+    "rd": "2013-11-28"
   },
   {
     "s": "030",
@@ -868,7 +897,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/f4OQ3ZgRyMg81iIU5qteVvMK7KJ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/9f0lBlSAxh2vrczreocxWvJMXSa.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/9f0lBlSAxh2vrczreocxWvJMXSa.jpg",
+    "rd": "2012-10-19"
   },
   {
     "s": "031",
@@ -900,7 +930,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/uNEgjUvIhj9Bl24EQgKtVe4LmpU.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/z4nKeZpPCrTifS6pzzK8vNleADl.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/z4nKeZpPCrTifS6pzzK8vNleADl.jpg",
+    "rd": "2013-09-12"
   },
   {
     "s": "032",
@@ -929,7 +960,8 @@
         "u": "https://www.rottentomatoes.com/m/now_you_see_me"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/mX3ozgAvhonMzawKFlxjvP605Sm.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/mX3ozgAvhonMzawKFlxjvP605Sm.jpg",
+    "rd": "2013-08-22"
   },
   {
     "s": "033",
@@ -961,7 +993,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/jt9nkX8KnciAbvq9f9Ouw07KF8w.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/w5IOxgEXqEiAduAECuiZTzyzM0k.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/w5IOxgEXqEiAduAECuiZTzyzM0k.jpg",
+    "rd": "2013-10-11"
   },
   {
     "s": "034",
@@ -993,7 +1026,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/wczX76Iewc7WSpl1YFZkQFlAOCC.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/gd2vQT8uMf1FAsiC0OdewL7XUFR.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/gd2vQT8uMf1FAsiC0OdewL7XUFR.jpg",
+    "rd": "2013-07-18"
   },
   {
     "s": "035",
@@ -1025,7 +1059,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/niDfoIeWGEfXxBH2DKkc9Z8yRHb.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/j5iUZRZtaPJbYJxvB6ZtmbE5LsZ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/j5iUZRZtaPJbYJxvB6ZtmbE5LsZ.jpg",
+    "rd": "2013-06-13"
   },
   {
     "s": "036",
@@ -1048,7 +1083,8 @@
         "u": "https://www.imdb.com/title/tt2150371/"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/xh5eDfNXc9wsPqdeEVRqY4EHEcw.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/xh5eDfNXc9wsPqdeEVRqY4EHEcw.jpg",
+    "rd": "2016-08-12"
   },
   {
     "s": "037",
@@ -1080,7 +1116,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/dH8cm5K1fYMCXEEp7CHYsDla99D.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/iNl1i8OJAaCf3ElkOPI9ud6CuXB.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/iNl1i8OJAaCf3ElkOPI9ud6CuXB.jpg",
+    "rd": "2013-03-14"
   },
   {
     "s": "038",
@@ -1112,7 +1149,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/npEEbEzhoWM8fcBLpa9yjqN0Clm.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/aM6E4DBP6588q3tEr9hz41ls80q.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/aM6E4DBP6588q3tEr9hz41ls80q.jpg",
+    "rd": "2013-04-11"
   },
   {
     "s": "039",
@@ -1141,7 +1179,8 @@
         "u": "https://www.rottentomatoes.com/m/hypnotis_ren"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/3ZtjPZO6JVSpbDp0O4Fa8m6ssuJ.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/3ZtjPZO6JVSpbDp0O4Fa8m6ssuJ.jpg",
+    "rd": "2015-07-30"
   },
   {
     "s": "040",
@@ -1173,7 +1212,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/c08XFez7JngaahzAZ2fojewfNrt.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/k5WMoEE6xjnsjNjTXTXTROzeBXo.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/k5WMoEE6xjnsjNjTXTXTROzeBXo.jpg",
+    "rd": "2007-03-23"
   },
   {
     "s": "041",
@@ -1202,7 +1242,8 @@
         "u": "https://www.rottentomatoes.com/m/surveillance"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/8CYX53rLeRonQjJOKyHkwAwBIWD.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/8CYX53rLeRonQjJOKyHkwAwBIWD.jpg",
+    "rd": "2008-02-08"
   },
   {
     "s": "042",
@@ -1234,7 +1275,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/hB7d3aT5QnDCFbVfpP7bLSFqZGZ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/kjVhc1Ba9dFhgsdzQLGKrUbfe1q.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/kjVhc1Ba9dFhgsdzQLGKrUbfe1q.jpg",
+    "rd": "2012-04-19"
   },
   {
     "s": "043",
@@ -1266,7 +1308,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/g4Kze731McN2WkcN0OLwi1CMa8u.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bA3Zc9GXeLT4NBSfFOnheqghzoS.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bA3Zc9GXeLT4NBSfFOnheqghzoS.jpg",
+    "rd": "2011-01-27"
   },
   {
     "s": "044",
@@ -1298,7 +1341,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/A8neCy6uB4s9dT0mtf5lebPFz5c.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/czaJqcaFFq6KSvlOZsDu3eJa35V.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/czaJqcaFFq6KSvlOZsDu3eJa35V.jpg",
+    "rd": "2012-12-06"
   },
   {
     "s": "045",
@@ -1330,7 +1374,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/cjfRqUXtNc2iJHfP60HTq9nFs0.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/6eyh5qNNfdEHyNIn3NKf5MzxV8R.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/6eyh5qNNfdEHyNIn3NKf5MzxV8R.jpg",
+    "rd": "2011-09-02"
   },
   {
     "s": "046",
@@ -1356,7 +1401,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/zmLm1SqgrEpj2FkAcgyiNVvY3Ed.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/mZabTaM3xmc7012c99tFHHB3cY3.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/mZabTaM3xmc7012c99tFHHB3cY3.jpg",
+    "rd": "2009-05-21"
   },
   {
     "s": "047",
@@ -1388,7 +1434,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/jd1TlA9yhOiK7PSUQDq0g4FRCZN.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/9iKFQ0Ka2tWL1k9baXwYoyCjZ0D.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/9iKFQ0Ka2tWL1k9baXwYoyCjZ0D.jpg",
+    "rd": "2013-02-09"
   },
   {
     "s": "048",
@@ -1420,7 +1467,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5GbfP52e6uYFW8k0VDmVNnPPP17.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bof71DUdBb5FwTylar4rnIVd8z.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bof71DUdBb5FwTylar4rnIVd8z.jpg",
+    "rd": "2014-02-20"
   },
   {
     "s": "049",
@@ -1452,7 +1500,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/y6rdJaCHoDUewGKR4VMqGpkf18G.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bgkFOoXEQMRjKkCvgoj7smdGbuh.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bgkFOoXEQMRjKkCvgoj7smdGbuh.jpg",
+    "rd": "2014-04-16"
   },
   {
     "s": "050",
@@ -1484,7 +1533,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/mu81Ibb2AforcMpBPlzfbrxPPCs.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4Vyrc1SGaBZZ0ZGDq4o6LcEgq1i.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4Vyrc1SGaBZZ0ZGDq4o6LcEgq1i.jpg",
+    "rd": "2014-10-30"
   },
   {
     "s": "051",
@@ -1516,7 +1566,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/z7zfkpdieCYCUaYHgpxvi3Hc2P.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bPsExF2epwQeyP7HK9JK52FSgsi.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bPsExF2epwQeyP7HK9JK52FSgsi.jpg",
+    "rd": "2014-02-20"
   },
   {
     "s": "052",
@@ -1548,7 +1599,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/2n1Vki7cr8FOgS1zhmPLa4M1s10.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sQGHdkl0dnHRnA6EpFXlq1R0T78.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sQGHdkl0dnHRnA6EpFXlq1R0T78.jpg",
+    "rd": "2012-09-18"
   },
   {
     "s": "053",
@@ -1580,7 +1632,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/kNgDn1WutH7buKn56JaAO8CNSjL.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/mORSowyx92dlvx9zYOKXZx0NpAW.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/mORSowyx92dlvx9zYOKXZx0NpAW.jpg",
+    "rd": "2014-11-27"
   },
   {
     "s": "054",
@@ -1612,7 +1665,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/mDyWv3GTFFHGdJWycL93zn1lggT.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/k23FPWl97XKpJ1oTaDyADzxWxs6.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/k23FPWl97XKpJ1oTaDyADzxWxs6.jpg",
+    "rd": "2014-09-18"
   },
   {
     "s": "055",
@@ -1641,7 +1695,8 @@
         "u": "https://www.rottentomatoes.com/m/gabrielle"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/72xt5skbvLacn8AodQF0B92rUXs.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/72xt5skbvLacn8AodQF0B92rUXs.jpg",
+    "rd": "2013-09-20"
   },
   {
     "s": "056",
@@ -1673,7 +1728,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/uxB5mNwYoD0oQPebZrTglsoNs0O.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/12rDMkiQFeXrLhlIbJpArL8wOHf.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/12rDMkiQFeXrLhlIbJpArL8wOHf.jpg",
+    "rd": "2015-01-07"
   },
   {
     "s": "057",
@@ -1705,7 +1761,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/oKXYwsY1F6h0P20Ec8AHbsIyzHQ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2RZIAureYbJCCqyduAgM1RwtRRl.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2RZIAureYbJCCqyduAgM1RwtRRl.jpg",
+    "rd": "2015-01-28"
   },
   {
     "s": "058",
@@ -1737,7 +1794,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1lkp87orcl6IjrdJJTJPnY2gEoc.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/3qjYgi0CjhXSrt1Sv1VFk26y5Yo.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/3qjYgi0CjhXSrt1Sv1VFk26y5Yo.jpg",
+    "rd": "2015-05-02"
   },
   {
     "s": "059",
@@ -1766,7 +1824,8 @@
         "u": "https://www.rottentomatoes.com/m/diana"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/9OFvGWjO3fJUKkUjNRfx4UHHbAy.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/9OFvGWjO3fJUKkUjNRfx4UHHbAy.jpg",
+    "rd": "2014-03-06"
   },
   {
     "s": "060",
@@ -1798,7 +1857,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1u1mjji8WPBFGRVg5xhVwG9dlhm.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wjfJy0jXpbtUuSkFxUeF8W4RrEo.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wjfJy0jXpbtUuSkFxUeF8W4RrEo.jpg",
+    "rd": "2015-04-02"
   },
   {
     "s": "061",
@@ -1830,7 +1890,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/3nGomBF02IHSvcdcmkm7bO83MsB.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/xRa23mJjSidsGtz9JpxKtQK4hhu.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/xRa23mJjSidsGtz9JpxKtQK4hhu.jpg",
+    "rd": "2015-04-30"
   },
   {
     "s": "062",
@@ -1862,7 +1923,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/9Hh6lmDNMH0HPO3KytjOuFxo1nD.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/a8mN287u37vIFfsQIZraB5zYUcv.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/a8mN287u37vIFfsQIZraB5zYUcv.jpg",
+    "rd": "2016-06-02"
   },
   {
     "s": "063",
@@ -1894,7 +1956,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/x48xaJUopcRbVFxZzSZhT2355je.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5oM00doqcMnRaJT4CaOfczEO7Qb.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5oM00doqcMnRaJT4CaOfczEO7Qb.jpg",
+    "rd": "2015-05-14"
   },
   {
     "s": "064",
@@ -1926,7 +1989,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/69LqGXXraCJZmvRzdm5JR1brCYb.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/ajukqMGU1d5d1Csx0jUGPDsXpFC.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/ajukqMGU1d5d1Csx0jUGPDsXpFC.jpg",
+    "rd": "2015-04-30"
   },
   {
     "s": "065",
@@ -1958,7 +2022,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/i30uj7R2SWVufcR0e4ZSZ28jz2B.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/aikBhzg2hT853U876DZglf6qlGN.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/aikBhzg2hT853U876DZglf6qlGN.jpg",
+    "rd": "2015-04-08"
   },
   {
     "s": "066",
@@ -1990,7 +2055,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5ydVmXbuW9heOH5TqUIs10vILpY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/dcyPj11c00lOhMESAVWtJKzlHt4.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/dcyPj11c00lOhMESAVWtJKzlHt4.jpg",
+    "rd": "2015-03-26"
   },
   {
     "s": "067",
@@ -2022,7 +2088,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/3PB3rwE6H3PgNYZLbFe3Kc6mjPY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wlP3Sjw5WVvjsi2CGFp84QwrZZC.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wlP3Sjw5WVvjsi2CGFp84QwrZZC.jpg",
+    "rd": "2015-01-22"
   },
   {
     "s": "068",
@@ -2054,7 +2121,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/3cRSgoFA4hC9mDG1tQ3L2ODpmRD.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/74IaLYwgko2nTLj8Gz9ukQ4RIvC.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/74IaLYwgko2nTLj8Gz9ukQ4RIvC.jpg",
+    "rd": "2015-01-22"
   },
   {
     "s": "069",
@@ -2086,7 +2154,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/3Kxb3eF06XegcyvzYH16ZvEDgJU.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/dBi5NqhsU9MBsE0uW0b5QtNZFWU.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/dBi5NqhsU9MBsE0uW0b5QtNZFWU.jpg",
+    "rd": "2014-09-11"
   },
   {
     "s": "070",
@@ -2118,7 +2187,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/yE0M0KTBDbs5VZnGw9MOEaTgwtG.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sqNeXF2ZoL3ULEHE6SUvEEFQBoo.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sqNeXF2ZoL3ULEHE6SUvEEFQBoo.jpg",
+    "rd": "2014-12-04"
   },
   {
     "s": "071",
@@ -2150,7 +2220,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1D4vcJmJc58WXarpRtwgd2do9Rg.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/vDfbeUK3OhoeyQRlUODwfSy6tyE.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/vDfbeUK3OhoeyQRlUODwfSy6tyE.jpg",
+    "rd": "2015-10-16"
   },
   {
     "s": "072",
@@ -2182,7 +2253,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/hhtGtFlvSljfjdB9HKTAlNc3oiH.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/40ZRzvdkuCPNCSbdcImc5o4JGdD.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/40ZRzvdkuCPNCSbdcImc5o4JGdD.jpg",
+    "rd": "2015-10-22"
   },
   {
     "s": "073",
@@ -2214,7 +2286,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/f1x1bcxtX0Ppz1zUyagsxOPWkMb.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wTvDGO0xGMmnScqjuiDeWU7PkcB.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wTvDGO0xGMmnScqjuiDeWU7PkcB.jpg",
+    "rd": "2015-10-15"
   },
   {
     "s": "074",
@@ -2246,7 +2319,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/hOSxKgqYCK0qRbELUfyJHA73zMi.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wldeDiuEBhYi1Q4FjSHzAQ3yS80.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wldeDiuEBhYi1Q4FjSHzAQ3yS80.jpg",
+    "rd": "2018-05-10"
   },
   {
     "s": "075",
@@ -2275,7 +2349,8 @@
         "u": "https://www.rottentomatoes.com/m/mia_madre"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/4ijAT1ObfokFdZkKTt1wHj4kWdG.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/4ijAT1ObfokFdZkKTt1wHj4kWdG.jpg",
+    "rd": "2015-08-20"
   },
   {
     "s": "076",
@@ -2307,7 +2382,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/uFUT5apEV5bMBCCkROX3JNSiuOu.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/vzbsqeoG7xH8EVOBiYBSIjU8wt1.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/vzbsqeoG7xH8EVOBiYBSIjU8wt1.jpg",
+    "rd": "2015-09-10"
   },
   {
     "s": "077",
@@ -2339,7 +2415,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/a1i393ZuPD8k4LXPPoZ4d2S3mVJ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bTnUxw2qH4oBGDMM0w4r6KQ11BD.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bTnUxw2qH4oBGDMM0w4r6KQ11BD.jpg",
+    "rd": "2015-07-23"
   },
   {
     "s": "078",
@@ -2371,7 +2448,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/kY7DTNis0pPcmk5fP0gLhKTnSn3.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sUmMrrVEpXsBs0YYvATvPkGNcBH.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sUmMrrVEpXsBs0YYvATvPkGNcBH.jpg",
+    "rd": "2015-06-19"
   },
   {
     "s": "079",
@@ -2400,7 +2478,8 @@
         "u": "https://www.rottentomatoes.com/m/m_s_negro_que_la_noche"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/bRNtx0ZqogXyjLueiDPV7gzImNg.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/bRNtx0ZqogXyjLueiDPV7gzImNg.jpg",
+    "rd": "2014-09-05"
   },
   {
     "s": "080",
@@ -2432,7 +2511,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/gWoQsrx3CgNyJKk05CQpSAvtcbE.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/usWzZFCKNBhVzD96ESLFEzETwPB.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/usWzZFCKNBhVzD96ESLFEzETwPB.jpg",
+    "rd": "2015-07-15"
   },
   {
     "s": "081",
@@ -2464,7 +2544,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ta0NGF29wSFqwA9ujXJCPgpySzW.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/ggnGtnXQHzpdMvow9gIlxocWuwW.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/ggnGtnXQHzpdMvow9gIlxocWuwW.jpg",
+    "rd": "2012-08-31"
   },
   {
     "s": "082",
@@ -2496,7 +2577,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/eatGjDYoy5hoycEvTwBZimdKs5y.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/9JJJOq1YuhUpC3wRgeEYn85UPbi.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/9JJJOq1YuhUpC3wRgeEYn85UPbi.jpg",
+    "rd": "2015-05-14"
   },
   {
     "s": "083",
@@ -2528,7 +2610,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/wN0KYvge1RcYFUhNlSSPwOPnNP5.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/yDI3qXoKMGUGGz0E2zrkHw4PRt4.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/yDI3qXoKMGUGGz0E2zrkHw4PRt4.jpg",
+    "rd": "2020-05-14"
   },
   {
     "s": "084",
@@ -2560,7 +2643,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/rqCUrWRkE7DhhUn49qWVDbQsl5l.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/tT8vexYdyHG0nHyXQkhzt8tbFkt.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/tT8vexYdyHG0nHyXQkhzt8tbFkt.jpg",
+    "rd": "2015-02-05"
   },
   {
     "s": "085",
@@ -2592,7 +2676,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/pcdKRdsRjPptS1jwm5CefJGGNrk.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bXMIMYlG7pT8kuHmO7HdKenXDMA.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bXMIMYlG7pT8kuHmO7HdKenXDMA.jpg",
+    "rd": "2014-10-09"
   },
   {
     "s": "086",
@@ -2624,7 +2709,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/xAaPOqTMm8iJh5yY8QXupWmY7Z4.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/o0EQmMhHA6Gpf7MS7KxPafWqTPp.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/o0EQmMhHA6Gpf7MS7KxPafWqTPp.jpg",
+    "rd": "2014-05-29"
   },
   {
     "s": "087",
@@ -2656,7 +2742,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5T8rK75G0qeDDs8mQ7UHtjNXlzy.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/7hJxwdm2OSE4Umsta7rYIxDaymU.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/7hJxwdm2OSE4Umsta7rYIxDaymU.jpg",
+    "rd": "2014-01-29"
   },
   {
     "s": "088",
@@ -2688,7 +2775,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/npfxO4GIg2mC2xW9vAe08QNfoyQ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/AmPGmrldZEFMHdZ7BNm8r1IL09S.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/AmPGmrldZEFMHdZ7BNm8r1IL09S.jpg",
+    "rd": "2012-12-14"
   },
   {
     "s": "089",
@@ -2720,7 +2808,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/y3xl3s7EhbrE25IxM02WzfFNgdv.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/oVxA5m5zg6QFKlSWy3VXjQJE5zU.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/oVxA5m5zg6QFKlSWy3VXjQJE5zU.jpg",
+    "rd": "2014-05-23"
   },
   {
     "s": "090",
@@ -2752,7 +2841,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/w23DNgChJPodfvltZaWxXgASXz4.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/aSrP7Xmk4EDL1iqWX2cbtnXqmT7.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/aSrP7Xmk4EDL1iqWX2cbtnXqmT7.jpg",
+    "rd": "2015-07-09"
   },
   {
     "s": "091",
@@ -2784,7 +2874,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/e4CRFaNCLnhEItseTpXbvP3VU8M.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/1OlinE4r38dgYbGSvkTVgY6iNDk.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/1OlinE4r38dgYbGSvkTVgY6iNDk.jpg",
+    "rd": "2014-04-10"
   },
   {
     "s": "092",
@@ -2816,7 +2907,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/netHzIutioPMJt6VePen3nXBBCR.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4Bb1kMIfrT2tYRZ9M6Jhqy6gkeF.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4Bb1kMIfrT2tYRZ9M6Jhqy6gkeF.jpg",
+    "rd": "2014-02-27"
   },
   {
     "s": "093",
@@ -2848,7 +2940,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/6Kbuco9DO0o0ohZM0RXN3Ohzyer.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4QBI1pdjr2hH1fgC8NqwZZnWNso.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4QBI1pdjr2hH1fgC8NqwZZnWNso.jpg",
+    "rd": "2014-01-09"
   },
   {
     "s": "094",
@@ -2877,7 +2970,8 @@
         "u": "https://www.rottentomatoes.com/m/mr_right"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/ys2DLFIrph4BfXmoE0VC9VTnlcQ.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/ys2DLFIrph4BfXmoE0VC9VTnlcQ.jpg",
+    "rd": "2016-06-16"
   },
   {
     "s": "095",
@@ -2909,7 +3003,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/gQgVIElQcC7Rfhjr6E6DxWg5v77.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/riaO9lEYnzlmkILiLG3Y6HtJaM3.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/riaO9lEYnzlmkILiLG3Y6HtJaM3.jpg",
+    "rd": "2016-06-09"
   },
   {
     "s": "096",
@@ -2941,7 +3036,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/qKReHnyXQx48YqTMcOgPVk36L6e.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/qSP072apfe2EEcd5Qg9vGYy2OLw.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/qSP072apfe2EEcd5Qg9vGYy2OLw.jpg",
+    "rd": "2016-05-11"
   },
   {
     "s": "097",
@@ -2973,7 +3069,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/4MaTkqk4LKccDYKh7AjV220CVgW.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sTQNRqLbfCXolrb5CizAW1dj528.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sTQNRqLbfCXolrb5CizAW1dj528.jpg",
+    "rd": "2016-05-25"
   },
   {
     "s": "098",
@@ -3005,7 +3102,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/nG9TgFgCjLlmw44vFQOVD2q52fV.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wbA13Xns8EtbIubDOPLl7kCYYA4.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wbA13Xns8EtbIubDOPLl7kCYYA4.jpg",
+    "rd": "2016-05-12"
   },
   {
     "s": "099",
@@ -3037,7 +3135,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/zu2ObUjORDtm3ezvi7eWFnw7PZB.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/9hWiNbvLR3nPDanTdEWOc4EeBGp.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/9hWiNbvLR3nPDanTdEWOc4EeBGp.jpg",
+    "rd": "2016-05-05"
   },
   {
     "s": "100",
@@ -3069,7 +3168,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/pAjBN1GUujz15DnCdXHwCw3PUZk.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/saa1scU6UIBJi9bMEvLNzXXKnDD.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/saa1scU6UIBJi9bMEvLNzXXKnDD.jpg",
+    "rd": "2016-04-07"
   },
   {
     "s": "101",
@@ -3101,7 +3201,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/3vqf3Cc2SpTO0ebfvZJfSM09HM9.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/kVchIyTFulZtFJmxq8e0SPvc3tH.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/kVchIyTFulZtFJmxq8e0SPvc3tH.jpg",
+    "rd": "2016-04-20"
   },
   {
     "s": "102",
@@ -3133,7 +3234,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/mEc5KbzVbOPDyZeWt9k0kWwyNnc.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/gsqKgZbXmge1FR7KHBKM5AQ93mb.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/gsqKgZbXmge1FR7KHBKM5AQ93mb.jpg",
+    "rd": "2016-03-30"
   },
   {
     "s": "103",
@@ -3162,7 +3264,8 @@
         "u": "https://www.rottentomatoes.com/m/un_peu_beaucoup_aveugl_ment"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/eGH66HYvjBDxXVQbI9VMdawDNQr.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/eGH66HYvjBDxXVQbI9VMdawDNQr.jpg",
+    "rd": "2016-04-07"
   },
   {
     "s": "104",
@@ -3194,7 +3297,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/rY4dfIZ2Pj5D0a3BWmSYLl9n0Dd.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jnnaCXTkJhwWcCJK8yZvAybrBvR.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jnnaCXTkJhwWcCJK8yZvAybrBvR.jpg",
+    "rd": "2016-03-17"
   },
   {
     "s": "105",
@@ -3226,7 +3330,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/dQRRX3Ty8KfLmojgF7FjvNB1JEm.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/icCQi9Tnyx86C987IoIFchxqMof.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/icCQi9Tnyx86C987IoIFchxqMof.jpg",
+    "rd": "2016-04-07"
   },
   {
     "s": "106",
@@ -3258,7 +3363,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/44QA5b4mkjPgk6nqvj3ZNbT6yfK.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/8FbbcmwmpGd7brfiC7f7lWFNGdi.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/8FbbcmwmpGd7brfiC7f7lWFNGdi.jpg",
+    "rd": "2016-02-24"
   },
   {
     "s": "107",
@@ -3290,7 +3396,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/dh7Be5MXHhlyfyEGbiGgc2jQari.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5ymJuqUWwQZ7yq63UE8DNpFBELr.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5ymJuqUWwQZ7yq63UE8DNpFBELr.jpg",
+    "rd": "2016-02-25"
   },
   {
     "s": "108",
@@ -3322,7 +3429,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/oh8ZsQzui4JpVtjB2aLcTOCYDis.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2aXAK6WNg9ihJm8qRSrguKzgaB7.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2aXAK6WNg9ihJm8qRSrguKzgaB7.jpg",
+    "rd": "2016-03-10"
   },
   {
     "s": "109",
@@ -3354,7 +3462,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fMBbqWknEoUdgHwjMSENpS5Mqhl.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/pl2zr5efo9Dz1fi2gpsslGwEQm.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/pl2zr5efo9Dz1fi2gpsslGwEQm.jpg",
+    "rd": "2016-03-03"
   },
   {
     "s": "110",
@@ -3386,7 +3495,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/qJHCj5lZ25uMlKCtaFgZujs8Zg4.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/o0ghC4XMIMdbRBXIqSvnPrxwj3W.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/o0ghC4XMIMdbRBXIqSvnPrxwj3W.jpg",
+    "rd": "2016-02-04"
   },
   {
     "s": "111",
@@ -3418,7 +3528,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/6ow4Ku05IfDQye4160dtUcqXfGK.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/eYpu1C6Xe3FzHaw5MtMVxLjBtJf.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/eYpu1C6Xe3FzHaw5MtMVxLjBtJf.jpg",
+    "rd": "2016-04-07"
   },
   {
     "s": "112",
@@ -3450,7 +3561,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/k1e0TlvDM4KsiSRyJENVrHxMqtK.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/en971MEXui9diirXlogOrPKmsEn.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/en971MEXui9diirXlogOrPKmsEn.jpg",
+    "rd": "2016-02-17"
   },
   {
     "s": "113",
@@ -3482,7 +3594,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/T0NyYB64irCM796IN0qkZC3Yp0.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/3QF0JAVaDBT9dJXYD9R8fT9Z0Sq.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/3QF0JAVaDBT9dJXYD9R8fT9Z0Sq.jpg",
+    "rd": "2015-04-02"
   },
   {
     "s": "114",
@@ -3511,7 +3624,8 @@
         "u": "https://www.rottentomatoes.com/m/madame_bovary"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/5IidrhSfd7RUFIHvpWiT3PAGl9C.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/5IidrhSfd7RUFIHvpWiT3PAGl9C.jpg",
+    "rd": "2015-12-10"
   },
   {
     "s": "115",
@@ -3540,7 +3654,8 @@
         "u": "https://www.rottentomatoes.com/m/macbeth"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/715py1HSUlsBYoYb4gSMnvyR4vU.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/715py1HSUlsBYoYb4gSMnvyR4vU.jpg",
+    "rd": "2015-12-03"
   },
   {
     "s": "116",
@@ -3572,7 +3687,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/oVA4Rx01OUAYdLOiBNBPjaG7I7v.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/fKPgObonYgPgCdu88yjV7Hpn7Dp.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/fKPgObonYgPgCdu88yjV7Hpn7Dp.jpg",
+    "rd": "2015-12-03"
   },
   {
     "s": "117",
@@ -3604,7 +3720,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/uY6EsvBYZ25ydYYo6lgw5boxDWc.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/y5Y12Pds6Z4ipLg482Azhp4xb9x.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/y5Y12Pds6Z4ipLg482Azhp4xb9x.jpg",
+    "rd": "2015-11-19"
   },
   {
     "s": "118",
@@ -3636,7 +3753,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/dPSMAFxDcB1s7YYZ1cbXZFDTJxM.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/xKtWcQD2yugIKz49LvZNHdLM09T.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/xKtWcQD2yugIKz49LvZNHdLM09T.jpg",
+    "rd": "2015-12-10"
   },
   {
     "s": "119",
@@ -3665,7 +3783,8 @@
         "u": "https://www.rottentomatoes.com/m/julieta"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/90Ayu3LKpLOwJXUtjHyuUFSFuyx.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/90Ayu3LKpLOwJXUtjHyuUFSFuyx.jpg",
+    "rd": "2016-11-17"
   },
   {
     "s": "120",
@@ -3697,7 +3816,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/rBFQEYQh8S0ise3plSKVVKq8lv0.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/tLYacCfh2xVX1hPaxqjx1lioNbl.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/tLYacCfh2xVX1hPaxqjx1lioNbl.jpg",
+    "rd": "2016-12-08"
   },
   {
     "s": "121",
@@ -3729,7 +3849,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/w0Xf8HAaJ2nOpvtv1ir3X9IjEpb.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4qqX8rBDa4Dzqf6pSSumpFoEHMB.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4qqX8rBDa4Dzqf6pSSumpFoEHMB.jpg",
+    "rd": "2016-03-22"
   },
   {
     "s": "122",
@@ -3761,7 +3882,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/zFrW9kxguJREhFcGNLaeKVx0lMP.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bbDMy8ou6N8yL5VidQpzo6kZZVk.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bbDMy8ou6N8yL5VidQpzo6kZZVk.jpg",
+    "rd": "2016-11-24"
   },
   {
     "s": "123",
@@ -3793,7 +3915,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5dy5ihLUwXmjxKi1AeLxBRDzjSD.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/kQVdpIPCqfpa24I8SQRiwOAbkLG.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/kQVdpIPCqfpa24I8SQRiwOAbkLG.jpg",
+    "rd": "2016-11-03"
   },
   {
     "s": "124",
@@ -3825,7 +3948,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/gPZ96OqXpSmi4wiT3TFEUamcvLO.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5HnHEodzdN7thQRMfncWdle8ybD.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5HnHEodzdN7thQRMfncWdle8ybD.jpg",
+    "rd": "2016-10-19"
   },
   {
     "s": "125",
@@ -3857,7 +3981,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1XzvSRkeDknQOZNHvQ0v7Yo76IE.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bhspYsRMHgMqzUlxiVpIY8OrqMt.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bhspYsRMHgMqzUlxiVpIY8OrqMt.jpg",
+    "rd": "2016-10-26"
   },
   {
     "s": "126",
@@ -3889,7 +4014,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/og5MkLuWBDl2cg0mi3edZQJnius.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/s1A9CKeoKglWDdQFRl9aC8wa3Zj.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/s1A9CKeoKglWDdQFRl9aC8wa3Zj.jpg",
+    "rd": "2016-10-27"
   },
   {
     "s": "127",
@@ -3921,7 +4047,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/e8DeyULYHsqHiR7tDik9EESqFDs.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/3f5rBEc6ioRBO2CATDt4sKjEJnY.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/3f5rBEc6ioRBO2CATDt4sKjEJnY.jpg",
+    "rd": "2016-08-31"
   },
   {
     "s": "128",
@@ -3950,7 +4077,8 @@
         "u": "https://www.rottentomatoes.com/m/venus_in_furs"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/aiecQqAWtBX9dxK7k5KStbCto4h.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/aiecQqAWtBX9dxK7k5KStbCto4h.jpg",
+    "rd": "2012-07-12"
   },
   {
     "s": "129",
@@ -3982,7 +4110,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/yHEXO3n1TOnuN9chIAYPuTxfXif.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4ANhwN1jr5EGwHS0M13AH5Fs3NH.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4ANhwN1jr5EGwHS0M13AH5Fs3NH.jpg",
+    "rd": "2016-08-31"
   },
   {
     "s": "130",
@@ -4011,7 +4140,8 @@
         "u": "https://www.rottentomatoes.com/m/jack"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/oCHrKQEqq6ExyirmwI43EaLdHwI.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/oCHrKQEqq6ExyirmwI43EaLdHwI.jpg",
+    "rd": "2015-09-10"
   },
   {
     "s": "131",
@@ -4043,7 +4173,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/dx1HM0bYYqQSlPfFGnZIMd2Wtkt.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jC6xdsrOpgLiODlEeII2bSnOFxI.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jC6xdsrOpgLiODlEeII2bSnOFxI.jpg",
+    "rd": "2016-04-22"
   },
   {
     "s": "132",
@@ -4075,7 +4206,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/meHtKdB3QZQL6UzVoM0Y7PFnqGP.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/p0pqnu9URsFzYwo55QbS3bfAamU.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/p0pqnu9URsFzYwo55QbS3bfAamU.jpg",
+    "rd": "2016-09-14"
   },
   {
     "s": "133",
@@ -4107,7 +4239,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/zlThlGgdsaM3bJuHQd7NIDkim3O.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/cYXYjMex6LmSVcN7RXOWWgKXmFa.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/cYXYjMex6LmSVcN7RXOWWgKXmFa.jpg",
+    "rd": "2016-12-16"
   },
   {
     "s": "134",
@@ -4136,7 +4269,8 @@
         "u": "https://www.rottentomatoes.com/m/la_t_te_haute"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/yQWCDzUnhEDI9E7gcIEc3jZ6Dfa.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/yQWCDzUnhEDI9E7gcIEc3jZ6Dfa.jpg",
+    "rd": "2015-05-13"
   },
   {
     "s": "135",
@@ -4168,7 +4302,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/vVM2sIGS3y4efDLWHhAS03tZWBW.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/byMyHJvhiIMKEYqO4I3UhIPEm7G.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/byMyHJvhiIMKEYqO4I3UhIPEm7G.jpg",
+    "rd": "2016-06-15"
   },
   {
     "s": "136",
@@ -4191,7 +4326,8 @@
         "u": "https://www.rottentomatoes.com/m/the_tag_along"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/h39HVK1N6hwc4BUOCVmhzUSAXPg.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/h39HVK1N6hwc4BUOCVmhzUSAXPg.jpg",
+    "rd": "2016-07-21"
   },
   {
     "s": "137",
@@ -4223,7 +4359,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/aKSkCIH61zoLSn0FYj6vdQrTAX6.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/tY9RkzUFUagcrLMriLd1fyOfG6G.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/tY9RkzUFUagcrLMriLd1fyOfG6G.jpg",
+    "rd": "2017-01-04"
   },
   {
     "s": "138",
@@ -4255,7 +4392,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/xa6Hy5NcnZcm4mw6fwZHb9tsZso.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/1nr8LMoOPER3a6UeAvIS1uYBpSK.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/1nr8LMoOPER3a6UeAvIS1uYBpSK.jpg",
+    "rd": "2016-08-16"
   },
   {
     "s": "139",
@@ -4287,7 +4425,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/hmm0CEDyLDMaoR97uxpEt6ZHP6b.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/31M4Rty4wAeRqVuykwJqTKIh0Ed.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/31M4Rty4wAeRqVuykwJqTKIh0Ed.jpg",
+    "rd": "2016-07-14"
   },
   {
     "s": "140",
@@ -4319,7 +4458,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ys2DLFIrph4BfXmoE0VC9VTnlcQ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/ugnGe88pG04SViHpbXbqenzKkOt.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/ugnGe88pG04SViHpbXbqenzKkOt.jpg",
+    "rd": "2016-06-16"
   },
   {
     "s": "141",
@@ -4351,7 +4491,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/pn8DCMbliT5Xofh5lpuVi8BGCIM.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/ywLZ2SMqyE6pLWLfA2LI5pV4Fdx.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/ywLZ2SMqyE6pLWLfA2LI5pV4Fdx.jpg",
+    "rd": "2016-06-09"
   },
   {
     "s": "142",
@@ -4383,7 +4524,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/a11bgxbnQFg16RWKULdsVNXu9j4.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sKJOOzIR5oMiCeXC7gBxXgIDz9p.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sKJOOzIR5oMiCeXC7gBxXgIDz9p.jpg",
+    "rd": "2016-06-22"
   },
   {
     "s": "143",
@@ -4409,7 +4551,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/7YFnWXZa8ElaKkYLJKFzWUlYnux.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/vcSHW85yAj83BjX7AbsZ5moI7Da.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/vcSHW85yAj83BjX7AbsZ5moI7Da.jpg",
+    "rd": "2017-05-11"
   },
   {
     "s": "144",
@@ -4441,7 +4584,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/gns81PefhT80amZECfgdaxbGYWD.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/q0X5l5GfbqxKuof0XHEIuh94RKb.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/q0X5l5GfbqxKuof0XHEIuh94RKb.jpg",
+    "rd": "2017-05-31"
   },
   {
     "s": "145",
@@ -4473,7 +4617,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/tE6tvHXlAZ8hqM4k9ZvtWtBk4pc.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4DZxWNSAyksN6N3JkvpJ53Yq6zU.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4DZxWNSAyksN6N3JkvpJ53Yq6zU.jpg",
+    "rd": "2017-03-01"
   },
   {
     "s": "146",
@@ -4505,7 +4650,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/suLFg4UjvM5BoDipg2Wu3gZ802T.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sYnrdolxonyMucMezj8PMVBRlVr.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sYnrdolxonyMucMezj8PMVBRlVr.jpg",
+    "rd": "2017-06-16"
   },
   {
     "s": "147",
@@ -4537,7 +4683,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/7IEjgGVcOT3kTIb42yFLPVjSvot.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/r17jFHAemzcWPPtoO0UxjIX0xas.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/r17jFHAemzcWPPtoO0UxjIX0xas.jpg",
+    "rd": "2017-02-22"
   },
   {
     "s": "148",
@@ -4569,7 +4716,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/wZPcpIyZx43nXEgrc9NvQUyoxtr.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/rfkIeCaIHhN3K5wjJJqKmfUjYp8.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/rfkIeCaIHhN3K5wjJJqKmfUjYp8.jpg",
+    "rd": "2017-03-23"
   },
   {
     "s": "149",
@@ -4601,7 +4749,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/nlvcNogJK9R9iIj0YINApQE36FF.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/vDKRMZGFTKP9nQolzeSB1rB1w6p.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/vDKRMZGFTKP9nQolzeSB1rB1w6p.jpg",
+    "rd": "2017-02-22"
   },
   {
     "s": "150",
@@ -4633,7 +4782,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ww6q47tBUePDeRDJulnA8g3lIlt.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2tE0A6WjLowwQOUY8se1Xlf3O6U.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2tE0A6WjLowwQOUY8se1Xlf3O6U.jpg",
+    "rd": "2017-02-28"
   },
   {
     "s": "151",
@@ -4665,7 +4815,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/yIlmfZYiXB7UTYxUBTEhiWrOYJO.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/lF41LYBSLVpZ61rZci471pqi6UW.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/lF41LYBSLVpZ61rZci471pqi6UW.jpg",
+    "rd": "2017-01-25"
   },
   {
     "s": "152",
@@ -4697,7 +4848,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/nbce2bP4thBSzzyujMjf839Lzuj.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/e29oMyfzzlWbhRlCBrzmZhlsw2m.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/e29oMyfzzlWbhRlCBrzmZhlsw2m.jpg",
+    "rd": "2017-01-11"
   },
   {
     "s": "153",
@@ -4729,7 +4881,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ue1KPcUK1sLsdBVZGM33ZDvDbCx.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/ycABRSIK1Ff10Tc2A6WJHagp1Co.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/ycABRSIK1Ff10Tc2A6WJHagp1Co.jpg",
+    "rd": "2017-02-01"
   },
   {
     "s": "154",
@@ -4761,7 +4914,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/9yobUFSdIP8PG6L7UVWpNjbTUPa.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/mDzzAQypU9CaolRyMiDVwlwffBY.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/mDzzAQypU9CaolRyMiDVwlwffBY.jpg",
+    "rd": "2017-03-22"
   },
   {
     "s": "155",
@@ -4793,7 +4947,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/r8H3eNZlTf2J4WW28l1sLY7ju8i.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/uXx9wjfJEzLlfqB8GW67SYBrhVT.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/uXx9wjfJEzLlfqB8GW67SYBrhVT.jpg",
+    "rd": "2017-02-15"
   },
   {
     "s": "156",
@@ -4825,7 +4980,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/bnEgrngNKsHh7B7eAMEBQf0cjYe.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/fRT76SSQzAuZljogpsWyKphUxYX.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/fRT76SSQzAuZljogpsWyKphUxYX.jpg",
+    "rd": "2017-01-25"
   },
   {
     "s": "157",
@@ -4854,7 +5010,8 @@
         "u": "https://www.rottentomatoes.com/m/juste_la_fin_du_monde"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/rhTo7nuESAHhV9EDTkak6cfCon4.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/rhTo7nuESAHhV9EDTkak6cfCon4.jpg",
+    "rd": "2017-01-18"
   },
   {
     "s": "158",
@@ -4886,7 +5043,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/h5h2acyeXXoxeS8BcDJtFpR2qCD.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jm1oD3eB08LImSwL1LrzF9AJQ5b.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jm1oD3eB08LImSwL1LrzF9AJQ5b.jpg",
+    "rd": "2017-02-22"
   },
   {
     "s": "159",
@@ -4918,7 +5076,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/tv2Ts7zRGzFWc6Xz0z8mxGUbNDB.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/s72jkxT7xPbfGxnE1lETq5OywvY.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/s72jkxT7xPbfGxnE1lETq5OywvY.jpg",
+    "rd": "2017-03-08"
   },
   {
     "s": "160",
@@ -4950,7 +5109,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/i1d9PSSyXD0lTXCX0oh0EDz6ssD.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/fjk4eE8Ypke4YLv5A3ArDH4GzYH.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/fjk4eE8Ypke4YLv5A3ArDH4GzYH.jpg",
+    "rd": "2017-02-15"
   },
   {
     "s": "161",
@@ -4982,7 +5142,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/iFWHkfl2RhEjWVTV2Y2eijmu7EG.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/nV2nQc3Y5h4zi3w3FMZOJAvpVOq.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/nV2nQc3Y5h4zi3w3FMZOJAvpVOq.jpg",
+    "rd": "2017-01-25"
   },
   {
     "s": "162",
@@ -5014,7 +5175,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/gdqM4sQXm8wZIB4rrAc2AnV09AD.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/mYZYVrQ2ghU3m79q7byeLzNXo1M.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/mYZYVrQ2ghU3m79q7byeLzNXo1M.jpg",
+    "rd": "2017-02-09"
   },
   {
     "s": "163",
@@ -5046,7 +5208,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/9OwH8xltSSF1CkxVgEqOXMGcXvz.jpg",
-    "back": ""
+    "back": "",
+    "rd": "1979-03-31"
   },
   {
     "s": "164",
@@ -5078,7 +5241,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/pxVtOO9T2ey4TjP0QBbMcmxTnu.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/gTo9VPjYsP6FD89HdzAKfjA7qH4.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/gTo9VPjYsP6FD89HdzAKfjA7qH4.jpg",
+    "rd": "2017-02-09"
   },
   {
     "s": "165",
@@ -5110,7 +5274,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/tYyTMu81IPvb0y8wnRbBixZWav9.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/ekZ7j7ElSFurRgqSalcP622YGrE.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/ekZ7j7ElSFurRgqSalcP622YGrE.jpg",
+    "rd": "2016-11-24"
   },
   {
     "s": "166",
@@ -5139,7 +5304,8 @@
         "u": "https://www.rottentomatoes.com/m/contratiempo"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/1bS5Do7dmOzda4nSIUU4PAgDCgV.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/1bS5Do7dmOzda4nSIUU4PAgDCgV.jpg",
+    "rd": "2017-09-21"
   },
   {
     "s": "167",
@@ -5171,7 +5337,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fq0WdmuL6JnBSH3jD2rszcOex68.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/eVHVwP71el20fofkCHo78ebQv7Q.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/eVHVwP71el20fofkCHo78ebQv7Q.jpg",
+    "rd": "2017-09-27"
   },
   {
     "s": "168",
@@ -5203,7 +5370,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/lktHrHZBL1ihgrd4tpM6oyNvqR3.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/uTQ6UAAdLdZwcmXmchIZJB7Jg64.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/uTQ6UAAdLdZwcmXmchIZJB7Jg64.jpg",
+    "rd": "2017-08-30"
   },
   {
     "s": "169",
@@ -5235,7 +5403,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/b4vzuJuK2nu4iL8ggjjcr17O5qw.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5eZ8kRSlD8P8a42y9GEGl1yAqOb.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5eZ8kRSlD8P8a42y9GEGl1yAqOb.jpg",
+    "rd": "2017-09-27"
   },
   {
     "s": "170",
@@ -5267,7 +5436,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/f7gaDz0eqTsgTs5Ne8Si3SO9in2.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/6h9pjTsWzaUWuUszHHbeI1JWE1.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/6h9pjTsWzaUWuUszHHbeI1JWE1.jpg",
+    "rd": "2017-10-19"
   },
   {
     "s": "171",
@@ -5299,7 +5469,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/yPbxPmM9CoMVEwpmgvVdjut5Zc3.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/kvSFYQG9tW7JOOhpFOWv6b1pbB0.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/kvSFYQG9tW7JOOhpFOWv6b1pbB0.jpg",
+    "rd": "2016-09-28"
   },
   {
     "s": "172",
@@ -5331,7 +5502,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/c5g0LOglgTemJbIxcda1kwfWD6B.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/6fwuBSN56KtiHH19bLRIxGtfpC5.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/6fwuBSN56KtiHH19bLRIxGtfpC5.jpg",
+    "rd": "2017-11-22"
   },
   {
     "s": "173",
@@ -5363,7 +5535,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/43COrS8RuxaZk5R7poi6CNIUKJV.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/76rh9uQWW0LmdCGe8kMwDbSbLB9.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/76rh9uQWW0LmdCGe8kMwDbSbLB9.jpg",
+    "rd": "2017-09-14"
   },
   {
     "s": "174",
@@ -5395,7 +5568,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/uidIFxKa22yX4WfVyFo2bnbQsWw.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/upatBMqiS0gSiNy52cwxKKcNne2.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/upatBMqiS0gSiNy52cwxKKcNne2.jpg",
+    "rd": "2017-09-21"
   },
   {
     "s": "175",
@@ -5427,7 +5601,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/hjki9weYYVABvkpZbX5jBOmKXXv.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/tPpYGm2mVecue7Bk3gNVoSPA5qn.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/tPpYGm2mVecue7Bk3gNVoSPA5qn.jpg",
+    "rd": "2017-07-05"
   },
   {
     "s": "176",
@@ -5459,7 +5634,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/eBhUGQn0wQOIKqgtLJalKGZNxfF.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4W7FBG3bBHcOh31v4G9CULQNcPy.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4W7FBG3bBHcOh31v4G9CULQNcPy.jpg",
+    "rd": "2017-08-24"
   },
   {
     "s": "177",
@@ -5491,7 +5667,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/c7EaSk0jd9nOl6GUIhuPk2gMOyh.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wztoDoglCOuiEfzl1FS6mglBioF.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wztoDoglCOuiEfzl1FS6mglBioF.jpg",
+    "rd": "2017-08-03"
   },
   {
     "s": "178",
@@ -5523,7 +5700,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/kbyLRsH1JvUePWzQZYrMCJUJTRQ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/9IAYhWW3bsggQcnQ2SBZD2V1999.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/9IAYhWW3bsggQcnQ2SBZD2V1999.jpg",
+    "rd": "2017-08-10"
   },
   {
     "s": "179",
@@ -5555,7 +5733,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/jTCrKLETEnalzMHEDt1VQUO39xl.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jRuiPXgOcYa6QK6UYwaRvAiFpGE.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jRuiPXgOcYa6QK6UYwaRvAiFpGE.jpg",
+    "rd": "2017-10-19"
   },
   {
     "s": "180",
@@ -5587,7 +5766,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/vJ8xKz2ip60nAEeN37eUmjAVpq2.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/w22CTHxmdAsUrXRbCQt4gOSOD6E.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/w22CTHxmdAsUrXRbCQt4gOSOD6E.jpg",
+    "rd": "2017-08-15"
   },
   {
     "s": "181",
@@ -5619,7 +5799,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/kHiSfrIh5NDoVZDCcQhzq3KHcsB.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/rYpOaLb908aDspCuaa1o7nn5Bf.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/rYpOaLb908aDspCuaa1o7nn5Bf.jpg",
+    "rd": "2017-07-07"
   },
   {
     "s": "182",
@@ -5651,7 +5832,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/6HE4xd8zloDqmjMZuhUCCw2UcY1.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/6QmX2BDVr1hIOIPHqnxvp1C1ZZp.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/6QmX2BDVr1hIOIPHqnxvp1C1ZZp.jpg",
+    "rd": "2017-08-16"
   },
   {
     "s": "183",
@@ -5683,7 +5865,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/k37JIBDgbuHvRzk22W7HTOdpaeg.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/fLvgZEMv012AHZk2PAxMyG8WROt.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/fLvgZEMv012AHZk2PAxMyG8WROt.jpg",
+    "rd": "2017-07-13"
   },
   {
     "s": "184",
@@ -5715,7 +5898,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/qaC3A1hSdW3DMXYukjwGR8i9iVg.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/g3hni0i9iAQ13jDGOFWavJFlojc.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/g3hni0i9iAQ13jDGOFWavJFlojc.jpg",
+    "rd": "2017-08-30"
   },
   {
     "s": "185",
@@ -5747,7 +5931,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/vA5AGI0TbXW0MrlvzXuDJ2hGWLi.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2NGBchckkORvJ94ojJWQDqgVvEX.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2NGBchckkORvJ94ojJWQDqgVvEX.jpg",
+    "rd": "2017-06-22"
   },
   {
     "s": "186",
@@ -5779,7 +5964,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/kDOnCut72YVzlnZvrdncK3zacAs.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/70IvSPhhV83cCW4bb19zqM9EZh4.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/70IvSPhhV83cCW4bb19zqM9EZh4.jpg",
+    "rd": "2017-07-12"
   },
   {
     "s": "187",
@@ -5811,7 +5997,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/qTiZhRh4y152Gj5jvEXMPmQZ71m.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/iXXPaQPfQowpQ5UvhsHLj9BgFhe.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/iXXPaQPfQowpQ5UvhsHLj9BgFhe.jpg",
+    "rd": "2017-05-09"
   },
   {
     "s": "188",
@@ -5843,7 +6030,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/7SkM2nPrAhYHJJtziyfFThgZtSo.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/rnNj2g7BhPIjxs0WR5VS2f0im7.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/rnNj2g7BhPIjxs0WR5VS2f0im7.jpg",
+    "rd": "2017-04-26"
   },
   {
     "s": "189",
@@ -5875,7 +6063,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/xwC89k8e3K7k1tG2avAlzA7BNOb.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jfnTuPMeksH5tnh9U4y6kRhz18s.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jfnTuPMeksH5tnh9U4y6kRhz18s.jpg",
+    "rd": "2017-04-20"
   },
   {
     "s": "190",
@@ -5907,7 +6096,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/guzNdgRjANTBDkTRYGqgzFOgSWx.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/fwf4L3r2ZU9ptOB9nOo5nuVLo1i.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/fwf4L3r2ZU9ptOB9nOo5nuVLo1i.jpg",
+    "rd": "2018-03-22"
   },
   {
     "s": "191",
@@ -5939,7 +6129,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/9uh4pH6lxTIWlcToZ1PPpdhYJBD.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/abirSHwWgKajV3hXhaIR5lcCIXe.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/abirSHwWgKajV3hXhaIR5lcCIXe.jpg",
+    "rd": "2018-02-22"
   },
   {
     "s": "192",
@@ -5971,7 +6162,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5z6uHS30VhInm2MDkbVoa0SegLJ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bioYaOXZS2nXLiLVf5mDOgXpCd8.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bioYaOXZS2nXLiLVf5mDOgXpCd8.jpg",
+    "rd": "2018-03-15"
   },
   {
     "s": "193",
@@ -6003,7 +6195,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/nwSrKv3tzo4HqkgMj3ZwfAC4VYT.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/lO5c0zG8s1dBPHcRparpNlNGWU9.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/lO5c0zG8s1dBPHcRparpNlNGWU9.jpg",
+    "rd": "2018-03-07"
   },
   {
     "s": "194",
@@ -6035,7 +6228,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/4RDt5wcLnvrr9ymPKWqBYMZzBfw.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5owIV2sqdfILBKyOOIkLYVqanZp.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5owIV2sqdfILBKyOOIkLYVqanZp.jpg",
+    "rd": "2018-03-08"
   },
   {
     "s": "195",
@@ -6067,7 +6261,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/4jCbWTPBgBj0OoTFlWYbHlJoG87.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/3ZQRLuXNTbewOHDfxF51fy74gh4.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/3ZQRLuXNTbewOHDfxF51fy74gh4.jpg",
+    "rd": "2018-02-28"
   },
   {
     "s": "196",
@@ -6099,7 +6294,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/xTOZbj6y3sTa83YH1dx82Ev7VlA.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/ufUAOM5aVizNf8d5YLoutqrrlhq.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/ufUAOM5aVizNf8d5YLoutqrrlhq.jpg",
+    "rd": "2018-01-17"
   },
   {
     "s": "197",
@@ -6131,7 +6327,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/icohdWIwQjhEy2Qxz0Pe5niHWI6.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sSlL9NfqN5gBhPkHE1TOBXqBoew.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sSlL9NfqN5gBhPkHE1TOBXqBoew.jpg",
+    "rd": "2018-01-25"
   },
   {
     "s": "198",
@@ -6163,7 +6360,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/naD3P63LASYMoBC9nEsYrPJhEUP.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/x5EUEv1N9g4BCX9GQXKvv3nqMVo.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/x5EUEv1N9g4BCX9GQXKvv3nqMVo.jpg",
+    "rd": "2018-01-31"
   },
   {
     "s": "199",
@@ -6195,7 +6393,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/znKng6YIRlmbBum5lSpx48KDJdq.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2y2aqaScd7jsUee0ddI1iRNgwGq.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2y2aqaScd7jsUee0ddI1iRNgwGq.jpg",
+    "rd": "2017-12-28"
   },
   {
     "s": "200",
@@ -6227,7 +6426,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/AiZRCsPF4HFTywgQaAOQSYaQ7ER.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5AhkjcqqRxBdpYZ0TeOuTCuOUYq.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5AhkjcqqRxBdpYZ0TeOuTCuOUYq.jpg",
+    "rd": "2018-01-04"
   },
   {
     "s": "201",
@@ -6259,7 +6459,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5yUyM27K4IrLkdfpiHIeBdcJXt6.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jGjFwizX2YYoUOJkCymlfvS8aGp.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jGjFwizX2YYoUOJkCymlfvS8aGp.jpg",
+    "rd": "2017-10-26"
   },
   {
     "s": "202",
@@ -6291,7 +6492,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1EX3A8mYkQk7czWj7l1tLVlCV2c.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/b7xQ5fuyVO4c24igizCfPgF6n7q.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/b7xQ5fuyVO4c24igizCfPgF6n7q.jpg",
+    "rd": "2017-12-27"
   },
   {
     "s": "203",
@@ -6323,7 +6525,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/4uUaaCCuro1Vvvcg5mqakFShEvF.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/IQyEvPTYvrzsa7qstRj6VLQupr.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/IQyEvPTYvrzsa7qstRj6VLQupr.jpg",
+    "rd": "2017-11-29"
   },
   {
     "s": "204",
@@ -6355,7 +6558,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/11x6lYvl0jwKPzsGZCVDGO961fa.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/rz3TAyd5kmiJmozp3GUbYeB5Kep.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/rz3TAyd5kmiJmozp3GUbYeB5Kep.jpg",
+    "rd": "2018-01-03"
   },
   {
     "s": "205",
@@ -6387,7 +6591,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ebTyrflCZJ10tDsjnRxsc8RXYFC.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/p1XSyBriqz7oBWoVcRqYlB6Kve3.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/p1XSyBriqz7oBWoVcRqYlB6Kve3.jpg",
+    "rd": "2007-09-20"
   },
   {
     "s": "206",
@@ -6419,7 +6624,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/tvaPe5kPoJCLn0xycctkHUaph7w.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/xUWf5xX0AnZgAnYXAMk03zTbsef.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/xUWf5xX0AnZgAnYXAMk03zTbsef.jpg",
+    "rd": "2003-12-05"
   },
   {
     "s": "207",
@@ -6451,7 +6657,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/rSeZX5l4T9XcIXCG1sq1YglqTjB.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/6nLdSON3ErniBZTXWG7WRqs5jGz.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/6nLdSON3ErniBZTXWG7WRqs5jGz.jpg",
+    "rd": "1990-11-24"
   },
   {
     "s": "208",
@@ -6477,7 +6684,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/6acY8NM0UN6qNr7gRhvZDXH2lxI.jpg",
-    "back": ""
+    "back": "",
+    "rd": "2020-01-01"
   },
   {
     "s": "209",
@@ -6509,7 +6717,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/k7buTv0A9QS6pZ7uzyzPfXT5gfi.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/dwZICSgqgDuAsRz2x5j3I9ejxvu.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/dwZICSgqgDuAsRz2x5j3I9ejxvu.jpg",
+    "rd": "2017-08-21"
   },
   {
     "s": "210",
@@ -6541,7 +6750,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/wEfGxo0Npbb5UFd06EEaPcIw9Eh.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/eRfANc4xSRNaR8E9fUI9hdLkCWB.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/eRfANc4xSRNaR8E9fUI9hdLkCWB.jpg",
+    "rd": "2017-09-21"
   },
   {
     "s": "211",
@@ -6573,7 +6783,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/tNiO6Uhjl1iRsu64aNKXUhf8x75.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wb78lmqAXsUVG84xrmAOJBfgZHr.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wb78lmqAXsUVG84xrmAOJBfgZHr.jpg",
+    "rd": "2017-12-07"
   },
   {
     "s": "212",
@@ -6605,7 +6816,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/580h5HhRVG0IBqQRabtD6x7IhtD.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/x4yZrzpiVhdWV6Q5KURqiezChbV.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/x4yZrzpiVhdWV6Q5KURqiezChbV.jpg",
+    "rd": "2017-09-21"
   },
   {
     "s": "213",
@@ -6637,7 +6849,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fJZmCJpLeBFKktLFEIKPEhllWlU.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/askFH4GSk2u9z3ZE5ypdKIMeqLJ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/askFH4GSk2u9z3ZE5ypdKIMeqLJ.jpg",
+    "rd": "2017-10-12"
   },
   {
     "s": "214",
@@ -6669,7 +6882,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/wDQele96zPu2iYEqgKO54FaA097.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/yizHZ1ynp8INr1O6QNIg5yBLGtW.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/yizHZ1ynp8INr1O6QNIg5yBLGtW.jpg",
+    "rd": "2018-10-25"
   },
   {
     "s": "215",
@@ -6701,7 +6915,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/gEoxu8K6UEqOhhheHp5Z9fjoSl4.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/g2yZ1kiGwLO5AUSmtsEJeFEWghJ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/g2yZ1kiGwLO5AUSmtsEJeFEWghJ.jpg",
+    "rd": "2018-10-04"
   },
   {
     "s": "216",
@@ -6733,7 +6948,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fdl6MuVNw60ziLE2q6jImbLC62Z.jpg",
-    "back": ""
+    "back": "",
+    "rd": "2022-02-28"
   },
   {
     "s": "217",
@@ -6765,7 +6981,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/tW2L3tb7kjCcuCnQ10mLpHQzBuY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wRKYpnFZCwzH8nOLjYryGryiE5M.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wRKYpnFZCwzH8nOLjYryGryiE5M.jpg",
+    "rd": "2018-08-23"
   },
   {
     "s": "218",
@@ -6797,7 +7014,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/vCbuv4UPeoJ92gEE4fyNpHCNcnC.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wJQowXYcpcujDJA2NAM1GSCZtM2.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wJQowXYcpcujDJA2NAM1GSCZtM2.jpg",
+    "rd": "2018-09-06"
   },
   {
     "s": "219",
@@ -6829,7 +7047,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/iaYvNgiExX2jPO9ehpLyRIkzdBT.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/yvbXGWjg30sj7rohEZvSe90jSJC.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/yvbXGWjg30sj7rohEZvSe90jSJC.jpg",
+    "rd": "2018-09-06"
   },
   {
     "s": "220",
@@ -6861,7 +7080,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/kKQin72zYQzbXWkzz0eRJ2N017h.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/dmgFJdivUmV4vGLkbPD49KVjlHx.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/dmgFJdivUmV4vGLkbPD49KVjlHx.jpg",
+    "rd": "2018-07-12"
   },
   {
     "s": "221",
@@ -6893,7 +7113,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1iWbx0JXqiEYGzK6njNy9I3Ze55.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/cUp74WEOfyiJS2Q8oZs8wP5IzSr.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/cUp74WEOfyiJS2Q8oZs8wP5IzSr.jpg",
+    "rd": "2018-10-18"
   },
   {
     "s": "222",
@@ -6925,7 +7146,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/3BJu5DQzK9w8PIeIXSAOCfcWKMu.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jOqOduY1tLhXgVZo7ypCtDVr0mM.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jOqOduY1tLhXgVZo7ypCtDVr0mM.jpg",
+    "rd": "2018-08-29"
   },
   {
     "s": "223",
@@ -6957,7 +7179,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5tw2FTUOBIyg6BcEtE5N2Dxut2N.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/7XM7kxa3U2g8TO3OGSiETCroNRD.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/7XM7kxa3U2g8TO3OGSiETCroNRD.jpg",
+    "rd": "2018-06-06"
   },
   {
     "s": "224",
@@ -6989,7 +7212,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1Xf8E3EN6fwOK8EHbRtNOFg96pi.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/13VjjUeJ6mcDUB36XRu4YFpYNSm.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/13VjjUeJ6mcDUB36XRu4YFpYNSm.jpg",
+    "rd": "2018-06-27"
   },
   {
     "s": "225",
@@ -7021,7 +7245,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5ViBQDi9wIMOEppTzgDbYFtCaBO.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5C01GuAmEJp951X7fm66SPBlsxU.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5C01GuAmEJp951X7fm66SPBlsxU.jpg",
+    "rd": "2018-05-31"
   },
   {
     "s": "226",
@@ -7053,7 +7278,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/9FNFqpzu0rKuzW394wVPaeJpFC3.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/kJwQXgAk440l2vZOspUJee6inim.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/kJwQXgAk440l2vZOspUJee6inim.jpg",
+    "rd": "2018-07-12"
   },
   {
     "s": "227",
@@ -7085,7 +7311,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/h2Fw8XXqDSyRA5Dn9ntCRJESYYY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/gJbTXKNTL6O7r7PzF6ZRkJGBlPp.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/gJbTXKNTL6O7r7PzF6ZRkJGBlPp.jpg",
+    "rd": "2018-06-07"
   },
   {
     "s": "228",
@@ -7117,7 +7344,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/u4FChoDddutqEBP4L0AHhPbrCAk.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/3P52oz9HPQWxcwHOwxtyrVV1LKi.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/3P52oz9HPQWxcwHOwxtyrVV1LKi.jpg",
+    "rd": "2018-05-16"
   },
   {
     "s": "229",
@@ -7149,7 +7377,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ySMudfcxhOncsjBfwpjFhg6dx6h.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/9T8sj5io4SGCBTHsk5H8LGcfKVe.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/9T8sj5io4SGCBTHsk5H8LGcfKVe.jpg",
+    "rd": "2018-06-21"
   },
   {
     "s": "230",
@@ -7181,7 +7410,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/nWlq5cEUguryEGh8bzUblGb7321.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wEXYJgW5l2IwwNdRVk9ixgKl8qu.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wEXYJgW5l2IwwNdRVk9ixgKl8qu.jpg",
+    "rd": "2018-02-22"
   },
   {
     "s": "231",
@@ -7213,7 +7443,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/xBG4i2yOe7zRRpBqB9KNJVQFzFu.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/vGZTyglSEzL7evznmyIAoubsKiM.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/vGZTyglSEzL7evznmyIAoubsKiM.jpg",
+    "rd": "2018-04-12"
   },
   {
     "s": "232",
@@ -7245,7 +7476,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/olkNCkEhhUiRuwMt6hcwxuchGf8.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/symqYH29cghJJ9QlV4uHtUi5W51.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/symqYH29cghJJ9QlV4uHtUi5W51.jpg",
+    "rd": "1970-11-25"
   },
   {
     "s": "233",
@@ -7277,7 +7509,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/lL8djpTjfUoOKeFyiJnZiMwxL87.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/pOTItgOWpZx8sryyejGooVBRsN1.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/pOTItgOWpZx8sryyejGooVBRsN1.jpg",
+    "rd": "2001-11-07"
   },
   {
     "s": "234",
@@ -7309,7 +7542,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/qAODUK5F0uRSuDBmilSfM1Hw0LL.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/gQEfeFzEDhvz1YB3JXU2yUZspmH.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/gQEfeFzEDhvz1YB3JXU2yUZspmH.jpg",
+    "rd": "2018-04-19"
   },
   {
     "s": "235",
@@ -7341,7 +7575,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/gEguR1qDAlEHfKhhYH9asgvsUBn.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sGzuQYSTwJvLBc2PnuSVLHhuFeh.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sGzuQYSTwJvLBc2PnuSVLHhuFeh.jpg",
+    "rd": "2018-02-28"
   },
   {
     "s": "236",
@@ -7373,7 +7608,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ciXo4YPYrBbQEIaXMTrPg58pm13.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/mc7w3y83wQU9YAIAmP1hoxqQped.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/mc7w3y83wQU9YAIAmP1hoxqQped.jpg",
+    "rd": "2017-10-27"
   },
   {
     "s": "237",
@@ -7405,7 +7641,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/uX6fSIRv1zeY5FG2pcUE2mgltuV.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sDiGcjWhSu42dCw0jQmBInAkDZ9.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sDiGcjWhSu42dCw0jQmBInAkDZ9.jpg",
+    "rd": "2018-02-07"
   },
   {
     "s": "238",
@@ -7437,7 +7674,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/pOFkXGOMR3CNR5FL9AVVA2OE7X.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wFgLR6tJblOm4tyaLlE8eFtXev3.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wFgLR6tJblOm4tyaLlE8eFtXev3.jpg",
+    "rd": "2019-05-09"
   },
   {
     "s": "239",
@@ -7469,7 +7707,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/qsQ4eqNWP6oKKiKp8QKyIDf7HLC.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/j7rl2LphIbC88FppTfwJ5Gxj9kX.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/j7rl2LphIbC88FppTfwJ5Gxj9kX.jpg",
+    "rd": "1977-09-15"
   },
   {
     "s": "240",
@@ -7501,7 +7740,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/x5guXEbeUegaV3dt8nsfdZu7557.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5ZSwZPKgcTJJwhxjbOHeoBTVaKh.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5ZSwZPKgcTJJwhxjbOHeoBTVaKh.jpg",
+    "rd": "2019-01-03"
   },
   {
     "s": "241",
@@ -7533,7 +7773,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/tZGxFGF1IabjYtSELa9D0da0X57.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/cn6SzcqqJslI787kthET65T19fU.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/cn6SzcqqJslI787kthET65T19fU.jpg",
+    "rd": "2019-01-16"
   },
   {
     "s": "242",
@@ -7565,7 +7806,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/s9nAuXPBR5iK4Z11UKiaPBBIJqY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jXDselREPq8TOVGM4dzBBUM7xVk.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jXDselREPq8TOVGM4dzBBUM7xVk.jpg",
+    "rd": "2019-02-05"
   },
   {
     "s": "243",
@@ -7597,7 +7839,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/wFT385EamvefX5pbE54ol5i01AA.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4tOYcEXHXclnD1B7EpVDw4guJoH.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4tOYcEXHXclnD1B7EpVDw4guJoH.jpg",
+    "rd": "2018-12-26"
   },
   {
     "s": "244",
@@ -7629,7 +7872,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/948EzhUmCVl14mYbFnk4ze6UAVe.jpg",
-    "back": ""
+    "back": "",
+    "rd": "1989-04-17"
   },
   {
     "s": "245",
@@ -7661,7 +7905,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/xoAy1diXjizGlxjHTtuU0MAh6gF.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/lfMtVr5hkFeGy4dMaEf3XUQr76d.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/lfMtVr5hkFeGy4dMaEf3XUQr76d.jpg",
+    "rd": "2019-02-27"
   },
   {
     "s": "246",
@@ -7693,7 +7938,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/d9V6Q9vpVpmaca7vwSUbCajtDb3.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/8mnXR9rey5uQ08rZAvzojKWbDQS.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/8mnXR9rey5uQ08rZAvzojKWbDQS.jpg",
+    "rd": "2018-12-12"
   },
   {
     "s": "247",
@@ -7725,7 +7971,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/OuPWSMYqYZiX6dmgCosFBgWH1H.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sLjeApi5odpyEoCzAnbr5DycL3z.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sLjeApi5odpyEoCzAnbr5DycL3z.jpg",
+    "rd": "2018-11-22"
   },
   {
     "s": "248",
@@ -7757,7 +8004,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/2UodD8rwfMOIOvorazRWXAHxJVv.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5wPWgTvdoVKW6ICeEAg86IBJOBW.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5wPWgTvdoVKW6ICeEAg86IBJOBW.jpg",
+    "rd": "2021-10-01"
   },
   {
     "s": "249",
@@ -7789,7 +8037,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/r4cukAGg6pDcD6f9sHHEr6IL8jt.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/ugDSJKMEexMt1d38uyzRnVFsDIh.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/ugDSJKMEexMt1d38uyzRnVFsDIh.jpg",
+    "rd": "2018-12-12"
   },
   {
     "s": "250",
@@ -7821,7 +8070,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/wcRPUM5AV8ehxikWspRkdHOzepk.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/32c48NEZOJxBvpN4FkaObQTOhjH.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/32c48NEZOJxBvpN4FkaObQTOhjH.jpg",
+    "rd": "2018-11-28"
   },
   {
     "s": "251",
@@ -7853,7 +8103,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/6dM7btEP14R9pPgp80e8AGfsl5N.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/9KKT8qPAII0VJMpviThOTMLN0Wt.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/9KKT8qPAII0VJMpviThOTMLN0Wt.jpg",
+    "rd": "2018-11-28"
   },
   {
     "s": "252",
@@ -7885,7 +8136,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ruZrJe35GG90394nbabbk9Ed7sS.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/dcvbs8z0GEXslC1kCT77x19XDeR.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/dcvbs8z0GEXslC1kCT77x19XDeR.jpg",
+    "rd": "2018-10-31"
   },
   {
     "s": "253",
@@ -7917,7 +8169,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/x4ojC59pYfPlAP4mmy2LSkCCuK2.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/hNsYUryiwxcdeTMkaBcPF3iEg0p.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/hNsYUryiwxcdeTMkaBcPF3iEg0p.jpg",
+    "rd": "2018-10-03"
   },
   {
     "s": "254",
@@ -7949,7 +8202,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5eGttMg1QZQHgccdX9pLKD5vKQm.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5utFTcwAXcgGTLZrNMl96t6pFfc.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5utFTcwAXcgGTLZrNMl96t6pFfc.jpg",
+    "rd": "2021-11-19"
   },
   {
     "s": "255",
@@ -7981,7 +8235,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/mVmg4fYyU4fZLAGdWp3VSOoCQ7G.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/tQvvRReWhrXnj28s4AIp2PblByg.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/tQvvRReWhrXnj28s4AIp2PblByg.jpg",
+    "rd": "2018-10-31"
   },
   {
     "s": "256",
@@ -8013,7 +8268,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/7BPBXYV2vINB8xcIc5TentaNfzs.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/gCIB3DdK00DyfwosVGf7pnFFdK3.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/gCIB3DdK00DyfwosVGf7pnFFdK3.jpg",
+    "rd": "2018-12-06"
   },
   {
     "s": "257",
@@ -8045,7 +8301,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/6WE2H8wNNtf0ktUoAaUcET3qi7U.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/zGHdS1eLaU5wdYCJ6vY9QfQGCTo.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/zGHdS1eLaU5wdYCJ6vY9QfQGCTo.jpg",
+    "rd": "2018-09-12"
   },
   {
     "s": "258",
@@ -8077,7 +8334,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/uF0zUz3ii163wQzfGbr9Y3k2Xqx.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4Hsk6Rh2kpUTmlnsjxMiXWiPBSb.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4Hsk6Rh2kpUTmlnsjxMiXWiPBSb.jpg",
+    "rd": "2018-11-22"
   },
   {
     "s": "259",
@@ -8109,7 +8367,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/qsPkigHg0kntzupMXjlyOpV6pH7.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/1rzQCRE4CSJOuuc5AueAdOHyU9k.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/1rzQCRE4CSJOuuc5AueAdOHyU9k.jpg",
+    "rd": "2018-12-13"
   },
   {
     "s": "260",
@@ -8141,7 +8400,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/eEQ1U6WGhrr9Tgw76BDep0C1Q0j.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/mHmGzDvUwSbffqPc2bzfNxL9OnV.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/mHmGzDvUwSbffqPc2bzfNxL9OnV.jpg",
+    "rd": "2018-10-25"
   },
   {
     "s": "261",
@@ -8173,7 +8433,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/nHTRmzwjKCtVX8Qmp0tMYwfVtg0.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/rcneDbRf8KbvuxzYWZVfgVCx6tH.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/rcneDbRf8KbvuxzYWZVfgVCx6tH.jpg",
+    "rd": "2019-08-28"
   },
   {
     "s": "262",
@@ -8205,7 +8466,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fQ7hFpDMnSQHix3zVkq1iE5jS6O.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jypNy38bThNz4K6IWDoE7h0xlP2.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jypNy38bThNz4K6IWDoE7h0xlP2.jpg",
+    "rd": "2019-08-22"
   },
   {
     "s": "263",
@@ -8228,7 +8490,8 @@
         "u": "https://www.imdb.com/title/tt4429160/"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/3yZ54uGQ4HxEbpNVO565mU1xagp.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/3yZ54uGQ4HxEbpNVO565mU1xagp.jpg",
+    "rd": "2019-07-25"
   },
   {
     "s": "264",
@@ -8260,7 +8523,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/8gIXXv0nls75v0oL7QvLXQxkHBX.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wm5QhKgitszib5KjaWeNK6yAgoj.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wm5QhKgitszib5KjaWeNK6yAgoj.jpg",
+    "rd": "2019-07-11"
   },
   {
     "s": "265",
@@ -8292,7 +8556,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/3YewJtji80oIroeXUavNRZkeXfQ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/34jW8LvjRplM8Pv06cBFDpLlenR.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/34jW8LvjRplM8Pv06cBFDpLlenR.jpg",
+    "rd": "2019-07-02"
   },
   {
     "s": "266",
@@ -8324,7 +8589,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/wvpgvcWNkF2HLuTEMIM7K83MvZ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/edghRD7vw1XgWEpMLpGt1VSGB5w.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/edghRD7vw1XgWEpMLpGt1VSGB5w.jpg",
+    "rd": "1988-11-09"
   },
   {
     "s": "267",
@@ -8356,7 +8622,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/8dGCWRwrMjn1jdFCI5xu5VrkGBL.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/vVpEOvdxVBP2aV166j5Xlvb5Cdc.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/vVpEOvdxVBP2aV166j5Xlvb5Cdc.jpg",
+    "rd": "2019-06-26"
   },
   {
     "s": "268",
@@ -8388,7 +8655,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/vo2CgNiWNU1536d0cu7sPjdQyva.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/iRl2k4TMhfESV2W3ygu3OmIVVwh.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/iRl2k4TMhfESV2W3ygu3OmIVVwh.jpg",
+    "rd": "2019-06-13"
   },
   {
     "s": "269",
@@ -8420,7 +8688,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/8mmxoEBzTMX4ziYgveeEx35ltNY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/s75xYQOo4Hy2fy229CEfj5jgC2B.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/s75xYQOo4Hy2fy229CEfj5jgC2B.jpg",
+    "rd": "2011-08-07"
   },
   {
     "s": "270",
@@ -8452,7 +8721,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/oQq7LyS2Q0nqOD3OQoAlHC4Q3Zv.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/j3w3lT3ABvJsVE3byNOMCYmnGMB.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/j3w3lT3ABvJsVE3byNOMCYmnGMB.jpg",
+    "rd": "2019-05-23"
   },
   {
     "s": "271",
@@ -8484,7 +8754,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/rGiFaSGVq7rfl0O19u9pJwP5cb0.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jYnQgKYACzQ06gRf15hRbyRkQsp.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jYnQgKYACzQ06gRf15hRbyRkQsp.jpg",
+    "rd": "2019-07-24"
   },
   {
     "s": "272",
@@ -8516,7 +8787,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/rNRfYkuRvM0z1RWHPbc2I8HCdvd.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/cjRUhKyt2Jo3V1KNzc5tpPNfccG.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/cjRUhKyt2Jo3V1KNzc5tpPNfccG.jpg",
+    "rd": "2019-06-05"
   },
   {
     "s": "273",
@@ -8548,7 +8820,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/qb1zc2UEdtu1K9AFZ9sYBrUcKGo.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/547fjELV7imMeSJrmkK2FeVHjvf.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/547fjELV7imMeSJrmkK2FeVHjvf.jpg",
+    "rd": "2019-06-06"
   },
   {
     "s": "274",
@@ -8580,7 +8853,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/tmfCIDekiqYHHVqfRt4EWD8CzTG.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/nMEGEPQIyS30KIJpZETGpluFquJ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/nMEGEPQIyS30KIJpZETGpluFquJ.jpg",
+    "rd": "2019-05-23"
   },
   {
     "s": "275",
@@ -8612,7 +8886,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ehONqRwStcbB6Mokg9YHg21oZYJ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/r2z8ceIsg9ON8DIHTf6cMqnK3CL.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/r2z8ceIsg9ON8DIHTf6cMqnK3CL.jpg",
+    "rd": "2018-08-08"
   },
   {
     "s": "276",
@@ -8644,7 +8919,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/vn8akeiW9Ex4bilkMK9gVWSnCqO.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/uVxLeiNgkbrJ6xsGaxf3R92wxRW.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/uVxLeiNgkbrJ6xsGaxf3R92wxRW.jpg",
+    "rd": "2017-12-28"
   },
   {
     "s": "277",
@@ -8676,7 +8952,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/u1wD5xw0FSRzumpzvx49q75qpOr.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/avwEj8wiywFH6FZ6h2wzvyJpiH7.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/avwEj8wiywFH6FZ6h2wzvyJpiH7.jpg",
+    "rd": "2004-08-13"
   },
   {
     "s": "278",
@@ -8708,7 +8985,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/oIuHWfl4qV9ZYNgouBLeCHvYfyS.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/mWLljCmpqlcYQh7uh51BBMwCZwN.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/mWLljCmpqlcYQh7uh51BBMwCZwN.jpg",
+    "rd": "2019-03-14"
   },
   {
     "s": "279",
@@ -8740,7 +9018,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/7puPuSeje8315Pbdxzo8bxHD6EB.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/rhbmTpZSLu4122sawltfpcBMo4T.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/rhbmTpZSLu4122sawltfpcBMo4T.jpg",
+    "rd": "2011-06-03"
   },
   {
     "s": "280",
@@ -8772,7 +9051,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/yXnDCtYoHOrGgbuhnsP3DXRBk9v.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/lWkb8EgpzzepKfufkA8Zr1sIxHg.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/lWkb8EgpzzepKfufkA8Zr1sIxHg.jpg",
+    "rd": "2016-09-16"
   },
   {
     "s": "281",
@@ -8804,7 +9084,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/r2pzXSlKzof7U7ahrX5hh1HNGit.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/aiM3XxYE2JvW1vJ4AC6cI1RjAoT.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/aiM3XxYE2JvW1vJ4AC6cI1RjAoT.jpg",
+    "rd": "2019-02-20"
   },
   {
     "s": "282",
@@ -8836,7 +9117,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/nK39gwD8ma9O2fOLth57qSwb9e.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/eAIHqfS3kXm7kZl4j7ZBfdegyEz.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/eAIHqfS3kXm7kZl4j7ZBfdegyEz.jpg",
+    "rd": "2020-01-15"
   },
   {
     "s": "283",
@@ -8868,7 +9150,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/361ksMhxn9tCYhVvzfkW8c2ZLYl.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/tintsaQ0WLzZsTMkTiqtMB3rfc8.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/tintsaQ0WLzZsTMkTiqtMB3rfc8.jpg",
+    "rd": "2020-02-26"
   },
   {
     "s": "284",
@@ -8900,7 +9183,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/nXoIRpt5NxGzX2L65wpzeaC1QVL.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/3pMU7OGlcksMb7YkMthj5A1Y08B.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/3pMU7OGlcksMb7YkMthj5A1Y08B.jpg",
+    "rd": "2020-10-21"
   },
   {
     "s": "285",
@@ -8932,7 +9216,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fVtb7iJYrwtLBYomrFBu3tZS3xa.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jGq40i1j9lrxt6HVKLFKSqREjXj.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jGq40i1j9lrxt6HVKLFKSqREjXj.jpg",
+    "rd": "2019-12-12"
   },
   {
     "s": "286",
@@ -8964,7 +9249,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/4VTSH4BWJdLPhcJchVjhpobhCj5.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/exqNtu2l1b8cpAnFnGcBPVqccHg.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/exqNtu2l1b8cpAnFnGcBPVqccHg.jpg",
+    "rd": "2020-01-01"
   },
   {
     "s": "287",
@@ -8996,7 +9282,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/sZetjIZ1P4YhaBB93ZSE4Tp7xbH.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/iFFC0ILEzcCGI8fJzixI9lI5n8o.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/iFFC0ILEzcCGI8fJzixI9lI5n8o.jpg",
+    "rd": "2020-11-18"
   },
   {
     "s": "288",
@@ -9028,7 +9315,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/hroNIUa8KdThEzSb9Vgzku8enXt.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/eFw5YSorHidsajLTayo1noueIxI.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/eFw5YSorHidsajLTayo1noueIxI.jpg",
+    "rd": "2019-12-13"
   },
   {
     "s": "289",
@@ -9060,7 +9348,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/n7KDDIWOY5IZrGlkeizuFMZfJFl.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/qgch2rFskIxDMgwrD5lWTaB4nBl.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/qgch2rFskIxDMgwrD5lWTaB4nBl.jpg",
+    "rd": "2019-12-11"
   },
   {
     "s": "290",
@@ -9092,7 +9381,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/h3jlaYHVDgSG7IxOq6p0cTA0lCx.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5xegGPhCSVMKbyh6zeT6Th0BWLB.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5xegGPhCSVMKbyh6zeT6Th0BWLB.jpg",
+    "rd": "2019-12-31"
   },
   {
     "s": "291",
@@ -9124,7 +9414,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/2H0gjSVdKdk20mGoU8QMItcsygQ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jTab4cf4X1dJJVS4F8UOGuesvPd.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jTab4cf4X1dJJVS4F8UOGuesvPd.jpg",
+    "rd": "2019-11-27"
   },
   {
     "s": "292",
@@ -9156,7 +9447,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/7brBiaaH1sToGV1YBi5EIUnyjo0.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4HWAQu28e2yaWrtupFPGFkdNU7V.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4HWAQu28e2yaWrtupFPGFkdNU7V.jpg",
+    "rd": "2019-12-04"
   },
   {
     "s": "293",
@@ -9188,7 +9480,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5v4ft3ajnSFXYwlid3SY2jq58sT.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/e7tMI0zVKJB2TS74TaBifIZIkCp.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/e7tMI0zVKJB2TS74TaBifIZIkCp.jpg",
+    "rd": "2019-11-13"
   },
   {
     "s": "294",
@@ -9220,7 +9513,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/nIoDNiWWOtCFdJRi89aFI98cdj0.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/riTANvQ8GKmQbgtC1ps3OfkU43A.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/riTANvQ8GKmQbgtC1ps3OfkU43A.jpg",
+    "rd": "2019-10-30"
   },
   {
     "s": "295",
@@ -9252,7 +9546,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ymL9GQZ3k2vEPL5ih4JigxX82kt.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sGqqnvOqJg2HDHrjtCPIlCwF4Mu.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sGqqnvOqJg2HDHrjtCPIlCwF4Mu.jpg",
+    "rd": "2019-11-13"
   },
   {
     "s": "296",
@@ -9284,7 +9579,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ybxOKIBpPFumu0lbDOyYGimwE6u.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/spYx9XQFODuqEVoPpvaJI1ksAVt.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/spYx9XQFODuqEVoPpvaJI1ksAVt.jpg",
+    "rd": "2019-10-23"
   },
   {
     "s": "297",
@@ -9316,7 +9612,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/6fAY4zknI82GUKKCQQ63wdPDzhO.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/dKFTYg8vWj5ZpsR4SVmueAssyZH.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/dKFTYg8vWj5ZpsR4SVmueAssyZH.jpg",
+    "rd": "2019-09-25"
   },
   {
     "s": "298",
@@ -9348,7 +9645,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/g8m62GF8XPUCGLEZJDgzvVCT6du.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/BOeORWljjIPGuCwUgLls24ctF3.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/BOeORWljjIPGuCwUgLls24ctF3.jpg",
+    "rd": "2019-09-25"
   },
   {
     "s": "299",
@@ -9380,7 +9678,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/nY9jJPiMHvYXhhsHel3ahci2xtk.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bo5M1dW76b3QuRFcTL8KPmN6WYj.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bo5M1dW76b3QuRFcTL8KPmN6WYj.jpg",
+    "rd": "2019-08-07"
   },
   {
     "s": "300",
@@ -9412,7 +9711,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/A5HzidYQQrxuLqgM06MEemjm0Qc.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/xavGKawUyXPWAa6JTUkFzaRXMPF.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/xavGKawUyXPWAa6JTUkFzaRXMPF.jpg",
+    "rd": "2019-08-28"
   },
   {
     "s": "301",
@@ -9444,7 +9744,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/A0d4wDnWuRxtXPQqaZ2zIAaPIqL.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/gUttUEqsrvaMlK5oL5TSQ54iE96.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/gUttUEqsrvaMlK5oL5TSQ54iE96.jpg",
+    "rd": "2021-05-14"
   },
   {
     "s": "302",
@@ -9476,7 +9777,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/swMFgTEcDUz7MCvWfYIIiZ8PatU.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/rLchzndbDRy41J9X363pMePbV5x.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/rLchzndbDRy41J9X363pMePbV5x.jpg",
+    "rd": "2020-11-20"
   },
   {
     "s": "303",
@@ -9508,7 +9810,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/eEmyuyNg4A3LEntaPrUiMueWtLA.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/8tNX8s3j1O0eqilOQkuroRLyOZA.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/8tNX8s3j1O0eqilOQkuroRLyOZA.jpg",
+    "rd": "2021-02-10"
   },
   {
     "s": "304",
@@ -9540,7 +9843,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/2R5CIrN1Pevi9aO2ux520qM3luQ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/ceVaixg5VUfx8j0N81FT0hRayRm.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/ceVaixg5VUfx8j0N81FT0hRayRm.jpg",
+    "rd": "2020-11-19"
   },
   {
     "s": "305",
@@ -9572,7 +9876,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/zvOCgZZBE7YLoWVfPZx3ZQ4td4i.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4tphk3VbqoRtCVuOzlEQxUrpR6c.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4tphk3VbqoRtCVuOzlEQxUrpR6c.jpg",
+    "rd": "2020-10-28"
   },
   {
     "s": "306",
@@ -9604,7 +9909,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/wLgHczwajb3QV2JBgsqNVjuHoJC.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/uorMP2U1F0AfogYMz4lYu2EbgYo.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/uorMP2U1F0AfogYMz4lYu2EbgYo.jpg",
+    "rd": "2020-09-29"
   },
   {
     "s": "307",
@@ -9636,7 +9942,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fJ0i5MKbBTKJGYY2uxsiUMdwMc6.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/54yOImQgj8i85u9hxxnaIQBRUuo.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/54yOImQgj8i85u9hxxnaIQBRUuo.jpg",
+    "rd": "2020-09-09"
   },
   {
     "s": "308",
@@ -9668,7 +9975,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1GtwuxXyjEf37tC5dLDLDRUgIfw.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jrsB8tChsAFTQilhsS8fxNTuear.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jrsB8tChsAFTQilhsS8fxNTuear.jpg",
+    "rd": "2020-12-03"
   },
   {
     "s": "309",
@@ -9700,7 +10008,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/pBXonLVwxqH3akoyXZAQ0gemBhj.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/pYUwk30i62GN8gcKeQTuzdZGxHk.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/pYUwk30i62GN8gcKeQTuzdZGxHk.jpg",
+    "rd": "2020-11-26"
   },
   {
     "s": "310",
@@ -9732,7 +10041,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/bqZRy3tJjJIrA38FSdqJEufQ2Os.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/1MoeNacOltBWojkStjhT3svBTOK.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/1MoeNacOltBWojkStjhT3svBTOK.jpg",
+    "rd": "2020-09-10"
   },
   {
     "s": "311",
@@ -9764,7 +10074,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ukDRwCEnVwBVSJ13xpzSzegIi1u.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/iymDDg4upZWgpbSeiE1JCjsSPBs.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/iymDDg4upZWgpbSeiE1JCjsSPBs.jpg",
+    "rd": "2011-11-17"
   },
   {
     "s": "312",
@@ -9796,7 +10107,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/oTY3zkK5zzp2CA2c3mSmVEHgFCz.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/cheDSO3mYmsAFQlRM91o7MK6Wcc.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/cheDSO3mYmsAFQlRM91o7MK6Wcc.jpg",
+    "rd": "2021-01-27"
   },
   {
     "s": "313",
@@ -9828,7 +10140,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5S45aZzCo6rIeE8zLsffi5lCYz6.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/zlqMASc3vEtdym2OvXgE7fC6onT.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/zlqMASc3vEtdym2OvXgE7fC6onT.jpg",
+    "rd": "2020-05-21"
   },
   {
     "s": "314",
@@ -9860,7 +10173,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/eK11getGeCdOWKwRZIl6Qd4bjwF.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/n4NKnzaLwGhBMNjYQTLhPVpE8je.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/n4NKnzaLwGhBMNjYQTLhPVpE8je.jpg",
+    "rd": "2020-10-22"
   },
   {
     "s": "315",
@@ -9892,7 +10206,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fXs2fjFlor3vuPBIaiAPniZAg9y.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5HjzYTihkH7EvOWSE7KcsF6pBMM.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5HjzYTihkH7EvOWSE7KcsF6pBMM.jpg",
+    "rd": "2021-08-04"
   },
   {
     "s": "316",
@@ -9924,7 +10239,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/vmiIIrRfS61T4DNtWztJc3i0u3N.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/s5mWOQ4rc90hhRebpBHdW0f1gix.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/s5mWOQ4rc90hhRebpBHdW0f1gix.jpg",
+    "rd": "2020-02-19"
   },
   {
     "s": "317",
@@ -9956,7 +10272,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/wFGQIAb6zjbKSbOer2a9TksWYyY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/uG1v9Hk1XKICd6IJChRR20mBh8i.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/uG1v9Hk1XKICd6IJChRR20mBh8i.jpg",
+    "rd": "2020-01-22"
   },
   {
     "s": "318",
@@ -9988,7 +10305,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ApWEAjflrgDBicdJEinFfIZcYH1.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/qo9tN87uTsbXnaAob6aa7U33ayb.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/qo9tN87uTsbXnaAob6aa7U33ayb.jpg",
+    "rd": "2021-07-14"
   },
   {
     "s": "319",
@@ -10020,7 +10338,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/9BQlnhahKCyQfuVYCNatmObboTU.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/klQJJGLRxyZUoiWusZ5GA3qAtiq.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/klQJJGLRxyZUoiWusZ5GA3qAtiq.jpg",
+    "rd": "2021-07-21"
   },
   {
     "s": "320",
@@ -10052,7 +10371,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/7myc6oVR4oXu5Rd5twllyFu85E2.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/kIQc0kkqIYTo65x5XjlKgqdDQ6a.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/kIQc0kkqIYTo65x5XjlKgqdDQ6a.jpg",
+    "rd": "2021-08-05"
   },
   {
     "s": "321",
@@ -10084,7 +10404,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/eS0D8HzA6rsauSZjxAsEeQ2aHJw.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/7OxkZIH9dkDQlXhwWggyCSrXmwd.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/7OxkZIH9dkDQlXhwWggyCSrXmwd.jpg",
+    "rd": "2021-09-08"
   },
   {
     "s": "322",
@@ -10116,7 +10437,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/sodg5pHVYDGnvQn4NZZu9808DPg.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/d7JUXVvjvVCXWs1mlpyO5ESdWdT.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/d7JUXVvjvVCXWs1mlpyO5ESdWdT.jpg",
+    "rd": "2021-08-19"
   },
   {
     "s": "323",
@@ -10148,7 +10470,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5LI5yyolaGTE9BVMlXpfPqWcWAY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/9dBSwftCzkC4K4zgMZTwcm58VUR.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/9dBSwftCzkC4K4zgMZTwcm58VUR.jpg",
+    "rd": "2021-05-26"
   },
   {
     "s": "324",
@@ -10180,7 +10503,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5DriFIGybBjdTR27oz1hrt5zpig.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bjIPzixuWnOzxDG25WaXKuy9lYZ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bjIPzixuWnOzxDG25WaXKuy9lYZ.jpg",
+    "rd": "2021-08-04"
   },
   {
     "s": "325",
@@ -10212,7 +10536,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/uwfXUJuog7hRfiDrWrNC9SQJxGI.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/g15PR8eQV9DehSWlagvdnJZqoRq.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/g15PR8eQV9DehSWlagvdnJZqoRq.jpg",
+    "rd": "2021-05-12"
   },
   {
     "s": "326",
@@ -10244,7 +10569,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/qEkQy6H83Sz7vPWN9ZQXWl9RiBF.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/70AV2Xx5FQYj20labp0EGdbjI6E.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/70AV2Xx5FQYj20labp0EGdbjI6E.jpg",
+    "rd": "2021-06-09"
   },
   {
     "s": "327",
@@ -10276,7 +10602,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/rlJiZaUHE5aUf8DEqhn7Cx2pV3J.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/k29qVmwWwR0i5A1UMIws1Vmv6hV.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/k29qVmwWwR0i5A1UMIws1Vmv6hV.jpg",
+    "rd": "1988-12-24"
   },
   {
     "s": "328",
@@ -10308,7 +10635,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/tINy5ptSurJXK7s1ye4CwPCoLqM.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/6ZwscHN0bSIueTVTo6mlTGUUP90.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/6ZwscHN0bSIueTVTo6mlTGUUP90.jpg",
+    "rd": "2012-02-09"
   },
   {
     "s": "329",
@@ -10340,7 +10668,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/eYhjqhfEC75c2Hv9zvEdNCvVYjg.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/mvxR0mbDVQkQp3K1OhEU9iDbGcA.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/mvxR0mbDVQkQp3K1OhEU9iDbGcA.jpg",
+    "rd": "2021-03-29"
   },
   {
     "s": "330",
@@ -10372,7 +10701,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/gITpN15v2AkBycLWtPN7i52g36n.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/pRqnzllPyO3IO7PIvqJuvgH6kWJ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/pRqnzllPyO3IO7PIvqJuvgH6kWJ.jpg",
+    "rd": "2019-03-27"
   },
   {
     "s": "331",
@@ -10404,7 +10734,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/bFZEYiLYIKklMDBEDdqC1CqdJU0.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2M2JxEv3HSpjnZWjY9NOdGgfUd.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2M2JxEv3HSpjnZWjY9NOdGgfUd.jpg",
+    "rd": "2021-02-03"
   },
   {
     "s": "332",
@@ -10436,7 +10767,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/A0u4c2rXVhPmDkx6cpoWvkNislx.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/pA4J371Gk2F47vyGQOWapcsnOzz.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/pA4J371Gk2F47vyGQOWapcsnOzz.jpg",
+    "rd": "2021-02-19"
   },
   {
     "s": "333",
@@ -10468,7 +10800,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/lhggFuwFyCRPgI0iPDPYCEhTm3D.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/g4L7cBgXk5FSykoCoL4QEGjlIUy.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/g4L7cBgXk5FSykoCoL4QEGjlIUy.jpg",
+    "rd": "2019-11-22"
   },
   {
     "s": "334",
@@ -10500,7 +10833,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/sEYyQ4lW43jg77yTiTSRUNVdtMc.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/7py8kUCYaOdFn1TfVS87BDBySOz.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/7py8kUCYaOdFn1TfVS87BDBySOz.jpg",
+    "rd": "2021-08-11"
   },
   {
     "s": "335",
@@ -10532,7 +10866,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/e48Ychye5TtwarRe41PzeCJH9RZ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/xMJvffWIaW9MtlY9aIXKViUNeIO.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/xMJvffWIaW9MtlY9aIXKViUNeIO.jpg",
+    "rd": "2021-12-08"
   },
   {
     "s": "336",
@@ -10564,7 +10899,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/8uiV88A5eB7PjMTtY6lQBUZ0Cpl.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jzWT0zd8U77fqWg5WgUfYaMzSFz.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jzWT0zd8U77fqWg5WgUfYaMzSFz.jpg",
+    "rd": "2022-03-30"
   },
   {
     "s": "337",
@@ -10596,7 +10932,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/hPNb2m2jgchIpAoyGauol3wZHub.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/oZtoyj3rhOST8FUtIXUqblIYmCv.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/oZtoyj3rhOST8FUtIXUqblIYmCv.jpg",
+    "rd": "2022-05-11"
   },
   {
     "s": "338",
@@ -10628,7 +10965,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/3d1ij4MEw3h2AZv62C49ysDfuG1.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wYtEvBmpBRXPdwGgr1gcWiwJSI7.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wYtEvBmpBRXPdwGgr1gcWiwJSI7.jpg",
+    "rd": "2022-01-19"
   },
   {
     "s": "339",
@@ -10660,7 +10998,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/deXmuqfCyXRVbwdSMo5sctgXh1i.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/g0YNGpmlXsgHfhGnJz3c5uyzZ1B.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/g0YNGpmlXsgHfhGnJz3c5uyzZ1B.jpg",
+    "rd": "2022-02-23"
   },
   {
     "s": "340",
@@ -10692,7 +11031,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/n1kXNSjRCeHoyQI5bkmobfVSeHf.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/vwtvQochfV2XZgQsxLueUSvdmPd.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/vwtvQochfV2XZgQsxLueUSvdmPd.jpg",
+    "rd": "2022-04-06"
   },
   {
     "s": "341",
@@ -10724,7 +11064,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fvqoI9r1GU2EFkc0xjZ6dKCuDVR.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/Bwh7Lol5k3hSqYOtqXWxbbJVMx.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/Bwh7Lol5k3hSqYOtqXWxbbJVMx.jpg",
+    "rd": "2021-12-15"
   },
   {
     "s": "342",
@@ -10756,7 +11097,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/in2aUEUaFxBJZniu9qZh5P9s1Tw.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/EnDlndEvw6Ptpp8HIwmRcSSNKQ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/EnDlndEvw6Ptpp8HIwmRcSSNKQ.jpg",
+    "rd": "2021-12-01"
   },
   {
     "s": "343",
@@ -10788,7 +11130,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/tVk9UXoQtm8xUTx60joYn3ryDYN.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/yPDKTnG5azdD2aAXPhX9rDEVuPD.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/yPDKTnG5azdD2aAXPhX9rDEVuPD.jpg",
+    "rd": "2015-09-30"
   },
   {
     "s": "344",
@@ -10820,7 +11163,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/8xoP2YfCmhhVUZ0jfLjVl45oM2U.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/3G1Q5xF40HkUBJXxt2DQgQzKTp5.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/3G1Q5xF40HkUBJXxt2DQgQzKTp5.jpg",
+    "rd": "2021-11-24"
   },
   {
     "s": "345",
@@ -10852,7 +11196,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/gG06Uu6UQseYaPx1RU2PQjFEUKK.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/p34WRcgkN2QIHcds5FtFiSpV3PC.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/p34WRcgkN2QIHcds5FtFiSpV3PC.jpg",
+    "rd": "2021-11-12"
   },
   {
     "s": "346",
@@ -10884,7 +11229,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fHnKlSp28U648O4vm95z86Jw5tT.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/eENEf62tMXbhyVvdcXlnQz2wcuT.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/eENEf62tMXbhyVvdcXlnQz2wcuT.jpg",
+    "rd": "2021-10-13"
   },
   {
     "s": "347",
@@ -10916,7 +11262,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1m1ZGxB1ZWUUPTe4iCJgdpqpzOq.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/cDVWsqsnGwIUqOSzAuDS0PIhNdW.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/cDVWsqsnGwIUqOSzAuDS0PIhNdW.jpg",
+    "rd": "2021-10-27"
   },
   {
     "s": "348",
@@ -10948,7 +11295,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/3Fg406jJznlJSpwZTiGo3dBdAiy.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/fbTxsnJcQwuwzCEu9VEiU9lV75Y.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/fbTxsnJcQwuwzCEu9VEiU9lV75Y.jpg",
+    "rd": "2021-12-01"
   },
   {
     "s": "349",
@@ -10980,7 +11328,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/xLc5dIdvRkMe9xVtnSB6aknD4sz.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wPjtacig0kIkVcTQmXoNt6jbMwo.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wPjtacig0kIkVcTQmXoNt6jbMwo.jpg",
+    "rd": "2021-10-14"
   },
   {
     "s": "350",
@@ -11012,7 +11361,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/a3eW3SRVCtqHZlo0M96eWA89poa.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/rInMNJipAil3iIcBltPiGRkNAG7.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/rInMNJipAil3iIcBltPiGRkNAG7.jpg",
+    "rd": "2021-07-02"
   },
   {
     "s": "351",
@@ -11044,7 +11394,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/2xTZ5VI9iYEAbeVewqSbO0fIAIm.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/3ULzK4XTSC1wal11K7459fxnjjA.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/3ULzK4XTSC1wal11K7459fxnjjA.jpg",
+    "rd": "2021-09-01"
   },
   {
     "s": "352",
@@ -11076,7 +11427,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/zPDY58lk0YIxr9qsnGV64PEnjkI.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4LrL40XecjGLRpX5I2gzMTUt04l.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4LrL40XecjGLRpX5I2gzMTUt04l.jpg",
+    "rd": "2021-10-20"
   },
   {
     "s": "353",
@@ -11108,7 +11460,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/tdnF84CnAsqVm2eCL8mNbDoAIbM.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jIkH6cy0Haa1cyitn6gtKmE3lxu.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jIkH6cy0Haa1cyitn6gtKmE3lxu.jpg",
+    "rd": "2021-12-09"
   },
   {
     "s": "354",
@@ -11140,7 +11493,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/pIi1uwrWDfubz0QVXeqQQjieCu3.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/jG52tsazn04F1fe8hPZfVv7ICKt.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/jG52tsazn04F1fe8hPZfVv7ICKt.jpg",
+    "rd": "2022-12-25"
   },
   {
     "s": "355",
@@ -11172,7 +11526,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/hHmJGgb29sIxSK9EOf6d68mDnEM.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/90IcDDC47Rck4D2fyZbpZ1rbFZW.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/90IcDDC47Rck4D2fyZbpZ1rbFZW.jpg",
+    "rd": "2023-01-04"
   },
   {
     "s": "356",
@@ -11204,7 +11559,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/oodPJ3Op1pWBhnEFyw5fampRCWf.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/eHGys7Iw6TfW5NskICTA9kP9EkN.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/eHGys7Iw6TfW5NskICTA9kP9EkN.jpg",
+    "rd": "2022-12-20"
   },
   {
     "s": "357",
@@ -11236,7 +11592,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/aWr7F5vK8LIY31sqQgINobBjBBK.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/oWWsuxplpHdwxVw2u6f3dGLKcvC.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/oWWsuxplpHdwxVw2u6f3dGLKcvC.jpg",
+    "rd": "2023-01-18"
   },
   {
     "s": "358",
@@ -11268,7 +11625,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/u2aVXft5GLBQnjzWVNda7sdDpdu.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/cd8YDn7M0lfaHhZdU6MvCDxPalP.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/cd8YDn7M0lfaHhZdU6MvCDxPalP.jpg",
+    "rd": "2022-12-14"
   },
   {
     "s": "359",
@@ -11300,7 +11658,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/7KT8E7CpEwxQUay5nROpY6mCK8F.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5wDBVictj4wUYZ31gR5WzCM9dLD.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5wDBVictj4wUYZ31gR5WzCM9dLD.jpg",
+    "rd": "2022-11-23"
   },
   {
     "s": "360",
@@ -11332,7 +11691,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/qA7wMmbGBG3HnNeIO18h8HvMWcd.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/7dm64SW5L5CCg47kAEAcdCGaq5i.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/7dm64SW5L5CCg47kAEAcdCGaq5i.jpg",
+    "rd": "2022-12-07"
   },
   {
     "s": "361",
@@ -11364,7 +11724,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/lrgmo1qluO9c2qdBduiu412fRDS.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/dKqa850uvbNSCaQCV4Im1XlzEtQ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/dKqa850uvbNSCaQCV4Im1XlzEtQ.jpg",
+    "rd": "2022-12-23"
   },
   {
     "s": "362",
@@ -11396,7 +11757,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/3weHvdbJ9RiSNHS0cz5694fkAnk.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/27Mj3rFYP3xqFy7lnz17vEd8Ms.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/27Mj3rFYP3xqFy7lnz17vEd8Ms.jpg",
+    "rd": "2022-07-13"
   },
   {
     "s": "363",
@@ -11428,7 +11790,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/msh4N8dxHk4FeEPZ8VBqHQFQYjI.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/y2Ca1neKke2mGPMaHzlCNDVZqsK.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/y2Ca1neKke2mGPMaHzlCNDVZqsK.jpg",
+    "rd": "2022-08-24"
   },
   {
     "s": "364",
@@ -11460,7 +11823,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5x5bPbnW9bS2QbNnc7bjmljuS14.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/k4TpF7wl1FMPzHRJNudODAm7h0P.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/k4TpF7wl1FMPzHRJNudODAm7h0P.jpg",
+    "rd": "2022-04-20"
   },
   {
     "s": "365",
@@ -11492,7 +11856,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fWkFnlCQLtfIBGnhMKVw2dttEDk.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/9zXPnbVpaDfTniLBuc5vgXGfzAP.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/9zXPnbVpaDfTniLBuc5vgXGfzAP.jpg",
+    "rd": "2022-07-13"
   },
   {
     "s": "366",
@@ -11524,7 +11889,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/6JSCkV0lIBUewhDRmirUN3Q41Ny.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/xS0rl1YrVt51ztzjRf6qoIPZ7TA.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/xS0rl1YrVt51ztzjRf6qoIPZ7TA.jpg",
+    "rd": "2021-11-18"
   },
   {
     "s": "367",
@@ -11556,7 +11922,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fZid9LbFTZV7NjM0qMwL1mPjhqu.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/rSrJW3MHZLWBtiNV3fbVaqNYVpy.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/rSrJW3MHZLWBtiNV3fbVaqNYVpy.jpg",
+    "rd": "2022-04-28"
   },
   {
     "s": "368",
@@ -11588,7 +11955,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/cABFrLRNlepxhioYBJEEX0fNOWf.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/lRbDyjI7HEaXxflFQbYpqHRGFBJ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/lRbDyjI7HEaXxflFQbYpqHRGFBJ.jpg",
+    "rd": "2022-02-09"
   },
   {
     "s": "369",
@@ -11620,7 +11988,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/mEHmuzE0vam89FGLiZ0HkZ8CMVn.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/fwrqW8Lp5VQuppFrODd4iJ8LySE.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/fwrqW8Lp5VQuppFrODd4iJ8LySE.jpg",
+    "rd": "2022-02-16"
   },
   {
     "s": "370",
@@ -11652,7 +12021,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/2xmJCxrt5t2dFhvwvmxZ5Cy577j.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/8QpzqK3nPGxpqpKqhe6QasTGBWQ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/8QpzqK3nPGxpqpKqhe6QasTGBWQ.jpg",
+    "rd": "2022-03-16"
   },
   {
     "s": "371",
@@ -11684,7 +12054,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/4UCQWDmMsOxqgtdTbkihSXbexbf.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/i2GVEvltEu3BXn5crBSxgKuTaca.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/i2GVEvltEu3BXn5crBSxgKuTaca.jpg",
+    "rd": "2023-07-19"
   },
   {
     "s": "372",
@@ -11716,7 +12087,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/bzn2BY0QWiClC2tOHWVAxp7FeCg.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/d1Vu0DRCeJ43YX98UKMi9xJNwrR.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/d1Vu0DRCeJ43YX98UKMi9xJNwrR.jpg",
+    "rd": "2023-09-20"
   },
   {
     "s": "373",
@@ -11748,7 +12120,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/efbK1Pida7jsb9kq5ejz7WLFZ1e.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/50Wq7fY21obXVRICuljdlSigWvH.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/50Wq7fY21obXVRICuljdlSigWvH.jpg",
+    "rd": "2023-10-06"
   },
   {
     "s": "374",
@@ -11780,7 +12153,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/gzqSFsFOIsEYFZxMVdgwZGyEGKT.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/gknIloEJve4FgAzlKdOUZu1K9HT.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/gknIloEJve4FgAzlKdOUZu1K9HT.jpg",
+    "rd": "2023-11-08"
   },
   {
     "s": "375",
@@ -11812,7 +12186,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/oYfssARSMGcHk6RPLwSARsTURmC.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/mzlZAMjE2yk2sW3f9HTeBM3B3jw.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/mzlZAMjE2yk2sW3f9HTeBM3B3jw.jpg",
+    "rd": "2023-07-26"
   },
   {
     "s": "376",
@@ -11844,7 +12219,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/lMWTlGr9jVUC18T515hPRKym5QQ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/9xfDWXAUbFXQK585JvByT5pEAhe.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/9xfDWXAUbFXQK585JvByT5pEAhe.jpg",
+    "rd": "2023-06-21"
   },
   {
     "s": "377",
@@ -11876,7 +12252,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fBNl8kpFMz5ugi3RGYfenKctzjq.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/fLEsa5SKTFgrdUGMHbsWomniak6.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/fLEsa5SKTFgrdUGMHbsWomniak6.jpg",
+    "rd": "2023-05-31"
   },
   {
     "s": "378",
@@ -11908,7 +12285,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/rnOpzbW776F6xgA2MrfyA2FxFxt.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sidvlo7V8VMyskNKGwua0Tarbol.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sidvlo7V8VMyskNKGwua0Tarbol.jpg",
+    "rd": "2023-06-30"
   },
   {
     "s": "379",
@@ -11940,7 +12318,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/5QXoAgO905YGucMJmeDb4CmjEUT.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sNnPbPopZxGO3s7Hd5qcqoMyLXl.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/sNnPbPopZxGO3s7Hd5qcqoMyLXl.jpg",
+    "rd": "2023-08-30"
   },
   {
     "s": "380",
@@ -11972,7 +12351,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fA1xRPplBqW87wWh0hO1pwbQmX8.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/3oqmk6mNWPatBKcjOOJLp5WW9zN.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/3oqmk6mNWPatBKcjOOJLp5WW9zN.jpg",
+    "rd": "2023-05-10"
   },
   {
     "s": "381",
@@ -12004,7 +12384,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/vL3BXlbHmpd5nAWrwOwxCBkd66m.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/atvEgnjjXN5QvFDThXVz4nyU9yi.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/atvEgnjjXN5QvFDThXVz4nyU9yi.jpg",
+    "rd": "2023-07-05"
   },
   {
     "s": "382",
@@ -12036,7 +12417,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/rEEEl6t8LDA3h25woAw6aYsqaSs.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/AdBXP8e6K3FYdDrMx3Wr6WZqCYF.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/AdBXP8e6K3FYdDrMx3Wr6WZqCYF.jpg",
+    "rd": "2023-03-29"
   },
   {
     "s": "383",
@@ -12068,7 +12450,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/zcpxI4YYFXd2aS1wffa5usKFFbq.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/xQyGkQ8ICa4lgifGr3oZjkm3AJ2.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/xQyGkQ8ICa4lgifGr3oZjkm3AJ2.jpg",
+    "rd": "2023-03-22"
   },
   {
     "s": "384",
@@ -12100,7 +12483,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/q0xV5Lnq30JiegbVGBOvVwrgUDT.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/46FRuCeAn6TrS4F1P4F9zhyCpyo.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/46FRuCeAn6TrS4F1P4F9zhyCpyo.jpg",
+    "rd": "2023-03-01"
   },
   {
     "s": "385",
@@ -12132,7 +12516,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/9DeVlOV9TVRdYeVZZQw8N2Lo6Ke.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg",
+    "rd": "2023-04-20"
   },
   {
     "s": "386",
@@ -12164,7 +12549,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/oxjM9l5senfyNOeba4wvUCVi8Ge.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/1vXD5HXqkhvsXFHE7KmCPZGPR1e.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/1vXD5HXqkhvsXFHE7KmCPZGPR1e.jpg",
+    "rd": "2023-03-15"
   },
   {
     "s": "387",
@@ -12196,7 +12582,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/qY8QqP7bithnAMFRsSfourWMlHN.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/aKSsorBuC08sVQkO97wZkMtBzZP.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/aKSsorBuC08sVQkO97wZkMtBzZP.jpg",
+    "rd": "1963-01-01"
   },
   {
     "s": "388",
@@ -12228,7 +12615,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/kfxi1tsQAkpZtCl72A3Wrl7iplz.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/9ZznETDyfPWVugRiv0jfGrkRftw.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/9ZznETDyfPWVugRiv0jfGrkRftw.jpg",
+    "rd": "2023-03-29"
   },
   {
     "s": "389",
@@ -12260,7 +12648,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/4N987FjnCbQn0dKDuchhD1wCfpj.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/tVH1qEFyKiCpP6kNDFyXKW2Tiif.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/tVH1qEFyKiCpP6kNDFyXKW2Tiif.jpg",
+    "rd": "2023-02-22"
   },
   {
     "s": "390",
@@ -12289,7 +12678,8 @@
         "u": "https://www.rottentomatoes.com/m/in_the_land_of_saints_and_sinners"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/nF55Arb7cbBJQZmE3mxLEEFkM3F.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/nF55Arb7cbBJQZmE3mxLEEFkM3F.jpg",
+    "rd": "2024-09-04"
   },
   {
     "s": "391",
@@ -12321,7 +12711,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/6yrDUJyl1naOn3zfOhFPE9ZGsfP.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/iKqItVltY6r0eJeIRdIZV8IrBpz.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/iKqItVltY6r0eJeIRdIZV8IrBpz.jpg",
+    "rd": "2024-03-13"
   },
   {
     "s": "392",
@@ -12353,7 +12744,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/17aLLBfhf63QsSraVUJtaONnb6L.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/en3GU5uGkKaYmSyetHV4csHHiH3.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/en3GU5uGkKaYmSyetHV4csHHiH3.jpg",
+    "rd": "2024-12-31"
   },
   {
     "s": "393",
@@ -12385,7 +12777,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/uarf91ft8eVDGMgMH4o6ip7rkCm.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/rmfIhftLXpHEZzkLSpWQMZhirMJ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/rmfIhftLXpHEZzkLSpWQMZhirMJ.jpg",
+    "rd": "2024-05-29"
   },
   {
     "s": "394",
@@ -12417,7 +12810,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/kUyfd947dX8bjlMncWoCks5rxFW.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/p9zvs64aKVtqbk2e5azr8VEPHeF.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/p9zvs64aKVtqbk2e5azr8VEPHeF.jpg",
+    "rd": "2023-10-06"
   },
   {
     "s": "395",
@@ -12449,7 +12843,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/6o6jgwvPc0W1FuFwA9XFAHwljt4.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/7HR38hMBl23lf38MAN63y4pKsHz.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/7HR38hMBl23lf38MAN63y4pKsHz.jpg",
+    "rd": "2024-03-06"
   },
   {
     "s": "396",
@@ -12481,7 +12876,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ggEVrwwk68QBcygzvzCV0fvRLEY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/nvW0QfRJ7ga9TK8DKwBfAPA8ywP.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/nvW0QfRJ7ga9TK8DKwBfAPA8ywP.jpg",
+    "rd": "2024-01-24"
   },
   {
     "s": "397",
@@ -12513,7 +12909,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/11EHXs37YRZPyIyJjlUB2FAnbys.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/eTvN54pd83TrSEOz6wbsXEJktCV.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/eTvN54pd83TrSEOz6wbsXEJktCV.jpg",
+    "rd": "2024-09-27"
   },
   {
     "s": "398",
@@ -12545,7 +12942,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/hSJl0U8Wi1YVORKI0hIbiXt1xSL.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/dTOQaHP4PjDXU2JwDF6UYqGqRT0.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/dTOQaHP4PjDXU2JwDF6UYqGqRT0.jpg",
+    "rd": "2024-01-17"
   },
   {
     "s": "399",
@@ -12577,7 +12975,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/bvwEkotIuHxjuSCEXhhSna0BqQT.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/uUJp5I4IbzuhdUiEx4R9OAoFpbz.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/uUJp5I4IbzuhdUiEx4R9OAoFpbz.jpg",
+    "rd": "2023-12-13"
   },
   {
     "s": "400",
@@ -12609,7 +13008,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/9f9YsmXoy9ghqZKIVuKHkmGGZCY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/8GnWDLn2AhnmkQ7hlQ9NJUYobSS.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/8GnWDLn2AhnmkQ7hlQ9NJUYobSS.jpg",
+    "rd": "2023-11-15"
   },
   {
     "s": "401",
@@ -12641,7 +13041,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/bYxNkZpRAygeo1Kbo79KJOn2Qjr.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/46Os8U0DEPmI0OnvKDxucl6SLVZ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/46Os8U0DEPmI0OnvKDxucl6SLVZ.jpg",
+    "rd": "2023-11-01"
   },
   {
     "s": "402",
@@ -12673,7 +13074,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/dWR8OTRCcYDbBmd8GKsyJT73kU2.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/rMvPXy8PUjj1o8o1pzgQbdNCsvj.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/rMvPXy8PUjj1o8o1pzgQbdNCsvj.jpg",
+    "rd": "2023-10-18"
   },
   {
     "s": "403",
@@ -12705,7 +13107,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/aZ0gr4QltjcdFNNywJaoTXpiBS2.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5CPbuhVfnUAbEyuf3LJ5bKiRvx4.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5CPbuhVfnUAbEyuf3LJ5bKiRvx4.jpg",
+    "rd": "2023-11-03"
   },
   {
     "s": "404",
@@ -12737,7 +13140,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/vkfpeBAbWVNo46SwvsSXZkRpREY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/qB9wshRySHgN2MibLOlsW6YalqD.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/qB9wshRySHgN2MibLOlsW6YalqD.jpg",
+    "rd": "2023-09-13"
   },
   {
     "s": "405",
@@ -12763,7 +13167,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/zNQbQhbzzp6bubs5lv3S4mfo1SM.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/cMoi6ljDVZbfbaivpARi4vIagTI.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/cMoi6ljDVZbfbaivpARi4vIagTI.jpg",
+    "rd": "2023-10-11"
   },
   {
     "s": "406",
@@ -12795,7 +13200,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/mewjjhpju5JT1wDFJDMdctWcCqd.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/xFYpUmB01nswPgbzi8EOCT1ZYFu.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/xFYpUmB01nswPgbzi8EOCT1ZYFu.jpg",
+    "rd": "2023-09-20"
   },
   {
     "s": "407",
@@ -12827,7 +13233,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/6xORIhe6cP3iM5RYTHs7MTOH1qa.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2Cpg8hUn60PK9CW9d5SWf605Ah8.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2Cpg8hUn60PK9CW9d5SWf605Ah8.jpg",
+    "rd": "2023-09-14"
   },
   {
     "s": "408",
@@ -12859,7 +13266,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/yV4Q1WvadLlO6TwiGPRMHOlYrpY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/8hSx5b4YfD2dzvGtrE6mdXF0xrZ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/8hSx5b4YfD2dzvGtrE6mdXF0xrZ.jpg",
+    "rd": "2022-09-08"
   },
   {
     "s": "409",
@@ -12891,7 +13299,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/8yX4Bt1qTUETuVyWgqyqlFM1nzw.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/mRmRE4RknbL7qKALWQDz64hWKPa.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/mRmRE4RknbL7qKALWQDz64hWKPa.jpg",
+    "rd": "2023-10-06"
   },
   {
     "s": "410",
@@ -12923,7 +13332,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/eK1uG7rxc8Bk0ceqHa0wjMZNs8c.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/iQcCAm8hKWZyUntqrvzyEGtXyJl.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/iQcCAm8hKWZyUntqrvzyEGtXyJl.jpg",
+    "rd": "2023-10-03"
   },
   {
     "s": "411",
@@ -12952,7 +13362,8 @@
         "u": "https://www.rottentomatoes.com/m/the_search"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/bauEuMbet8sii0CShmpwJqdD9ZT.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/bauEuMbet8sii0CShmpwJqdD9ZT.jpg",
+    "rd": "2019-01-17"
   },
   {
     "s": "412",
@@ -12968,7 +13379,8 @@
     "dK": "",
     "dE": "",
     "lk": [],
-    "poster": "https://kopis.or.kr/_next/image?url=%2Fupload%2FpfmPoster%2FPF_PF264858_250514_105914.gif&w=384&q=75"
+    "poster": "https://kopis.or.kr/_next/image?url=%2Fupload%2FpfmPoster%2FPF_PF264858_250514_105914.gif&w=384&q=75",
+    "rd": "2025"
   },
   {
     "s": "413",
@@ -12985,7 +13397,8 @@
     "dE": "",
     "lk": [],
     "poster": "https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791166463532.jpg",
-    "publisher": "기탄출판사"
+    "publisher": "기탄출판사",
+    "rd": "2026"
   },
   {
     "s": "414",
@@ -13002,7 +13415,8 @@
     "dE": "",
     "lk": [],
     "poster": "https://image.yes24.com/goods/90688615/XL",
-    "publisher": "시공사"
+    "publisher": "시공사",
+    "rd": "2020"
   },
   {
     "s": "415",
@@ -13019,7 +13433,8 @@
     "dE": "",
     "lk": [],
     "poster": "https://image.yes24.com/goods/125183329/XL",
-    "publisher": "을유문화사"
+    "publisher": "을유문화사",
+    "rd": "2024"
   },
   {
     "s": "416",
@@ -13036,7 +13451,8 @@
     "dE": "",
     "lk": [],
     "poster": "https://image.yes24.com/goods/115836267/XL",
-    "publisher": "알에이치코리아(RHK)"
+    "publisher": "알에이치코리아(RHK)",
+    "rd": "2022"
   },
   {
     "s": "417",
@@ -13053,7 +13469,8 @@
     "dE": "",
     "lk": [],
     "poster": "https://image.yes24.com/goods/119709697/XL",
-    "publisher": "위즈덤하우스"
+    "publisher": "위즈덤하우스",
+    "rd": "2023"
   },
   {
     "s": "418",
@@ -13084,7 +13501,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/eqEzpQNusV9XSdnA9HAvlLMeuPs.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/pwGmXVKUgKN13psUjlhC9zBcq1o.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/pwGmXVKUgKN13psUjlhC9zBcq1o.jpg",
+    "rd": "2024-03-13"
   },
   {
     "s": "419",
@@ -13115,7 +13533,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ekHemOB84SoKi6fqG0ciwvKWM2i.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4MCKNAc6AbWjEsM2h9Xc29owo4z.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4MCKNAc6AbWjEsM2h9Xc29owo4z.jpg",
+    "rd": "2024-04-03"
   },
   {
     "s": "420",
@@ -13146,7 +13565,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/s1mSUviCXABZhCix3PCdXkwCxTq.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/ef3ySEDfWeQWBfXPuc7VLhIsccH.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/ef3ySEDfWeQWBfXPuc7VLhIsccH.jpg",
+    "rd": "2013-08-22"
   },
   {
     "s": "421",
@@ -13177,7 +13597,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/aKNFzaqQgPzsGXnsMc4kJH5hFIV.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/f1Is9VLQZSRpeLMU7mIcj5aXclt.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/f1Is9VLQZSRpeLMU7mIcj5aXclt.jpg",
+    "rd": "1967-01-01"
   },
   {
     "s": "422",
@@ -13208,7 +13629,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/aUZ176q7ldMaPLYVnmaFWK4CApE.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/H5HjE7Xb9N09rbWn1zBfxgI8uz.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/H5HjE7Xb9N09rbWn1zBfxgI8uz.jpg",
+    "rd": "2024-05-01"
   },
   {
     "s": "423",
@@ -13239,7 +13661,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/mGzSIfzmcf9H91DS06cnka1SYrP.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/5cCfqeUH2f5Gnu7Lh9xepY9TB6x.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/5cCfqeUH2f5Gnu7Lh9xepY9TB6x.jpg",
+    "rd": "2024-04-17"
   },
   {
     "s": "424",
@@ -13270,7 +13693,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/l0d3sJuF4KCl4Y4Z9n06hgF5f7g.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2TPoqmatGDfBOiRxqNoL11ncCJe.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2TPoqmatGDfBOiRxqNoL11ncCJe.jpg",
+    "rd": "2024-05-15"
   },
   {
     "s": "425",
@@ -13301,7 +13725,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/8tmtj4WIJEYVXxlrDcO6SqQN0Vz.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/P82NAcEsLIYgQtrtn36tYsj41m.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/P82NAcEsLIYgQtrtn36tYsj41m.jpg",
+    "rd": "2024-05-15"
   },
   {
     "s": "426",
@@ -13332,7 +13757,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/caNBYk7beRAg8Tcpe7ZjzM2nYXH.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/fqv8v6AycXKsivp1T5yKtLbGXce.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/fqv8v6AycXKsivp1T5yKtLbGXce.jpg",
+    "rd": "2024-05-08"
   },
   {
     "s": "427",
@@ -13363,7 +13789,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/w2Inh0CsdRmuEPrkhLZzXbi94M2.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/zz219ZRGo0vVIzvKttjx5nXOc2N.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/zz219ZRGo0vVIzvKttjx5nXOc2N.jpg",
+    "rd": "2024-06-19"
   },
   {
     "s": "428",
@@ -13394,7 +13821,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/aum9VtZx5wTDtcXbqH4rRzNr2lI.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/oMiKHO3H5RixfLsiU5Vumhlp5sj.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/oMiKHO3H5RixfLsiU5Vumhlp5sj.jpg",
+    "rd": "2024-07-10"
   },
   {
     "s": "429",
@@ -13425,7 +13853,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/9hEdO3PcV0usDgRyfWOxGYAcoPB.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/qwU4cRX74cN6Z9XvDEOoYsoEAoN.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/qwU4cRX74cN6Z9XvDEOoYsoEAoN.jpg",
+    "rd": "2024-06-19"
   },
   {
     "s": "430",
@@ -13456,7 +13885,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/wIrhEUBWjRmZuL1Ix41cF2LhJrW.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/3q01ACG0MWm0DekhvkPFCXyPZSu.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/3q01ACG0MWm0DekhvkPFCXyPZSu.jpg",
+    "rd": "2024-06-06"
   },
   {
     "s": "431",
@@ -13487,7 +13917,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/mXGlp8K10JhiY5ZNY7zMldm2lss.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/1fL2S8LKxCVE9KoPRBXeagmBtex.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/1fL2S8LKxCVE9KoPRBXeagmBtex.jpg",
+    "rd": "2024-09-11"
   },
   {
     "s": "432",
@@ -13518,7 +13949,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fS2w4mtZM8Io3jPOaG34uozzxuc.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/pg01mUOLX6bmkmQyQownrPDXbm.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/pg01mUOLX6bmkmQyQownrPDXbm.jpg",
+    "rd": "2024-08-21"
   },
   {
     "s": "433",
@@ -13549,7 +13981,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/AmWTYg3RCMv7fbQxwCqrxiaUhkc.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/iYqSQaWDttQIQzsxg9xHyg0bttG.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/iYqSQaWDttQIQzsxg9xHyg0bttG.jpg",
+    "rd": "2024-08-14"
   },
   {
     "s": "434",
@@ -13580,7 +14013,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/287MYoxjfINSyfaaV636Z2ioR36.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/8yPSYhooj8nyBbmV3GVdLDwuE7e.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/8yPSYhooj8nyBbmV3GVdLDwuE7e.jpg",
+    "rd": "2024-09-13"
   },
   {
     "s": "435",
@@ -13611,7 +14045,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ptfoRD0MmL8Ry0iBVccYbqoN9Xc.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/3V4kLQg0kSqPLctI5ziYWabAZYF.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/3V4kLQg0kSqPLctI5ziYWabAZYF.jpg",
+    "rd": "2024-10-23"
   },
   {
     "s": "436",
@@ -13642,7 +14077,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/hwmwTFtMbzxAWbIOp1RyyiOCyx0.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/zo8CIjJ2nfNOevqNajwMRO6Hwka.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/zo8CIjJ2nfNOevqNajwMRO6Hwka.jpg",
+    "rd": "2024-11-27"
   },
   {
     "s": "437",
@@ -13673,7 +14109,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/nTeZEyYMFCTyCf8AP9jBbs2a5Nx.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/78CquSA0GN0m7NIYnNECx91KFkJ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/78CquSA0GN0m7NIYnNECx91KFkJ.jpg",
+    "rd": "2024-12-18"
   },
   {
     "s": "438",
@@ -13704,7 +14141,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/oxaTI2yDZskb6AaeKZLDak1hRLZ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/CZyMhVVpraYDptLpYXxXjgAuCH.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/CZyMhVVpraYDptLpYXxXjgAuCH.jpg",
+    "rd": "2024-07-12"
   },
   {
     "s": "439",
@@ -13735,7 +14173,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/gLabmTVZpNOGa8LEiMvTi9hJPDe.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/4s2d3xdyqotiVNHTlTlJjrr3q0H.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/4s2d3xdyqotiVNHTlTlJjrr3q0H.jpg",
+    "rd": "2015-01-21"
   },
   {
     "s": "440",
@@ -13766,7 +14205,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/u1e1BWUPIuN7CWLUgDURUlea3oV.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/AaYfsgRcgU00n0MNVsn1604bfcu.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/AaYfsgRcgU00n0MNVsn1604bfcu.jpg",
+    "rd": "2022-04-01"
   },
   {
     "s": "441",
@@ -13795,7 +14235,8 @@
         "u": "https://www.rottentomatoes.com/m/how_to_make_a_killing"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/hJxdfkQVSzM67uKjInnZA2mJTua.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/hJxdfkQVSzM67uKjInnZA2mJTua.jpg",
+    "rd": "2024-08-28"
   },
   {
     "s": "442",
@@ -13826,7 +14267,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/gYOhHBHSqb3J0QaZWlKYDbpxY7Y.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bGGjyPqtNc8hhGkPo8W8D8t90bW.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bGGjyPqtNc8hhGkPo8W8D8t90bW.jpg",
+    "rd": "2025-03-12"
   },
   {
     "s": "443",
@@ -13857,7 +14299,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/sdJknCMrXZ1yVM2NhwgpyxaKv4O.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/kcCy5tKTe6WepVQ6SQaSewpmoCj.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/kcCy5tKTe6WepVQ6SQaSewpmoCj.jpg",
+    "rd": "2025-02-26"
   },
   {
     "s": "444",
@@ -13888,7 +14331,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1rfxGlRaFe8bqKOtebXl2CFel8F.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/7N7CtZftqEvgojR3QloukU0oWPg.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/7N7CtZftqEvgojR3QloukU0oWPg.jpg",
+    "rd": "2025-02-19"
   },
   {
     "s": "445",
@@ -13919,7 +14363,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ggNMbArkwcECIB07My2CvuGqdAu.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/kydclLUnhGMuoCxl6VRfSSwdRRO.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/kydclLUnhGMuoCxl6VRfSSwdRRO.jpg",
+    "rd": "2014-10-03"
   },
   {
     "s": "446",
@@ -13950,7 +14395,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/xpkfE3Z9qn3sOts8aMTk1JdJAZq.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/wP0NGOGf2PG4lHXHWEqFW0kBOye.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/wP0NGOGf2PG4lHXHWEqFW0kBOye.jpg",
+    "rd": "2025-04-09"
   },
   {
     "s": "447",
@@ -13981,7 +14427,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/A4W0yRN7Xy6JLIhRymIh5plK2Zj.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2IIKts2A9vnUdM9tTC76B8tDmuZ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2IIKts2A9vnUdM9tTC76B8tDmuZ.jpg",
+    "rd": "2025-06-06"
   },
   {
     "s": "448",
@@ -14012,7 +14459,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/1oG69MtmZGovhho0pPgRY9d1qrU.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/8FWLJHuWB72UXBmiMtxwTvQVumN.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/8FWLJHuWB72UXBmiMtxwTvQVumN.jpg",
+    "rd": "2025-07-30"
   },
   {
     "s": "449",
@@ -14043,7 +14491,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/vAZxtf6eCE7LERr9aRSvoeJ2V4z.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/kdDQn3Oi7iy1VK7GWhMRyPXUf9K.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/kdDQn3Oi7iy1VK7GWhMRyPXUf9K.jpg",
+    "rd": "2025-08-13"
   },
   {
     "s": "450",
@@ -14074,7 +14523,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ubgOSHAEhv1ds8BNHodhCcI13oH.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/hHDNOlATHhre4eZ7aYz5cdyJLik.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/hHDNOlATHhre4eZ7aYz5cdyJLik.jpg",
+    "rd": "2026-02-27"
   },
   {
     "s": "451",
@@ -14105,7 +14555,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/QhGn8LntSVpxFFSw7KU3SEscQm.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/lqwwGkwJHtz9QgKtz4zeY19YgDg.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/lqwwGkwJHtz9QgKtz4zeY19YgDg.jpg",
+    "rd": "2025-08-08"
   },
   {
     "s": "452",
@@ -14136,7 +14587,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/rGe64vmd9cpvwiTD5OGWJezBnNg.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/1yktYsxkmUtUFTUnCAUaqG6FEiz.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/1yktYsxkmUtUFTUnCAUaqG6FEiz.jpg",
+    "rd": "2025-08-06"
   },
   {
     "s": "453",
@@ -14167,7 +14619,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/sUDEDz6vdzVgEICdOmgiVdjhHLp.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/d2Zz6EyYESWtKUYXDy6qccOcBA5.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/d2Zz6EyYESWtKUYXDy6qccOcBA5.jpg",
+    "rd": "1993-12-24"
   },
   {
     "s": "454",
@@ -14198,7 +14651,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/Amxb9cmCm4YM3cXe3AE9Wq50FLg.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/tK3zER0850mxditEoepTOmIeYKq.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/tK3zER0850mxditEoepTOmIeYKq.jpg",
+    "rd": "2025-09-17"
   },
   {
     "s": "455",
@@ -14229,7 +14683,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/qFXkslzkBIihZnwyYal9WnQ9OTe.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/fiRDzpcJe7qz3yIR43hdXIE3NHv.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/fiRDzpcJe7qz3yIR43hdXIE3NHv.jpg",
+    "rd": "2025-12-12"
   },
   {
     "s": "456",
@@ -14260,7 +14715,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/ko6Wxr4sB9RM3pJb5JlWPqiSOIp.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/tN3pTxkQoP96wtaEahYuRVdUWb2.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/tN3pTxkQoP96wtaEahYuRVdUWb2.jpg",
+    "rd": "2025-11-05"
   },
   {
     "s": "457",
@@ -14291,7 +14747,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/vkX85I1Mv27bnxMSWOuKntwjVgb.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/s7vWRjcfRVMW8tBIxhC3UhKxRoo.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/s7vWRjcfRVMW8tBIxhC3UhKxRoo.jpg",
+    "rd": "2025-10-29"
   },
   {
     "s": "458",
@@ -14322,7 +14779,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/7qemFpOxUtLlIUJBRFHptxJNgbe.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/2ha0wAOqrUcLScStWQcgeOOXapQ.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/2ha0wAOqrUcLScStWQcgeOOXapQ.jpg",
+    "rd": "2025-10-22"
   },
   {
     "s": "459",
@@ -14353,7 +14811,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/4nJcUMpWgnIPZPJ13TWKRxAdY9U.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/pUNfHmVqfwRdILhCkU8TdysVOXo.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/pUNfHmVqfwRdILhCkU8TdysVOXo.jpg",
+    "rd": "2025-10-08"
   },
   {
     "s": "460",
@@ -14384,7 +14843,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/mlpVu3aq1cOjlHOxd70NILlj1fc.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/nkxtuK4alXlGC87FRNDfAZJIFiB.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/nkxtuK4alXlGC87FRNDfAZJIFiB.jpg",
+    "rd": "2026-01-07"
   },
   {
     "s": "461",
@@ -14415,7 +14875,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/8lpCbwbYh9SSzCFsHDndZHKrcD4.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/gaKFXcB5J1gz0QqYj8bWIfrPc04.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/gaKFXcB5J1gz0QqYj8bWIfrPc04.jpg",
+    "rd": "2025-11-05"
   },
   {
     "s": "462",
@@ -14446,7 +14907,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/pZSZVQH5mlm1EmF3x5O2o14GfTZ.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/1SgD8XMa6dDSBKbPU4TDe2cmfGK.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/1SgD8XMa6dDSBKbPU4TDe2cmfGK.jpg",
+    "rd": "2025-12-24"
   },
   {
     "s": "463",
@@ -14477,7 +14939,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/fQ8Q3VAybCt6fHFJQD0kwd5azNL.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/7HKpc11uQfxnw0Y8tRUYn1fsKqE.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/7HKpc11uQfxnw0Y8tRUYn1fsKqE.jpg",
+    "rd": "2026-02-04"
   },
   {
     "s": "464",
@@ -14508,7 +14971,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/c4df7ExGyVUWAWOwNB5jy4EFHsx.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bpp58yHuQmpt6xwggI63mVRw7po.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bpp58yHuQmpt6xwggI63mVRw7po.jpg",
+    "rd": "2026-01-28"
   },
   {
     "s": "465",
@@ -14537,7 +15001,8 @@
         "u": "https://www.rottentomatoes.com/m/28_years_later_the_bone_temple"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/zRo90O0bTKJem1aDgVa6Sm0gthE.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/zRo90O0bTKJem1aDgVa6Sm0gthE.jpg",
+    "rd": "2025-06-19"
   },
   {
     "s": "466",
@@ -14568,7 +15033,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/77ggpowGO0ORQY9x33NeBIPajm1.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/52AkwEfQiJl2HuTPMZ2yC5Bdr9I.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/52AkwEfQiJl2HuTPMZ2yC5Bdr9I.jpg",
+    "rd": "2026-04-08"
   },
   {
     "s": "467",
@@ -14599,7 +15065,8 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/sYn6PHN0PE6ep3TGlYS5bM3AkPg.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/hhBqc8n9WaGizwMglvGZcDKzguK.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/hhBqc8n9WaGizwMglvGZcDKzguK.jpg",
+    "rd": "2026-05-27"
   },
   {
     "s": "468",
@@ -14630,6 +15097,7 @@
       }
     ],
     "poster": "https://image.tmdb.org/t/p/w500/yPV87cvDabRMTZs6NIbZLOufBLR.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bZJSYYVrfhM3upw38KXv7SUz7Kz.jpg"
+    "back": "https://image.tmdb.org/t/p/w1280/bZJSYYVrfhM3upw38KXv7SUz7Kz.jpg",
+    "rd": "2026-04-01"
   }
 ]
