@@ -169,10 +169,10 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify
 
 <div class="toolbar">
   <div class="filter-tabs">
-    <button class="filter-tab active" onclick="filter('all')">
+    <button class="filter-tab" onclick="filter('all')">
       <span class="lang-ko" style="display:none">전체</span><span class="lang-en">All</span>
     </button>
-    <button class="filter-tab" onclick="filter('영화')">
+    <button class="filter-tab active" onclick="filter('영화')">
       <span class="lang-ko" style="display:none">영화</span><span class="lang-en">Film</span>
     </button>
     <button class="filter-tab" onclick="filter('공연')">
@@ -219,7 +219,7 @@ const ALADIN_KEY = 'ttbsuky79.shopping0154001';
 const GE = {영화:'Film',뮤지컬:'Musical',연극:'Theatre',책:'Book',저서:'Authored'};
 
 let W = [];
-let lang = 'en', currentFilter = 'all', sortNewest = true;
+let lang = 'en', currentFilter = '영화', sortNewest = true;
 
 /* ═══ LOAD DATA ═══ */
 async function init(){
