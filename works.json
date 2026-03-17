@@ -4173,16 +4173,14 @@
   {
     "s": "136",
     "g": "영화",
-    "ko": "The Tag-Along",
-    "en": "The Tag-Along",
+    "ko": "마신자: 빨간 옷 소녀의 저주",
+    "en": "紅衣小女孩",
     "sub": "",
-    "subE": "",
-    "y": 2025,
-    "t": 1405573,
+    "y": 2015,
+    "t": 375170,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -4193,8 +4191,7 @@
         "u": "https://www.rottentomatoes.com/m/the_tag_along"
       }
     ],
-    "poster": "",
-    "back": ""
+    "poster": "https://image.tmdb.org/t/p/w500/h39HVK1N6hwc4BUOCVmhzUSAXPg.jpg"
   },
   {
     "s": "137",
