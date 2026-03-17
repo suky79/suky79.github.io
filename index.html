@@ -127,8 +127,8 @@ nav.scrolled{background:rgba(27,37,64,.96);backdrop-filter:blur(20px);-webkit-ba
 .np-book-btn:hover{filter:brightness(1.1)}
 .np-info h3{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px}
 .np-info p{font-size:10px;color:var(--muted2)}
-.np-slider-wrap{position:relative;display:none}
-.np-slider-track{display:flex;gap:16px;overflow:hidden}
+.np-slider-wrap{position:relative;display:none;overflow:hidden}
+.np-slider-track{display:flex;gap:16px;transition:transform .35s ease}
 .np-slider-track .np-card{flex:0 0 calc(50% - 8px);min-width:0}
 .np-arrow{position:absolute;top:40%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(27,37,64,.85);border:1px solid rgba(240,235,224,.15);color:#F0EBE0;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s,background .2s;z-index:10;backdrop-filter:blur(4px)}
 .np-arrow:hover{background:rgba(45,60,89,.95)}
@@ -530,9 +530,9 @@ function npSlide(dir){
   const total = window._npSlideTotal || 0;
   const maxIdx = Math.max(0, total - 2);
   window._npSlideIdx = Math.min(Math.max((window._npSlideIdx||0) + dir, 0), maxIdx);
-  const cardW = track.offsetWidth / 2 + 8;
+  // 카드 한 장 폭 = 트랙 폭의 절반 + gap 절반
+  const cardW = (track.parentElement.offsetWidth / 2) + 8;
   track.style.transform = `translateX(-${window._npSlideIdx * cardW}px)`;
-  track.style.transition = 'transform .35s ease';
   npUpdateArrows();
 }
 
