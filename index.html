@@ -168,11 +168,12 @@ nav.scrolled{background:rgba(27,37,64,.96);backdrop-filter:blur(20px);-webkit-ba
 .book-info-desc .lang-ko{display:none}
 
 @media(max-width:768px){
-  .book-row,.book-row:nth-child(even){flex-direction:column;align-items:center;text-align:center;gap:28px}
+  .book-row,.book-row:nth-child(even){flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:28px}
   .book-3d-wrap{width:150px}
   .book-cover{width:120px}
   .book-spine{left:-14px;width:14px}
-  .book-row:nth-child(even) .book-spine{right:-14px}
+  .book-row:nth-child(even) .book-spine{right:-14px;left:auto}
+  .book-info,.book-row:nth-child(even) .book-info{flex:none;max-width:100%;width:100%}
   .book-info-desc{max-width:100%}
   .mybooks-inner{padding:0 20px}
 }
