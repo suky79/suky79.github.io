@@ -236,7 +236,7 @@ select.form-input{cursor:pointer}
     <button class="tab-btn active" onclick="switchTab('add')">＋ 작품 추가</button>
     <button class="tab-btn" onclick="switchTab('featured')">★ 히어로 관리</button>
     <button class="tab-btn" onclick="switchTab('grid')">◆ 쇼케이스 그리드</button>
-    <button class="tab-btn" onclick="switchTab('strip')">▦ 대표작 15선</button>
+    <button class="tab-btn" onclick="switchTab('strip')">▦ 대표작 20선</button>
     <button class="tab-btn" onclick="switchTab('nowplaying')">🎬 현재 상영작</button>
     <button class="tab-btn" onclick="switchTab('list')">≡ 전체 목록</button>
   </div>
@@ -474,14 +474,14 @@ select.form-input{cursor:pointer}
     </div>
   </div>
 
-  <!-- TAB: FILMSTRIP (대표작 15선) -->
+  <!-- TAB: FILMSTRIP (대표작 20선) -->
   <div id="tab-strip" style="display:none">
     <div class="featured-section-card">
-      <div class="card-title">▦ 대표작 15선 <span class="badge">최대 15개</span></div>
+      <div class="card-title">▦ 대표작 20선 <span class="badge">최대 20개</span></div>
       <p class="card-sub">메인 화면 "Selected Works" 가로 스크롤 섹션에 표시됩니다.<br>
         5개까지 선택 가능 · 드래그로 순서 변경 · 지정하지 않으면 최신 5개 자동 표시</p>
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-        <span style="font-size:12px;color:var(--muted)" id="stripCountLabel">0 / 15 선택됨</span>
+        <span style="font-size:12px;color:var(--muted)" id="stripCountLabel">0 / 20 선택됨</span>
         <button class="btn btn-ghost btn-sm" onclick="clearStrip()">전체 해제</button>
       </div>
       <div class="featured-list" id="stripList">
@@ -553,9 +553,15 @@ select.form-input{cursor:pointer}
 
   <!-- TAB: WORKS LIST -->
   <div id="tab-list" style="display:none">
-    <div class="section-header">
+    <div class="section-header" style="flex-wrap:wrap;gap:10px">
       <span class="section-title">전체 작품 <span id="totalCount" style="color:var(--muted);font-weight:400;font-size:14px">0</span></span>
-      <div style="display:flex;gap:6px;align-items:center">
+      <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+        <span style="font-size:11px;color:var(--muted);margin-right:2px">장르:</span>
+        <button class="btn btn-ghost btn-sm active-sort" id="listGenreAll" onclick="setListGenre('all')" style="font-size:11px">전체</button>
+        <button class="btn btn-ghost btn-sm" id="listGenreFilm" onclick="setListGenre('영화')" style="font-size:11px">영화</button>
+        <button class="btn btn-ghost btn-sm" id="listGenrePerf" onclick="setListGenre('공연')" style="font-size:11px">공연</button>
+        <button class="btn btn-ghost btn-sm" id="listGenreBook" onclick="setListGenre('책')" style="font-size:11px">책·저서</button>
+        <span style="font-size:11px;color:var(--border);margin:0 2px">|</span>
         <span style="font-size:11px;color:var(--muted);margin-right:2px">정렬:</span>
         <button class="btn btn-ghost btn-sm active-sort" id="sortDefault" onclick="setSort('default')" style="font-size:11px">기본</button>
         <button class="btn btn-ghost btn-sm" id="sortTitle" onclick="setSort('title')" style="font-size:11px">이름순</button>
@@ -1118,6 +1124,16 @@ function resetForm(){
 }
 
 let currentSort = 'default';
+let currentListGenre = 'all';
+
+function setListGenre(g){
+  currentListGenre = g;
+  ['All','Film','Perf','Book'].forEach(k=>{
+    const map = {All:'all', Film:'영화', Perf:'공연', Book:'책·저서'};
+    document.getElementById('listGenre'+k)?.classList.toggle('active-sort', map[k]===g);
+  });
+  renderWorksList();
+}
 
 function setSort(s){
   currentSort = s;
@@ -1141,7 +1157,14 @@ function renderWorksList(){
   document.getElementById('totalCount').textContent = works.length;
   const el = document.getElementById('worksList');
   if(!works.length){ el.innerHTML='<p style="color:var(--muted);text-align:center;padding:40px 0">작품이 없습니다.</p>'; return; }
-  el.innerHTML = getSortedWorks().map((w,i)=>{
+
+  let filtered = getSortedWorks();
+  if(currentListGenre === '영화') filtered = filtered.filter(w=>w.g==='영화');
+  else if(currentListGenre === '공연') filtered = filtered.filter(w=>w.g==='뮤지컬'||w.g==='연극');
+  else if(currentListGenre === '책·저서') filtered = filtered.filter(w=>w.g==='책'||w.g==='저서');
+
+  document.getElementById('totalCount').textContent = currentListGenre==='all' ? works.length : `${filtered.length} / ${works.length}`;
+  el.innerHTML = filtered.map((w,i)=>{
     const realIdx = works.indexOf(w);
     const badge = GE[w.g]||w.g;
     const bc = BADGE_CLASS[w.g]||'badge-film';
@@ -1489,7 +1512,7 @@ function renderAdminStrip(){
   const inStrip = works.filter(w=>w.strip);
   const notIn = works.filter(w=>!w.strip);
 
-  document.getElementById('stripCountLabel').textContent = `${inStrip.length} / 15 선택됨`;
+  document.getElementById('stripCountLabel').textContent = `${inStrip.length} / 20 선택됨`;
 
   if(inStrip.length){
     list.innerHTML = inStrip.map((w,si)=>{
@@ -1521,7 +1544,7 @@ function renderAdminStrip(){
     list.innerHTML = '<p style="color:var(--muted);font-size:12px;text-align:center;padding:20px;background:var(--bg3);border-radius:6px">아래에서 작품을 추가하세요. 비워두면 최신 5개가 자동 표시됩니다.</p>';
   }
 
-  const canAdd = inStrip.length < 15;
+  const canAdd = inStrip.length < 20;
   avail.innerHTML = notIn.map(w=>{
     const gi=works.indexOf(w);
     return `<div class="chip" onclick="${canAdd?`addToStrip(${gi})`:'showStripFull()'}"
@@ -1532,7 +1555,7 @@ function renderAdminStrip(){
 }
 
 async function addToStrip(gi){
-  if(works.filter(w=>w.strip).length >= 15){ showStripFull(); return; }
+  if(works.filter(w=>w.strip).length >= 20){ showStripFull(); return; }
   works[gi].strip = true;
   markDirty(); renderAdminStrip(); renderWorksList();
 }
@@ -1548,7 +1571,7 @@ async function clearStrip(){
   markDirty(); renderAdminStrip(); renderWorksList();
 }
 
-function showStripFull(){ toast('최대 15개까지만 선택할 수 있습니다.','info'); }
+function showStripFull(){ toast('최대 20개까지만 선택할 수 있습니다.','info'); }
 
 let stripDragIdx=null;
 function stripDragStart(e){ stripDragIdx=+e.currentTarget.dataset.stripIdx; e.currentTarget.style.opacity='.5'; }
