@@ -6918,16 +6918,15 @@
   {
     "s": "216",
     "g": "영화",
-    "ko": "The Voice",
-    "en": "The Voice",
+    "ko": "더 보이스",
+    "en": "The Voices",
     "sub": "",
-    "subE": "",
-    "y": 2022,
-    "t": 1391478,
+    "y": 2014,
+    "rd": "2018-08-29",
+    "t": 244458,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -6944,9 +6943,7 @@
         "u": "https://www.rottentomatoes.com/m/the_voice"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/fdl6MuVNw60ziLE2q6jImbLC62Z.jpg",
-    "back": "",
-    "rd": "2022-02-28"
+    "poster": "https://image.tmdb.org/t/p/w500/uFn4U2P1YZz7soLduthFEbyUpsK.jpg"
   },
   {
     "s": "217",
