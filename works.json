@@ -11076,16 +11076,15 @@
   {
     "s": "343",
     "g": "영화",
-    "ko": "Lamb",
-    "en": "Lamb",
+    "ko": "램",
+    "en": "Dýrið",
     "sub": "",
-    "subE": "",
-    "y": 2015,
-    "t": 337114,
+    "y": 2021,
+    "rd": "2021-12-29",
+    "t": 788929,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -11102,9 +11101,7 @@
         "u": "https://www.rottentomatoes.com/m/lamb"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/tVk9UXoQtm8xUTx60joYn3ryDYN.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/yPDKTnG5azdD2aAXPhX9rDEVuPD.jpg",
-    "rd": "2015-09-30"
+    "poster": "https://image.tmdb.org/t/p/w500/iTqGHIxZmh9dqwj5dXXlpi5FvUv.jpg"
   },
   {
     "s": "344",
