@@ -8646,13 +8646,12 @@
     "ko": "틴 스피릿",
     "en": "Teen Spirit",
     "sub": "",
-    "subE": "",
-    "y": 2011,
-    "t": 73108,
+    "y": 2019,
+    "rd": "2019-09-04",
+    "t": 440918,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -8669,9 +8668,7 @@
         "u": "https://www.rottentomatoes.com/m/teen_spirit"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/8mmxoEBzTMX4ziYgveeEx35ltNY.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/s75xYQOo4Hy2fy229CEfj5jgC2B.jpg",
-    "rd": "2011-08-07"
+    "poster": "https://image.tmdb.org/t/p/w500/iJYvbN9B1JChcc0gVig4Vx1CCFy.jpg"
   },
   {
     "s": "270",
