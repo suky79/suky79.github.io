@@ -13509,15 +13509,15 @@
   {
     "s": "420",
     "g": "영화",
-    "ko": "투 마더스",
-    "en": "Adoration",
+    "ko": "마더스",
+    "en": "Mothers' Instinct",
     "sub": "Gaumont",
-    "y": 2013,
-    "t": 111190,
+    "y": 2024,
+    "rd": "2024-04-03",
+    "t": 758679,
     "gr": "g6",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -13534,9 +13534,7 @@
         "u": "https://www.rottentomatoes.com/m/adoration"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/s1mSUviCXABZhCix3PCdXkwCxTq.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/ef3ySEDfWeQWBfXPuc7VLhIsccH.jpg",
-    "rd": "2013-08-22"
+    "poster": "https://image.tmdb.org/t/p/w500/9qa7exOEw7rvxiapyeOVHjQBGfb.jpg"
   },
   {
     "s": "421",
