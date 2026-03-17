@@ -304,8 +304,9 @@ function renderGrid(){
   if(currentFilter === '공연') items = items.filter(w=>w.g==='뮤지컬'||w.g==='연극');
   else if(currentFilter === '책') items = items.filter(w=>w.g==='책'||w.g==='저서');
   else if(currentFilter !== 'all') items = items.filter(w=>w.g===currentFilter);
-  if(sortNewest) items.sort((a,b)=>b.y-a.y);
-  else items.sort((a,b)=>a.y-b.y);
+  const dateKey = w => w.rd || w.ym || (w.y ? String(w.y)+'-00-00' : '0000-00-00');
+  if(sortNewest) items.sort((a,b)=>dateKey(b).localeCompare(dateKey(a)));
+  else items.sort((a,b)=>dateKey(a).localeCompare(dateKey(b)));
   currentItems = items;
 
   const grid = document.getElementById('posterGrid');
@@ -356,7 +357,7 @@ function buildCards(items){
         ${linksHtml?`<div class="poster-links">${linksHtml}</div>`:''}
         <div class="poster-tooltip">
           <div class="poster-tooltip-title">${title}</div>
-          <div class="poster-tooltip-year">${w.y} · ${w.sub}</div>
+          <div class="poster-tooltip-year">${w.rd||w.ym||w.y}${w.sub?' · '+w.sub:''}</div>
         </div>
       </div>
     </div>`;
@@ -425,7 +426,7 @@ function renderLightbox(){
   img.src = w.poster || '';
   img.style.display = w.poster ? '' : 'none';
   const title = lang==='en' ? w.en : w.ko;
-  document.getElementById('lbMeta').textContent = `${title}  ·  ${w.y}`;
+  document.getElementById('lbMeta').textContent = `${title}  ·  ${w.rd||w.ym||w.y}`;
   document.getElementById('lbPrev').classList.toggle('hidden', _lbIdx === 0);
   document.getElementById('lbNext').classList.toggle('hidden', _lbIdx === currentItems.length - 1);
 }

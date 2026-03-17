@@ -307,6 +307,8 @@ select.form-input{cursor:pointer}
         <div class="form-group film-only" id="fg-tmdb">
           <span class="form-label">TMDB ID</span>
           <input class="form-input" type="number" id="fTmdb" placeholder="533535" />
+          <input type="hidden" id="fTmdbDate" value="">
+          <input type="hidden" id="fKrDate" value="">
         </div>
         <div class="form-group film-only" id="fg-imdb">
           <span class="form-label">IMDb URL</span>
@@ -933,6 +935,22 @@ function selectTMDB(idx){
   document.getElementById('fKo').value = m.title !== m.original_title ? m.title : '';
   document.getElementById('fYear').value = m.release_date ? m.release_date.substring(0,4) : '';
   document.getElementById('fTmdb').value = m.id || '';
+  const dateEl = document.getElementById('fTmdbDate');
+  if(dateEl) dateEl.value = m.release_date || '';
+
+  // 한국 개봉일 자동 조회
+  if(m.id){
+    fetch(`https://api.themoviedb.org/3/movie/${m.id}/release_dates?api_key=${tmdbApiKey}`)
+      .then(r=>r.json())
+      .then(d=>{
+        const krData = (d.results||[]).find(r=>r.iso_3166_1==='KR');
+        const krDate = krData && krData.release_dates && krData.release_dates[0]
+          ? krData.release_dates[0].release_date.slice(0,10)
+          : (m.release_date||'');
+        const krEl = document.getElementById('fKrDate');
+        if(krEl) krEl.value = krDate;
+      }).catch(()=>{});
+  }
 
   // 포스터 URL 업데이트 + 미리보기 갱신
   if(m.poster_path){
@@ -1019,6 +1037,13 @@ async function saveWork(){
       en,
       sub: document.getElementById('fSub').value.trim() || '',
       y: year,
+      rd: (() => {
+        const krDate = document.getElementById('fKrDate')?.value?.trim();
+        if(krDate && krDate.length >= 8) return krDate;
+        const tmdbDate = document.getElementById('fTmdbDate')?.value?.trim();
+        if(tmdbDate && tmdbDate.length >= 8) return tmdbDate;
+        return year ? String(year) : '';
+      })(),
       t: currentGenre==='영화' ? (parseInt(document.getElementById('fTmdb').value)||null) : null,
       gr,
       feat: document.getElementById('fFeat').value==='true',
