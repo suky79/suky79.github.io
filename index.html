@@ -127,9 +127,19 @@ nav.scrolled{background:rgba(27,37,64,.96);backdrop-filter:blur(20px);-webkit-ba
 .np-book-btn:hover{filter:brightness(1.1)}
 .np-info h3{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px}
 .np-info p{font-size:10px;color:var(--muted2)}
+.np-slider-wrap{position:relative;display:none}
+.np-slider-track{display:flex;gap:16px;overflow:hidden}
+.np-slider-track .np-card{flex:0 0 calc(50% - 8px);min-width:0}
+.np-arrow{position:absolute;top:40%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(27,37,64,.85);border:1px solid rgba(240,235,224,.15);color:#F0EBE0;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s,background .2s;z-index:10;backdrop-filter:blur(4px)}
+.np-arrow:hover{background:rgba(45,60,89,.95)}
+.np-arrow.prev{left:-16px}
+.np-arrow.next{right:-16px}
+.np-slider-wrap:hover .np-arrow{opacity:1}
+.np-arrow.hidden{opacity:0!important;pointer-events:none}
 
 @media(max-width:768px){
-  .np-card{flex:0 0 calc(50% - 8px)}
+  .nowplaying-grid{display:none}
+  .np-slider-wrap{display:block}
   .nowplaying-inner{padding:0 20px}
 }
 
@@ -265,6 +275,11 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify
       <span class="filmstrip-title lang-en">Now Showing</span>
     </div>
     <div class="nowplaying-grid" id="nowPlayingGrid"></div>
+    <div class="np-slider-wrap" id="nowPlayingSlider">
+      <button class="np-arrow prev hidden" id="npPrev" onclick="npSlide(-1)">&#8249;</button>
+      <div class="np-slider-track" id="nowPlayingSliderTrack"></div>
+      <button class="np-arrow next" id="npNext" onclick="npSlide(1)">&#8250;</button>
+    </div>
   </div>
 </section>
 
@@ -501,6 +516,33 @@ function renderNowPlayingSection(list){
         <p>${item.year}${item.type==='perf'?' · 공연':''}</p>
       </div>
     </div>`).join('');
+
+  // 모바일 슬라이더 동기화
+  const sliderTrack = document.getElementById('nowPlayingSliderTrack');
+  if(sliderTrack){ sliderTrack.innerHTML = grid.innerHTML; }
+  window._npSlideIdx = 0;
+  window._npSlideTotal = list.length;
+  npUpdateArrows();
+}
+function npSlide(dir){
+  const track = document.getElementById('nowPlayingSliderTrack');
+  if(!track) return;
+  const total = window._npSlideTotal || 0;
+  const maxIdx = Math.max(0, total - 2);
+  window._npSlideIdx = Math.min(Math.max((window._npSlideIdx||0) + dir, 0), maxIdx);
+  const cardW = track.offsetWidth / 2 + 8;
+  track.style.transform = `translateX(-${window._npSlideIdx * cardW}px)`;
+  track.style.transition = 'transform .35s ease';
+  npUpdateArrows();
+}
+
+function npUpdateArrows(){
+  const total = window._npSlideTotal || 0;
+  const idx = window._npSlideIdx || 0;
+  const prev = document.getElementById('npPrev');
+  const next = document.getElementById('npNext');
+  if(prev) prev.classList.toggle('hidden', idx === 0);
+  if(next) next.classList.toggle('hidden', idx >= Math.max(0, total - 2));
 }
 
 /* ═══════════ MY BOOKS ═══════════ */
