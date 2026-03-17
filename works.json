@@ -13774,15 +13774,14 @@
   {
     "s": "441",
     "g": "영화",
-    "ko": "하우 투 메이크 어 킬링",
-    "en": "How to Make a Killing",
+    "ko": "킬",
+    "en": "KILL",
     "sub": "StudioCanal",
-    "y": 2026,
-    "t": 467905,
+    "y": 2024,
+    "t": 1160018,
     "gr": "g3",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -13799,8 +13798,7 @@
         "u": "https://www.rottentomatoes.com/m/how_to_make_a_killing"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/udsbVbckQIJ2FpsJj5ScALQe0A1.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/bkUa5ZDqjQPx6rkxs0hM87vaWVa.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/hJxdfkQVSzM67uKjInnZA2mJTua.jpg"
   },
   {
     "s": "442",
