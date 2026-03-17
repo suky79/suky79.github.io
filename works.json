@@ -7476,16 +7476,15 @@
   {
     "s": "233",
     "g": "영화",
-    "ko": "C'est la vie",
+    "ko": "세라비: 다섯 번의 기적",
     "en": "C'est la vie",
     "sub": "",
-    "subE": "",
-    "y": 2001,
-    "t": 79048,
+    "y": 2020,
+    "rd": "2022-02-23",
+    "t": 554375,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -7502,9 +7501,7 @@
         "u": "https://www.rottentomatoes.com/m/cest_la_vie"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/lL8djpTjfUoOKeFyiJnZiMwxL87.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/pOTItgOWpZx8sryyejGooVBRsN1.jpg",
-    "rd": "2001-11-07"
+    "poster": "https://image.tmdb.org/t/p/w500/ms2b4kyy2cNkDNhXL9RWK7chpjF.jpg"
   },
   {
     "s": "234",
