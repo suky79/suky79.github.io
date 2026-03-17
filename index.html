@@ -5,7 +5,7 @@
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The White Beard Translators</title>
+<title>Beardos</title>
 
 
 <style>
@@ -169,10 +169,10 @@ nav.scrolled{background:rgba(27,37,64,.96);backdrop-filter:blur(20px);-webkit-ba
 
 @media(max-width:768px){
   .book-row,.book-row:nth-child(even){flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:28px}
-  .book-3d-wrap{width:150px}
-  .book-cover{width:120px}
-  .book-spine{left:-14px;width:14px}
-  .book-row:nth-child(even) .book-spine{right:-14px;left:auto}
+  .book-3d-wrap{width:160px;overflow:hidden;filter:drop-shadow(0 16px 24px rgba(0,0,0,.4))}
+  .book-cover,.book-row:nth-child(even) .book-cover{width:160px;transform:none;border-radius:4px}
+  .book-3d-wrap:hover .book-cover,.book-row:nth-child(even) .book-3d-wrap:hover .book-cover{transform:translateY(-4px)}
+  .book-spine,.book-row:nth-child(even) .book-spine{display:none}
   .book-info,.book-row:nth-child(even) .book-info{flex:none;max-width:100%;width:100%}
   .book-info-desc{max-width:100%}
   .mybooks-inner{padding:0 20px}
@@ -237,7 +237,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify
 <body>
 
 <nav id="mainNav">
-  <a href="#" class="nav-logo">The White Beard Translators<i>.</i></a>
+  <a href="#" class="nav-logo">Beardos<i>.</i></a>
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="collection.html"><span class="lang-ko" style="display:none">컬렉션</span><span class="lang-en">Collection</span></a></li>
@@ -351,9 +351,9 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify
 </section>
 
 <footer>
-  <span class="footer-logo">The White Beard Translators.</span>
+  <span class="footer-logo">Beardos.</span>
   <span class="footer-copy lang-ko" style="display:none">© 2025 흰수염 번역단. All rights reserved.</span>
-  <span class="footer-copy lang-en">© 2025 The White Beard Translators. All rights reserved.</span>
+  <span class="footer-copy lang-en">© 2025 Beardos. All rights reserved.</span>
 </footer>
 
 <script>
@@ -662,7 +662,7 @@ function updateHeroContent(i){
         <span class="lang-en" ${he}><em>${w.en}</em></span>
       </h1>
       <div class="hero-film-meta" style="animation:none;opacity:0">
-        <span>${w.y}</span> · <span class="lang-ko" ${hk}>흰수염 번역단</span><span class="lang-en" ${he}>The White Beard Translators</span>
+        <span>${w.y}</span> · <span class="lang-ko" ${hk}>흰수염 번역단</span><span class="lang-en" ${he}>Beardos</span>
       </div>
       <p class="hero-film-desc" style="animation:none;opacity:0">
         <span class="lang-ko" ${hk}>${(w.dK||'').replace(/\n/g,'<br>')}</span>
