@@ -2546,16 +2546,15 @@
   {
     "s": "082",
     "g": "영화",
-    "ko": "보이콰이어",
-    "en": "Boychoir",
+    "ko": "더 이스케이프",
+    "en": "The Escape",
     "sub": "",
-    "subE": "",
-    "y": 2015,
-    "t": 286519,
+    "y": 2016,
+    "rd": "2016-10-23",
+    "t": 417004,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "세상에 마음을 열지 못하는 반항아 ‘스텟’은 어느 날 교장 선생님의 권유로 뜻하지 않게 최고의 실력자만 모였다는 국립 소년 합창단 입학시험을 치른다.  한 번도 음악 교육을 받은 적 없는 ‘스텟’의 숨겨진 재능을 엿본 단장 ‘카르벨레’는 그에게 혹독한 교육을 넘어 인생의 가르침을 전하게 된다.  방황과 혼란에서 벗어나지 못했던 ‘스텟’은 그의 가르침 속에서 처음으로 꿈과 희망을 느끼고 조금씩 변화하기 시작하는데…  올봄, 가장 따뜻한 희망이 울려 퍼집니다.",
     "dE": "",
     "lk": [
@@ -2572,9 +2571,7 @@
         "u": "https://www.rottentomatoes.com/m/boychoir"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/wN0KYvge1RcYFUhNlSSPwOPnNP5.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/yDI3qXoKMGUGGz0E2zrkHw4PRt4.jpg",
-    "rd": "2020-05-14"
+    "poster": "https://image.tmdb.org/t/p/w500/nKm8oOyjC88l0Iggwuye4ayMvWF.jpg"
   },
   {
     "s": "083",
