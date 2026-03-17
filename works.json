@@ -7449,16 +7449,15 @@
   {
     "s": "232",
     "g": "영화",
-    "ko": "Promise at Dawn",
-    "en": "Promise at Dawn",
+    "ko": "새벽의 약속",
+    "en": "La Promesse de l'aube",
     "sub": "",
-    "subE": "",
-    "y": 1970,
-    "t": 277364,
+    "y": 2017,
+    "rd": "2017-10-15",
+    "t": 432616,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -7475,9 +7474,7 @@
         "u": "https://www.rottentomatoes.com/m/promise_at_dawn"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/olkNCkEhhUiRuwMt6hcwxuchGf8.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/symqYH29cghJJ9QlV4uHtUi5W51.jpg",
-    "rd": "1970-11-25"
+    "poster": "https://image.tmdb.org/t/p/w500/vZP4NJPEEeI5PiVUytzVdSzt2nl.jpg"
   },
   {
     "s": "233",
