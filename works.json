@@ -9374,16 +9374,15 @@
   {
     "s": "292",
     "g": "영화",
-    "ko": "엔젤 해즈 폴른",
-    "en": "Angel Has Fallen",
+    "ko": "디어스킨",
+    "en": "Le Daim",
     "sub": "",
-    "subE": "",
     "y": 2019,
-    "t": 423204,
+    "rd": "2019-10-05",
+    "t": 582883,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "비밀 경호국 최고 요원 배닝의 엄호 중 트럼불 대통령을 향한 초대형 규모의 드론 테러가 발생한다. 가까스로 대통령을 구하고 유일하게 살아남은 배닝은 완벽히 조작된 음모에 의해 대통령 암살사건의 테러범으로 지목되고, 국가 영웅은 한순간에 일급 수배자가 되어 FBI에게 쫓기게 되는데…",
     "dE": "",
     "lk": [
@@ -9400,9 +9399,7 @@
         "u": "https://www.rottentomatoes.com/m/angel_has_fallen"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/ymL9GQZ3k2vEPL5ih4JigxX82kt.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/sGqqnvOqJg2HDHrjtCPIlCwF4Mu.jpg",
-    "rd": "2019-11-13"
+    "poster": "https://image.tmdb.org/t/p/w500/4VTSH4BWJdLPhcJchVjhpobhCj5.jpg"
   },
   {
     "s": "293",
