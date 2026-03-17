@@ -351,7 +351,6 @@ function buildCards(items){
     return `
     <div class="poster-card" onclick="openLightbox(${JSON.stringify(w).replace(/"/g,'&quot;')})">
       <div class="poster-img">
-        <span class="poster-spine">${w.s}</span>
         ${imgHtml}
         <span class="poster-genre">${badge}</span>
         ${linksHtml?`<div class="poster-links">${linksHtml}</div>`:''}
