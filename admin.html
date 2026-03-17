@@ -1171,9 +1171,10 @@ function setSort(s){
 
 function getSortedWorks(){
   const list = [...works];
+  const dateKey = w => w.rd || (w.y ? String(w.y)+'-00-00' : '0000-00-00');
   if(currentSort==='title') return list.sort((a,b)=>a.en.localeCompare(b.en));
-  if(currentSort==='yearAsc') return list.sort((a,b)=>a.y-b.y);
-  if(currentSort==='yearDesc') return list.sort((a,b)=>b.y-a.y);
+  if(currentSort==='yearAsc') return list.sort((a,b)=>dateKey(a).localeCompare(dateKey(b)));
+  if(currentSort==='yearDesc') return list.sort((a,b)=>dateKey(b).localeCompare(dateKey(a)));
   return list; // default: 원래 순서
 }
 
@@ -1197,7 +1198,7 @@ function renderWorksList(){
       <div class="work-item-poster" id="adminposter-${realIdx}">${w.poster?`<img src="${w.poster}" alt="" onerror="this.style.display='none'">`:''}</div>
       <div class="work-item-info">
         <div class="work-item-title">${w.s} — ${w.en}</div>
-        <div class="work-item-meta">${w.ko!==w.en?w.ko+' · ':''}${w.y}${w.sub?' · '+w.sub:''}</div>
+        <div class="work-item-meta">${w.ko!==w.en?w.ko+' · ':''}${w.rd||w.y}${w.sub?' · '+w.sub:''}</div>
       </div>
       <span class="work-item-badge ${bc}">${badge}</span>
       <div class="work-item-flags">
