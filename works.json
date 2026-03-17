@@ -12555,16 +12555,15 @@
   {
     "s": "387",
     "g": "영화",
-    "ko": "Shotgun Wedding",
+    "ko": "샷건 웨딩",
     "en": "Shotgun Wedding",
     "sub": "",
-    "subE": "",
-    "y": 1963,
-    "t": 186477,
+    "y": 2022,
+    "rd": "2023-03-29",
+    "t": 758009,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -12581,9 +12580,7 @@
         "u": "https://www.rottentomatoes.com/m/shotgun_wedding"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/qY8QqP7bithnAMFRsSfourWMlHN.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/aKSsorBuC08sVQkO97wZkMtBzZP.jpg",
-    "rd": "1963-01-01"
+    "poster": "https://image.tmdb.org/t/p/w500/aGhII6CTTvpZwnElzAUB7ZbgjTN.jpg"
   },
   {
     "s": "388",
