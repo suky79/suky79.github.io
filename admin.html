@@ -262,6 +262,13 @@ select.form-input{cursor:pointer}
           <button class="btn btn-ghost" onclick="searchTMDB()">검색</button>
         </div>
         <div class="tmdb-results" id="tmdbResults"></div>
+        <div id="tmdbSelectedPreview" style="display:none;margin:10px 0 4px;display:flex;align-items:flex-start;gap:12px;background:rgba(0,0,0,.15);border-radius:6px;padding:10px">
+          <img id="tmdbSelectedImg" src="" alt="" style="width:72px;border-radius:4px;flex-shrink:0;object-fit:cover">
+          <div>
+            <div id="tmdbSelectedTitle" style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px"></div>
+            <div id="tmdbSelectedYear" style="font-size:11px;color:var(--muted)"></div>
+          </div>
+        </div>
       </div>
 
       <!-- PERFORMANCE section: 직접 입력 -->
@@ -938,9 +945,38 @@ function selectTMDB(idx){
   const dateEl = document.getElementById('fTmdbDate');
   if(dateEl) dateEl.value = m.release_date || '';
 
+  // TMDB 선택 인라인 미리보기 업데이트
+  const prevPanel = document.getElementById('tmdbSelectedPreview');
+  const prevImg   = document.getElementById('tmdbSelectedImg');
+  const prevTitle = document.getElementById('tmdbSelectedTitle');
+  const prevYear  = document.getElementById('tmdbSelectedYear');
+  if(prevPanel){
+    prevPanel.style.display = 'flex';
+    prevImg.src   = m.poster_path ? `${TP}${m.poster_path}` : '';
+    prevImg.style.display = m.poster_path ? '' : 'none';
+    prevTitle.textContent = (m.title||m.original_title||'');
+    prevYear.textContent  = m.release_date ? m.release_date.slice(0,4) : '';
+  }
+
+  // 포스터 URL 업데이트 + 미리보기 갱신
+  if(m.poster_path){
+    const posterUrl = `https://image.tmdb.org/t/p/w500${m.poster_path}`;
+    setImgSource('url');
+    document.getElementById('fPosterUrl').value = posterUrl;
+    document.getElementById('imgsrc-upload').classList.remove('active');
+    document.getElementById('imgsrc-url').classList.add('active');
+    // 이미지 강제 리로드
+    const previewImg = document.getElementById('urlPreviewImg');
+    previewImg.src = '';
+    requestAnimationFrame(()=>{
+      previewImg.src = posterUrl;
+      document.getElementById('urlPreviewWrap').style.display = 'block';
+    });
+  }
+
   // 한국 개봉일 자동 조회
   if(m.id){
-    fetch(`https://api.themoviedb.org/3/movie/${m.id}/release_dates?api_key=${tmdbApiKey}`)
+    fetch(`https://api.themoviedb.org/3/movie/${m.id}/release_dates?api_key=${TMDB_KEY}`)
       .then(r=>r.json())
       .then(d=>{
         const krData = (d.results||[]).find(r=>r.iso_3166_1==='KR');
@@ -950,17 +986,6 @@ function selectTMDB(idx){
         const krEl = document.getElementById('fKrDate');
         if(krEl) krEl.value = krDate;
       }).catch(()=>{});
-  }
-
-  // 포스터 URL 업데이트 + 미리보기 갱신
-  if(m.poster_path){
-    const posterUrl = `https://image.tmdb.org/t/p/w500${m.poster_path}`;
-    setImgSource('url');
-    document.getElementById('fPosterUrl').value = posterUrl;
-    previewPosterUrl(posterUrl);
-    // 버튼 active 상태 업데이트
-    document.getElementById('imgsrc-upload').classList.remove('active');
-    document.getElementById('imgsrc-url').classList.add('active');
   }
 
   fetch(`https://api.themoviedb.org/3/movie/${m.id}/external_ids?api_key=${TMDB_KEY}`)
