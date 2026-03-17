@@ -7680,13 +7680,12 @@
     "ko": "서스페리아",
     "en": "Suspiria",
     "sub": "",
-    "subE": "",
-    "y": 1977,
-    "t": 11906,
+    "y": 2018,
+    "rd": "2019-05-16",
+    "t": 361292,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "독일의 유명한 발레 학교로 유학 온 미국인 소녀 수지는 도착 첫날 밤, 겁에 질려 학교에서 도망쳐나오는 학생을 목격하고, 이튿날 아침 도망치던 학생과 다른 여학생이 끔찍하게 살해당했다는 소식을 듣는다. 수지는 발레 학교에 적응하려고 애쓰지만 이상한 선생과 학생들, 밤에 기숙사에 울려퍼지는 기이한 소리들 때문에 힘이 든다. 그 지방 전설로 내려오는 마녀 이야기와 살인 사건이 관련있으리라 추측하던 수지는 자신도 모르는 사이에 흑마술의 표적이 되는데...",
     "dE": "",
     "lk": [
@@ -7703,9 +7702,7 @@
         "u": "https://www.rottentomatoes.com/m/suspiria"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/qsQ4eqNWP6oKKiKp8QKyIDf7HLC.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/j7rl2LphIbC88FppTfwJ5Gxj9kX.jpg",
-    "rd": "1977-09-15"
+    "poster": "https://image.tmdb.org/t/p/w500/l7RweYloEealQuhaaldcxDU5VS8.jpg"
   },
   {
     "s": "240",
