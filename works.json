@@ -14303,15 +14303,15 @@
   {
     "s": "445",
     "g": "영화",
-    "ko": "더 드롭",
-    "en": "The Drop",
+    "ko": "드롭",
+    "en": "Drop",
     "sub": "Fox Searchlight Pictures",
-    "y": 2014,
-    "t": 154400,
+    "y": 2025,
+    "rd": "2025-04-23",
+    "t": 1249213,
     "gr": "g6",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -14328,9 +14328,7 @@
         "u": "https://www.rottentomatoes.com/m/the_drop"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/ggNMbArkwcECIB07My2CvuGqdAu.jpg",
-    "back": "https://image.tmdb.org/t/p/w1280/kydclLUnhGMuoCxl6VRfSSwdRRO.jpg",
-    "rd": "2014-10-03"
+    "poster": "https://image.tmdb.org/t/p/w500/l7Xj2XB7tRg1UqF4x5Prlc2LssQ.jpg"
   },
   {
     "s": "446",
