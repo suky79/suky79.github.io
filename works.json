@@ -7836,16 +7836,15 @@
   {
     "s": "244",
     "g": "영화",
-    "ko": "Leto",
-    "en": "Leto",
+    "ko": "레토",
+    "en": "Лето",
     "sub": "",
-    "subE": "",
-    "y": 1989,
-    "t": 204513,
+    "y": 2018,
+    "rd": "2018-10-08",
+    "t": 502897,
     "gr": "g1",
     "feat": false,
     "home": false,
-    "strip": false,
     "dK": "",
     "dE": "",
     "lk": [
@@ -7862,9 +7861,7 @@
         "u": "https://www.rottentomatoes.com/m/leto"
       }
     ],
-    "poster": "https://image.tmdb.org/t/p/w500/948EzhUmCVl14mYbFnk4ze6UAVe.jpg",
-    "back": "",
-    "rd": "1989-04-17"
+    "poster": "https://image.tmdb.org/t/p/w500/6mRfghg9vqXFBPR5RV1LMm91UxJ.jpg"
   },
   {
     "s": "245",
