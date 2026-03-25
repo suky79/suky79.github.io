@@ -24,5 +24,14 @@
     "poster": "https://kopis.or.kr/_next/image?url=%2Fupload%2FpfmPoster%2FPF_PF283525_260120_112946.gif&w=384&q=75",
     "type": "perf",
     "naverUrl": "https://tickets.interpark.com/goods/26000685"
+  },
+  {
+    "id": "film_1171145",
+    "title": "크라임 101",
+    "originalTitle": "Crime 101",
+    "year": "2026",
+    "poster": "https://image.tmdb.org/t/p/w500/77ggpowGO0ORQY9x33NeBIPajm1.jpg",
+    "type": "film",
+    "naverUrl": "https://search.naver.com/search.naver?query=%ED%81%AC%EB%9D%BC%EC%9E%84%20101%20%EC%98%88%EB%A7%A4"
   }
 ]
